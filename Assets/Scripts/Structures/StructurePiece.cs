@@ -2,45 +2,53 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public delegate void onHit();
+public delegate void onDead();
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(BoxCollider))]
+[RequireComponent(typeof(CullOnDead))]
+[RequireComponent(typeof(ImpactSpreadSystem))]
 public class StructurePiece : MonoBehaviour, IDestructable
 {
     public int health = 100;
 
-    public static event onHit onHit;
+    public event onHit onHit;
+    public event onDead onDead;
 
     private BoxCollider boxCollider;
     private Rigidbody rigidBody;
     private int forceMagnitude = 10;
-    private bool isDead;
+    private bool isDead = false;
     Vector3 hitDir;
+
+    List<int> alreadyHitByHitID = new List<int>();
+    void Start()
+    {
+        onHit += CheckIfDead;
+        boxCollider = GetComponent<BoxCollider>();
+        rigidBody = GetComponent<Rigidbody>();
+    }
     public void AddForceInDirection(Vector3 direction, float forceMagnitude)
     {
         rigidBody.AddForce(direction * forceMagnitude, ForceMode.Impulse);
     }
 
-    public void DamageMe(int damage)
+    public void DamageMe(int damage, int hitID, GameObject recievedFrom)
     {
         if (isDead) { return; }
         health -= damage;
-        ImpactNearbyPieces();
-        Debug.Log(gameObject.name + ": HIT!");
         onHit?.Invoke();
     }
-
-    public void ImpactNearbyPieces()
-    {
-        Debug.LogError("Implement impact");
-    }
-
     public void CheckIfDead()
     {
-       if(isDead){ return; }
        if(health <= 0)
         {
             ActivatePhysics();
             AddForceInDirection(hitDir, forceMagnitude);
             isDead = true;
+            onDead?.Invoke();
         }
     }
 
@@ -50,22 +58,8 @@ public class StructurePiece : MonoBehaviour, IDestructable
         boxCollider.isTrigger = false;
         rigidBody.useGravity = true;
     }
-    // Start is called before the first frame update
     public void GetHitDirection(Vector3 hitDir)
     {
         this.hitDir = hitDir;
     }
-    void Start()
-    {
-        onHit += CheckIfDead;
-        boxCollider = GetComponent<BoxCollider>();
-        rigidBody = GetComponent<Rigidbody>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 }

@@ -5,13 +5,14 @@ using UnityEngine;
 public delegate void onHitDestructable();
 public class Hitter : MonoBehaviour
 {
-    public static event onHitDestructable onHitDestructable;
+    public event onHitDestructable onHitDestructable;
     public int damage = 40;
 
     Vector3 hitDir;
     Vector3 oldHitDir;
 
     private IDestructable destructableObj;
+    private int hitID;
     void Start()
     {
         onHitDestructable += DamageDestructableObject;
@@ -25,7 +26,7 @@ public class Hitter : MonoBehaviour
     void DamageDestructableObject()
     {
         StartCoroutine(CalculateHitDirection());
-        destructableObj.DamageMe(damage);
+        destructableObj.DamageMe(damage, 23343, gameObject);
     }
     IEnumerator CalculateHitDirection()
     {
