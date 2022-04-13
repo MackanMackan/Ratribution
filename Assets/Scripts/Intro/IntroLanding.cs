@@ -1,34 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class IntroLanding : MonoBehaviour
 { 
-    public IntroCameraShake cameraShake;
-    public SwitchCamera switchCamera;
     public CharacterMovement characterMovement;
     public bool landing;
     
     Collider trigger;
+    public CinemachineFreeLook cinemachineFreeLook;
+    public IntroCameraShake introCameraShake;
 
     private void Start()
-    {
-        trigger = GetComponent<BoxCollider>();
+    {       
+        trigger = GetComponent<BoxCollider>();        
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(cameraShake.Shake(.25f, .8f));
-            StartCoroutine(CameraSwith());
+            StartCoroutine(introCameraShake.Shake(0.25f, 0.25f));      
+            StartCoroutine(BeginGame());
         }
     }
 
-    public IEnumerator CameraSwith()
+     IEnumerator BeginGame ()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
+
+        cinemachineFreeLook.enabled = true;
         trigger.enabled = false;
-        switchCamera.MainCamera();
-        landing = true;
+        landing = true;     
     }
 }

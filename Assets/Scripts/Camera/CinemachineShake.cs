@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-
 public class CinemachineShake : MonoBehaviour
 {
     public static CinemachineShake Instance { get; private set; }
-    private float shakeTime;
-    
+
+    float shakeTime;
+    float shakeTimeTotale;
+    float startingAmplitude;
+    float startingFrequency;
+
     public CinemachineFreeLook cmfl;
 
     private void Awake()
@@ -16,24 +19,31 @@ public class CinemachineShake : MonoBehaviour
         Instance = this;     
     }
 
-    public void Shake(float intensity, float time)
-    {
-        cmfl.GetRig(0).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = intensity;
-        cmfl.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = intensity;
-        cmfl.GetRig(3).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = intensity;
+   public void CMShake(float amplitude, float frequency, float time)
+    {       
+        cmfl.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = amplitude;
+        cmfl.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = frequency;
+
         shakeTime = time;
+        //shakeTimeTotale = time;
+        //startingFrequency = frequency;
+        //startingAmplitude = amplitude;
+
     }
 
     private void Update()
     {
-        if (shakeTime >0)
+        if (shakeTime > 0)
         {
-          shakeTime -= Time.deltaTime;
+            shakeTime -= Time.deltaTime;
+
+            //cmfl.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = Mathf.Lerp(startingAmplitude, 0f, shakeTime);
+            //cmfl.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = Mathf.Lerp(startingFrequency, 0f, shakeTime);
         }
-        
+
         if (shakeTime<= 0)
         {
-            cmfl.GetRig(0).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
+            CMShake(0f, 0f, 0f);
         }
     }
 }
