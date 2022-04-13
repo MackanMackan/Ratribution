@@ -34,6 +34,7 @@ public class CharacterAttack : MonoBehaviour
         anim = animatorParentObj.GetComponent<Animation>();
 
         actionInput.performed += MeleeAttack;
+        actionInput.canceled += ResetAnim; ;
     }
 
     private void OnEnable()
@@ -49,8 +50,12 @@ public class CharacterAttack : MonoBehaviour
     private void MeleeAttack(InputAction.CallbackContext callbackContext)
     {
         Debug.Log("Hej");
-        animator.SetBool("punching", true);
-        
-        animator.SetBool("punching", false);
+        animator.SetTrigger("PunchT");
     }
+    private void ResetAnim(InputAction.CallbackContext callbackContext)
+    {
+        Debug.Log("Hejdå");
+        //animator.SetBool("punching", false);
+    }
+
 }
