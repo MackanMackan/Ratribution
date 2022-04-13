@@ -6,10 +6,10 @@ using UnityEngine.InputSystem;
 public class CharacterMovement : MonoBehaviour
 {
     public float playerSpeed = 2.0f;
-    
+
     private Vector2 moveDir;
     private Vector2 LookDir;
-    
+
     private PlayerInputActions playerControls;
     private InputAction moveInput;
 
@@ -54,16 +54,17 @@ public class CharacterMovement : MonoBehaviour
     }
     private void Rotation()
     {
-        //Vector3 lookDir = new Vector3.fwd  (0,moveDir.y,0)
+        Vector3 ld = (Vector3)moveDir + transform.position;
 
         if (moveDir != Vector2.zero)
         {
-            //Vector3.RotateTowards(transform.position, moveDir, 3f, 3f);
-            transform.rotation = Quaternion.LookRotation(moveDir, Vector2.up);
-            //transform.Rotate(0, moveDir.y, 0, Space.World);
-            //Debug.Log(moveDir);
-            //transform.rotation = Quaternion.LookRotation(moveDir);
-            //charTransform.Rotate(moveDir);
+
+            Vector3 m = moveDir;
+            m.z = m.y;
+            m.y = 0;
+            Quaternion q = Quaternion.LookRotation(m, Vector3.up);
+            transform.rotation = q;
+            Debug.Log(moveDir);
         }
     }
 
