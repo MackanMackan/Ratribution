@@ -15,5 +15,4 @@ public class CameraFollow : MonoBehaviour
         vcam.LookAt = refPlayer.transform;
     }
 
-    //TODO Freez mouse when drop
 }
