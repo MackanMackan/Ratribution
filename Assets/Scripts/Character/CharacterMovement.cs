@@ -63,7 +63,7 @@ public class CharacterMovement : MonoBehaviour
             m.z = m.y;
             m.y = 0;
             Quaternion q = Quaternion.LookRotation(m, Vector3.up);
-            transform.rotation = q;
+            transform.rotation = Quaternion.Lerp(transform.rotation, q, Time.deltaTime * 3);
             Debug.Log(moveDir);
         }
     }
