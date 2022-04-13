@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 
-public delegate void onHit(int hitID);
+public delegate void onHit(int hitID, int impactJumpAt, int damage);
 public delegate void onDead();
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(BoxCollider))]
@@ -19,6 +19,7 @@ public class StructurePiece : MonoBehaviour, IDestructable
 
     private BoxCollider boxCollider;
     private Rigidbody rigidBody;
+    private GameObject latestHitRecievedFrom;
     private int forceMagnitude = 10;
     private bool isDead = false;
     Vector3 hitDir;
@@ -35,16 +36,21 @@ public class StructurePiece : MonoBehaviour, IDestructable
         rigidBody.AddForce(direction * forceMagnitude, ForceMode.Impulse);
     }
 
-    public void DamageMe(int damage, int hitID, GameObject recievedFrom)
+    public void DamageMe(int damage, int hitID, GameObject recievedFrom, int impactJumpAt)
     {
         if (isDead) { return; }
         health -= damage;
-        onHit?.Invoke(hitID);
+        latestHitRecievedFrom = recievedFrom;
+        onHit?.Invoke(hitID, impactJumpAt, damage);
     }
-    public void CheckIfDead(int hitID)
+    public void CheckIfDead(int hitID, int impactJumpAt, int damage)
     {
        if(health <= 0)
         {
+            if (!latestHitRecievedFrom.gameObject.name.Equals("PlayerHitter"))
+            {
+                hitDir = latestHitRecievedFrom.transform.position - transform.position;
+            }
             ActivatePhysics();
             AddForceInDirection(hitDir, forceMagnitude);
             isDead = true;

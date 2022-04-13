@@ -4,55 +4,62 @@ using UnityEngine;
 
 public class ImpactSpreadSystem : MonoBehaviour
 {
+    public BoxCollider boxCollider;
     public GameObject testBox;
-    BoxCollider boxCollider;
+    public LayerMask layer;
+    public bool testImpact = false;
+
+    float impactSpreadDamageModifier = 0.60f;
+    int impactJumpAt = 0;
+    int maxImpactJumps = 2;
     Collider[] nearbyColliders;
     List<int> hitIDs = new List<int>();
-    int overlapBoxSizeMultiplier = 3;
     void Start()
     {
         GetComponent<StructurePiece>().onHit += GetNearbyStructurePieces;
         boxCollider = GetComponent<BoxCollider>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void GetNearbyStructurePieces(int hitID, int impactSpreadJumpAt, int damage)
     {
-        
-    }
-    private void GetNearbyStructurePieces(int hitID)
-    {
-        foreach(int id in hitIDs)
+        impactJumpAt = impactSpreadJumpAt;
+        if(impactJumpAt == maxImpactJumps) { return; }
+        else
+        {
+            impactJumpAt++;
+        }
+        foreach (int id in hitIDs)
         {
             if (id == hitID) { return; }
         }
         hitIDs.Add(hitID);
-        Debug.LogError("Implement impact");
-        nearbyColliders = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2,
-            Quaternion.identity, LayerMask.NameToLayer("Default"));
+        nearbyColliders = Physics.OverlapBox(boxCollider.bounds.center, boxCollider.bounds.size/3 * 1.1f,
+           Quaternion.identity, layer);
 
-        Debug.Log(nearbyColliders.Length);
-        SpreadImpactToNearbyPieces();
+        SpreadImpactToNearbyPieces(damage, hitID);
     }
-    private void SpreadImpactToNearbyPieces()
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    //check that it is being run in play mode, so it doesn't try to draw this in editor mode
+    //    if (true)
+    //        //draw a cube where the overlapbox is (positioned where your gameobject is as well as a size)
+    //        Gizmos.DrawWireCube(boxCollider.bounds.center, boxCollider.bounds.size * 1.2f);
+    //}
+    private void SpreadImpactToNearbyPieces(int damage, int hitID)
     {
-        //if(nearbyColliders.Length == 0)
-        //{
-        //    StructurePiece[] pieces = transform.parent.GetComponentsInChildren<StructurePiece>();
-        //    foreach(StructurePiece piece in pieces)
-        //    {
-        //        piece.ActivatePhysics();
-        //    }
-        //    return;
-        //}
+        damage = Mathf.RoundToInt((float)damage * impactSpreadDamageModifier);
         foreach (Collider nearbyObj in nearbyColliders)
         {
-            Debug.Log(nearbyObj.gameObject.name);
-            //BoxCollider newCollider = nearbyObj.gameObject.AddComponent<BoxCollider>();
-            //newCollider.bounds.center.Set(boxCollider.bounds.center.x, boxCollider.bounds.center.y, boxCollider.bounds.center.z);
-            //newCollider.bounds.extents.Set(boxCollider.bounds.extents.x * 1.2f,
-            //boxCollider.bounds.extents.y * 1.2f, boxCollider.bounds.extents.z * 1.2f);
-            nearbyObj.GetComponent<IDestructable>().DamageMe(10, hitIDs[hitIDs.Count-1], gameObject);
+            if(nearbyObj == boxCollider) { continue; }
+            if (testImpact)
+            {
+                GameObject instance = Instantiate(testBox);
+                instance.transform.position = nearbyObj.transform.position;
+                Destroy(instance, 2);
+                Debug.DrawRay(transform.position, nearbyObj.transform.position - transform.position, Color.red, 10);
+            }
+            nearbyObj.GetComponent<IDestructable>().DamageMe(damage, hitID, gameObject, impactJumpAt);
         }
     }
 }

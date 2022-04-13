@@ -26,12 +26,13 @@ public class Hitter : MonoBehaviour
     void DamageDestructableObject()
     {
         StartCoroutine(CalculateHitDirection());
-        destructableObj.DamageMe(damage, 23343, gameObject);
+        int hitID = Random.Range(0, 10000);
+        destructableObj.DamageMe(damage, hitID, gameObject,0);
     }
     IEnumerator CalculateHitDirection()
     {
         oldHitDir = transform.position;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
         hitDir = oldHitDir - transform.position;
         hitDir.Normalize();
         destructableObj.GetHitDirection(hitDir);
