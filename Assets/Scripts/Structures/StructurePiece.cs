@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 
-public delegate void onHit();
+public delegate void onHit(int hitID);
 public delegate void onDead();
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(BoxCollider))]
@@ -39,9 +39,9 @@ public class StructurePiece : MonoBehaviour, IDestructable
     {
         if (isDead) { return; }
         health -= damage;
-        onHit?.Invoke();
+        onHit?.Invoke(hitID);
     }
-    public void CheckIfDead()
+    public void CheckIfDead(int hitID)
     {
        if(health <= 0)
         {
