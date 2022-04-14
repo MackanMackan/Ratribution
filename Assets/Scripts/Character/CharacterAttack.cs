@@ -3,13 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
-public delegate void fireButton();
-
 public class CharacterAttack : MonoBehaviour
 {
-    public event fireButton fireButton;
-
     private PlayerInputActions playerControls;
     private InputAction actionInput;
 
@@ -17,7 +12,6 @@ public class CharacterAttack : MonoBehaviour
     [SerializeField] GameObject animatorParentObj;
 
     private Animator animator;
-    private Animation anim;
 
     private Rigidbody hitterRB;
 
@@ -30,11 +24,11 @@ public class CharacterAttack : MonoBehaviour
     private void Start()
     {
         hitterRB = hitter.GetComponent<Rigidbody>();
+        hitter.SetActive(false);
+
         animator = animatorParentObj.GetComponent<Animator>();
-        anim = animatorParentObj.GetComponent<Animation>();
 
         actionInput.performed += MeleeAttack;
-        actionInput.canceled += ResetAnim; ;
     }
 
     private void OnEnable()
@@ -50,12 +44,14 @@ public class CharacterAttack : MonoBehaviour
     private void MeleeAttack(InputAction.CallbackContext callbackContext)
     {
         Debug.Log("Hej");
+        hitter.SetActive(true);
         animator.SetTrigger("PunchT");
+
     }
-    private void ResetAnim(InputAction.CallbackContext callbackContext)
+    public void TurnOffPunch()
     {
-        Debug.Log("Hejdå");
-        //animator.SetBool("punching", false);
+        Debug.Log("TurnOffPunch Called");
+        hitter.SetActive(false);
     }
 
 }
