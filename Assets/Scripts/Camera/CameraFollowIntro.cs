@@ -8,7 +8,7 @@ public class CameraFollowIntro : MonoBehaviour
 
     private void Start()
     {
-        target = GameObject.Find("Player(Clone)").GetComponent<Transform>();
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     void Update()

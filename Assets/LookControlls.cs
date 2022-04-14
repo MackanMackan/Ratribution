@@ -48,6 +48,17 @@ public partial class @LookControlls : IInputActionCollection2, IDisposable
                     ""action"": ""Mouse Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cd3960af-51da-4ec6-ac5e-b9366e29eadd"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mouse Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }

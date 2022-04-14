@@ -7,6 +7,7 @@ public class Hitter : MonoBehaviour
 {
     public event onHitDestructable onHitDestructable;
     public int damage = 40;
+    public float gizmoSizeSplit = 1f;
 
     Vector3 hitDir;
     Vector3 oldHitDir;
@@ -50,6 +51,6 @@ public class Hitter : MonoBehaviour
     {
         // Draw a yellow sphere at the transform's position
         Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(gameObject.GetComponent<SphereCollider>().bounds.center, 2.991732f /2 );
+        Gizmos.DrawSphere(gameObject.GetComponent<SphereCollider>().bounds.center, gameObject.GetComponent<SphereCollider>().radius / gizmoSizeSplit);
     }
 }

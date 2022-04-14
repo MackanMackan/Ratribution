@@ -32,9 +32,9 @@ public class IntroLanding : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
 
-        cameraHolder.transform.position = Vector3.Lerp(cameraHolder.transform.position, FP_cam.transform.position,20f);
+        //cameraHolder.transform.position = Vector3.Lerp(cameraHolder.transform.position, FP_cam.transform.position,20f);
 
-        yield return new WaitForSeconds(2f);
+        //yield return new WaitForSeconds(2f);
 
         cinemachineFreeLook.enabled = true;
         trigger.enabled = false;
