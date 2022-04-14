@@ -6,10 +6,19 @@ using Cinemachine;
 public class CameraFollow : MonoBehaviour
 {
     GameObject refPlayer;
+    CinemachineFreeLook vcam;
+    Transform cameraPos;
+    Transform introCam;
+
+  
 
     private void Start()
-    {   
-        var vcam = GetComponent<CinemachineFreeLook>();
+    {
+        cameraPos = GameObject.Find("FP_Cam").GetComponent<Transform>();
+
+
+        vcam = GetComponent<CinemachineFreeLook>();
+        
         refPlayer = GameObject.Find("Drop").GetComponent<PlayerDrop>().GO_player;
         vcam.Follow = refPlayer.transform;
         vcam.LookAt = refPlayer.transform;

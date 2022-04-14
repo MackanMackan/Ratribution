@@ -11,10 +11,13 @@ public class IntroLanding : MonoBehaviour
     Collider trigger;
     public CinemachineFreeLook cinemachineFreeLook;
     public IntroCameraShake introCameraShake;
+    public GameObject FP_cam;
+    public GameObject cameraHolder;
 
     private void Start()
     {       
-        trigger = GetComponent<BoxCollider>();        
+        trigger = GetComponent<BoxCollider>();
+        
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -28,6 +31,10 @@ public class IntroLanding : MonoBehaviour
      IEnumerator BeginGame ()
     {
         yield return new WaitForSeconds(1f);
+
+        cameraHolder.transform.position = Vector3.Lerp(cameraHolder.transform.position, FP_cam.transform.position,20f);
+
+        yield return new WaitForSeconds(2f);
 
         cinemachineFreeLook.enabled = true;
         trigger.enabled = false;
