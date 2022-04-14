@@ -38,14 +38,6 @@ public class ImpactSpreadSystem : MonoBehaviour
 
         SpreadImpactToNearbyPieces(damage, hitID);
     }
-    //private void OnDrawGizmos()
-    //{
-    //    Gizmos.color = Color.red;
-    //    //check that it is being run in play mode, so it doesn't try to draw this in editor mode
-    //    if (true)
-    //        //draw a cube where the overlapbox is (positioned where your gameobject is as well as a size)
-    //        Gizmos.DrawWireCube(boxCollider.bounds.center, boxCollider.bounds.size * 1.2f);
-    //}
     private void SpreadImpactToNearbyPieces(int damage, int hitID)
     {
         damage = Mathf.RoundToInt((float)damage * impactSpreadDamageModifier);
