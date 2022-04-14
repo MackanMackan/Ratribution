@@ -18,8 +18,8 @@ public class CameraFollow : MonoBehaviour
 
 
         cmCam = GetComponent<CinemachineFreeLook>();
-        
-        refPlayer = GameObject.Find("Drop").GetComponent<PlayerDrop>().GO_player;
+
+        refPlayer = GameObject.FindGameObjectWithTag("Player");
         cmCam.Follow = refPlayer.transform;
         cmCam.LookAt = refPlayer.transform;
 
