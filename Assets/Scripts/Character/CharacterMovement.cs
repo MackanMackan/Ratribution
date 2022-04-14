@@ -67,7 +67,7 @@ public class CharacterMovement : MonoBehaviour
             m.z = m.y;
             m.y = 0;
             Quaternion q = Quaternion.LookRotation(m, Vector3.up);
-            transform.localRotation = Quaternion.Lerp(transform.rotation, q, Time.deltaTime * 3);
+            transform.localRotation = Quaternion.Lerp(transform.rotation, q, Time.deltaTime * 6);
             Debug.Log(moveDir);
         }
     }
@@ -78,8 +78,8 @@ public class CharacterMovement : MonoBehaviour
         Rotation();
         Vector3 m = new Vector3(moveDir.x * playerSpeed, 0, moveDir.y * playerSpeed);
         rb.velocity = m;
-        
+
         //Vector3 m = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-        //rb.AddRelativeForce(m * playerSpeed * Time.deltaTime);
+        //rb.AddForce(m * playerSpeed * Time.deltaTime);
     }
 }

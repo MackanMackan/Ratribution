@@ -45,4 +45,11 @@ public class Hitter : MonoBehaviour
             onHitDestructable?.Invoke();
         }
     }
+
+    void OnDrawGizmos()
+    {
+        // Draw a yellow sphere at the transform's position
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(gameObject.GetComponent<SphereCollider>().bounds.center, 2.991732f /2 );
+    }
 }
