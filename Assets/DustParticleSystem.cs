@@ -21,9 +21,9 @@ public class DustParticleSystem : MonoBehaviour
     }
     public void EmitDustParticles(Vector3 position, int emits)
     {
-        dustParticleSystem = InstanciateParticleSystem();
-        dustParticleSystem.transform.position = position;
-        ParticleSystem particles = dustParticleSystem.GetComponent<ParticleSystem>();
+        GameObject dustParticleSystemInstance = InstanciateParticleSystem();
+        dustParticleSystemInstance.transform.position = position;
+        ParticleSystem particles = dustParticleSystemInstance.GetComponent<ParticleSystem>();
         particles.Emit(emits);
     }
 

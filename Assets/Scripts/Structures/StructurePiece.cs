@@ -41,7 +41,7 @@ public class StructurePiece : MonoBehaviour, IDestructable
         if (isDead) { return; }
         health -= damage;
         latestHitRecievedFrom = recievedFrom;
-        DustParticleSystem.Instance.EmitDustParticles(transform.position, 10);
+        DustParticleSystem.Instance.EmitDustParticles(transform.position, 1);
         onHit?.Invoke(hitID, impactJumpAt, damage);
     }
     public void CheckIfDead(int hitID, int impactJumpAt, int damage)
