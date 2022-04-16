@@ -42,7 +42,6 @@ public class StructurePiece : MonoBehaviour, IDestructable
         health -= damage;
         latestHitRecievedFrom = recievedFrom;
         DustParticleSystem.Instance.EmitDustParticles(transform.position, 1);
-        ServiceLocator.GetAudioProvider().PlayOneShot("StructureImpact");
         onHit?.Invoke(hitID, impactJumpAt, damage);
     }
     public void CheckIfDead(int hitID, int impactJumpAt, int damage)
