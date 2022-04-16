@@ -45,7 +45,9 @@ public class CharacterMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        CameraLookRotation();
         Movement();
+
     }
 
 
@@ -59,7 +61,6 @@ public class CharacterMovement : MonoBehaviour
         //Rotate towards input dir.
         targetAngle = Mathf.Atan2(GetMoveInput().x, GetMoveInput().z) * Mathf.Rad2Deg + CharaCam.eulerAngles.y;
     }
-
     private void Rotation()
     {
         if (moveDir != Vector2.zero)
@@ -69,23 +70,25 @@ public class CharacterMovement : MonoBehaviour
             m.y = 0;
             Quaternion q = Quaternion.LookRotation(m, Vector3.up);
             transform.localRotation = Quaternion.Lerp(transform.rotation, q, Time.deltaTime * 6);
-            //Debug.Log(moveDir);
         }
     }
 
     private void Movement()
     {
+        Rotation();
+        Vector3 m = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+        Vector3 resetV = new Vector3(0, rb.velocity.y, 0);
+        
+        
         if (GetMoveInput().magnitude >= 0.1f)
         {
-            CameraLookRotation();
-            Rotation();
 
-            Vector3 m = new Vector3(moveDir.x * playerSpeed, rb.velocity.y, moveDir.y * playerSpeed);
-            //Vector3 m = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-
-            rb.velocity = m;
+            rb.velocity = m * playerSpeed;
+        }
+        else
+        {
             
-            //rb.AddForce(m * playerSpeed * Time.deltaTime);
+            rb.velocity = Vector3.Lerp(rb.velocity, resetV, 1.5f);
         }
     }
 }
