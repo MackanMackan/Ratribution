@@ -47,9 +47,7 @@ public class CharacterMovement : MonoBehaviour
     {
         CameraLookRotation();
         Movement();
-
     }
-
 
     private Vector3 GetMoveInput()
     {
@@ -65,7 +63,8 @@ public class CharacterMovement : MonoBehaviour
     {
         if (moveDir != Vector2.zero)
         {
-            Vector3 m = moveDir;
+            //Vector3 m = moveDir;
+            Vector3 m = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             m.z = m.y;
             m.y = 0;
             Quaternion q = Quaternion.LookRotation(m, Vector3.up);
@@ -82,13 +81,12 @@ public class CharacterMovement : MonoBehaviour
         
         if (GetMoveInput().magnitude >= 0.1f)
         {
-
-            rb.velocity = m * playerSpeed;
+            rb.AddForce(playerSpeed * Time.deltaTime * m, ForceMode.VelocityChange);
+            //rb.velocity = m * playerSpeed;
         }
         else
         {
-            
-            rb.velocity = Vector3.Lerp(rb.velocity, resetV, 1.5f);
+            //rb.velocity = Vector3.Lerp(rb.velocity, resetV, 5f);
         }
     }
 }
