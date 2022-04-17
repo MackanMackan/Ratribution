@@ -13,10 +13,12 @@ public class Hitter : MonoBehaviour
     Vector3 oldHitDir;
 
     private IDestructable destructableObj;
-    private int hitID;
+    private int hitID = 0;
+    private bool hitSFXPlayed = false;
     void Start()
     {
         onHitDestructable += DamageDestructableObject;
+        hitID = Random.Range(0, 10000);
     }
 
     // Update is called once per frame
@@ -27,9 +29,13 @@ public class Hitter : MonoBehaviour
     void DamageDestructableObject()
     {
         StartCoroutine(CalculateHitDirection());
-        int hitID = Random.Range(0, 10000);
         destructableObj.DamageMe(damage, hitID, gameObject,0);
-        ServiceLocator.GetAudioProvider().PlayOneShot("StructureImpact",transform.position,true);
+        if (!hitSFXPlayed)
+        {
+            ServiceLocator.GetAudioProvider().PlayOneShot("StructureImpact",transform.position,true);
+            hitSFXPlayed = true;
+        }
+        if (!IsInvoking(nameof(GetNewHitID))) { Invoke(nameof(GetNewHitID), 1); }
     }
     IEnumerator CalculateHitDirection()
     {
@@ -38,6 +44,11 @@ public class Hitter : MonoBehaviour
         hitDir = oldHitDir - transform.position;
         hitDir.Normalize();
         destructableObj.GetHitDirection(hitDir);
+    }
+    private void GetNewHitID()
+    {
+        hitID = Random.Range(0, 10000);
+        hitSFXPlayed = false;
     }
     private void OnTriggerEnter(Collider other)
     {

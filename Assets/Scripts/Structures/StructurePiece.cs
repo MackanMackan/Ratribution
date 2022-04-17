@@ -41,7 +41,16 @@ public class StructurePiece : MonoBehaviour, IDestructable
         if (isDead) { return; }
         health -= damage;
         latestHitRecievedFrom = recievedFrom;
+
+        Debug.Log("ME: "+gameObject.name + "impact jump at: " +impactJumpAt + 
+            "From: "+recievedFrom.name);
         DustParticleSystem.Instance.EmitDustParticles(transform.position, 1);
+
+        if(impactJumpAt < 1)
+        {
+            ServiceLocator.GetAudioProvider().PlayOneShot("ImpactAftermath", transform.position, true);
+        }
+
         onHit?.Invoke(hitID, impactJumpAt, damage);
     }
     public void CheckIfDead(int hitID, int impactJumpAt, int damage)

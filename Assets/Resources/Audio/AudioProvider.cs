@@ -39,7 +39,6 @@ public class AudioProvider : IAudioService
         foreach (var clip in audioClips)
         {
             audioLibrary.Add(clip.name.ToLower(), clip);
-            Debug.Log(clip.name.ToLower());
         }
     }
 
