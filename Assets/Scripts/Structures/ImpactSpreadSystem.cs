@@ -36,10 +36,11 @@ public class ImpactSpreadSystem : MonoBehaviour
         nearbyColliders = Physics.OverlapBox(boxCollider.bounds.center, boxCollider.bounds.size/3 * 1.1f,
            Quaternion.identity, layer);
 
-        SpreadImpactToNearbyPieces(damage, hitID);
+        StartCoroutine(SpreadImpactToNearbyPieces(damage, hitID));
     }
-    private void SpreadImpactToNearbyPieces(int damage, int hitID)
+    IEnumerator SpreadImpactToNearbyPieces(int damage, int hitID)
     {
+        yield return new WaitForSeconds(0.25f);
         damage = Mathf.RoundToInt((float)damage * impactSpreadDamageModifier);
         foreach (Collider nearbyObj in nearbyColliders)
         {

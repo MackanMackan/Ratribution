@@ -24,7 +24,8 @@ public class StructurePiece : MonoBehaviour, IDestructable
     private bool isDead = false;
     Vector3 hitDir;
 
-    List<int> alreadyHitByHitID = new List<int>();
+    private int particlesToEmit = 2;
+
     void Start()
     {
         onHit += CheckIfDead;
@@ -44,7 +45,7 @@ public class StructurePiece : MonoBehaviour, IDestructable
 
         Debug.Log("ME: "+gameObject.name + "impact jump at: " +impactJumpAt + 
             "From: "+recievedFrom.name);
-        DustParticleSystem.Instance.EmitDustParticles(transform.position, 1);
+        DustParticleSystem.Instance.EmitDustParticles(transform.position, particlesToEmit);
 
         if(impactJumpAt < 1)
         {
