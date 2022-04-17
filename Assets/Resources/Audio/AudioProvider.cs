@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,6 +26,7 @@ public class AudioProvider : IAudioService
         {
             AudioSource source = new GameObject("AudioSource (created at runtime)").AddComponent<AudioSource>();
             source.transform.SetParent(parent.transform);
+            source.spatialBlend = 1;
             AddAudioSourcesToList(source);
         }
     }
@@ -48,27 +48,29 @@ public class AudioProvider : IAudioService
         audioSources.Add(source);
     }
 
-    public void PlayLoop(string clipName)
+    public void PlayLoop(string clipName, Vector3 position)
     {
-        PlayLoop(audioLibrary[clipName.ToLower()]);
+        PlayLoop(audioLibrary[clipName.ToLower()],position);
     }
 
-    public void PlayLoop(AudioClip clip)
+    public void PlayLoop(AudioClip clip, Vector3 position)
     {
         AudioSource source = GetAvailableAudioSource();
         source.clip = clip;
         source.loop = true;
+        source.transform.position = position;
         source.Play();
     }
 
-    public void PlayOneShot(string clipName)
+    public void PlayOneShot(string clipName, Vector3 position, bool randomPitch)
     {
-        Debug.Log(clipName);
-        PlayOneShot(audioLibrary[clipName.ToLower()]);
+        PlayOneShot(audioLibrary[clipName.ToLower()],position,randomPitch);
     }
-    public void PlayOneShot(AudioClip clip)
+    public void PlayOneShot(AudioClip clip, Vector3 position, bool randomPitch)
     {
         AudioSource source = GetAvailableAudioSource();
+        source.transform.position = position;
+        if (randomPitch) { source.pitch = UnityEngine.Random.Range(0.7f, 1.4f); }
         source.PlayOneShot(clip);
     }
 

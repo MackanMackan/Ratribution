@@ -29,6 +29,7 @@ public class Hitter : MonoBehaviour
         StartCoroutine(CalculateHitDirection());
         int hitID = Random.Range(0, 10000);
         destructableObj.DamageMe(damage, hitID, gameObject,0);
+        ServiceLocator.GetAudioProvider().PlayOneShot("StructureImpact",transform.position,true);
     }
     IEnumerator CalculateHitDirection()
     {
