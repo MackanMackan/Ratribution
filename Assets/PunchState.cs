@@ -5,17 +5,10 @@ using UnityEngine;
 public class PunchState : StateMachineBehaviour
 {
     GameObject player;
-    Hitter hitter;
-
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         player = GameObject.FindGameObjectWithTag("Player");
-
-        if (hitter == null)
-            hitter = player.GetComponent<Hitter>();
-
-        hitter.GetNewHitID();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

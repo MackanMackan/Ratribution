@@ -10,6 +10,7 @@ public class CharacterAttack : MonoBehaviour
 
     [SerializeField] GameObject hitter;
     [SerializeField] GameObject animatorParentObj;
+    Hitter hitterScript;
 
     private Animator animator;
 
@@ -47,6 +48,10 @@ public class CharacterAttack : MonoBehaviour
         hitter.SetActive(true);
         animator.SetTrigger("PunchT");
 
+        if (hitterScript == null)
+            hitterScript = hitter.GetComponent<Hitter>();
+
+        hitterScript.GetNewHitID();
     }
     public void TurnOffPunch()
     {
