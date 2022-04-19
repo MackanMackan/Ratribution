@@ -43,8 +43,6 @@ public class StructurePiece : MonoBehaviour, IDestructable
         health -= damage;
         latestHitRecievedFrom = recievedFrom;
 
-        Debug.Log("ME: "+gameObject.name + "impact jump at: " +impactJumpAt + 
-            "From: "+recievedFrom.name);
         DustParticleSystem.Instance.EmitDustParticles(transform.position, particlesToEmit);
 
         if(impactJumpAt < 1)
