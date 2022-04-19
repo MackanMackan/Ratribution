@@ -54,6 +54,7 @@ public class Hitter : MonoBehaviour
         if (other.GetComponent<IDestructable>() != null)
         {
             destructableObj = other.GetComponent<IDestructable>();
+            ParticleSystemServiceLocator.Instance.GetImpactParticleSystem().EmitParticles(transform.position, 1);
             onHitDestructable?.Invoke();
         }
     }
