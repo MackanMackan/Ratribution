@@ -43,14 +43,12 @@ public class CharacterAttack : MonoBehaviour
 
     private void MeleeAttack(InputAction.CallbackContext callbackContext)
     {
-        Debug.Log("Hej");
         hitter.SetActive(true);
         animator.SetTrigger("PunchT");
 
     }
     public void TurnOffPunch()
     {
-        Debug.Log("TurnOffPunch Called");
         hitter.SetActive(false);
     }
 
