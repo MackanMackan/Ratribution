@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,15 +6,19 @@ using UnityEngine.InputSystem;
 
 public class CharacterMovement : MonoBehaviour
 {
-    public float playerSpeed = 2.0f;
+    public float playerSpeed = 20.0f;
+    public float jumpPower = 50.0f;
+    public float rayDistance = 1.0f;
 
     private Vector2 moveDir;
     private float targetAngle;
+    private bool isGrounded;
 
     private Transform CharaCam;
 
     private PlayerInputActions playerControls;
     private InputAction moveInput;
+    private InputAction jumpInput;
 
     private Rigidbody rb;
 
@@ -21,11 +26,15 @@ public class CharacterMovement : MonoBehaviour
     {
         playerControls = new PlayerInputActions();
         moveInput = playerControls.Player.Move;
+        jumpInput = playerControls.Player.Jump;
 
         //Movement
         moveInput.performed += cntxt => moveDir = cntxt.ReadValue<Vector2>();
         moveInput.canceled += cntxt => moveDir = Vector2.zero;
+
+        jumpInput.performed += Jump;
     }
+
 
     private void Start()
     {
@@ -36,11 +45,13 @@ public class CharacterMovement : MonoBehaviour
     private void OnEnable()
     {
         moveInput.Enable();
+        jumpInput.Enable();
     }
 
     private void OnDisable()
     {
         moveInput.Disable();
+        jumpInput.Disable();
     }
 
     private void FixedUpdate()
@@ -63,10 +74,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (moveDir != Vector2.zero)
         {
-            //Vector3 m = moveDir;
             Vector3 m = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            m.z = m.y;
-            m.y = 0;
             Quaternion q = Quaternion.LookRotation(m, Vector3.up);
             transform.localRotation = Quaternion.Lerp(transform.rotation, q, Time.deltaTime * 6);
         }
@@ -75,18 +83,36 @@ public class CharacterMovement : MonoBehaviour
     private void Movement()
     {
         Rotation();
+
+        Debug.DrawRay(transform.position, Vector3.down, Color.green, rayDistance);
         Vector3 m = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-        Vector3 resetV = new Vector3(0, rb.velocity.y, 0);
-        
         
         if (GetMoveInput().magnitude >= 0.1f)
         {
             rb.AddForce(playerSpeed * Time.deltaTime * m, ForceMode.VelocityChange);
-            //rb.velocity = m * playerSpeed;
+        }
+    }
+    private void Jump(InputAction.CallbackContext obj)
+    {
+        GroundCheck();
+        Debug.Log("Jump!!");
+
+        if (isGrounded)
+        {
+            rb.AddForce(jumpPower * Vector3.up, ForceMode.Impulse);
+        }
+    }
+
+    private void GroundCheck()
+    {
+        if (Physics.Raycast(transform.position, Vector3.down, rayDistance))
+        {
+            isGrounded = true;
         }
         else
         {
-            //rb.velocity = Vector3.Lerp(rb.velocity, resetV, 5f);
+            isGrounded = false;
         }
+        Debug.Log("Checked ground: " + isGrounded);
     }
 }
