@@ -35,7 +35,6 @@ public class Hitter : MonoBehaviour
             ServiceLocator.GetAudioProvider().PlayOneShot("StructureImpact",transform.position,true);
             hitSFXPlayed = true;
         }
-        if (!IsInvoking(nameof(GetNewHitID))) { Invoke(nameof(GetNewHitID), 1); }
     }
     IEnumerator CalculateHitDirection()
     {
@@ -45,7 +44,7 @@ public class Hitter : MonoBehaviour
         hitDir.Normalize();
         destructableObj.GetHitDirection(hitDir);
     }
-    private void GetNewHitID()
+    public void GetNewHitID()
     {
         hitID = Random.Range(0, 10000);
         hitSFXPlayed = false;
@@ -55,6 +54,7 @@ public class Hitter : MonoBehaviour
         if (other.GetComponent<IDestructable>() != null)
         {
             destructableObj = other.GetComponent<IDestructable>();
+            ParticleSystemServiceLocator.Instance.GetImpactParticleSystem().EmitParticles(transform.position, 1);
             onHitDestructable?.Invoke();
         }
     }

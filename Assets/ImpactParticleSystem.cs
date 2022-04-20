@@ -1,13 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class DustParticleSystem : IParticleSystem
+class ImpactParticleSystem : IParticleSystem
 {
-    public GameObject dustParticleSystem;
-
-    public void EmitParticles(Vector3 position, int emits)
+    GameObject impactParticleSystem;
+     public void EmitParticles(Vector3 position, int emits)
     {
         GameObject dustParticleSystemInstance = InstatiateParticleSystem();
         dustParticleSystemInstance.transform.position = position;
@@ -17,11 +13,11 @@ public class DustParticleSystem : IParticleSystem
 
     public GameObject InstatiateParticleSystem()
     {
-        return MonoBehaviour.Instantiate(dustParticleSystem);
+        return MonoBehaviour.Instantiate(impactParticleSystem);
     }
 
     public void SetParticleSystem(GameObject particleSystem)
     {
-        dustParticleSystem = particleSystem;
+        impactParticleSystem = particleSystem;
     }
 }
