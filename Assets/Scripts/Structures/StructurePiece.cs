@@ -70,8 +70,7 @@ public class StructurePiece : MonoBehaviour, IDestructable
 
     public void ActivatePhysics()
     {
-        boxCollider.isTrigger = false;
-        rigidBody.useGravity = true;
+        rigidBody.isKinematic = false;
     }
     public void GetHitDirection(Vector3 hitDir)
     {
