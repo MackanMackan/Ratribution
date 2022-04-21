@@ -10,10 +10,9 @@ public class CullOnDead : MonoBehaviour
     {
         structurePiece = GetComponent<StructurePiece>();
         structurePiece.onDead += Cull;
-        structurePiece.onPhysicsActive += Cull;
     }
 
-    private void Cull()
+    public void Cull(Transform deadPiece)
     {
         Destroy(gameObject, timeUntilCulled);
     }

@@ -5,12 +5,25 @@ using UnityEngine;
 public class BuildingCrumble : MonoBehaviour
 {
     [SerializeField] int health;
+    List<Transform> children;
     void Start()
     {
-        StructurePiece.onHitStructure += HurtMe;
+        StructurePiece piece;
+        children = new List<Transform>();
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            children.Add(transform.GetChild(i));
+        }
+        foreach (Transform child in children)
+        {
+            piece = child.GetComponent<StructurePiece>();
+            piece.onHit += DamageMe;
+            piece.onDead += RemoveDeadPiece;
+        }
+
     }
 
-    private void HurtMe(int damage)
+    public void DamageMe(int hitID, int impactJumpAt, int damage)
     {
         health -= damage;
         if(health <= 0)
@@ -20,9 +33,16 @@ public class BuildingCrumble : MonoBehaviour
     }
     private void DestroyBuilding()
     {
-        for(int i = 0; i < transform.childCount; i++)
+        foreach(Transform child in children)
         {
-            transform.GetChild(i).GetComponent<StructurePiece>().ActivatePhysics();
+            if(child == null) { continue; }
+
+            child.GetComponent<StructurePiece>().ActivatePhysics();
+            child.GetComponent<CullOnDead>().Cull(null);
         }
+    }
+    private void RemoveDeadPiece(Transform deadPiece)
+    {
+        children.Remove(deadPiece);
     }
 }

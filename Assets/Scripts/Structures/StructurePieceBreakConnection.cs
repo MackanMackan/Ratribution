@@ -30,7 +30,7 @@ public class StructurePieceBreakConnection : MonoBehaviour
     private void ConnectMeToUnderLyingPiece(GameObject underLyingPiece)
     {
         connectedPieceName = underLyingPiece.name;
-        underLyingPiece.GetComponent<StructurePiece>().onPhysicsActive += GetComponent<StructurePiece>().ActivatePhysics;
+        underLyingPiece.GetComponent<StructurePiece>().onPhysicsActive += GetComponent<StructurePiece>().ActivatePhysicsNotDead;
     }
     private void OnDrawGizmos()
     {
