@@ -3,8 +3,8 @@ using UnityEditor;
 
 public class SizeEditor : EditorWindow
 {
-	public string myString = "0";
-	public string myString2 = "0";
+	public float myString = 0;
+	public float myString2 = 0;
 
 	[MenuItem("Window/RandomSize")]
 	public static void SetupWindow()
@@ -18,8 +18,8 @@ public class SizeEditor : EditorWindow
 	{
 		GUILayout.Label("Choose Random Rage", EditorStyles.boldLabel);
 		GUILayout.Space(20f);
-		myString = EditorGUILayout.TextField("Random Rage", myString);
-		myString2 = EditorGUILayout.TextField("Random Rage", myString);
+		myString = EditorGUILayout.FloatField(("Random Rage"), myString);
+		myString2 = EditorGUILayout.FloatField("Random Rage", myString2);
 		GUILayout.Space(20f);
 
 		if (GUILayout.Button($"Give {Selection.transforms.Length} Random Size"))
@@ -50,7 +50,7 @@ public class SizeEditor : EditorWindow
 
     private void RandomSize(Transform trans)
     {
-		float randomScale = UnityEngine.Random.Range(float.Parse("myString"), float.Parse("myString2"));
+		float randomScale = UnityEngine.Random.Range(myString, myString2);
 		Transform transform = trans.GetComponent<Transform>();
 		Undo.RecordObject(transform, "Changing size");
 
