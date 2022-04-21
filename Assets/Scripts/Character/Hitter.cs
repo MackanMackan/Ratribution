@@ -15,6 +15,8 @@ public class Hitter : MonoBehaviour
     private IDestructable destructableObj;
     private int hitID = 0;
     private bool hitSFXPlayed = false;
+
+    public CinemachineShake cinemachineShake;
     void Start()
     {
         onHitDestructable += DamageDestructableObject;
@@ -32,6 +34,7 @@ public class Hitter : MonoBehaviour
         destructableObj.DamageMe(damage, hitID, gameObject,0);
         if (!hitSFXPlayed)
         {
+            cinemachineShake.CMShake(0.1f, 0.1f, 0.5f);
             ServiceLocator.GetAudioProvider().PlayOneShot("StructureImpact",transform.position,true);
             hitSFXPlayed = true;
         }
