@@ -6,10 +6,12 @@ using UnityEngine.InputSystem;
 public class CharacterAttack : MonoBehaviour
 {
     private PlayerInputActions playerControls;
-    private InputAction actionInput;
+    private InputAction fireInput;
+    private InputAction fire2Input;
 
     public GameObject hitterR;
     public GameObject hitterL;
+    public GameObject hitterKick;
     [SerializeField] GameObject animatorParentObj;
     //Hitter hitterScript;
 
@@ -20,7 +22,8 @@ public class CharacterAttack : MonoBehaviour
     private void Awake()
     {
         playerControls = new PlayerInputActions();
-        actionInput = playerControls.Player.Fire;
+        fireInput = playerControls.Player.Fire;
+        fire2Input = playerControls.Player.Fire2;
     }
 
     private void Start()
@@ -28,22 +31,29 @@ public class CharacterAttack : MonoBehaviour
         //hitterRB = hitter.GetComponent<Rigidbody>();
         hitterR.SetActive(false);
         hitterL.SetActive(false);
+        hitterKick.SetActive(false);
 
         animator = animatorParentObj.GetComponent<Animator>();
 
         //actionInput.performed += MeleeAttack;
-        actionInput.started += StartPunching;
-        actionInput.canceled += StopPunching;
+        fireInput.started += StartPunching;
+        fireInput.canceled += StopPunching;
+
+        fire2Input.started += StartKicking;
+        fire2Input.canceled += StopKicking;
+
     }
 
     private void OnEnable()
     {
-        actionInput.Enable();
+        fireInput.Enable();
+        fire2Input.Enable();
     }
 
     private void OnDisable()
     {
-        actionInput.Disable();
+        fireInput.Disable();
+        fireInput.Disable();
     }
 
     private void MeleeAttack(InputAction.CallbackContext callbackContext)
@@ -60,15 +70,25 @@ public class CharacterAttack : MonoBehaviour
     {
         animator.SetBool("isPunching", true);
     }
+    private void StartKicking(InputAction.CallbackContext callbackContext)
+    {
+        animator.SetBool("isKicking", true);
+    }
 
     private void StopPunching(InputAction.CallbackContext callbackContext)
     {
         animator.SetBool("isPunching", false);
     }
 
+    private void StopKicking(InputAction.CallbackContext callbackContext)
+    {
+        animator.SetBool("isKicking", false);
+    }
+
     private void TurnOffPunches()
     {
         hitterR.SetActive(false);
         hitterL.SetActive(false);
+        hitterKick.SetActive(false);
     }
 }

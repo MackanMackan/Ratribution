@@ -6,12 +6,14 @@ using UnityEngine.InputSystem;
 
 public class CharacterMovement : MonoBehaviour
 {
-    public float playerSpeed = 20.0f;
+    public float playerMoveForce = 20.0f;
     public float turnSpeed = 6.0f;
+    public float stopSpeed = 1.0f;
     public float jumpPower = 50.0f;
     public float rayDistance = 1.0f;
 
     private Vector2 moveDir;
+    private Vector3 resetV;
     private float targetAngle;
     private bool isGrounded;
 
@@ -86,10 +88,16 @@ public class CharacterMovement : MonoBehaviour
 
         Debug.DrawRay(transform.position, Vector3.down, Color.green, rayDistance);
         Vector3 m = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+        resetV = new Vector3(0, rb.velocity.y, 0);
         
         if (GetMoveInput().magnitude >= 0.1f)
         {
-            rb.AddForce(playerSpeed * Time.deltaTime * m, ForceMode.VelocityChange);
+            rb.AddForce(playerMoveForce * Time.deltaTime * m, ForceMode.VelocityChange);
+        }
+        else
+        {
+            //Disney On Ice hate campaign
+            rb.velocity = Vector3.Lerp(rb.velocity, resetV, stopSpeed * Time.deltaTime);
         }
     }
     private void Jump(InputAction.CallbackContext obj)
