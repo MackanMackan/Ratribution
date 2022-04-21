@@ -81,6 +81,11 @@ public class StructurePiece : MonoBehaviour, IDestructable
         health = 0;
         onPhysicsActive?.Invoke();
     }
+    public void ActivatePhysicsNotDead()
+    {
+        rigidBody.isKinematic = false;
+        onPhysicsActive?.Invoke();
+    }
     public void GetHitDirection(Vector3 hitDir)
     {
         this.hitDir = hitDir;
