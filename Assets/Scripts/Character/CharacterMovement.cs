@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class CharacterMovement : MonoBehaviour
 {
     public float playerSpeed = 20.0f;
+    public float turnSpeed = 6.0f;
     public float jumpPower = 50.0f;
     public float rayDistance = 1.0f;
 
@@ -34,7 +35,6 @@ public class CharacterMovement : MonoBehaviour
 
         jumpInput.performed += Jump;
     }
-
 
     private void Start()
     {
@@ -76,7 +76,7 @@ public class CharacterMovement : MonoBehaviour
         {
             Vector3 m = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             Quaternion q = Quaternion.LookRotation(m, Vector3.up);
-            transform.localRotation = Quaternion.Lerp(transform.rotation, q, Time.deltaTime * 6);
+            transform.localRotation = Quaternion.Lerp(transform.rotation, q, Time.deltaTime * turnSpeed);
         }
     }
 
@@ -115,4 +115,10 @@ public class CharacterMovement : MonoBehaviour
         }
         Debug.Log("Checked ground: " + isGrounded);
     }
+
+    private void SlowDown()
+    {
+        //Slows player down while mid-air or attacking.
+
+    } 
 }

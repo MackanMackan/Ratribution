@@ -6,6 +6,8 @@ using Cinemachine;
 public class IntroLanding : MonoBehaviour
 { 
     public CharacterMovement characterMovement;
+
+    [HideInInspector]
     public bool landing;
     
     Collider trigger;
@@ -16,8 +18,7 @@ public class IntroLanding : MonoBehaviour
 
     private void Start()
     {       
-        trigger = GetComponent<BoxCollider>();
-        
+        trigger = GetComponent<BoxCollider>(); 
     }
     private void OnTriggerEnter(Collider other)
     {

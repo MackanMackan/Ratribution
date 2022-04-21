@@ -25,10 +25,6 @@ public class CinemachineShake : MonoBehaviour
         cmfl.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = frequency;
 
         shakeTime = time;
-        //shakeTimeTotale = time;
-        //startingFrequency = frequency;
-        //startingAmplitude = amplitude;
-
     }
 
     private void Update()
@@ -36,9 +32,6 @@ public class CinemachineShake : MonoBehaviour
         if (shakeTime > 0)
         {
             shakeTime -= Time.deltaTime;
-
-            //cmfl.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = Mathf.Lerp(startingAmplitude, 0f, shakeTime);
-            //cmfl.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = Mathf.Lerp(startingFrequency, 0f, shakeTime);
         }
 
         if (shakeTime<= 0)
