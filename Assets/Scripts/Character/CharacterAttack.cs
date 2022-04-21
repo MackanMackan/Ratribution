@@ -8,9 +8,10 @@ public class CharacterAttack : MonoBehaviour
     private PlayerInputActions playerControls;
     private InputAction actionInput;
 
-    [SerializeField] GameObject hitter;
+    public GameObject hitterR;
+    public GameObject hitterL;
     [SerializeField] GameObject animatorParentObj;
-    Hitter hitterScript;
+    //Hitter hitterScript;
 
     private Animator animator;
 
@@ -24,12 +25,15 @@ public class CharacterAttack : MonoBehaviour
 
     private void Start()
     {
-        hitterRB = hitter.GetComponent<Rigidbody>();
-        hitter.SetActive(false);
+        //hitterRB = hitter.GetComponent<Rigidbody>();
+        hitterR.SetActive(false);
+        hitterL.SetActive(false);
 
         animator = animatorParentObj.GetComponent<Animator>();
 
-        actionInput.performed += MeleeAttack;
+        //actionInput.performed += MeleeAttack;
+        actionInput.started += StartPunching;
+        actionInput.canceled += StopPunching;
     }
 
     private void OnEnable()
@@ -44,17 +48,27 @@ public class CharacterAttack : MonoBehaviour
 
     private void MeleeAttack(InputAction.CallbackContext callbackContext)
     {
-        hitter.SetActive(true);
+        //hitter.SetActive(true);
         animator.SetTrigger("PunchT");
 
-        if (hitterScript == null)
-            hitterScript = hitter.GetComponent<Hitter>();
-
-        hitterScript.GetNewHitID();
+        //if (hitterScript == null)
+        //    hitterScript = hitter.GetComponent<Hitter>();
+        //
+        //hitterScript.GetNewHitID();
     }
-    public void TurnOffPunch()
+    private void StartPunching(InputAction.CallbackContext callbackContext)
     {
-        hitter.SetActive(false);
+        animator.SetBool("isPunching", true);
     }
 
+    private void StopPunching(InputAction.CallbackContext callbackContext)
+    {
+        animator.SetBool("isPunching", false);
+    }
+
+    private void TurnOffPunches()
+    {
+        hitterR.SetActive(false);
+        hitterL.SetActive(false);
+    }
 }
