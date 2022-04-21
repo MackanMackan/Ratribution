@@ -23,6 +23,7 @@ public class ImpactSpreadSystem : MonoBehaviour
     private void GetNearbyStructurePieces(int hitID, int impactSpreadJumpAt, int damage)
     {
         impactJumpAt = impactSpreadJumpAt;
+        nearbyColliders = new Collider[0];
         if(impactJumpAt == maxImpactJumps) { return; }
         else
         {
@@ -36,6 +37,8 @@ public class ImpactSpreadSystem : MonoBehaviour
         nearbyColliders = Physics.OverlapBox(boxCollider.bounds.center, boxCollider.bounds.size/3 * 1.1f,
            Quaternion.identity, layer);
 
+        if(nearbyColliders.Length == 0) { GetComponent<StructurePiece>().ActivatePhysics(); return; }
+
         StartCoroutine(SpreadImpactToNearbyPieces(damage, hitID));
     }
     IEnumerator SpreadImpactToNearbyPieces(int damage, int hitID)
@@ -45,13 +48,13 @@ public class ImpactSpreadSystem : MonoBehaviour
         foreach (Collider nearbyObj in nearbyColliders)
         {
             if(nearbyObj == boxCollider) { continue; }
-            if (testImpact)
+            /*if (testImpact)
             {
                 GameObject instance = Instantiate(testBox);
                 instance.transform.position = nearbyObj.transform.position;
                 Destroy(instance, 2);
                 Debug.DrawRay(transform.position, nearbyObj.transform.position - transform.position, Color.red, 10);
-            }
+            }*/
             nearbyObj.GetComponent<IDestructable>().DamageMe(damage, hitID, gameObject, impactJumpAt);
         }
     }

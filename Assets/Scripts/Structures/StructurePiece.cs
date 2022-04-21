@@ -5,17 +5,22 @@ using UnityEngine;
 
 
 public delegate void onHit(int hitID, int impactJumpAt, int damage);
+public delegate void onHitStructure(int damage);
 public delegate void onDead();
+public delegate void onPhysicsActive();
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(BoxCollider))]
 [RequireComponent(typeof(CullOnDead))]
 [RequireComponent(typeof(ImpactSpreadSystem))]
+[RequireComponent(typeof(StructurePieceBreakConnection))]
 public class StructurePiece : MonoBehaviour, IDestructable
 {
     public int health = 100;
 
     public event onHit onHit;
+    public static event onHitStructure onHitStructure;
     public event onDead onDead;
+    public event onPhysicsActive onPhysicsActive;
 
     private BoxCollider boxCollider;
     private Rigidbody rigidBody;
@@ -51,6 +56,7 @@ public class StructurePiece : MonoBehaviour, IDestructable
         }
 
         onHit?.Invoke(hitID, impactJumpAt, damage);
+        onHitStructure?.Invoke(damage);
     }
     public void CheckIfDead(int hitID, int impactJumpAt, int damage)
     {
@@ -71,6 +77,9 @@ public class StructurePiece : MonoBehaviour, IDestructable
     public void ActivatePhysics()
     {
         rigidBody.isKinematic = false;
+        isDead = true;
+        health = 0;
+        onPhysicsActive?.Invoke();
     }
     public void GetHitDirection(Vector3 hitDir)
     {

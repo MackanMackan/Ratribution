@@ -54,7 +54,8 @@ public class Hitter : MonoBehaviour
         if (other.GetComponent<IDestructable>() != null)
         {
             destructableObj = other.GetComponent<IDestructable>();
-            ParticleSystemServiceLocator.Instance.GetImpactParticleSystem().EmitParticles(transform.position, 1);
+            //TODO: REDO impact effect it sux //by kolbe for kolbe
+           // ParticleSystemServiceLocator.Instance.GetImpactParticleSystem().EmitParticles(transform.position, 1);
             onHitDestructable?.Invoke();
         }
     }
