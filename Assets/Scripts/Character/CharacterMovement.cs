@@ -92,7 +92,8 @@ public class CharacterMovement : MonoBehaviour
         
         if (GetMoveInput().magnitude >= 0.1f)
         {
-            rb.AddForce(playerMoveForce * Time.deltaTime * m, ForceMode.VelocityChange);
+            rb.velocity = playerMoveForce * Time.deltaTime * m * 100;
+            //rb.AddForce(playerMoveForce * Time.deltaTime * m, ForceMode.VelocityChange);
         }
         else
         {
