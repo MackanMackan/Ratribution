@@ -34,6 +34,6 @@ public class StructurePieceBreakConnection : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
-        Debug.DrawRay(transform.position+GetComponent<BoxCollider>().center, rayDirection, Color.blue);
+        //Debug.DrawRay(transform.position+GetComponent<BoxCollider>().center, rayDirection, Color.blue);
     }
 }

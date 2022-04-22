@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class CullOnDead : MonoBehaviour
 {
-    private int timeUntilCulled = 5;
+    private int timeUntilCulled = 15;
+    BuildingDestroy buildingDestroy;
     StructurePiece structurePiece;
     void Start()
     {
-        structurePiece = GetComponent<StructurePiece>();
-        structurePiece.onDead += Cull;
+        if(transform.childCount != 0)
+        {
+            buildingDestroy = GetComponent<BuildingDestroy>();
+            buildingDestroy.onDead += Cull;
+        }
+        else
+        {
+            structurePiece = GetComponent<StructurePiece>();
+            structurePiece.onDead += Cull;
+        }
     }
 
     public void Cull(Transform deadPiece)
