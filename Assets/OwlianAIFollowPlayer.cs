@@ -16,6 +16,10 @@ public class OwlianAIFollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+    void MoveTowardsPlayer()
+    {
         agent.destination = player.transform.position;
     }
 }
