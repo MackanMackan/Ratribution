@@ -4,14 +4,12 @@ using UnityEngine;
 
 
 
-public delegate void onHit(int hitID, int impactJumpAt, int damage);
-public delegate void onDead(Transform deadPiece);
-public delegate void onPhysicsActive();
+public delegate void onHit();
+public delegate void onDead();
 
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(BoxCollider))]
+[RequireComponent(typeof(MeshCollider))]
 [RequireComponent(typeof(CullOnDead))]
-[RequireComponent(typeof(ImpactSpreadSystem))]
 [RequireComponent(typeof(StructurePieceBreakConnection))]
 public class StructurePiece : MonoBehaviour, IDestructable
 {
@@ -19,22 +17,20 @@ public class StructurePiece : MonoBehaviour, IDestructable
 
     public event onHit onHit;
     public event onDead onDead;
-    public event onPhysicsActive onPhysicsActive;
 
-    private BoxCollider boxCollider;
-    [SerializeField] private BuildingCrumble buildingDamage;
+    private MeshCollider meshCollider;
     private Rigidbody rigidBody;
     private GameObject latestHitRecievedFrom;
     private int forceMagnitude = 10;
     private bool isDead = false;
     Vector3 hitDir;
 
-    private int particlesToEmit = 2;
+    private int particlesToEmit = 4;
 
     void Start()
     {
         onHit += CheckIfDead;
-        boxCollider = GetComponent<BoxCollider>();
+        meshCollider = GetComponent<MeshCollider>();
         rigidBody = GetComponent<Rigidbody>();
     }
     public void AddForceInDirection(Vector3 direction, float forceMagnitude)
@@ -42,33 +38,37 @@ public class StructurePiece : MonoBehaviour, IDestructable
         rigidBody.AddForce(direction * forceMagnitude, ForceMode.Impulse);
     }
 
-    public void DamageMe(int damage, int hitID, GameObject recievedFrom, int impactJumpAt)
+    public void DamageMe(int damage, GameObject recievedFrom, int impactJumpAt)
     {
         if (isDead) { return; }
         health -= damage;
         latestHitRecievedFrom = recievedFrom;
 
-        ParticleSystemServiceLocator.Instance.GetDustParticleSystem().EmitParticles(transform.position, particlesToEmit);
+        ParticleSystemServiceLocator.Instance.GetDustParticleSystem().EmitParticles(meshCollider.bounds.center, particlesToEmit);
 
         if(impactJumpAt < 1)
         {
             ServiceLocator.GetAudioProvider().PlayOneShot("ImpactAftermath", transform.position, true);
         }
 
-        onHit?.Invoke(hitID, impactJumpAt, damage);
+        onHit?.Invoke();
     }
-    public void CheckIfDead(int hitID, int impactJumpAt, int damage)
+    public void CheckIfDead()
     {
        if(health <= 0)
         {
-            if (!latestHitRecievedFrom.gameObject.name.Equals("PlayerHitter"))
+            if(latestHitRecievedFrom == null)
             {
-                hitDir = latestHitRecievedFrom.transform.position - transform.position;
+                hitDir = Vector3.zero;
+            }
+            else
+            {
+                hitDir = transform.position - latestHitRecievedFrom.transform.position;
             }
             ActivatePhysics();
             AddForceInDirection(hitDir, forceMagnitude);
             isDead = true;
-            onDead?.Invoke(transform);
+            onDead?.Invoke();
         }
     }
 
@@ -79,16 +79,16 @@ public class StructurePiece : MonoBehaviour, IDestructable
         rigidBody.isKinematic = false;
         isDead = true;
         health = 0;
-        onPhysicsActive?.Invoke();
-    }
-    public void ActivatePhysicsNotDead()
-    {
-        if (rigidBody == null) { return; }
-        rigidBody.isKinematic = false;
-        onPhysicsActive?.Invoke();
     }
     public void GetHitDirection(Vector3 hitDir)
     {
         this.hitDir = hitDir;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer.Equals(LayerMask.NameToLayer("Ground")))
+        {
+            ParticleSystemServiceLocator.Instance.GetDustParticleSystem().EmitParticles(meshCollider.bounds.center, particlesToEmit);
+        }
     }
 }

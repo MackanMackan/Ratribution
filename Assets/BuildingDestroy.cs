@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate void onGotHit(int hitID, int impactJumpAt, int damage);
+public delegate void onGotHit();
 public class BuildingDestroy : MonoBehaviour, IDestructable
 {
     [SerializeField] private int health;
@@ -27,7 +27,7 @@ public class BuildingDestroy : MonoBehaviour, IDestructable
         rigidBody.AddForce(direction * forceMagnitude, ForceMode.Impulse);
     }
 
-    public void DamageMe(int damage, int hitID, GameObject recievedFrom, int impactJumpAt)
+    public void DamageMe(int damage, GameObject recievedFrom, int impactJumpAt)
     {
         if (isDead) { return; }
         health -= damage;
@@ -40,9 +40,9 @@ public class BuildingDestroy : MonoBehaviour, IDestructable
             ServiceLocator.GetAudioProvider().PlayOneShot("ImpactAftermath", transform.position, true);
         }
 
-        onGotHit?.Invoke(hitID, impactJumpAt, damage);
+        onGotHit?.Invoke();
     }
-    public void CheckIfDead(int hitID, int impactJumpAt, int damage)
+    public void CheckIfDead()
     {
         if (health <= 0)
         {
@@ -53,7 +53,7 @@ public class BuildingDestroy : MonoBehaviour, IDestructable
             ActivatePhysics();
             AddForceInDirection(Vector3.up, forceMagnitude);
             isDead = true;
-            onDead?.Invoke(transform);
+            onDead?.Invoke();
         }
     }
 

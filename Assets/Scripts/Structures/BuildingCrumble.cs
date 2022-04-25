@@ -17,8 +17,6 @@ public class BuildingCrumble : MonoBehaviour
         foreach (Transform child in children)
         {
             piece = child.GetComponent<StructurePiece>();
-            piece.onHit += DamageMe;
-            piece.onDead += RemoveDeadPiece;
         }
 
     }
@@ -38,7 +36,7 @@ public class BuildingCrumble : MonoBehaviour
             if(child == null) { continue; }
 
             child.GetComponent<StructurePiece>().ActivatePhysics();
-            child.GetComponent<CullOnDead>().Cull(null);
+            child.GetComponent<CullOnDead>().Cull();
         }
     }
     private void RemoveDeadPiece(Transform deadPiece)
