@@ -20,7 +20,6 @@ public class Hitter : MonoBehaviour
     void Start()
     {
         onHitDestructable += DamageDestructableObject;
-        hitID = Random.Range(0, 10000);
     }
 
     // Update is called once per frame
@@ -30,8 +29,7 @@ public class Hitter : MonoBehaviour
     }
     void DamageDestructableObject()
     {
-        StartCoroutine(CalculateHitDirection());
-        destructableObj.DamageMe(damage, hitID, gameObject,0);
+        destructableObj.DamageMe(damage, gameObject,0);
         if (!hitSFXPlayed)
         {
             Debug.Log("HEJ");
@@ -40,14 +38,7 @@ public class Hitter : MonoBehaviour
             hitSFXPlayed = true;
         }
     }
-    IEnumerator CalculateHitDirection()
-    {
-        oldHitDir = transform.position;
-        yield return new WaitForSeconds(0.1f);
-        hitDir = oldHitDir - transform.position;
-        hitDir.Normalize();
-        destructableObj.GetHitDirection(hitDir);
-    }
+
     public void GetNewHitID()
     {
         hitID = Random.Range(0, 10000);

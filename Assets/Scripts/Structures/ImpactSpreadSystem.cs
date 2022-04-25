@@ -16,7 +16,6 @@ public class ImpactSpreadSystem : MonoBehaviour
     List<int> hitIDs = new List<int>();
     void Start()
     {
-        GetComponent<StructurePiece>().onHit += GetNearbyStructurePieces;
         boxCollider = GetComponent<BoxCollider>();
     }
 
@@ -55,7 +54,7 @@ public class ImpactSpreadSystem : MonoBehaviour
                 Destroy(instance, 2);
                 Debug.DrawRay(transform.position, nearbyObj.transform.position - transform.position, Color.red, 10);
             }*/
-            nearbyObj.GetComponent<IDestructable>().DamageMe(damage, hitID, gameObject, impactJumpAt);
+            nearbyObj.GetComponent<IDestructable>().DamageMe(damage, gameObject, impactJumpAt);
         }
     }
 }
