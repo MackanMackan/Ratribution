@@ -21,7 +21,7 @@ public class CullOnDead : MonoBehaviour
         }
     }
 
-    public void Cull(Transform deadPiece)
+    public void Cull()
     {
         Destroy(gameObject, timeUntilCulled);
     }
