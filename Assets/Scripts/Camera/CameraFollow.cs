@@ -15,7 +15,7 @@ public class CameraFollow : MonoBehaviour
         cameraPos = GameObject.FindGameObjectWithTag("FP_Cam").GetComponent<Transform>();
         cmCam = GetComponent<CinemachineFreeLook>();
 
-        refPlayer = GameObject.FindGameObjectWithTag("Player");
+        refPlayer = GameObject.FindGameObjectWithTag("CameraFollow");
         cmCam.Follow = refPlayer.transform;
         cmCam.LookAt = refPlayer.transform;
     }
