@@ -1,42 +1,54 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class CinemachineShake : MonoBehaviour
 {
     public static CinemachineShake Instance { get; private set; }
 
     float shakeTime;
-    float shakeTimeTotale;
-    float startingAmplitude;
-    float startingFrequency;
 
-    public CinemachineFreeLook cmfl;
+   public  CinemachineFreeLook cinemachineFreeLook;
 
     private void Awake()
     {
-        Instance = this;     
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
 
-   public void CMShake(float amplitude, float frequency, float time)
-    {       
-        cmfl.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = amplitude;
-        cmfl.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = frequency;
+    private void Start()
+    {
+        cinemachineFreeLook = GetComponent<CinemachineFreeLook>();
+    }
 
-        shakeTime = time;
+    public void BeginShake(float amplitude, float frequency, float time)
+    {
+        StartCoroutine(Shake(amplitude, frequency, time));
+    }
+    public IEnumerator Shake(float amplitude, float frequency, float time)
+    {
+        Noise(amplitude, frequency);
+        yield return new WaitForSeconds(time);
+        Noise(0, 0);
+    }
+    void Noise(float amplitude, float frequency)
+    {       
+        cinemachineFreeLook.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = amplitude;
+        cinemachineFreeLook.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = frequency;
     }
 
     private void Update()
     {
-        if (shakeTime > 0)
+        if (Input.GetMouseButtonDown(0))
         {
-            shakeTime -= Time.deltaTime;
-        }
-
-        if (shakeTime<= 0)
-        {
-            CMShake(0f, 0f, 0f);
+            StartCoroutine(Shake(20, 20, 0.5f));
         }
     }
 }

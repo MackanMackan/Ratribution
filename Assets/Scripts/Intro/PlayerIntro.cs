@@ -22,10 +22,5 @@ public class PlayerIntro : MonoBehaviour
             characterMovement.enabled = true;
         }
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            CinemachineShake.Instance.CMShake(3f, 3f, 1f);
-
-        }
     }
 }
