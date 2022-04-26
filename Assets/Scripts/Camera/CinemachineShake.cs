@@ -31,14 +31,12 @@ public class CinemachineShake : MonoBehaviour
     }
     public IEnumerator Shake(float amplitude, float frequency, float time)
     {
-        Debug.Log("SHAKE");
         Noise(amplitude, frequency);
         yield return new WaitForSeconds(time);
         Noise(0, 0);
     }
     void Noise(float amplitude, float frequency)
     {
-        Debug.Log("HEJ");
         cinemachineFreeLook.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = amplitude;
         cinemachineFreeLook.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = frequency;
     }

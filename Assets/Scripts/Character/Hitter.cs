@@ -16,9 +16,9 @@ public class Hitter : MonoBehaviour
     private int hitID = 0;
     private bool hitSFXPlayed = false;
 
-    public float amplitude= 2f;
-    public float frequency= 2f;
-    public float time =0.4f;
+     float amplitude= 5f;
+     float frequency= 2f;
+     float time =0.4f;
 
     void Start()
     {
@@ -29,7 +29,6 @@ public class Hitter : MonoBehaviour
         destructableObj.DamageMe(damage, gameObject,0);
         if (!hitSFXPlayed)
         {
-            Debug.Log("MAya");
             CinemachineShake.Instance.BeginShake(amplitude, frequency, time);
             ServiceLocator.GetAudioProvider().PlayOneShot("StructureImpact",transform.position,true);
             hitSFXPlayed = true;
