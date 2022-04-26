@@ -16,24 +16,20 @@ public class Hitter : MonoBehaviour
     private int hitID = 0;
     private bool hitSFXPlayed = false;
 
-    //public CinemachineShake cinemachineShake;
+    public float amplitude;
+    public float frequency;
+    public float time;
+
     void Start()
     {
         onHitDestructable += DamageDestructableObject;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     void DamageDestructableObject()
     {
         destructableObj.DamageMe(damage, gameObject,0);
         if (!hitSFXPlayed)
         {
-            Debug.Log("HEJ");
-            //cinemachineShake.CMShake(2f, 2f, 0.5f);
+            CinemachineShake.Instance.BeginShake(amplitude, frequency, time);
             ServiceLocator.GetAudioProvider().PlayOneShot("StructureImpact",transform.position,true);
             hitSFXPlayed = true;
         }
@@ -47,7 +43,7 @@ public class Hitter : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<IDestructable>() != null)
-        {
+        {                   
             destructableObj = other.GetComponent<IDestructable>();
             //TODO: REDO impact effect it sux //by kolbe for kolbe
            // ParticleSystemServiceLocator.Instance.GetImpactParticleSystem().EmitParticles(transform.position, 1);
