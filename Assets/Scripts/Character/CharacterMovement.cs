@@ -12,6 +12,8 @@ public class CharacterMovement : MonoBehaviour
     public float jumpPower = 50.0f;
     public float rayDistance = 1.0f;
 
+    [SerializeField] GameObject animatorParentObj;
+
     private Vector2 moveDir;
     private Vector3 resetV;
     private float targetAngle;
@@ -24,6 +26,7 @@ public class CharacterMovement : MonoBehaviour
     private InputAction jumpInput;
 
     private Rigidbody rb;
+    private Animator animator;
 
     private void Awake()
     {
@@ -42,6 +45,7 @@ public class CharacterMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         CharaCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
+        animator = animatorParentObj.GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -95,12 +99,14 @@ public class CharacterMovement : MonoBehaviour
             m = playerMoveForce * Time.deltaTime * m * 100;
             m.y = rb.velocity.y;
             rb.velocity = m;
+            animator.SetBool("isRunning", true);
             //rb.AddForce(playerMoveForce * Time.deltaTime * m, ForceMode.VelocityChange);
         }
         else
         {
             //Disney On Ice hate campaign
             rb.velocity = Vector3.Lerp(rb.velocity, resetV, stopSpeed * Time.deltaTime);
+            animator.SetBool("isRunning", false);
         }
     }
 

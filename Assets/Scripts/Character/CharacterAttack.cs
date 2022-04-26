@@ -31,7 +31,7 @@ public class CharacterAttack : MonoBehaviour
         //hitterRB = hitter.GetComponent<Rigidbody>();
         hitterR.SetActive(false);
         hitterL.SetActive(false);
-        hitterKick.SetActive(false);
+        //hitterKick.SetActive(false);
 
         animator = animatorParentObj.GetComponent<Animator>();
 
@@ -89,6 +89,6 @@ public class CharacterAttack : MonoBehaviour
     {
         hitterR.SetActive(false);
         hitterL.SetActive(false);
-        hitterKick.SetActive(false);
+        //hitterKick.SetActive(false);
     }
 }
