@@ -9,16 +9,11 @@ public class Hitter : MonoBehaviour
     public int damage = 40;
     public float gizmoSizeSplit = 1f;
 
-    Vector3 hitDir;
-    Vector3 oldHitDir;
-
     private IDestructable destructableObj;
-    private int hitID = 0;
-    private bool hitSFXPlayed = false;
 
-     float amplitude= 5f;
-     float frequency= 2f;
-     float time =0.4f;
+    float amplitude = 5f;
+    float frequency = 2f;
+    float time = 0.4f;
 
     void Start()
     {
@@ -26,27 +21,18 @@ public class Hitter : MonoBehaviour
     }
     void DamageDestructableObject()
     {
-        destructableObj.DamageMe(damage, gameObject,0);
-        if (!hitSFXPlayed)
-        {
-            CinemachineShake.Instance.BeginShake(amplitude, frequency, time);
-            ServiceLocator.GetAudioProvider().PlayOneShot("StructureImpact",transform.position,true);
-            hitSFXPlayed = true;
-        }
-    }
+        destructableObj.DamageMe(damage, gameObject, 0);
 
-    public void GetNewHitID()
-    {
-        hitID = Random.Range(0, 10000);
-        hitSFXPlayed = false;
+        CinemachineShake.Instance.BeginShake(amplitude, frequency, time);
+        ServiceLocator.GetAudioProvider().PlayOneShot("StructureImpact", transform.position, true);
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<IDestructable>() != null)
-        {                   
+        {
             destructableObj = other.GetComponent<IDestructable>();
             //TODO: REDO impact effect it sux //by kolbe for kolbe
-           // ParticleSystemServiceLocator.Instance.GetImpactParticleSystem().EmitParticles(transform.position, 1);
+            // ParticleSystemServiceLocator.Instance.GetImpactParticleSystem().EmitParticles(transform.position, 1);
             onHitDestructable?.Invoke();
         }
     }
