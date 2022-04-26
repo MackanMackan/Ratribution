@@ -1,27 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+
 
 public class BuildingCrumble : MonoBehaviour
 {
     [SerializeField] int health;
-    List<Transform> children;
+    [SerializeField] List<Transform> children;
     void Start()
-    {
-        StructurePiece piece;
-        children = new List<Transform>();
-        for (int i = 0; i < transform.childCount; i++)
+    {   
+        foreach (var child in children)
         {
-            children.Add(transform.GetChild(i));
+            child.GetComponent<StructurePiece>().onDamageBuilding += DamageMe;
         }
-        foreach (Transform child in children)
-        {
-            piece = child.GetComponent<StructurePiece>();
-        }
-
     }
 
-    public void DamageMe(int hitID, int impactJumpAt, int damage)
+    public void DamageMe(int damage)
     {
         health -= damage;
         if(health <= 0)
@@ -38,9 +33,9 @@ public class BuildingCrumble : MonoBehaviour
             child.GetComponent<StructurePiece>().ActivatePhysics();
             child.GetComponent<CullOnDead>().Cull();
         }
-    }
-    private void RemoveDeadPiece(Transform deadPiece)
-    {
-        children.Remove(deadPiece);
+        NavMeshObstacle obs = GetComponent<NavMeshObstacle>();
+        obs.carving = false;
+        
+        Destroy(gameObject, 10);
     }
 }

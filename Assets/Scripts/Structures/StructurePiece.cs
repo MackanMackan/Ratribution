@@ -6,6 +6,8 @@ using UnityEngine;
 
 public delegate void onHit();
 public delegate void onDead();
+public delegate void onDamageBuilding(int damage);
+
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(MeshCollider))]
@@ -17,6 +19,7 @@ public class StructurePiece : MonoBehaviour, IDestructable
 
     public event onHit onHit;
     public event onDead onDead;
+    public event onDamageBuilding onDamageBuilding;
 
     private MeshCollider meshCollider;
     private Rigidbody rigidBody;
@@ -52,6 +55,7 @@ public class StructurePiece : MonoBehaviour, IDestructable
         }
 
         onHit?.Invoke();
+        onDamageBuilding?.Invoke(damage);
     }
     public void CheckIfDead()
     {
