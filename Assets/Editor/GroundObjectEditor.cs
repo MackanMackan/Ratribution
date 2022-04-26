@@ -15,11 +15,12 @@ public class GroundObjectEditor : EditorWindow
 	{
 		if (GUILayout.Button($"Ground {Selection.transforms.Length} Objects"))
 		{
-			foreach (Transform trans in Selection.transforms)
-			{
-				Undo.RecordObject(trans, $"Align With Ground: Ground Object '{trans.name}'");
-				SendToGround(trans);
-			}
+		    AlignSelectedObjectsToGround();
+			//foreach (Transform trans in Selection.transforms)
+			//{
+			//	//Undo.RecordObject(trans, $"Align With Ground: Ground Object '{trans.name}'");
+			//	//SendToGround(trans);
+			//}
 		}
 
 		GUILayout.Space(20f);
@@ -52,4 +53,21 @@ public class GroundObjectEditor : EditorWindow
 			}
 		}
 	}
+
+	private void AlignSelectedObjectsToGround()
+    {
+		foreach (var item in Selection.transforms)
+        {
+			RaycastHit hit;
+			Ray ray = new Ray(item.transform.position, Vector3.down);
+			Debug.DrawRay(item.transform.position, Vector3.down);
+
+			Undo.RecordObject(item, $"Sending objects to ground: {item.name}");
+
+			if (Physics.Raycast(ray, out hit))
+            {
+				item.transform.position = hit.point;
+            }
+        }
+    }
 }

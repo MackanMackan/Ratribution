@@ -103,6 +103,7 @@ public class CharacterMovement : MonoBehaviour
             rb.velocity = Vector3.Lerp(rb.velocity, resetV, stopSpeed * Time.deltaTime);
         }
     }
+
     private void Jump(InputAction.CallbackContext obj)
     {
         GroundCheck();
