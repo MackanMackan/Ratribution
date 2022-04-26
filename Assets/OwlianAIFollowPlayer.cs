@@ -13,8 +13,8 @@ public class OwlianAIFollowPlayer : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        player = GameObject.Find("Character");
-        StartCoroutine(CheckForPlayer());
+       
+        StartCoroutine(GetPlayerRef());
     }
 
     // Update is called once per frame
@@ -60,6 +60,12 @@ public class OwlianAIFollowPlayer : MonoBehaviour
         {
             atAttackDistance = false;
         }
+        StartCoroutine(CheckForPlayer());
+    }
+    IEnumerator GetPlayerRef()
+    {
+        yield return new WaitForSeconds(10f);
+        player = GameObject.Find("Character(Clone)");
         StartCoroutine(CheckForPlayer());
     }
 }
