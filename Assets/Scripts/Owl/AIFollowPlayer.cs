@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-public class OwlianAIFollowPlayer :  IAIState
+public class AIFollowPlayer : IAIState
 {
 
-    [SerializeField] GameObject player;
-    [SerializeField] float attackDistance;
+    GameObject player;
+    float attackDistance = 15;
     NavMeshAgent agent;
     MonoBehaviour mono;
     bool atAttackDistance = false;
-
     private void StopAndLookAtPlayer()
     {
         agent.destination = agent.transform.position;
@@ -43,19 +42,13 @@ public class OwlianAIFollowPlayer :  IAIState
         }
         mono.StartCoroutine(CheckForPlayer());
     }
-    IEnumerator GetPlayerRef()
-    {
-        yield return new WaitForSeconds(10f);
-        player = GameObject.Find("Player(Clone)");
-        mono.StartCoroutine(CheckForPlayer());
-    }
 
-    public void InitializeState(NavMeshAgent agent, GameObject player)
+    public void InitializeState(NavMeshAgent agent, GameObject player, MonoBehaviour mono)
     {
         this.agent = agent;
         this.player = player;
-        mono = new MonoBehaviour();
-        mono.StartCoroutine(GetPlayerRef());
+        this.mono = mono;
+        this.mono.StartCoroutine(CheckForPlayer());
     }
 
     public void ExecuteState()
