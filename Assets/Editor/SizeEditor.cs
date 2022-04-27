@@ -31,6 +31,18 @@ public class SizeEditor : EditorWindow
 			}
 		}
 
+		if (GUILayout.Button("Randomize Y Rotation"))
+		{
+
+			foreach (var item in Selection.transforms)
+			{
+				Undo.RecordObject(item, "Random rotation");
+				item.transform.Rotate(item.transform.up, Random.Range(0, 359));
+			}
+
+		}
+
+
 		GUILayout.Space(20f);
 		GUILayout.Label("Undo/Redo", EditorStyles.boldLabel);
 		GUILayout.Space(20f);
