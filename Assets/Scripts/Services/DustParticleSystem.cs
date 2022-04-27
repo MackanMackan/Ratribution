@@ -14,7 +14,6 @@ public class DustParticleSystem : IParticleSystem
         ParticleSystem particles = dustParticleSystemInstance.GetComponent<ParticleSystem>();
         particles.Emit(emits);
     }
-
     public GameObject InstatiateParticleSystem()
     {
         return MonoBehaviour.Instantiate(dustParticleSystem);
