@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 2027488123358511810}
   - component: {fileID: 2027488123358511809}
   - component: {fileID: 2027488123358511838}
-  - component: {fileID: 2027488123358511839}
-  - component: {fileID: 8480700041714878109}
+  - component: {fileID: 9114492201425136250}
   m_Layer: 0
   m_Name: Owlian
   m_TagString: Untagged
@@ -88,7 +87,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2027488123358511839
+--- !u!114 &9114492201425136250
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,24 +96,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2027488123358511808}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f40e8fe6271d1dd4c9e55dde7942c11a, type: 3}
+  m_Script: {fileID: 11500000, guid: 457ceb65bf0df494282e1788dc6bfd43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 5711385316259376916, guid: 836157b26c72026448e30c8e4ab8bcb2, type: 3}
-  attackDistance: 15
---- !u!135 &8480700041714878109
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2027488123358511808}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 12
-  m_Center: {x: 0, y: 0, z: 0}
+  player: {fileID: 0}
 --- !u!1001 &6456231305692162065
 PrefabInstance:
   m_ObjectHideFlags: 0
