@@ -248,7 +248,7 @@ MonoBehaviour:
     showEyeDropper: 1
   maxFogDistance:
     m_OverrideState: 1
-    m_Value: 4487.5
+    m_Value: 101.2
     min: 0
   mipFogMaxMip:
     m_OverrideState: 0
@@ -265,13 +265,13 @@ MonoBehaviour:
     min: 0
   baseHeight:
     m_OverrideState: 1
-    m_Value: 0.6
+    m_Value: 283.1
   maximumHeight:
     m_OverrideState: 1
-    m_Value: 57.62
+    m_Value: 2453.7
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 8.79
+    m_Value: 884.9
     min: 1
   enableVolumetricFog:
     m_OverrideState: 0
@@ -293,7 +293,7 @@ MonoBehaviour:
     min: 0.1
   denoisingMode:
     m_OverrideState: 0
-    m_Value: 3
+    m_Value: 2
   anisotropy:
     m_OverrideState: 0
     m_Value: 0
@@ -355,6 +355,31 @@ MonoBehaviour:
   - {fileID: 8588894571042162471}
   - {fileID: -1994694139387114809}
   - {fileID: 4714420582983486130}
+  - {fileID: 5939824529473486468}
+  - {fileID: 511998416381056661}
+--- !u!114 &511998416381056661
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da5ab44aadfb1804db5fd470983ac1b8, type: 3}
+  m_Name: LiftGammaGain
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  lift:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.99698704, z: 0.97368443, w: 0}
+  gamma:
+    m_OverrideState: 1
+    m_Value: {x: 0.9993261, y: 1, z: 0.9882309, w: 0.05}
+  gain:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 1, z: 1, w: 0.05}
 --- !u!114 &4714420582983486130
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -533,6 +558,44 @@ MonoBehaviour:
   m_HighQualityFiltering:
     m_OverrideState: 0
     m_Value: 1
+--- !u!114 &5939824529473486468
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b8bcdf71d7fafa419fca1ed162f5fc9, type: 3}
+  m_Name: ColorAdjustments
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  postExposure:
+    m_OverrideState: 1
+    m_Value: 0.45
+  contrast:
+    m_OverrideState: 1
+    m_Value: 26
+    min: -100
+    max: 100
+  colorFilter:
+    m_OverrideState: 1
+    m_Value: {r: 0.9716981, g: 0.9700543, b: 0.9111962, a: 1}
+    hdr: 1
+    showAlpha: 0
+    showEyeDropper: 1
+  hueShift:
+    m_OverrideState: 0
+    m_Value: 50
+    min: -180
+    max: 180
+  saturation:
+    m_OverrideState: 1
+    m_Value: 16
+    min: -100
+    max: 100
 --- !u!114 &8351483691231033693
 MonoBehaviour:
   m_ObjectHideFlags: 3

@@ -2,38 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
-public class OwlianAIFollowPlayer : MonoBehaviour
+public class OwlianAIFollowPlayer :  IAIState
 {
 
     [SerializeField] GameObject player;
     [SerializeField] float attackDistance;
     NavMeshAgent agent;
+    MonoBehaviour mono;
     bool atAttackDistance = false;
-    void Start()
-    {
-        agent = GetComponent<NavMeshAgent>();
-       
-        StartCoroutine(GetPlayerRef());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (!atAttackDistance)
-        {
-            MoveTowardsPlayer();
-        }
-        else
-        {
-            StopAndLookAtPlayer();
-        }
-    }
 
     private void StopAndLookAtPlayer()
     {
-        agent.destination = transform.position;
-        transform.LookAt(player.transform);
+        agent.destination = agent.transform.position;
+        agent.transform.LookAt(player.transform);
     }
 
     void MoveTowardsPlayer()
@@ -43,9 +24,9 @@ public class OwlianAIFollowPlayer : MonoBehaviour
     IEnumerator CheckForPlayer()
     {
         yield return new WaitForSeconds(0.5f);
-        Vector3 direction = player.transform.position - transform.position;
+        Vector3 direction = player.transform.position - agent.transform.position;
         direction.Normalize();
-        if (Physics.Raycast(transform.position, direction, out RaycastHit hitInfo, attackDistance))
+        if (Physics.Raycast(agent.transform.position, direction, out RaycastHit hitInfo, attackDistance))
         {
             if (hitInfo.transform.CompareTag("Player"))
             {
@@ -60,12 +41,36 @@ public class OwlianAIFollowPlayer : MonoBehaviour
         {
             atAttackDistance = false;
         }
-        StartCoroutine(CheckForPlayer());
+        mono.StartCoroutine(CheckForPlayer());
     }
     IEnumerator GetPlayerRef()
     {
         yield return new WaitForSeconds(10f);
-        player = GameObject.Find("Character(Clone)");
-        StartCoroutine(CheckForPlayer());
+        player = GameObject.Find("Player(Clone)");
+        mono.StartCoroutine(CheckForPlayer());
+    }
+
+    public void InitializeState(NavMeshAgent agent, GameObject player)
+    {
+        this.agent = agent;
+        this.player = player;
+        mono = new MonoBehaviour();
+        mono.StartCoroutine(GetPlayerRef());
+    }
+
+    public void ExecuteState()
+    {
+        if (!atAttackDistance)
+        {
+            MoveTowardsPlayer();
+        }
+        else
+        {
+            StopAndLookAtPlayer();
+        }
+    }
+
+    public void UnInitilizeState()
+    {
     }
 }
