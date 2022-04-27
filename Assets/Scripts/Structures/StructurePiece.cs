@@ -43,7 +43,12 @@ public class StructurePiece : MonoBehaviour, IDestructable
 
     public void DamageMe(int damage, GameObject recievedFrom, int impactJumpAt)
     {
-        if (isDead) { AddForceInDirection(hitDir, forceMagnitude); return; }
+        if (isDead) {
+            hitDir = transform.position - latestHitRecievedFrom.transform.position;
+            AddForceInDirection(hitDir, forceMagnitude); 
+            return; 
+        }
+
         health -= damage;
         latestHitRecievedFrom = recievedFrom;
 
