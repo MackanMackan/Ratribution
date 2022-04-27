@@ -24,7 +24,8 @@ public class StructurePiece : MonoBehaviour, IDestructable
     private MeshCollider meshCollider;
     private Rigidbody rigidBody;
     private GameObject latestHitRecievedFrom;
-    private int forceMagnitude = 10;
+    [SerializeField] GameObject player;
+    private int forceMagnitude = 25;
     private bool isDead = false;
     Vector3 hitDir;
 
@@ -32,20 +33,30 @@ public class StructurePiece : MonoBehaviour, IDestructable
 
     void Start()
     {
+        StartCoroutine(nameof(GetPlayerRef));
         onHit += CheckIfDead;
         meshCollider = GetComponent<MeshCollider>();
         rigidBody = GetComponent<Rigidbody>();
+        
     }
     public void AddForceInDirection(Vector3 direction, float forceMagnitude)
     {
         rigidBody.AddForce(direction * forceMagnitude, ForceMode.Impulse);
     }
-
+    IEnumerator GetPlayerRef()
+    {
+        yield return new WaitForSeconds(2f);
+        player = GameObject.Find("Player(Clone)");
+    }
     public void DamageMe(int damage, GameObject recievedFrom, int impactJumpAt)
     {
-        if (isDead) { AddForceInDirection(hitDir, forceMagnitude); return; }
+        if (isDead) {
+            hitDir = transform.position - player.transform.position;
+            AddForceInDirection(hitDir, forceMagnitude); 
+            return; 
+        }
+
         health -= damage;
-        latestHitRecievedFrom = recievedFrom;
 
         ParticleSystemServiceLocator.Instance.GetDustParticleSystem().EmitParticles(meshCollider.bounds.center, particlesToEmit);
 
@@ -67,7 +78,7 @@ public class StructurePiece : MonoBehaviour, IDestructable
             }
             else
             {
-                hitDir = transform.position - latestHitRecievedFrom.transform.position;
+                hitDir = transform.position - player.transform.position;
             }
             ActivatePhysics();
             AddForceInDirection(hitDir, forceMagnitude);
