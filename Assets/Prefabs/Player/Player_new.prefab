@@ -1140,6 +1140,7 @@ GameObject:
   - component: {fileID: 5711385316259376908}
   - component: {fileID: 4699961327880758745}
   - component: {fileID: 5711385316259376907}
+  - component: {fileID: -1560907202653674214}
   m_Layer: 0
   m_Name: Player_new
   m_TagString: Player
@@ -1259,6 +1260,20 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &-1560907202653674214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5711385316259376916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a86ddc0b1dd992439229752224bf9a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAnimator: {fileID: 6608281341009605828}
+  stopTime: 0.1
 --- !u!1 &5717937075093800493
 GameObject:
   m_ObjectHideFlags: 0
@@ -1859,6 +1874,10 @@ PrefabInstance:
       value: PlayerHitter Right
       objectReference: {fileID: 0}
     - target: {fileID: 328618384865170398, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
+      propertyPath: animImpact
+      value: 
+      objectReference: {fileID: -1560907202653674214}
+    - target: {fileID: 328618384865170398, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
       propertyPath: gizmoSizeSplit
       value: 1
       objectReference: {fileID: 0}
@@ -2012,6 +2031,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerHitter
       objectReference: {fileID: 0}
+    - target: {fileID: 328618384865170398, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
+      propertyPath: animImpact
+      value: 
+      objectReference: {fileID: -1560907202653674214}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
 --- !u!1 &4587463522609942007 stripped
@@ -2096,18 +2119,22 @@ PrefabInstance:
       value: PlayerHitter Left
       objectReference: {fileID: 0}
     - target: {fileID: 328618384865170398, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
+      propertyPath: animImpact
+      value: 
+      objectReference: {fileID: -1560907202653674214}
+    - target: {fileID: 328618384865170398, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
       propertyPath: gizmoSizeSplit
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
---- !u!4 &5760444227535268692 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 328618384865170384, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
-  m_PrefabInstance: {fileID: 5439865866831100036}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5760444227535268688 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 328618384865170388, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
+  m_PrefabInstance: {fileID: 5439865866831100036}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5760444227535268692 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 328618384865170384, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
   m_PrefabInstance: {fileID: 5439865866831100036}
   m_PrefabAsset: {fileID: 0}

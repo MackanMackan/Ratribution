@@ -1057,6 +1057,7 @@ GameObject:
   - component: {fileID: 5711385316259376908}
   - component: {fileID: 4699961327880758745}
   - component: {fileID: 5711385316259376907}
+  - component: {fileID: 6872216060402254019}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1176,6 +1177,20 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &6872216060402254019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5711385316259376916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a86ddc0b1dd992439229752224bf9a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAnimator: {fileID: 1430486546519339380}
+  stopTime: 0.1
 --- !u!1 &5861289130600067819
 GameObject:
   m_ObjectHideFlags: 0
@@ -1875,19 +1890,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 328618384865170384, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.84704673
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 328618384865170384, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.13833545
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 328618384865170384, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.2608146
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 328618384865170384, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.44198525
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 328618384865170384, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1909,16 +1924,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerHitter Left
       objectReference: {fileID: 0}
+    - target: {fileID: 328618384865170398, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
+      propertyPath: animImpact
+      value: 
+      objectReference: {fileID: 6872216060402254019}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
---- !u!4 &5407866377889154312 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 328618384865170384, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
-  m_PrefabInstance: {fileID: 5729675487225157336}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5407866377889154316 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 328618384865170388, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
+  m_PrefabInstance: {fileID: 5729675487225157336}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5407866377889154312 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 328618384865170384, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
   m_PrefabInstance: {fileID: 5729675487225157336}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6223523492172945777
@@ -1992,6 +2011,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerHitter Right
       objectReference: {fileID: 0}
+    - target: {fileID: 328618384865170398, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
+      propertyPath: animImpact
+      value: 
+      objectReference: {fileID: 6872216060402254019}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
 --- !u!1 &5967578513774561957 stripped

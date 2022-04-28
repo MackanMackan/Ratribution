@@ -46,7 +46,7 @@ public class StructurePiece : MonoBehaviour, IDestructable
     IEnumerator GetPlayerRef()
     {
         yield return new WaitForSeconds(2f);
-        player = GameObject.Find("Player(Clone)");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
     public void DamageMe(int damage, GameObject recievedFrom, int impactJumpAt)
     {

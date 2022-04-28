@@ -13,6 +13,7 @@ public class RightPunchState : StateMachineBehaviour
         attackScript = player.GetComponent<CharacterAttack>();
         
         attackScript.hitterR.SetActive(true);
+        CharacterAnimationImpact.canBeStopped = true;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

@@ -14,6 +14,7 @@ public class LeftPunchState : StateMachineBehaviour
         attackScript = player.GetComponent<CharacterAttack>();
 
         attackScript.hitterL.SetActive(true);
+        CharacterAnimationImpact.canBeStopped = true;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
