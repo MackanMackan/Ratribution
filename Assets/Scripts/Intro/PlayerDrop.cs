@@ -9,12 +9,12 @@ public class PlayerDrop : MonoBehaviour
     public GameObject dropPlace;
     [HideInInspector]
     public GameObject GO_player;
-    public CinemachineFreeLook cinemachineFreeLook;
+    public CinemachineVirtualCamera cinemachineVirtualCamera;
 
     private void Awake()
     {
        Vector3 spawnPosition = dropPlace.transform.position;
        GO_player = Instantiate(player, spawnPosition, Quaternion.identity);
-       cinemachineFreeLook.enabled = false ;
+       cinemachineVirtualCamera.enabled = false ;
     }
 }

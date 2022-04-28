@@ -11,10 +11,11 @@ public class IntroLanding : MonoBehaviour
     public bool landing;
     
     Collider trigger;
-    public CinemachineFreeLook cinemachineFreeLook;
+    public CinemachineVirtualCamera cinemachineVirtualCamera;
     public IntroCameraShake introCameraShake;
-    public GameObject FP_cam;
+    //public GameObject V_cam;
     public GameObject cameraHolder;
+    //public DollyZoom dollyZoom;
 
     private void Start()
     {       
@@ -24,20 +25,23 @@ public class IntroLanding : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(introCameraShake.Shake(0.25f, 0.25f));      
+            StartCoroutine(introCameraShake.Shake(0.25f, 0.25f));
+            
             StartCoroutine(BeginGame());
+
+            //dollyZoom.MoveDollyZoom();
         }
     }
 
      IEnumerator BeginGame ()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
 
         //cameraHolder.transform.position = Vector3.Lerp(cameraHolder.transform.position, FP_cam.transform.position,20f);
 
         //yield return new WaitForSeconds(2f);
 
-        cinemachineFreeLook.enabled = true;
+        cinemachineVirtualCamera.enabled = true;
         trigger.enabled = false;
         landing = true;     
     }
