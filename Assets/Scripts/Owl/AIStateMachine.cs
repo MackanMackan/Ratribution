@@ -31,7 +31,7 @@ public class AIStateMachine : MonoBehaviour
     IEnumerator GetPlayerRef()
     {
         yield return new WaitForSeconds(2f);
-        player = GameObject.Find("Player(Clone)");
+        player = GameObject.FindGameObjectWithTag("Player");
         aiState.InitializeState(agent, player, this);
     }
 }

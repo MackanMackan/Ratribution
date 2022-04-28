@@ -101,7 +101,6 @@ public class CharacterMovement : MonoBehaviour
             m.y = rb.velocity.y;
             rb.velocity = m;
             animator.SetBool("isRunning", true);
-            //rb.AddForce(playerMoveForce * Time.deltaTime * m, ForceMode.VelocityChange);
         }
         else
         {
@@ -118,6 +117,7 @@ public class CharacterMovement : MonoBehaviour
 
         if (isGrounded)
         {
+            animator.SetTrigger("JumpT");
             rb.AddForce(jumpPower * Vector3.up, ForceMode.Impulse);
         }
     }

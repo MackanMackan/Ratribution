@@ -13,11 +13,8 @@ public class CharacterAttack : MonoBehaviour
     public GameObject hitterL;
     public GameObject hitterKick;
     [SerializeField] GameObject animatorParentObj;
-    //Hitter hitterScript;
 
     private Animator animator;
-
-    private Rigidbody hitterRB;
 
     private void Awake()
     {
@@ -28,20 +25,17 @@ public class CharacterAttack : MonoBehaviour
 
     private void Start()
     {
-        //hitterRB = hitter.GetComponent<Rigidbody>();
         hitterR.SetActive(false);
         hitterL.SetActive(false);
-        //hitterKick.SetActive(false);
+        hitterKick.SetActive(false);
 
         animator = animatorParentObj.GetComponent<Animator>();
 
-        //actionInput.performed += MeleeAttack;
         fireInput.started += StartPunching;
         fireInput.canceled += StopPunching;
 
         fire2Input.started += StartKicking;
         fire2Input.canceled += StopKicking;
-
     }
 
     private void OnEnable()
@@ -58,13 +52,7 @@ public class CharacterAttack : MonoBehaviour
 
     private void MeleeAttack(InputAction.CallbackContext callbackContext)
     {
-        //hitter.SetActive(true);
         animator.SetTrigger("PunchT");
-
-        //if (hitterScript == null)
-        //    hitterScript = hitter.GetComponent<Hitter>();
-        //
-        //hitterScript.GetNewHitID();
     }
     private void StartPunching(InputAction.CallbackContext callbackContext)
     {
@@ -89,6 +77,6 @@ public class CharacterAttack : MonoBehaviour
     {
         hitterR.SetActive(false);
         hitterL.SetActive(false);
-        //hitterKick.SetActive(false);
+        hitterKick.SetActive(false);
     }
 }
