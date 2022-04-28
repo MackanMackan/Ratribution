@@ -11,7 +11,13 @@ class ImpactParticleSystem : IParticleSystem
         particles.Emit(emits);
     }
 
-        public GameObject InstatiateParticleSystem()
+    public GameObject GetNewParticleSystem()
+    {
+        GameObject dustParticleSystemInstance = InstatiateParticleSystem();
+        return dustParticleSystemInstance;
+    }
+
+    public GameObject InstatiateParticleSystem()
     {
         return MonoBehaviour.Instantiate(impactParticleSystem);
     }

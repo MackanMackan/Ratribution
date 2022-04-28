@@ -9,8 +9,10 @@ public class Hitter : MonoBehaviour
     public int damage = 40;
     public float gizmoSizeSplit = 1f;
 
+    [SerializeField] private CharacterAnimationImpact animImpact;
+    [SerializeField] ParticleSystem shockWaveParticleSystem;
     private IDestructable destructableObj;
-
+    Transform playerTransform;
     float amplitude = 5f;
     float frequency = 2f;
     float time = 0.4f;
@@ -18,6 +20,9 @@ public class Hitter : MonoBehaviour
     void Start()
     {
         onHitDestructable += DamageDestructableObject;
+
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+
     }
     void DamageDestructableObject()
     {
@@ -31,8 +36,7 @@ public class Hitter : MonoBehaviour
         if (other.GetComponent<IDestructable>() != null)
         {
             destructableObj = other.GetComponent<IDestructable>();
-            //TODO: REDO impact effect it sux //by kolbe for kolbe
-            // ParticleSystemServiceLocator.Instance.GetImpactParticleSystem().EmitParticles(transform.position, 1);
+            animImpact.PauseAnimationOnImpact(playerTransform,transform);
             onHitDestructable?.Invoke();
         }
     }
