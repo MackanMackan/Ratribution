@@ -11,7 +11,7 @@ class ImpactParticleSystem : IParticleSystem
         particles.Emit(emits);
     }
 
-    public GameObject InstatiateParticleSystem()
+        public GameObject InstatiateParticleSystem()
     {
         return MonoBehaviour.Instantiate(impactParticleSystem);
     }

@@ -28,6 +28,7 @@ public class CharacterMovement : MonoBehaviour
     private Rigidbody rb;
     private Animator animator;
 
+    [SerializeField] ParticleSystem jumpParticles;
     private void Awake()
     {
         playerControls = new PlayerInputActions();
@@ -138,5 +139,12 @@ public class CharacterMovement : MonoBehaviour
     {
         //Slows player down while mid-air or attacking.
 
-    } 
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer.Equals(LayerMask.NameToLayer("Ground")))
+        {
+            jumpParticles.Emit(20);
+        }
+    }
 }
