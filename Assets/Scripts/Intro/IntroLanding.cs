@@ -12,10 +12,9 @@ public class IntroLanding : MonoBehaviour
     
     Collider trigger;
     public CinemachineVirtualCamera cinemachineVirtualCamera;
+    public CinemachineVirtualCamera cinemachineVirtualCamera2;
     public IntroCameraShake introCameraShake;
-    //public GameObject V_cam;
     public GameObject cameraHolder;
-    //public DollyZoom dollyZoom;
 
     private void Start()
     {       
@@ -28,8 +27,6 @@ public class IntroLanding : MonoBehaviour
             StartCoroutine(introCameraShake.Shake(0.25f, 0.25f));
             
             StartCoroutine(BeginGame());
-
-            //dollyZoom.MoveDollyZoom();
         }
     }
 
@@ -37,11 +34,8 @@ public class IntroLanding : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
 
-        //cameraHolder.transform.position = Vector3.Lerp(cameraHolder.transform.position, FP_cam.transform.position,20f);
-
-        //yield return new WaitForSeconds(2f);
-
         cinemachineVirtualCamera.enabled = true;
+        cinemachineVirtualCamera2.enabled = true;
         trigger.enabled = false;
         landing = true;     
     }
