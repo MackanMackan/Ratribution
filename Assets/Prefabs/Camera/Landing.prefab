@@ -79,7 +79,8 @@ MonoBehaviour:
   player: {fileID: 5711385316259376916, guid: 299d5e118d4247845a35d59d018259b7, type: 3}
   dropPlace: {fileID: 4012522241919348512}
   GO_player: {fileID: 0}
-  cinemachineFreeLook: {fileID: 0}
+  cinemachineVirtualCamera1: {fileID: 7700964822199959173, guid: 8d29a6ea7d9ecf949a472a614b982c61, type: 3}
+  cinemachineVirtualCamera2: {fileID: 7404653944253349308, guid: 48c9591ca786c854c9fb2e2b2e27ffb6, type: 3}
 --- !u!1 &4012522242194972009
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,9 +140,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterMovement: {fileID: 7125376261283405459, guid: dca1d299df1ed004eb505717a595921d, type: 3}
   landing: 0
-  cinemachineFreeLook: {fileID: 0}
+  cinemachineVirtualCamera: {fileID: 7700964822199959173, guid: 8d29a6ea7d9ecf949a472a614b982c61, type: 3}
+  cinemachineVirtualCamera2: {fileID: 7404653944253349308, guid: 48c9591ca786c854c9fb2e2b2e27ffb6, type: 3}
   introCameraShake: {fileID: 4126060750862528384}
-  FP_cam: {fileID: 0}
   cameraHolder: {fileID: 4126060749723274603}
 --- !u!1001 &8620853992930625331
 PrefabInstance:
@@ -206,6 +207,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 1.33
       objectReference: {fileID: 0}
+    - target: {fileID: 5684065463331776688, guid: 45b778c2156256344b14899f326ee75b, type: 3}
+      propertyPath: m_CustomBlends
+      value: 
+      objectReference: {fileID: 11400000, guid: b62184d64cffe3343822c10faeb9a434, type: 2}
     - target: {fileID: 5684065463331776693, guid: 45b778c2156256344b14899f326ee75b, type: 3}
       propertyPath: m_IsActive
       value: 1
