@@ -6,7 +6,8 @@ using System.Collections.Generic;
 public class CinemachineShake : MonoBehaviour
 {
     public static CinemachineShake Instance { get; private set; }
-    public  CinemachineFreeLook cinemachineFreeLook;
+    public CinemachineVirtualCamera cam1;
+
 
     private void Awake()
     {
@@ -22,7 +23,7 @@ public class CinemachineShake : MonoBehaviour
 
     private void Start()
     {
-        cinemachineFreeLook = GetComponent<CinemachineFreeLook>();
+        cam1 = GetComponent<CinemachineVirtualCamera>();
     }
 
     public void BeginShake(float amplitude, float frequency, float time)
@@ -37,7 +38,16 @@ public class CinemachineShake : MonoBehaviour
     }
     void Noise(float amplitude, float frequency)
     {
-        cinemachineFreeLook.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = amplitude;
-        cinemachineFreeLook.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = frequency;
+        cam1.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = amplitude;
+        cam1.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = frequency;
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            Debug.Log("MAYA");
+            BeginShake(2, 2, 2);
+        }
     }
 }
