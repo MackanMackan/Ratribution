@@ -56,13 +56,17 @@ public class CinemachineSwitch : MonoBehaviour
         {
             vCam1.Priority = 0;
             vCam2.Priority = 1;
+            CinemachineShake.Instance.cam1 = vCam2;
         }
 
         else
         {
             vCam1.Priority = 1;
             vCam2.Priority = 0;
+            CinemachineShake.Instance.cam1 = vCam1;
         }
+
+
 
         cam1 = !cam1;
     }

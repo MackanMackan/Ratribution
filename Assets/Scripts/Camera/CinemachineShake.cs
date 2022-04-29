@@ -20,10 +20,10 @@ public class CinemachineShake : MonoBehaviour
             Instance = this;
         }
     }
-    private void Start()
-    {
-        cam1 = GetComponent<CinemachineVirtualCamera>();
-    }
+   // private void Start()
+   // {
+   //     cam1 = GetComponent<CinemachineVirtualCamera>();
+   // }
 
     public void BeginShake(float amplitude, float frequency, float time)
     {
