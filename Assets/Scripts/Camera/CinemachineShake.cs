@@ -20,7 +20,6 @@ public class CinemachineShake : MonoBehaviour
             Instance = this;
         }
     }
-
     private void Start()
     {
         cam1 = GetComponent<CinemachineVirtualCamera>();
@@ -42,12 +41,4 @@ public class CinemachineShake : MonoBehaviour
         cam1.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = frequency;
     }
 
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(1))
-        {
-            Debug.Log("MAYA");
-            BeginShake(2, 2, 2);
-        }
-    }
 }
