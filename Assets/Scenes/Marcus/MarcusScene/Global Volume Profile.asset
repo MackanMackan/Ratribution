@@ -278,7 +278,7 @@ MonoBehaviour:
     m_Value: 0
   albedo:
     m_OverrideState: 1
-    m_Value: {r: 0.6698113, g: 0.5459594, b: 0.5459594, a: 1}
+    m_Value: {r: 0.34273407, g: 0.31744394, b: 0.3490566, a: 1}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1
@@ -373,13 +373,13 @@ MonoBehaviour:
   m_AdvancedMode: 0
   lift:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.99698704, z: 0.97368443, w: 0}
+    m_Value: {x: 1, y: 0.95490617, z: 0.9817656, w: -0.006543136}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 0.9993261, y: 1, z: 0.9882309, w: 0.05}
+    m_Value: {x: 1, y: 0.98372614, z: 0.8954638, w: 0.05}
   gain:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: 0.05}
+    m_Value: {x: 1, y: 0.9600214, z: 0.88131326, w: 0.05}
 --- !u!114 &4714420582983486130
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -400,7 +400,7 @@ MonoBehaviour:
     min: 0
     max: 360
   skyIntensityMode:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   exposure:
     m_OverrideState: 1
@@ -411,13 +411,13 @@ MonoBehaviour:
     min: 0
   upperHemisphereLuxValue:
     m_OverrideState: 0
-    m_Value: 2.282268
+    m_Value: 1.0438948
     min: 0
   upperHemisphereLuxColor:
     m_OverrideState: 0
-    m_Value: {x: 0.30279502, y: 0.42552236, z: 0.5}
+    m_Value: {x: 0.053891193, y: 0.24703789, z: 0.5}
   desiredLuxValue:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1.09
   updateMode:
     m_OverrideState: 0
@@ -431,7 +431,7 @@ MonoBehaviour:
     m_Value: 0
   hdriSky:
     m_OverrideState: 1
-    m_Value: {fileID: 8900000, guid: d01bc0096e819b24db0ea5fbffea90e5, type: 2}
+    m_Value: {fileID: 8900000, guid: 5dd1dab73acb80a4ca4a200b35ea95e2, type: 3}
   enableDistortion:
     m_OverrideState: 0
     m_Value: 1
@@ -534,7 +534,7 @@ MonoBehaviour:
     min: 0
     max: 1
   tint:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: {r: 0.25375578, g: 0.32022905, b: 0.4528302, a: 1}
     hdr: 0
     showAlpha: 0
@@ -574,26 +574,26 @@ MonoBehaviour:
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.45
+    m_Value: 0.54
   contrast:
     m_OverrideState: 1
-    m_Value: 26
+    m_Value: 13
     min: -100
     max: 100
   colorFilter:
     m_OverrideState: 1
-    m_Value: {r: 0.9716981, g: 0.9700543, b: 0.9111962, a: 1}
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
     hdr: 1
     showAlpha: 0
     showEyeDropper: 1
   hueShift:
     m_OverrideState: 0
-    m_Value: 50
+    m_Value: 180
     min: -180
     max: 180
   saturation:
     m_OverrideState: 1
-    m_Value: 16
+    m_Value: 15
     min: -100
     max: 100
 --- !u!114 &8351483691231033693
