@@ -2,7 +2,7 @@
 
 public interface IDestructable
 {
-    void DamageMe(int damage, GameObject recievedFrom, int impactJumpAt);
+    void DamageMe(int damage, GameObject recievedFrom);
     void ActivatePhysics();
     void AddForceInDirection(Vector3 direction, float forceMagnitude);
     void CheckIfDead();
