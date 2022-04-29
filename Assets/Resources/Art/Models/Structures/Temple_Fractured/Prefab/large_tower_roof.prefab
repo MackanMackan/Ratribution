@@ -11,6 +11,11 @@ GameObject:
   - component: {fileID: 3707665452543596191}
   - component: {fileID: 5288092044279732425}
   - component: {fileID: 8184923670722525669}
+  - component: {fileID: 7371892963431431920}
+  - component: {fileID: 2696266446826236146}
+  - component: {fileID: 5869566046441384024}
+  - component: {fileID: 8269632416141570572}
+  - component: {fileID: 5600010026413874548}
   m_Layer: 0
   m_Name: large_tower_roof2
   m_TagString: Untagged
@@ -81,6 +86,76 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &7371892963431431920
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120555852488080375}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &2696266446826236146
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120555852488080375}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -640798976545628496, guid: 93a9294a258017442b6ba72e080bb9fa, type: 3}
+--- !u!114 &5869566046441384024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120555852488080375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60291febb49ec224ea23091db47708c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8269632416141570572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120555852488080375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f29b49b4e3102c94090baa64b3d8d347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainStabilityPiece: {fileID: 0}
+  isBottomPiece: 0
+--- !u!114 &5600010026413874548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120555852488080375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e24c2c51d275674dac1e1538a851d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  player: {fileID: 0}
 --- !u!1 &2437058159562351418
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +167,11 @@ GameObject:
   - component: {fileID: 8438086179770509183}
   - component: {fileID: 6256924480504901369}
   - component: {fileID: 1874462646179933048}
+  - component: {fileID: 6010846272579923268}
+  - component: {fileID: 5671419121442706526}
+  - component: {fileID: 8978726124112344140}
+  - component: {fileID: 4759307835265681657}
+  - component: {fileID: 842418870150382673}
   m_Layer: 0
   m_Name: large_tower_roof0
   m_TagString: Untagged
@@ -162,6 +242,76 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &6010846272579923268
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2437058159562351418}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &5671419121442706526
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2437058159562351418}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2968134438087948652, guid: 93a9294a258017442b6ba72e080bb9fa, type: 3}
+--- !u!114 &8978726124112344140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2437058159562351418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60291febb49ec224ea23091db47708c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4759307835265681657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2437058159562351418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f29b49b4e3102c94090baa64b3d8d347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainStabilityPiece: {fileID: 0}
+  isBottomPiece: 0
+--- !u!114 &842418870150382673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2437058159562351418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e24c2c51d275674dac1e1538a851d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  player: {fileID: 0}
 --- !u!1 &5417019217878535549
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,6 +323,11 @@ GameObject:
   - component: {fileID: 6308157981895061018}
   - component: {fileID: 1249977156338213113}
   - component: {fileID: 380677010228206215}
+  - component: {fileID: 7125151022570093311}
+  - component: {fileID: 4182507383966064530}
+  - component: {fileID: 2686820148170312740}
+  - component: {fileID: 2010006465663460506}
+  - component: {fileID: 5746220294969177558}
   m_Layer: 0
   m_Name: large_tower_roof1
   m_TagString: Untagged
@@ -243,6 +398,76 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &7125151022570093311
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5417019217878535549}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &4182507383966064530
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5417019217878535549}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2525846825252305178, guid: 93a9294a258017442b6ba72e080bb9fa, type: 3}
+--- !u!114 &2686820148170312740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5417019217878535549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60291febb49ec224ea23091db47708c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2010006465663460506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5417019217878535549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f29b49b4e3102c94090baa64b3d8d347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainStabilityPiece: {fileID: 0}
+  isBottomPiece: 0
+--- !u!114 &5746220294969177558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5417019217878535549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e24c2c51d275674dac1e1538a851d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  player: {fileID: 0}
 --- !u!1 &5483774012136233267
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,6 +479,11 @@ GameObject:
   - component: {fileID: 3276264061205559295}
   - component: {fileID: 5363615906257496525}
   - component: {fileID: 903546869275751699}
+  - component: {fileID: 341367131119057169}
+  - component: {fileID: 2900499869111460034}
+  - component: {fileID: 1411361107328191201}
+  - component: {fileID: 2440560243881036501}
+  - component: {fileID: 6271025777170398971}
   m_Layer: 0
   m_Name: large_tower_roof3
   m_TagString: Untagged
@@ -324,6 +554,76 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &341367131119057169
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5483774012136233267}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &2900499869111460034
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5483774012136233267}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 832990588734714768, guid: 93a9294a258017442b6ba72e080bb9fa, type: 3}
+--- !u!114 &1411361107328191201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5483774012136233267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60291febb49ec224ea23091db47708c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2440560243881036501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5483774012136233267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f29b49b4e3102c94090baa64b3d8d347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainStabilityPiece: {fileID: 0}
+  isBottomPiece: 0
+--- !u!114 &6271025777170398971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5483774012136233267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e24c2c51d275674dac1e1538a851d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  player: {fileID: 0}
 --- !u!1 &8951267979562184466
 GameObject:
   m_ObjectHideFlags: 0

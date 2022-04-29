@@ -26,7 +26,7 @@ public class Hitter : MonoBehaviour
     }
     void DamageDestructableObject()
     {
-        destructableObj.DamageMe(damage, gameObject, 0);
+        destructableObj.DamageMe(damage, gameObject);
 
         CinemachineShake.Instance.BeginShake(amplitude, frequency, time);
         ServiceLocator.GetAudioProvider().PlayOneShot("StructureImpact", transform.position, true);

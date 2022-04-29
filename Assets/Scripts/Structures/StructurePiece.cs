@@ -48,7 +48,7 @@ public class StructurePiece : MonoBehaviour, IDestructable
         yield return new WaitForSeconds(2f);
         player = GameObject.FindGameObjectWithTag("Player");
     }
-    public void DamageMe(int damage, GameObject recievedFrom, int impactJumpAt)
+    public void DamageMe(int damage, GameObject recievedFrom)
     {
         if (isDead) {
             hitDir = transform.position - player.transform.position;
@@ -60,10 +60,7 @@ public class StructurePiece : MonoBehaviour, IDestructable
 
         ParticleSystemServiceLocator.Instance.GetDustParticleSystem().EmitParticles(meshCollider.bounds.center, particlesToEmit);
 
-        if(impactJumpAt < 1)
-        {
-            ServiceLocator.GetAudioProvider().PlayOneShot("ImpactAftermath", transform.position, true);
-        }
+        ServiceLocator.GetAudioProvider().PlayOneShot("ImpactAftermath", transform.position, true);
 
         onHit?.Invoke();
         onDamageBuilding?.Invoke(damage);
