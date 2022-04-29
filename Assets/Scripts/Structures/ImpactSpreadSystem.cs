@@ -54,7 +54,7 @@ public class ImpactSpreadSystem : MonoBehaviour
                 Destroy(instance, 2);
                 Debug.DrawRay(transform.position, nearbyObj.transform.position - transform.position, Color.red, 10);
             }*/
-            nearbyObj.GetComponent<IDestructable>().DamageMe(damage, gameObject, impactJumpAt);
+            nearbyObj.GetComponent<IDestructable>().DamageMe(damage, gameObject);
         }
     }
 }
