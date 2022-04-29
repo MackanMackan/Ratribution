@@ -6,19 +6,12 @@ public class CinemachineSwitch : MonoBehaviour
 {
     [SerializeField]
     private InputAction action;
-    //private Animator animator;
     [SerializeField]
     private CinemachineVirtualCamera vCam1;
     [SerializeField]
     private CinemachineVirtualCamera vCam2;
 
-
     private bool cam1 = true;
-
-    private void Awake()
-    {
-        //animator = GetComponent<Animator>();
-    }
 
     private void OnEnable()
     {
@@ -35,21 +28,6 @@ public class CinemachineSwitch : MonoBehaviour
         action.performed += _ => SwitchCameraPrio();
     }
 
-    //private void SwitchState()
-    //{
-    //    if (cam1)
-    //    {
-    //        animator.Play("Camera2");
-    //    }
-
-    //    else
-    //    {
-    //        animator.Play("Camera1");
-    //    }
-
-    //    cam1 = !cam1;
-    //}
-
     private void SwitchCameraPrio()
     {
         if (cam1)
@@ -65,8 +43,6 @@ public class CinemachineSwitch : MonoBehaviour
             vCam2.Priority = 0;
             CinemachineShake.Instance.cam1 = vCam1;
         }
-
-
 
         cam1 = !cam1;
     }
