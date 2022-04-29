@@ -32,7 +32,7 @@ public class IntroLanding : MonoBehaviour
 
      IEnumerator BeginGame ()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(0.5f);
 
         cinemachineVirtualCamera.enabled = true;
         cinemachineVirtualCamera2.enabled = true;
