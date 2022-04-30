@@ -4,39 +4,41 @@ using UnityEngine;
 using Cinemachine;
 
 public class IntroLanding : MonoBehaviour
-{ 
+{
     public CharacterMovement characterMovement;
 
     [HideInInspector]
     public bool landing;
-    
+
     Collider trigger;
     public CinemachineVirtualCamera cinemachineVirtualCamera;
     public CinemachineVirtualCamera cinemachineVirtualCamera2;
-    public IntroCameraShake introCameraShake;
-    public GameObject cameraHolder;
+    public CinemachineVirtualCamera cinemachineVirtualCameraIntro;
 
     private void Start()
-    {       
-        trigger = GetComponent<BoxCollider>(); 
+    {
+        trigger = GetComponent<BoxCollider>();
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(introCameraShake.Shake(0.25f, 0.25f));
-            
+            CinemachineShake.Instance.BeginShake(2, 2, 0.5f);
+
+
             StartCoroutine(BeginGame());
         }
     }
 
-     IEnumerator BeginGame ()
+    IEnumerator BeginGame()
     {
         yield return new WaitForSeconds(0.5f);
 
         cinemachineVirtualCamera.enabled = true;
+        CinemachineShake.Instance.cam1 = cinemachineVirtualCamera;
         cinemachineVirtualCamera2.enabled = true;
+        cinemachineVirtualCameraIntro.enabled = false;
         trigger.enabled = false;
-        landing = true;     
+        landing = true;
     }
 }
