@@ -13,6 +13,7 @@ public class CharacterMovement : MonoBehaviour
     public float turnSpeed = 6.0f;
     public float jumpPower = 50.0f;
     public float rayDistance = 1.0f;
+    public float stopSpeed = 1.0f;
 
     [SerializeField] GameObject animatorParentObj;
 
@@ -21,7 +22,6 @@ public class CharacterMovement : MonoBehaviour
     private bool isGrounded;
 
     private float targetAngle;
-    private float stopSpeed = 1.0f;
 
     private Transform CharaCam;
 
@@ -70,6 +70,7 @@ public class CharacterMovement : MonoBehaviour
     {
         CameraLookRotation();
         Movement();
+        CheckIfPlayerIsFallingAndPlayAnimation();
     }
 
     private Vector3 GetMoveInput()
@@ -89,6 +90,18 @@ public class CharacterMovement : MonoBehaviour
             Vector3 m = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             Quaternion q = Quaternion.LookRotation(m, Vector3.up);
             transform.localRotation = Quaternion.Lerp(transform.rotation, q, Time.deltaTime * turnSpeed);
+        }
+    }
+
+    private void CheckIfPlayerIsFallingAndPlayAnimation()
+    {
+        if (rb.velocity.y < -5 && !isGrounded)
+        {
+            animator.SetBool("isFalling", true);
+        }
+        else
+        {
+            animator.SetBool("isFalling", false);
         }
     }
 
@@ -140,11 +153,6 @@ public class CharacterMovement : MonoBehaviour
         Debug.Log("Checked ground: " + isGrounded);
     }
 
-    private void SlowDown()
-    {
-        //Slows player down while mid-air or attacking.
-
-    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer.Equals(LayerMask.NameToLayer("Ground")))
