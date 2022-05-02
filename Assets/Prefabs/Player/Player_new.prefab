@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 584322185912655204}
   - component: {fileID: 6608281341009605828}
-  - component: {fileID: 5274389083864606987}
   m_Layer: 0
   m_Name: pc_animations_fixed
   m_TagString: Untagged
@@ -44,7 +43,7 @@ Animator:
   m_GameObject: {fileID: 238758134985017310}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 01dedb9c56ed7264d8a98bb04d7657d9, type: 3}
-  m_Controller: {fileID: 9100000, guid: ede7a4750e6890b4ba5f0370f42569b0, type: 2}
+  m_Controller: {fileID: 9100000, guid: c442d4621c2acdc4ca1a830e9d7428fc, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -53,20 +52,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5274389083864606987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 238758134985017310}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99995af2c52f22a4381ae79a62ef56b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  running: {fileID: 0}
-  hips: {fileID: 0}
 --- !u!1 &467657902575716211
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,9 +1178,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4d2a0cc45f36f4397a3d7e182f54a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMoveForce: 10
+  playerMoveForce: 0
+  runningMoveForce: 10
+  punchingMoveForce: 3
   turnSpeed: 6
-  stopSpeed: 10
   jumpPower: 200
   rayDistance: 0.5
   animatorParentObj: {fileID: 238758134985017310}
