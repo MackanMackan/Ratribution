@@ -13,10 +13,7 @@ public class Hitter : MonoBehaviour
     [SerializeField] ParticleSystem shockWaveParticleSystem;
     private IDestructable destructableObj;
     Transform playerTransform;
-    float amplitude = 5f;
-    float frequency = 2f;
-    float time = 0.4f;
-
+ 
     void Start()
     {
         onHitDestructable += DamageDestructableObject;
@@ -27,8 +24,6 @@ public class Hitter : MonoBehaviour
     void DamageDestructableObject()
     {
         destructableObj.DamageMe(damage, gameObject);
-
-        CinemachineShake.Instance.BeginShake(amplitude, frequency, time);
         ServiceLocator.GetAudioProvider().PlayOneShot("StructureImpact", transform.position, true);
     }
     private void OnTriggerEnter(Collider other)

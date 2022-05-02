@@ -9,6 +9,12 @@ public class BuildingCrumble : MonoBehaviour
     [SerializeField] int health;
     [SerializeField] List<Transform> children;
     DestructionCount destructionCount;
+   
+    float amplitude = 2;
+    
+    float frequency = 2;
+    
+    float time = 0.4f;
     void Start()
     {   
         foreach (var child in children)
@@ -46,7 +52,10 @@ public class BuildingCrumble : MonoBehaviour
         }
         NavMeshObstacle obs = GetComponent<NavMeshObstacle>();
         obs.carving = false;
-        
+
+        Debug.Log("HEJ");
+        CinemachineShake.Instance.BeginShake(amplitude, frequency, time);
+
         Destroy(gameObject, 10);
     }
 }
