@@ -17,6 +17,7 @@ public class BuildingDestroy : MonoBehaviour, IDestructable
 
     private int particlesToEmit = 2;
 
+
     void Start()
     {
         onGotHit += CheckIfDead;

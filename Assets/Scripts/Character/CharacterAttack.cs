@@ -9,6 +9,8 @@ public class CharacterAttack : MonoBehaviour
     private InputAction fireInput;
     private InputAction fire2Input;
 
+    private CharacterMovement characterMovement;
+
     public GameObject hitterR;
     public GameObject hitterL;
     public GameObject hitterKick;
@@ -29,6 +31,7 @@ public class CharacterAttack : MonoBehaviour
         hitterL.SetActive(false);
         hitterKick.SetActive(false);
 
+        characterMovement = GetComponent<CharacterMovement>();
         animator = animatorParentObj.GetComponent<Animator>();
 
         fireInput.started += StartPunching;
@@ -50,27 +53,28 @@ public class CharacterAttack : MonoBehaviour
         fireInput.Disable();
     }
 
-    private void MeleeAttack(InputAction.CallbackContext callbackContext)
-    {
-        animator.SetTrigger("PunchT");
-    }
     private void StartPunching(InputAction.CallbackContext callbackContext)
     {
         animator.SetBool("isPunching", true);
+        characterMovement.playerMoveForce = characterMovement.punchingMoveForce;
     }
     private void StartKicking(InputAction.CallbackContext callbackContext)
     {
         animator.SetBool("isKicking", true);
+        //stop speed
+
     }
 
     private void StopPunching(InputAction.CallbackContext callbackContext)
     {
         animator.SetBool("isPunching", false);
+        characterMovement.playerMoveForce = characterMovement.runningMoveForce;
     }
 
     private void StopKicking(InputAction.CallbackContext callbackContext)
     {
         animator.SetBool("isKicking", false);
+        //reset to punching speed, if still punching else running speed
     }
 
     private void TurnOffPunches()
