@@ -6,9 +6,11 @@ using UnityEngine.InputSystem;
 
 public class CharacterMovement : MonoBehaviour
 {
-    public float playerMoveForce = 20.0f;
+
+    public float playerMoveForce;
+    public float runningMoveForce = 10.0f;
+    public float punchingMoveForce = 2.0f;
     public float turnSpeed = 6.0f;
-    public float stopSpeed = 1.0f;
     public float jumpPower = 50.0f;
     public float rayDistance = 1.0f;
 
@@ -16,8 +18,10 @@ public class CharacterMovement : MonoBehaviour
 
     private Vector2 moveDir;
     private Vector3 resetV;
-    private float targetAngle;
     private bool isGrounded;
+
+    private float targetAngle;
+    private float stopSpeed = 1.0f;
 
     private Transform CharaCam;
 
@@ -44,6 +48,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void Start()
     {
+        playerMoveForce = runningMoveForce;
         rb = GetComponent<Rigidbody>();
         CharaCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
         animator = animatorParentObj.GetComponent<Animator>();
