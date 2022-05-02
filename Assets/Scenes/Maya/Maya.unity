@@ -380,7 +380,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 926276914}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SmallTowers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,28 +484,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1064223576 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7700964822126747359, guid: 8d29a6ea7d9ecf949a472a614b982c61, type: 3}
-  m_PrefabInstance: {fileID: 7700964822850608519}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1064223581
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1064223576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
-  m_PivotOffset: {x: 0, y: 0, z: 0}
-  m_AmplitudeGain: 0
-  m_FrequencyGain: 0
-  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!224 &1155408881 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8172764454057208503, guid: 18cad6d4bae9dc946a896abd7d58d528, type: 3}
@@ -1403,10 +1381,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: VCam2
       objectReference: {fileID: 0}
-    - target: {fileID: 7404653944253349308, guid: 48c9591ca786c854c9fb2e2b2e27ffb6, type: 3}
-      propertyPath: m_Priority
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7404653944253349311, guid: 48c9591ca786c854c9fb2e2b2e27ffb6, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1460,46 +1434,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1064223581, guid: 8d29a6ea7d9ecf949a472a614b982c61, type: 3}
-      propertyPath: m_AmplitudeGain
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1064223581, guid: 8d29a6ea7d9ecf949a472a614b982c61, type: 3}
-      propertyPath: m_FrequencyGain
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7700964822126747356, guid: 8d29a6ea7d9ecf949a472a614b982c61, type: 3}
-      propertyPath: m_ScreenY
-      value: 0.9434887
-      objectReference: {fileID: 0}
-    - target: {fileID: 7700964822126747356, guid: 8d29a6ea7d9ecf949a472a614b982c61, type: 3}
-      propertyPath: m_DeadZoneHeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7700964822126747356, guid: 8d29a6ea7d9ecf949a472a614b982c61, type: 3}
-      propertyPath: m_LookaheadSmoothing
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7700964822126747356, guid: 8d29a6ea7d9ecf949a472a614b982c61, type: 3}
-      propertyPath: m_TrackedObjectOffset.y
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7700964822126747357, guid: 8d29a6ea7d9ecf949a472a614b982c61, type: 3}
-      propertyPath: m_FollowOffset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7700964822126747357, guid: 8d29a6ea7d9ecf949a472a614b982c61, type: 3}
-      propertyPath: m_FollowOffset.y
-      value: 8.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7700964822126747357, guid: 8d29a6ea7d9ecf949a472a614b982c61, type: 3}
-      propertyPath: m_FollowOffset.z
-      value: -25.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 7700964822199959171, guid: 8d29a6ea7d9ecf949a472a614b982c61, type: 3}
-      propertyPath: m_Strategy
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7700964822199959172, guid: 8d29a6ea7d9ecf949a472a614b982c61, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1543,14 +1477,6 @@ PrefabInstance:
     - target: {fileID: 7700964822199959172, guid: 8d29a6ea7d9ecf949a472a614b982c61, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7700964822199959173, guid: 8d29a6ea7d9ecf949a472a614b982c61, type: 3}
-      propertyPath: m_Priority
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7700964822199959173, guid: 8d29a6ea7d9ecf949a472a614b982c61, type: 3}
-      propertyPath: m_Lens.FieldOfView
-      value: 51
       objectReference: {fileID: 0}
     - target: {fileID: 7700964822199959174, guid: 8d29a6ea7d9ecf949a472a614b982c61, type: 3}
       propertyPath: m_Name
