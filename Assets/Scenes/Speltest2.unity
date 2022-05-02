@@ -28535,6 +28535,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: SmallTower (110)
       objectReference: {fileID: 0}
+    - target: {fileID: 5444484400650870865, guid: 19242f376489d35459a29042e843fd5a, type: 3}
+      propertyPath: time
+      value: 0.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444484400650870865, guid: 19242f376489d35459a29042e843fd5a, type: 3}
+      propertyPath: amplitude
+      value: 4.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444484400650870865, guid: 19242f376489d35459a29042e843fd5a, type: 3}
+      propertyPath: frequency
+      value: 5.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19242f376489d35459a29042e843fd5a, type: 3}
 --- !u!4 &1760141091 stripped
@@ -29489,12 +29501,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7404653943350925819, guid: 48c9591ca786c854c9fb2e2b2e27ffb6, type: 3}
+      propertyPath: m_AmplitudeGain
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7404653943350925819, guid: 48c9591ca786c854c9fb2e2b2e27ffb6, type: 3}
+      propertyPath: m_FrequencyGain
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7404653944253349304, guid: 48c9591ca786c854c9fb2e2b2e27ffb6, type: 3}
       propertyPath: m_Name
       value: VCam2 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7404653944253349308, guid: 48c9591ca786c854c9fb2e2b2e27ffb6, type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7404653944253349308, guid: 48c9591ca786c854c9fb2e2b2e27ffb6, type: 3}
+      propertyPath: m_Priority
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7404653944253349311, guid: 48c9591ca786c854c9fb2e2b2e27ffb6, type: 3}
