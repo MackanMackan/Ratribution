@@ -14,6 +14,7 @@ public class CharacterAttack : MonoBehaviour
     public GameObject hitterR;
     public GameObject hitterL;
     public GameObject hitterKick;
+    public GameObject hitterSlam;
     [SerializeField] GameObject animatorParentObj;
 
     private Animator animator;
@@ -30,6 +31,7 @@ public class CharacterAttack : MonoBehaviour
         hitterR.SetActive(false);
         hitterL.SetActive(false);
         hitterKick.SetActive(false);
+        hitterSlam.SetActive(false);
 
         characterMovement = GetComponent<CharacterMovement>();
         animator = animatorParentObj.GetComponent<Animator>();
@@ -56,6 +58,8 @@ public class CharacterAttack : MonoBehaviour
     private void StartPunching(InputAction.CallbackContext callbackContext)
     {
         animator.SetBool("isPunching", true);
+
+        //Slows down player while punching
         characterMovement.playerMoveForce = characterMovement.punchingMoveForce;
     }
     private void StartKicking(InputAction.CallbackContext callbackContext)
@@ -68,14 +72,36 @@ public class CharacterAttack : MonoBehaviour
     private void StopPunching(InputAction.CallbackContext callbackContext)
     {
         animator.SetBool("isPunching", false);
+
+        //Resets player speed after stopping attack
         characterMovement.playerMoveForce = characterMovement.runningMoveForce;
     }
-
     private void StopKicking(InputAction.CallbackContext callbackContext)
     {
         animator.SetBool("isKicking", false);
-        //reset to punching speed, if still punching else running speed
     }
+
+    private void DiceRollForAttackVariations()
+    {
+        int randomNum = Random.Range(1, 10);
+        Debug.Log("Diceroll");
+        if (randomNum <= 2)
+        {
+            Debug.Log("Kick");
+            animator.SetTrigger("KickT");
+            //animator.SetBool("isKicking", true);
+        }
+        else if (randomNum >= 7)
+        {
+            Debug.Log("Slam");
+            animator.SetTrigger("SlamT");
+        }
+        else
+        {
+            Debug.Log("normal punch");
+        }
+    }
+
 
     private void TurnOffPunches()
     {

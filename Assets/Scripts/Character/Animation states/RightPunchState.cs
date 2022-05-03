@@ -11,8 +11,9 @@ public class RightPunchState : StateMachineBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         attackScript = player.GetComponent<CharacterAttack>();
-        
+
         attackScript.hitterR.SetActive(true);
+        player.SendMessage("DiceRollForAttackVariations");
         CharacterAnimationImpact.canBeStopped = true;
     }
 
