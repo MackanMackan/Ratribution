@@ -1111,10 +1111,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMoveForce: 10
+  runningMoveForce: 10
+  punchingMoveForce: 2
   turnSpeed: 6
-  stopSpeed: 10
   jumpPower: 50
   rayDistance: 1
+  stopSpeed: 10
   animatorParentObj: {fileID: 4524474645335547030}
   jumpParticles: {fileID: 466729728250343441}
 --- !u!114 &5711385316259376908
@@ -1190,7 +1192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 1430486546519339380}
-  stopTime: 0.1
+  stopTime: 0.3
 --- !u!1 &5861289130600067819
 GameObject:
   m_ObjectHideFlags: 0

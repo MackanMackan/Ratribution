@@ -1184,6 +1184,7 @@ MonoBehaviour:
   turnSpeed: 6
   jumpPower: 200
   rayDistance: 0.5
+  stopSpeed: 1
   animatorParentObj: {fileID: 238758134985017310}
   jumpParticles: {fileID: 2225083491879096424}
 --- !u!114 &5711385316259376908
@@ -1259,7 +1260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 6608281341009605828}
-  stopTime: 0.1
+  stopTime: 0.3
 --- !u!1 &5717937075093800493
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,7 +25,7 @@ public class AIFollowPlayer : IAIState
         yield return new WaitForSeconds(0.5f);
         Vector3 direction = player.transform.position - agent.transform.position;
         direction.Normalize();
-        if (Physics.Raycast(agent.transform.position, direction, out RaycastHit hitInfo, attackDistance))
+        if (Physics.Raycast(agent.transform.position + direction, direction, out RaycastHit hitInfo, attackDistance))
         {
             if (hitInfo.transform.CompareTag("Player"))
             {

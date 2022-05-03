@@ -9,10 +9,12 @@ public class AIStateMachine : MonoBehaviour
     NavMeshAgent agent;
     MonoBehaviour mono;
     [SerializeField] GameObject player;
+    OwlianAnimationHandler animHandler;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         aiState = new AIFollowPlayer();
+        animHandler = GetComponent<OwlianAnimationHandler>();
         StartCoroutine(nameof(GetPlayerRef));
     }
 
@@ -21,6 +23,10 @@ public class AIStateMachine : MonoBehaviour
     {
         if(player)
             aiState.ExecuteState();
+
+        if(animHandler)
+            animHandler.DoRunAnimation(Mathf.Abs(agent.velocity.x+ agent.velocity.y+ agent.velocity.z));
+        
     }
     public void ChangeState(IAIState newState)
     {
