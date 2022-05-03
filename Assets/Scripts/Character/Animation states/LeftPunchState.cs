@@ -14,6 +14,7 @@ public class LeftPunchState : StateMachineBehaviour
         attackScript = player.GetComponent<CharacterAttack>();
 
         attackScript.hitterL.SetActive(true);
+        player.SendMessage("DiceRollForAttackVariations");
         CharacterAnimationImpact.canBeStopped = true;
     }
 

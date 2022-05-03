@@ -6,13 +6,15 @@ public class KickState : StateMachineBehaviour
 {
     GameObject player;
     CharacterAttack attackScript;
+    CharacterMovement characterMovement;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         player = GameObject.FindGameObjectWithTag("Player");
         attackScript = player.GetComponent<CharacterAttack>();
-
+        characterMovement = player.GetComponent<CharacterMovement>();
+        characterMovement.playerMoveForce = 0;
         attackScript.hitterKick.SetActive(true);
     }
 
@@ -26,6 +28,7 @@ public class KickState : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         attackScript.hitterKick.SetActive(false);
+        characterMovement.playerMoveForce = characterMovement.runningMoveForce;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

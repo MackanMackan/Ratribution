@@ -6,10 +6,9 @@ using UnityEngine.AI;
 
 public class BuildingCrumble : MonoBehaviour
 {
-    [SerializeField] int health;
+    public int health;
     [SerializeField] List<Transform> children;
-    DestructionCount destructionCount;
-   
+    
     float amplitude = 2;
     
     float frequency = 2;
@@ -20,11 +19,7 @@ public class BuildingCrumble : MonoBehaviour
         foreach (var child in children)
         {
             child.GetComponent<StructurePiece>().onDamageBuilding += DamageMe;
-        }
-
-        destructionCount = FindObjectOfType<DestructionCount>();
-        destructionCount.AddHealth(health);
-        
+        }                                 
     }
 
     public void DamageMe(int damage)
@@ -32,9 +27,6 @@ public class BuildingCrumble : MonoBehaviour
         damage = Mathf.Min(health, damage);
 
         health -= damage;
-
-        //destructionCount.UpdateUIText(damage);
-        destructionCount.UpdateUISlider(damage);
 
         if (health <= 0)
         {
