@@ -19,7 +19,7 @@ public class CharacterMovement : MonoBehaviour
 
     private Vector2 moveDir;
     private Vector3 resetV;
-    private bool isGrounded;
+    public bool isGrounded;
 
     private float targetAngle;
 
@@ -52,6 +52,9 @@ public class CharacterMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         CharaCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
         animator = animatorParentObj.GetComponent<Animator>();
+
+        //Sets stronger gravity for all rigidbodies in the scene
+        Physics.gravity = new Vector3(0, -20f, 0);
     }
 
     private void OnEnable()
@@ -98,6 +101,10 @@ public class CharacterMovement : MonoBehaviour
         if (rb.velocity.y < -5 && !isGrounded)
         {
             animator.SetBool("isFalling", true);
+        }
+        else if (rb.velocity.y < -5 && isGrounded)
+        {
+            animator.SetTrigger("LandingT");
         }
         else
         {

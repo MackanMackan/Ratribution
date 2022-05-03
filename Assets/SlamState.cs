@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeftPunchState : StateMachineBehaviour
+public class SlamState : StateMachineBehaviour
 {
     GameObject player;
     CharacterAttack attackScript;
+    CharacterMovement characterMovement;
 
-    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
+    //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         player = GameObject.FindGameObjectWithTag("Player");
         attackScript = player.GetComponent<CharacterAttack>();
-
-        attackScript.hitterL.SetActive(true);
-        player.SendMessage("DiceRollForAttackVariations");
-        CharacterAnimationImpact.canBeStopped = true;
+        characterMovement = player.GetComponent<CharacterMovement>();   
+        characterMovement.playerMoveForce = 0;
+        attackScript.hitterSlam.SetActive(true);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -24,10 +24,11 @@ public class LeftPunchState : StateMachineBehaviour
     //    
     //}
 
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
+     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        attackScript.hitterL.SetActive(false);
+        attackScript.hitterSlam.SetActive(false);
+        characterMovement.playerMoveForce = characterMovement.runningMoveForce;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
