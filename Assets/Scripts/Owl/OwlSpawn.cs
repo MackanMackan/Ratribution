@@ -5,7 +5,6 @@ using UnityEngine;
 public class OwlSpawn : MonoBehaviour
 {
     public GameObject owl;
-    public GameObject startPoint;
 
     int maxOwl = 350;
     int spawnOwlcounter;
@@ -30,7 +29,6 @@ public class OwlSpawn : MonoBehaviour
         {
             numberOfOwls.Add(beginOwls[i]);
         }
-
     }
 
     void Update()
