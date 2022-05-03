@@ -34,8 +34,6 @@ public class OwlSpawn : MonoBehaviour
     void Update()
     {
         SpawnOwl();
-
-        Debug.Log(numberOfOwls.Count);
     }
 
     private void SpawnOwl()

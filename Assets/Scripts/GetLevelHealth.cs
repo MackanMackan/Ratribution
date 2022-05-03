@@ -14,13 +14,16 @@ public class GetLevelHealth : MonoBehaviour
     public Level level;
     [SerializeField]
     GameObject levelHolder_1;
-    // [SerializeField]
-    //GameObject levelHolder_2;
-    //[SerializeField]
-    //GameObject levelHolder_3;
+    [SerializeField]
+    GameObject levelHolder_2;
+    [SerializeField]
+    GameObject levelHolder_3;
 
     DestructionCount destructionCount;
     BuildingCrumble buildingCrumble;
+
+    public float totalHealth;
+
 
     void Start()
     {
@@ -36,19 +39,50 @@ public class GetLevelHealth : MonoBehaviour
 
     private float GetCurrentHealth()
     {
-        int totalHealth = 0;
+         totalHealth = 0;
+
         if (level == Level.Level_1)
         {
-            List<GameObject> children = levelHolder_1.GetChildren();
+            Metod(levelHolder_1);
 
-            foreach (GameObject child in children)
+            if (totalHealth <= 0)
             {
-                buildingCrumble = child.GetComponent<BuildingCrumble>();
-                if (buildingCrumble != null)
-                    totalHealth += buildingCrumble.health;
-            }           
+                level = Level.Level_2;
+            }
+        }
+
+        if (level == Level.Level_2)
+        {
+            Metod(levelHolder_2);
+
+            if (totalHealth <= 0)
+            {
+                level = Level.Level_3;
+            }
+        }
+
+        if (level == Level.Level_3)
+        {
+            Metod(levelHolder_3);
+
+            if (totalHealth <= 0)
+            {
+                //WINNING
+            }
         }
 
         return totalHealth;
+    }
+
+    public void Metod(GameObject level)
+    {       
+        List<GameObject> children = level.GetChildren();
+
+        foreach (GameObject child in children)
+        {
+            buildingCrumble = child.GetComponent<BuildingCrumble>();
+            if (buildingCrumble != null)
+                totalHealth += buildingCrumble.health;
+        }
     }
 }
