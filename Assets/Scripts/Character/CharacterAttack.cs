@@ -18,6 +18,7 @@ public class CharacterAttack : MonoBehaviour
     [SerializeField] GameObject animatorParentObj;
 
     private Animator animator;
+    private Rigidbody rb;
 
     private void Awake()
     {
@@ -35,12 +36,10 @@ public class CharacterAttack : MonoBehaviour
 
         characterMovement = GetComponent<CharacterMovement>();
         animator = animatorParentObj.GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
 
         fireInput.started += StartPunching;
         fireInput.canceled += StopPunching;
-
-        fire2Input.started += StartKicking;
-        fire2Input.canceled += StopKicking;
     }
 
     private void OnEnable()
@@ -62,23 +61,12 @@ public class CharacterAttack : MonoBehaviour
         //Slows down player while punching
         characterMovement.playerMoveForce = characterMovement.punchingMoveForce;
     }
-    private void StartKicking(InputAction.CallbackContext callbackContext)
-    {
-        animator.SetBool("isKicking", true);
-        //stop speed
-
-    }
-
     private void StopPunching(InputAction.CallbackContext callbackContext)
     {
         animator.SetBool("isPunching", false);
 
         //Resets player speed after stopping attack
         characterMovement.playerMoveForce = characterMovement.runningMoveForce;
-    }
-    private void StopKicking(InputAction.CallbackContext callbackContext)
-    {
-        animator.SetBool("isKicking", false);
     }
 
     private void DiceRollForAttackVariations()
@@ -95,17 +83,14 @@ public class CharacterAttack : MonoBehaviour
             Debug.Log("Slam");
             animator.SetTrigger("SlamT");
         }
-        else
-        {
-            Debug.Log("normal punch");
-        }
+
     }
-
-
-    private void TurnOffPunches()
+    public void ActivateSlamTrigger()
     {
-        hitterR.SetActive(false);
-        hitterL.SetActive(false);
-        hitterKick.SetActive(false);
+        Debug.Log("Det funkade!!!!");
+        hitterSlam.SetActive(true);
+
+        rb.AddForce(500 * Vector3.forward);
     }
+
 }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 584322185912655204}
   - component: {fileID: 6608281341009605828}
+  - component: {fileID: 1281994562419752506}
   m_Layer: 0
   m_Name: pc_animations_fixed
   m_TagString: Untagged
@@ -52,6 +53,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1281994562419752506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238758134985017310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 038206dd58b20784584e7588390d70ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &467657902575716211
 GameObject:
   m_ObjectHideFlags: 0
@@ -2130,27 +2143,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 328618384865170384, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.037334215
+      value: 0.055000763
       objectReference: {fileID: 0}
     - target: {fileID: 328618384865170384, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.037334215
+      value: 0.055000763
       objectReference: {fileID: 0}
     - target: {fileID: 328618384865170384, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.037334215
+      value: 0.055000763
       objectReference: {fileID: 0}
     - target: {fileID: 328618384865170384, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0052
+      value: 0.0012
       objectReference: {fileID: 0}
     - target: {fileID: 328618384865170384, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0014
+      value: -0.0079
       objectReference: {fileID: 0}
     - target: {fileID: 328618384865170384, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0006
+      value: 0.0234
       objectReference: {fileID: 0}
     - target: {fileID: 328618384865170384, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2194,7 +2207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 328618384865170398, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
       propertyPath: damage
-      value: 60
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 328618384865170398, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
       propertyPath: animImpact
