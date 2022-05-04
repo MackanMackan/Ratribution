@@ -102,7 +102,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void CheckIfPlayerIsFallingAndPlayAnimation()
     {
-        if (rb.velocity.y < -5 && !isGrounded)
+        if (rb.velocity.y < -10 && !isGrounded)
         {
             animator.SetBool("isFalling", true);
         }
@@ -152,13 +152,13 @@ public class CharacterMovement : MonoBehaviour
 
     private void GroundCheck()
     {
-        isGrounded = Physics.CheckSphere(transform.position - new Vector3(0, 0.5f, 0), 1f, groundLayer);
+        isGrounded = Physics.CheckSphere(transform.position - new Vector3(0, 0.5f, 0), 1.5f, groundLayer);
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(transform.position - new Vector3(0, 0.5f, 0), 1f);
+        Gizmos.DrawSphere(transform.position - new Vector3(0, 0.5f, 0), 1.5f);
     }
 
     private void OnCollisionEnter(Collision collision)
