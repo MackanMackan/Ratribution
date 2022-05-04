@@ -38,6 +38,8 @@ public class NextLevel : MonoBehaviour
         if (getLevelHealth.level == Level.Level_4 || Input.GetMouseButtonDown(1))
         {
             winUI.SetActive(true);
+            Time.timeScale = 0;
+
         }
     }
 
