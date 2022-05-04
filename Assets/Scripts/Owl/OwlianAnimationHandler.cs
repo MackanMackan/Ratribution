@@ -18,5 +18,12 @@ public class OwlianAnimationHandler : MonoBehaviour
     {
         animator.enabled = false;
     }
-
+    public void DoAttackAnimation()
+    {
+        animator.SetBool("Attacking", true);
+    }
+    public void StopAttackAnimation()
+    {
+        animator.SetBool("Attacking", false);
+    }
 }
