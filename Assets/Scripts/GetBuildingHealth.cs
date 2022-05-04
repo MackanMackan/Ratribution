@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GetLevelHealth : MonoBehaviour
+public enum Level
 {
-    public enum Level
-    {
-        Level_1,
-        Level_2,
-        Level_3,
-    }
+    Level_1,
+    Level_2,
+    Level_3,
+    Level_4,
+}
+
+public class GetBuildingHealth : MonoBehaviour
+{
 
     public Level level;
+
     [SerializeField]
     GameObject levelHolder_1;
     [SerializeField]
@@ -67,7 +70,7 @@ public class GetLevelHealth : MonoBehaviour
 
             if (totalHealth <= 0)
             {
-                //WINNING
+                level = Level.Level_4;
             }
         }
 

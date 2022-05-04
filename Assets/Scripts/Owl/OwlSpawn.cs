@@ -30,7 +30,6 @@ public class OwlSpawn : MonoBehaviour
             numberOfOwls.Add(beginOwls[i]);
         }
     }
-
     void Update()
     {
         SpawnOwl();
