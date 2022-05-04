@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class CharacterMovement : MonoBehaviour
 {
-
+    [Header("Floats")]
     public float playerMoveForce;
     public float runningMoveForce = 10.0f;
     public float punchingMoveForce = 2.0f;
@@ -15,11 +15,15 @@ public class CharacterMovement : MonoBehaviour
     public float rayDistance = 1.0f;
     public float stopSpeed = 1.0f;
 
+    [Header("Bools")]
+    [SerializeField] bool isGrounded;
+    
+    [Header("Misc")]
     [SerializeField] GameObject animatorParentObj;
+    [SerializeField] LayerMask groundLayer;
 
     private Vector2 moveDir;
     private Vector3 resetV;
-    public bool isGrounded;
 
     private float targetAngle;
 
@@ -115,6 +119,7 @@ public class CharacterMovement : MonoBehaviour
     private void Movement()
     {
         Rotation();
+        GroundCheck();
 
         Debug.DrawRay(transform.position, Vector3.down, Color.green, rayDistance);
         Vector3 m = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
@@ -123,8 +128,8 @@ public class CharacterMovement : MonoBehaviour
         if (GetMoveInput().magnitude >= 0.1f)
         {
             m = playerMoveForce * Time.deltaTime * m * 100;
-            m.y = rb.velocity.y;
-            rb.velocity = m;
+
+            rb.velocity = new Vector3(m.x, rb.velocity.y, m.z);
             animator.SetBool("isRunning", true);
         }
         else
@@ -137,27 +142,23 @@ public class CharacterMovement : MonoBehaviour
 
     private void Jump(InputAction.CallbackContext obj)
     {
-        GroundCheck();
-        Debug.Log("Jump!!");
-
         if (isGrounded)
         {
+            Debug.Log("Jump!!");
             animator.SetTrigger("JumpT");
-            rb.AddForce(jumpPower * Vector3.up, ForceMode.Impulse);
+            rb.AddForceAtPosition(jumpPower * Vector3.up * 100, transform.position, ForceMode.Impulse);
         }
     }
 
     private void GroundCheck()
     {
-        if (Physics.Raycast(transform.position, Vector3.down, rayDistance))
-        {
-            isGrounded = true;
-        }
-        else
-        {
-            isGrounded = false;
-        }
-        Debug.Log("Checked ground: " + isGrounded);
+        isGrounded = Physics.CheckSphere(transform.position - new Vector3(0, 0.5f, 0), 1f, groundLayer);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(transform.position - new Vector3(0, 0.5f, 0), 1f);
     }
 
     private void OnCollisionEnter(Collision collision)

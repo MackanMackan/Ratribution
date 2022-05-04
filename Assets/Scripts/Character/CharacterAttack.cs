@@ -83,15 +83,14 @@ public class CharacterAttack : MonoBehaviour
 
     private void DiceRollForAttackVariations()
     {
-        int randomNum = Random.Range(1, 10);
+        int randomNum = Random.Range(1, 100);
         Debug.Log("Diceroll");
-        if (randomNum <= 2)
+        if (randomNum <= 5)
         {
             Debug.Log("Kick");
             animator.SetTrigger("KickT");
-            //animator.SetBool("isKicking", true);
         }
-        else if (randomNum >= 7)
+        else if (randomNum >= 90)
         {
             Debug.Log("Slam");
             animator.SetTrigger("SlamT");
