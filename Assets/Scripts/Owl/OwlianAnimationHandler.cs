@@ -9,8 +9,7 @@ public class OwlianAnimationHandler : MonoBehaviour
     {
         animator = GetComponent<Animator>();
     }
-
-   public void DoRunAnimation(float movementSpeed)
+    public void DoRunAnimation(float movementSpeed)
     {
         animator.SetFloat("MovementSpeed", movementSpeed);
     }

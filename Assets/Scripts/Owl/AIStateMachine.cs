@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,7 +9,7 @@ public class AIStateMachine : MonoBehaviour
     [SerializeField] GameObject player;
     OwlianAnimationHandler animHandler;
     float attackDistance = 15;
-    bool atAttackDistance = false;
+    public bool atAttackDistance = false;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
