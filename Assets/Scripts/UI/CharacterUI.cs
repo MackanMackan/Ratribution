@@ -9,8 +9,10 @@ public class CharacterUI : MonoBehaviour
 
     {
         slider = GetComponent<Slider>();
+        slider.maxValue = CharacterHealth.GetHealth();
         slider.value = CharacterHealth.GetHealth();
         CharacterHealth.onHitPlayer += UpdateUISlider;
+        
     }
 
     private void Update()

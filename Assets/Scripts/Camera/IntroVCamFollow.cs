@@ -8,7 +8,6 @@ public class IntroVCamFollow : MonoBehaviour
     GameObject refPlayer;
     CinemachineVirtualCamera introCam;
 
-
     private void Start()
     {
         CinemachineShake.Instance.cam1 = GetComponent<CinemachineVirtualCamera>();
@@ -16,4 +15,5 @@ public class IntroVCamFollow : MonoBehaviour
         refPlayer = GameObject.FindGameObjectWithTag("Player");
         introCam.LookAt = refPlayer.transform;
     }
+
 }
