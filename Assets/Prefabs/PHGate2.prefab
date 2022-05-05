@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2836705518977972536}
   - component: {fileID: 2836705518977972537}
   - component: {fileID: 2836705518977972542}
-  - component: {fileID: 2836705518977972543}
   m_Layer: 0
   m_Name: PHGate2
   m_TagString: Untagged
@@ -27,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2836705518977972540}
-  m_LocalRotation: {x: -0, y: 0.32296404, z: -0, w: 0.94641125}
+  m_LocalRotation: {x: 0, y: 0.32296774, z: 0, w: 0.94641006}
   m_LocalPosition: {x: 314.6, y: 89.5, z: 285.7}
   m_LocalScale: {x: 27.620111, y: 27.620111, z: 6.027813}
   m_Children: []
@@ -96,18 +95,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2836705518977972543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2836705518977972540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a77ab3f03a80b34aa59927b41d59805, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gate1: {fileID: 6415759781908729419, guid: 278a04c9505b21049b894f3775e9241f, type: 3}
-  gate2: {fileID: 2836705518977972540}
-  winUI: {fileID: 0}

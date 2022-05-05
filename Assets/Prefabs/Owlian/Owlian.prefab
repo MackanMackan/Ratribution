@@ -2165,6 +2165,7 @@ Transform:
   m_Children:
   - {fileID: 4427729758492331831}
   - {fileID: 3509785138428787084}
+  - {fileID: 5445764470031876588}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2287,6 +2288,7 @@ MonoBehaviour:
   - {fileID: 8810030812762566288}
   - {fileID: 8103895316284411804}
   root: {fileID: 788813230482005976}
+  featherParticles: {fileID: 2076241708632666439}
 --- !u!136 &7488160638448983841
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3466,4 +3468,79 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2129442830875631027, guid: aaa915e795616f9469f701821fcbc51f, type: 3}
   m_PrefabInstance: {fileID: 211113880005561999}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8089350625190993694
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4738527412541153193}
+    m_Modifications:
+    - target: {fileID: 4309971671649246962, guid: 7c88c2d8039de5a48a801c279f72517b, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309971671649246962, guid: 7c88c2d8039de5a48a801c279f72517b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309971671649246962, guid: 7c88c2d8039de5a48a801c279f72517b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309971671649246962, guid: 7c88c2d8039de5a48a801c279f72517b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309971671649246962, guid: 7c88c2d8039de5a48a801c279f72517b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309971671649246962, guid: 7c88c2d8039de5a48a801c279f72517b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309971671649246962, guid: 7c88c2d8039de5a48a801c279f72517b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309971671649246962, guid: 7c88c2d8039de5a48a801c279f72517b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309971671649246962, guid: 7c88c2d8039de5a48a801c279f72517b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309971671649246962, guid: 7c88c2d8039de5a48a801c279f72517b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309971671649246962, guid: 7c88c2d8039de5a48a801c279f72517b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5830709636961340424, guid: 7c88c2d8039de5a48a801c279f72517b, type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7823719425729736281, guid: 7c88c2d8039de5a48a801c279f72517b, type: 3}
+      propertyPath: m_Name
+      value: Feather Particle System
+      objectReference: {fileID: 0}
+    - target: {fileID: 7823719425729736281, guid: 7c88c2d8039de5a48a801c279f72517b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7c88c2d8039de5a48a801c279f72517b, type: 3}
+--- !u!1 &2076241708632666439 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7823719425729736281, guid: 7c88c2d8039de5a48a801c279f72517b, type: 3}
+  m_PrefabInstance: {fileID: 8089350625190993694}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5445764470031876588 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4309971671649246962, guid: 7c88c2d8039de5a48a801c279f72517b, type: 3}
+  m_PrefabInstance: {fileID: 8089350625190993694}
   m_PrefabAsset: {fileID: 0}

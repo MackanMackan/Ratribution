@@ -6,8 +6,8 @@ public class OwlSpawn : MonoBehaviour
 {
     public GameObject owl;
 
-    int maxOwl = 350;
-    int spawnOwlcounter;
+    int maxOwl = 70;
+    public static int spawnOwlcounter;
     float nextSpawn;
     public float spawnRate;
 

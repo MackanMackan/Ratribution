@@ -24,7 +24,6 @@ public class Hitter : MonoBehaviour
     void DamageDestructableObject()
     {
         destructableObj.DamageMe(damage, gameObject);
-        ServiceLocator.GetAudioProvider().PlayOneShot("StructureImpact", transform.position, true);
     }
     private void OnTriggerEnter(Collider other)
     {

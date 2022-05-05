@@ -15,6 +15,7 @@ public class OwlianKill : MonoBehaviour, IDestructable
     [SerializeField] List<GameObject> childList;
     [SerializeField] List<Rigidbody> rigidBodies;
     [SerializeField] GameObject root;
+    [SerializeField] GameObject featherParticles;
     void Start()
     {
         animHandler = GetComponent<OwlianAnimationHandler>();
@@ -31,7 +32,7 @@ public class OwlianKill : MonoBehaviour, IDestructable
         animHandler.DisableAnimator();
         col1.enabled = false;
         col2.enabled = false;
-
+        featherParticles.SetActive(true);
         foreach (var child in childList)
         {
             child.transform.SetParent(root.transform);
@@ -60,6 +61,7 @@ public class OwlianKill : MonoBehaviour, IDestructable
         direction.Normalize();
         direction.y = 6;
         AddForceInDirection(direction,forceMagnitude);
+        OwlSpawn.spawnOwlcounter--;
     }
 
     public void GetHitDirection(Vector3 direction)
@@ -69,5 +71,12 @@ public class OwlianKill : MonoBehaviour, IDestructable
     void CullOnDeath()
     {
         Destroy(gameObject,15);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer.Equals(LayerMask.NameToLayer("Ground")))
+        {
+            featherParticles.SetActive(false);
+        }
     }
 }
