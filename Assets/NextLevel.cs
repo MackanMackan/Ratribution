@@ -10,29 +10,45 @@ public class NextLevel : MonoBehaviour
     GameObject gate2;
 
     GetBuildingHealth getLevelHealth;
+    CinemachineSwitch cinemachineSwitch;
 
     public GameObject winUI;
 
     float levelHealth;
     float speed = 10;
+
+    bool level = true;
     
 
     private void Start()
     {
         getLevelHealth = FindObjectOfType<GetBuildingHealth>();
+        cinemachineSwitch = FindObjectOfType<CinemachineSwitch>();
         winUI.SetActive(false);
     }
 
     private void Update()
     {
         if (getLevelHealth.level == Level.Level_2)
-        { 
+        {          
             GateOpen(gate1);
+
+            if (level)
+            {
+                StartCoroutine(cinemachineSwitch.GateCamera(gate1));
+                level = false;
+            }
         }
 
         if ( getLevelHealth.level == Level.Level_3)
         {
             GateOpen(gate2);
+
+            if (level == false)
+            {
+                StartCoroutine(cinemachineSwitch.GateCamera(gate2));
+                level = true;
+            }
         }
 
         if (getLevelHealth.level == Level.Level_4)
