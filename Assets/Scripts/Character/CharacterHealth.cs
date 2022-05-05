@@ -1,17 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+public delegate void onHitPlayer();
 public class CharacterHealth : MonoBehaviour
 {
-    [SerializeField] static int health = 50;
-   
+    public static event onHitPlayer onHitPlayer;
+    [SerializeField] static int health = 500;
     public static void DamageMe(int damage)
     {
         health -= damage;
+        onHitPlayer?.Invoke();
     }
 
-    public int GetHealth()
+    public static int GetHealth()
     {
         return health;
     }

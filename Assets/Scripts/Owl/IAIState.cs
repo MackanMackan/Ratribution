@@ -5,7 +5,7 @@ using UnityEngine;
 
 public interface IAIState
 {
-    public void InitializeState(NavMeshAgent agent,GameObject player, MonoBehaviour mono);
-    public void ExecuteState();
+    public void InitializeState(NavMeshAgent agent,GameObject player, AIStateMachine stateMachine, MonoBehaviour mono);
+    public void ExecuteState(bool atAttackDistance);
     public void UnInitilizeState();
 }

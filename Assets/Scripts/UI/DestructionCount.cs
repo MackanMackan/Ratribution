@@ -14,21 +14,30 @@ public class DestructionCount : MonoBehaviour
 
     private void Start()
     {
-        slider = GetComponent<Slider>();       
+        slider = GetComponent<Slider>();
     }
 
-    public void AddHealth(int value)
+    public void SetStartTotalHealth(float startValue)
     {
-        totalHealth += value;
-        currentHealth = totalHealth;
+        totalHealth = startValue;
+        currentHealth = startValue;
+    }
+    public void SetCurrentHealth(float value)
+    {
+        currentHealth = value;
+
+    }
+    private void Update()
+    {
+        UpdateUISlider();
     }
 
-    public void UpdateUISlider(int damage)
+    private void UpdateUISlider()
     {
-        currentHealth -= damage;
+        float total1 = currentHealth / totalHealth * 100;
+        int total= Mathf.RoundToInt(total1);
+
         slider.value = currentHealth / totalHealth;
-        uiText.text = (currentHealth / totalHealth * 100).ToString() + "%";
+        uiText.text = total.ToString() + "%";
     }
-
-
 }
