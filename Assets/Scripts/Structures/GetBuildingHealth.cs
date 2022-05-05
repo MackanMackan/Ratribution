@@ -12,7 +12,6 @@ public enum Level
 
 public class GetBuildingHealth : MonoBehaviour
 {
-
     public Level level;
 
     [SerializeField]
@@ -27,12 +26,11 @@ public class GetBuildingHealth : MonoBehaviour
 
     public float totalHealth;
 
-
     void Start()
     {
         level = Level.Level_1;
         destructionCount = FindObjectOfType<DestructionCount>();
-        destructionCount.SetStartTotalHealth(GetCurrentHealth());      
+        RestartBuildingHealth();    
     }
 
     void Update()
@@ -51,6 +49,7 @@ public class GetBuildingHealth : MonoBehaviour
             if (totalHealth <= 0)
             {
                 level = Level.Level_2;
+                RestartBuildingHealth();
             }
         }
 
@@ -61,6 +60,7 @@ public class GetBuildingHealth : MonoBehaviour
             if (totalHealth <= 0)
             {
                 level = Level.Level_3;
+                RestartBuildingHealth();
             }
         }
 
@@ -87,5 +87,10 @@ public class GetBuildingHealth : MonoBehaviour
             if (buildingCrumble != null)
                 totalHealth += buildingCrumble.health;
         }
+    }
+
+    public void RestartBuildingHealth()
+    {
+        destructionCount.SetStartTotalHealth(GetCurrentHealth());
     }
 }

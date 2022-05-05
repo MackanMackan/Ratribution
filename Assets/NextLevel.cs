@@ -35,7 +35,7 @@ public class NextLevel : MonoBehaviour
             GateOpen(gate2);
         }
 
-        if (getLevelHealth.level == Level.Level_4 || Input.GetMouseButtonDown (1))
+        if (getLevelHealth.level == Level.Level_4)
         {
             winUI.SetActive(true);
            
