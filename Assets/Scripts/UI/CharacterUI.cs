@@ -1,19 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CharacterUI : MonoBehaviour
 {
     Slider slider;
-    float currentHealth;
-    public CharacterHealth characterHealth;
 
     private void Start()
 
     {
         slider = GetComponent<Slider>();
-        currentHealth = characterHealth.GetHealth();
+        slider.value = CharacterHealth.GetHealth();
+        CharacterHealth.onHitPlayer += UpdateUISlider;
     }
 
     private void Update()
@@ -24,9 +21,8 @@ public class CharacterUI : MonoBehaviour
         
     }
 
-    public void UpdateUISlider(int damage)
+    public void UpdateUISlider()
     {
-        currentHealth -= damage;
-        slider.value = currentHealth;       
+        slider.value = CharacterHealth.GetHealth();       
     }
 }

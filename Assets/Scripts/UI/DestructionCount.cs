@@ -34,9 +34,11 @@ public class DestructionCount : MonoBehaviour
 
     private void UpdateUISlider()
     {
+        float total1 = currentHealth / totalHealth * 100;
+        int total= Mathf.RoundToInt(total1);
 
         slider.value = currentHealth / totalHealth;
-        uiText.text = (currentHealth / totalHealth * 100).ToString() + "%";
+        uiText.text = total.ToString() + "%";
     }
 
 

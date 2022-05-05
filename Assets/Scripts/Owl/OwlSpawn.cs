@@ -16,9 +16,12 @@ public class OwlSpawn : MonoBehaviour
 
     private GameObject[] beginOwls;
 
+    GetBuildingHealth getLevelHealth;
+
     void Start()
     {
         addOwls();
+        getLevelHealth = FindObjectOfType<GetBuildingHealth>();
     }
 
     private void addOwls()
@@ -33,6 +36,12 @@ public class OwlSpawn : MonoBehaviour
     void Update()
     {
         SpawnOwl();
+
+        if (getLevelHealth.level == Level.Level_4 || Input.GetMouseButtonDown(1))
+        {
+            KillOwl();
+            maxOwl = 0;
+        }
     }
 
     private void SpawnOwl()
@@ -49,5 +58,14 @@ public class OwlSpawn : MonoBehaviour
             numberOfOwls.Add(enemySpawn);
         }
     }
+
+    private void KillOwl()
+    {
+        foreach (GameObject owl in numberOfOwls)
+        {
+            Destroy(owl);
+        }
+    }
 }
+
     

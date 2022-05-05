@@ -35,17 +35,16 @@ public class NextLevel : MonoBehaviour
             GateOpen(gate2);
         }
 
-        if (getLevelHealth.level == Level.Level_4 || Input.GetMouseButtonDown(1))
+        if (getLevelHealth.level == Level.Level_4)
         {
             winUI.SetActive(true);
-            Time.timeScale = 0;
+            Time.timeScale = 0.3f;
 
         }
     }
 
     public void GateOpen(GameObject gate)
     {
-        Debug.Log("Hallå");
         gate.transform.Translate(Vector3.up * speed * Time.deltaTime);
     }
 }
