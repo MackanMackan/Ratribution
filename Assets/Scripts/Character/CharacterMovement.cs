@@ -191,7 +191,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void PushCharacterForwardWhenSlamming()
     {
-        rb.AddForceAtPosition(slamForce * transform.forward * 100, transform.position, ForceMode.Impulse);
+        rb.AddForceAtPosition(slamForce * camCompensatedMoveDir * 100, transform.position, ForceMode.Impulse);
     }
 
     private void GroundCheck()
