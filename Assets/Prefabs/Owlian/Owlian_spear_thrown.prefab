@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7806060639911389233}
   - component: {fileID: 4701971189383072508}
   - component: {fileID: 7022538279336684909}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Owlian_spear_thrown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,6 +78,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 8062271337342956702}
   throwForce: 20
+  spearCollider: {fileID: 7022538279336684909}
 --- !u!65 &7022538279336684909
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -102,7 +103,7 @@ GameObject:
   - component: {fileID: 2213141426225903185}
   - component: {fileID: 3918561836530093851}
   - component: {fileID: 523610645244177295}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,22 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpearFly : MonoBehaviour
 {
     [SerializeField] Rigidbody rb;
     [SerializeField] float throwForce = 10;
+    [SerializeField] BoxCollider spearCollider;
     void Start()
     {
         Vector3 direction = CharacterGetter.PLAYER.transform.position - transform.position;
         direction.Normalize();
-        direction.y = 1.2f;
+        direction.y = Random.Range(0.5f,0.7f);
         rb.AddForce(direction * throwForce, ForceMode.VelocityChange);
-    }
-    private void Update()
-    {
         transform.LookAt(CharacterGetter.PLAYER.transform);
-        transform.eulerAngles = new Vector3(transform.eulerAngles.x + 90, transform.eulerAngles.y, transform.eulerAngles.z); 
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x + 90, transform.eulerAngles.y, transform.eulerAngles.z);
+        Destroy(gameObject,10);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,6 +22,9 @@ public class SpearFly : MonoBehaviour
         {
             transform.SetParent(other.transform);
             CharacterHealth.DamageMe(2);
+            rb.isKinematic = true;
+            rb.velocity = Vector3.zero;
+            spearCollider.enabled = false;
         }
     }
 }
