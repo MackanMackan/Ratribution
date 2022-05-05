@@ -10,6 +10,7 @@ public class CharacterMovement : MonoBehaviour
     public float playerMoveForce;
     public float runningMoveForce = 10.0f;
     public float punchingMoveForce = 2.0f;
+    public float slamForce;
     public float turnSpeed = 6.0f;
     public float jumpPower = 50.0f;
     public float rayDistance = 1.0f;
@@ -24,6 +25,8 @@ public class CharacterMovement : MonoBehaviour
 
     private Vector2 moveDir;
     private Vector3 resetV;
+    private Vector3 camCompensatedMoveDir;
+
 
     private float targetAngleY;
     private float targetAngleX;
@@ -93,43 +96,48 @@ public class CharacterMovement : MonoBehaviour
         //Rotate towards input dir.
         targetAngleY = Mathf.Atan2(GetMoveInput().x, GetMoveInput().z) * Mathf.Rad2Deg + CharaCam.eulerAngles.y;
     }
+    private void Rotation()
+    {
+        if (moveDir != Vector2.zero)
+        {
+            camCompensatedMoveDir = Quaternion.Euler(targetAngleX, targetAngleY, 0f) * Vector3.forward;
+            Quaternion q = Quaternion.LookRotation(camCompensatedMoveDir, Vector3.up);
+            transform.localRotation = Quaternion.Lerp(transform.rotation, q, Time.deltaTime * turnSpeed);
+        }
+    }
     private void SlopeCompensation()
     {
         //Calculate surface angle and use it to compensate rotation
         RaycastHit hit;
         RaycastHit compareHit;
 
-        //CurrentPos Angle Ray
+        //CurrentPos Angle Ray debug
         //Debug.DrawRay(transform.position, Vector3.down, Color.green, 3f);
+        //
+        ////ComparisonRay debug
+        //Debug.DrawRay(transform.forward + Vector3.up + Vector3.forward, Vector3.down, Color.blue, rayDistance);
 
-        //ComparisonRay
-        //Debug.DrawRay(transform.localPosition + new Vector3(0,0,2), Vector3.down, Color.blue, 6f);
-
-        if (Physics.Raycast(transform.position,Vector3.down , out hit, groundLayer) && isGrounded)
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, groundLayer) && isGrounded)
         {
             targetAngleX = Mathf.Atan2(hit.normal.x, hit.normal.y) * Mathf.Rad2Deg;
         }
 
-        //Physics.Raycast(transform.localPosition + new Vector3(0, 1, 2), Vector3.down, out compareHit,3f, groundLayer);
-        //if (hit.normal.y < compareHit.normal.y)
+        //if (Physics.Raycast(transform.forward + Vector3.up + Vector3.forward, Vector3.down, out compareHit, rayDistance, groundLayer))
         //{
-        //    Debug.Log("hej");
-        //    targetAngleX *= -1;
+        //    if (compareHit.normal.y > transform.position.y)
+        //    {
+        //        Debug.Log("uppför");
+        //        Debug.Log(compareHit.distance);
+        //    }
+        //    else if (compareHit.normal.y < transform.position.y)
+        //    {
+        //        Debug.Log("Nerför");
+        //        Debug.Log(compareHit.distance);
+        //    }
         //}
 
         //Clamps targetangle to avoid extreme rotations
         targetAngleX = Mathf.Clamp(targetAngleX, -15f, 15f);
-        //Debug.Log(targetAngleX);
-
-    }
-    private void Rotation()
-    {
-        if (moveDir != Vector2.zero)
-        {
-            Vector3 m = Quaternion.Euler(targetAngleX, targetAngleY, 0f) * Vector3.forward;
-            Quaternion q = Quaternion.LookRotation(m, Vector3.up);
-            transform.localRotation = Quaternion.Lerp(transform.rotation, q, Time.deltaTime * turnSpeed);
-        }
     }
 
     private void CheckIfPlayerIsFallingAndPlayAnimation()
@@ -153,14 +161,14 @@ public class CharacterMovement : MonoBehaviour
         Rotation();
         GroundCheck();
 
-        Vector3 m = Quaternion.Euler(0f, targetAngleY, 0f) * Vector3.forward;
+        //Vector3 m = Quaternion.Euler(0f, targetAngleY, 0f) * Vector3.forward;
         resetV = new Vector3(0, rb.velocity.y, 0);
         
         if (GetMoveInput().magnitude >= 0.1f)
         {
-            m = playerMoveForce * Time.deltaTime * m * 100;
+            camCompensatedMoveDir = playerMoveForce * Time.deltaTime * camCompensatedMoveDir * 100;
 
-            rb.velocity = new Vector3(m.x, rb.velocity.y, m.z);
+            rb.velocity = new Vector3(camCompensatedMoveDir.x, rb.velocity.y, camCompensatedMoveDir.z);
             animator.SetBool("isRunning", true);
         }
         else
@@ -179,6 +187,11 @@ public class CharacterMovement : MonoBehaviour
             animator.SetTrigger("JumpT");
             rb.AddForceAtPosition(jumpPower * Vector3.up * 100, transform.position, ForceMode.Impulse);
         }
+    }
+
+    public void PushCharacterForwardWhenSlamming()
+    {
+        rb.AddForceAtPosition(slamForce * camCompensatedMoveDir * 100, transform.position, ForceMode.Impulse);
     }
 
     private void GroundCheck()

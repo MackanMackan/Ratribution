@@ -18,7 +18,6 @@ public class CharacterAttack : MonoBehaviour
     [SerializeField] GameObject animatorParentObj;
 
     private Animator animator;
-    private Rigidbody rb;
 
     private void Awake()
     {
@@ -36,7 +35,6 @@ public class CharacterAttack : MonoBehaviour
 
         characterMovement = GetComponent<CharacterMovement>();
         animator = animatorParentObj.GetComponent<Animator>();
-        rb = GetComponent<Rigidbody>();
 
         fireInput.started += StartPunching;
         fireInput.canceled += StopPunching;
@@ -78,19 +76,16 @@ public class CharacterAttack : MonoBehaviour
             Debug.Log("Kick");
             animator.SetTrigger("KickT");
         }
-        else if (randomNum >= 90)
+        else if (randomNum >= 85)
         {
             Debug.Log("Slam");
             animator.SetTrigger("SlamT");
         }
-
     }
     public void ActivateSlamTrigger()
     {
-        Debug.Log("Det funkade!!!!");
         hitterSlam.SetActive(true);
-
-        rb.AddForce(500 * Vector3.forward);
+        characterMovement.PushCharacterForwardWhenSlamming();
     }
 
 }
