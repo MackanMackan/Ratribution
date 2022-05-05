@@ -35,10 +35,12 @@ public class NextLevel : MonoBehaviour
             GateOpen(gate2);
         }
 
-        if (getLevelHealth.level == Level.Level_4)
+        if (getLevelHealth.level == Level.Level_4 || Input.GetMouseButtonDown (1))
         {
             winUI.SetActive(true);
+           
             Time.timeScale = 0.3f;
+            Time.fixedDeltaTime = 0.03F * Time.timeScale;
 
         }
     }

@@ -40,6 +40,4 @@ public class DestructionCount : MonoBehaviour
         slider.value = currentHealth / totalHealth;
         uiText.text = total.ToString() + "%";
     }
-
-
 }
