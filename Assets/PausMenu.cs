@@ -19,12 +19,10 @@ public class PausMenu : MonoBehaviour
         {
             if (gameIsPaused)
             {
-                Debug.Log("Resumed");
                 Resume();
             }
             else
-            {
-                Debug.Log("Paused");
+            {             
                 Pause();
             }
         }
@@ -43,9 +41,16 @@ public class PausMenu : MonoBehaviour
         Time.timeScale = 0f;
         gameIsPaused = true;
     }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(1);
+        Time.timeScale = 1f;
+    }
     public void BackToMainMenu()
     {
-        SceneManager.LoadScene("0");
+        SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
     }
 
     public void QuitGame()
