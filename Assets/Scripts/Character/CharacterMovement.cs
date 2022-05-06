@@ -18,6 +18,7 @@ public class CharacterMovement : MonoBehaviour
 
     [Header("Bools")]
     [SerializeField] bool isGrounded;
+    [SerializeField] bool walkingUpSlope;
     
     [Header("Misc")]
     [SerializeField] GameObject animatorParentObj;
@@ -26,7 +27,6 @@ public class CharacterMovement : MonoBehaviour
     private Vector2 moveDir;
     private Vector3 resetV;
     private Vector3 camCompensatedMoveDir;
-
 
     private float targetAngleY;
     private float targetAngleX;
@@ -78,10 +78,14 @@ public class CharacterMovement : MonoBehaviour
         jumpInput.Disable();
     }
 
+    private void Update()
+    {
+        SlopeCompensation();
+    }
+
     private void FixedUpdate()
     {
         CameraLookRotation();
-        SlopeCompensation();
         Movement();
         CheckIfPlayerIsFallingAndPlayAnimation();
     }
@@ -110,31 +114,34 @@ public class CharacterMovement : MonoBehaviour
         //Calculate surface angle and use it to compensate rotation
         RaycastHit hit;
         RaycastHit compareHit;
+        Vector3 localOffset = new Vector3(0, 2, 10);
 
-        //CurrentPos Angle Ray debug
-        //Debug.DrawRay(transform.position, Vector3.down, Color.green, 3f);
-        //
-        ////ComparisonRay debug
-        //Debug.DrawRay(transform.forward + Vector3.up + Vector3.forward, Vector3.down, Color.blue, rayDistance);
+        //CurrentPos Angle Ray debug -- HIT
+        Debug.DrawRay(transform.position, Vector3.down, Color.green, 3f);
+        
 
+        ////CompareY debug -- COMPAREHIT
+        Debug.DrawRay(transform.TransformPoint(localOffset), Vector3.down, Color.yellow);
+
+        //Create surface angle
         if (Physics.Raycast(transform.position, Vector3.down, out hit, groundLayer) && isGrounded)
         {
             targetAngleX = Mathf.Atan2(hit.normal.x, hit.normal.y) * Mathf.Rad2Deg;
         }
 
-        //if (Physics.Raycast(transform.forward + Vector3.up + Vector3.forward, Vector3.down, out compareHit, rayDistance, groundLayer))
-        //{
-        //    if (compareHit.normal.y > transform.position.y)
-        //    {
-        //        Debug.Log("uppför");
-        //        Debug.Log(compareHit.distance);
-        //    }
-        //    else if (compareHit.normal.y < transform.position.y)
-        //    {
-        //        Debug.Log("Nerför");
-        //        Debug.Log(compareHit.distance);
-        //    }
-        //}
+        if (Physics.Raycast(transform.TransformPoint(localOffset), Vector3.down, out compareHit, groundLayer))
+        {
+            if (compareHit.normal.y > transform.position.y)
+            {
+                Debug.Log("uppför");
+                walkingUpSlope = true;
+            }
+            else if (compareHit.normal.y < transform.position.y)
+            {
+                Debug.Log("Nerför");
+                walkingUpSlope = false;
+            }
+        }
 
         //Clamps targetangle to avoid extreme rotations
         targetAngleX = Mathf.Clamp(targetAngleX, -15f, 15f);

@@ -17,4 +17,9 @@ public class AnimationEventSender : MonoBehaviour
     {
         characterAttack.ActivateSlamTrigger();
     }
+
+    public void PlayIntroLandingRoarSound()
+    {
+        ServiceLocator.GetAudioProvider().PlayOneShot("IntroRoar", transform.position, false);
+    }
 }
