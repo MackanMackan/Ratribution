@@ -11,6 +11,7 @@ public class PlayerDrop : MonoBehaviour
     public GameObject GO_player;
     public CinemachineVirtualCamera cinemachineVirtualCamera1;
     public CinemachineVirtualCamera cinemachineVirtualCamera2;
+    CharacterMovement characterMovement;
 
     private void Awake()
     {
@@ -18,6 +19,9 @@ public class PlayerDrop : MonoBehaviour
        GO_player = Instantiate(player, spawnPosition, Quaternion.identity);
        cinemachineVirtualCamera1.enabled = false ;
        cinemachineVirtualCamera2.enabled = false;
-
+        player = GameObject.FindGameObjectWithTag("Player");
+        characterMovement = player.GetComponent<CharacterMovement>();
+        characterMovement.playerMoveForce = 0;
     }
+
 }

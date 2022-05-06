@@ -37,7 +37,7 @@ public class OwlSpawn : MonoBehaviour
     {
         SpawnOwl();
 
-        if (getLevelHealth.level == Level.Level_4 || Input.GetMouseButtonDown(1))
+        if (getLevelHealth.level == Level.Level_4)
         {
             KillOwl();
             maxOwl = 0;

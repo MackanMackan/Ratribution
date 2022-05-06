@@ -6,12 +6,13 @@ using Cinemachine;
 public class GateFollow : MonoBehaviour
 {
     CinemachineVirtualCamera gateCam;
+    [SerializeField]
+    GameObject gate;
+
     void Start()
     {
-       
-        //gateCam = GetComponent<CinemachineVirtualCamera>();
-        //refPlayer = GameObject.FindGameObjectWithTag("Player");
-        //gateCam.LookAt = refPlayer.transform;
+        gateCam = GetComponent<CinemachineVirtualCamera>();
+        gateCam.LookAt = gate.transform;
+        gateCam.enabled = false;
     }
-
 }

@@ -14,9 +14,11 @@ public class CinemachineSwitch : MonoBehaviour
     private CinemachineVirtualCamera vCam2;
     [SerializeField]
     private CinemachineVirtualCamera vCam3;
+    float amplitude = 0.5f;
+    float frequency = 0.5f;
 
     private bool cam1 = true;
-
+     
     private void OnEnable()
     {
         action.Enable();
@@ -52,19 +54,24 @@ public class CinemachineSwitch : MonoBehaviour
         cam1 = !cam1;
     }
 
-    public IEnumerator GateCamera(GameObject gate)
+    public IEnumerator GateCamera(CinemachineVirtualCamera gateCam)
     {
         vCam2.enabled = false;
         vCam1.enabled = false;
-        vCam3.enabled = true;
+        gateCam.enabled = true;
 
-        CinemachineShake.Instance.BeginShake(2, 2, 4f);
+
+        gateCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = amplitude;
+        gateCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = frequency;
 
         yield return new WaitForSeconds(4);
 
+        gateCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
+        gateCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0;
+
         vCam2.enabled = true;
         vCam1.enabled = true;
-        vCam3.enabled = false;
+        gateCam.enabled = false;
 
         //TODO STOP MOVMENT for player and owls MW
 

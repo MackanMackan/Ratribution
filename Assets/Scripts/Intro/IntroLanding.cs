@@ -5,8 +5,6 @@ using Cinemachine;
 
 public class IntroLanding : MonoBehaviour
 {
-    public CharacterMovement characterMovement;
-
     [HideInInspector]
     public bool landing;
 
@@ -14,6 +12,9 @@ public class IntroLanding : MonoBehaviour
     public CinemachineVirtualCamera cinemachineVirtualCamera;
     public CinemachineVirtualCamera cinemachineVirtualCamera2;
     public CinemachineVirtualCamera cinemachineVirtualCameraIntro;
+
+    
+    public CharacterMovement characterMovement;
 
     private void Start()
     {
@@ -25,13 +26,13 @@ public class IntroLanding : MonoBehaviour
         {
             CinemachineShake.Instance.BeginShake(2, 2, 0.5f);
 
-
             StartCoroutine(BeginGame());
         }
     }
 
     IEnumerator BeginGame()
     {
+
         yield return new WaitForSeconds(2.75f);
 
         cinemachineVirtualCamera.enabled = true;
@@ -39,6 +40,10 @@ public class IntroLanding : MonoBehaviour
         cinemachineVirtualCamera2.enabled = true;
         cinemachineVirtualCameraIntro.enabled = false;
         trigger.enabled = false;
+
+        yield return new WaitForSeconds(2f);
+
         landing = true;
+             
     }
 }

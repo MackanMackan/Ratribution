@@ -7,8 +7,8 @@ using UnityEngine.InputSystem;
 public class CharacterMovement : MonoBehaviour
 {
     [Header("Floats")]
-    public float playerMoveForce;
-    public float runningMoveForce = 10.0f;
+    public float playerMoveForce ;
+    public float runningMoveForce= 10;
     public float punchingMoveForce = 2.0f;
     public float slamForce;
     public float turnSpeed = 6.0f;
@@ -42,6 +42,8 @@ public class CharacterMovement : MonoBehaviour
 
     [SerializeField] ParticleSystem jumpParticles;
 
+    IntroLanding introLanding;
+
     private void Awake()
     {
         playerControls = new PlayerInputActions();
@@ -53,6 +55,8 @@ public class CharacterMovement : MonoBehaviour
         moveInput.canceled += cntxt => moveDir = Vector2.zero;
 
         jumpInput.performed += Jump;
+
+        introLanding = FindObjectOfType<IntroLanding>();
     }
 
     private void Start()
@@ -64,6 +68,7 @@ public class CharacterMovement : MonoBehaviour
 
         //Sets stronger gravity for all rigidbodies in the scene
         Physics.gravity = new Vector3(0, -20f, 0);
+        OnDisable();
     }
 
     private void OnEnable()
@@ -88,6 +93,14 @@ public class CharacterMovement : MonoBehaviour
         CameraLookRotation();
         Movement();
         CheckIfPlayerIsFallingAndPlayAnimation();
+    }
+
+    private void Update()
+    {
+        if (introLanding.landing)
+        {
+            OnEnable();
+        }
     }
 
     private Vector3 GetMoveInput()

@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class NextLevel : MonoBehaviour
 {
+    [SerializeField]
+    CinemachineVirtualCamera gateCam1;
+    [SerializeField]
+    CinemachineVirtualCamera gateCam2;
     [SerializeField]
     GameObject gate1;
     [SerializeField]
@@ -35,7 +40,7 @@ public class NextLevel : MonoBehaviour
 
             if (level)
             {
-                StartCoroutine(cinemachineSwitch.GateCamera(gate1));
+                StartCoroutine(cinemachineSwitch.GateCamera(gateCam1));
                 level = false;
             }
         }
@@ -46,7 +51,7 @@ public class NextLevel : MonoBehaviour
 
             if (level == false)
             {
-                StartCoroutine(cinemachineSwitch.GateCamera(gate2));
+                StartCoroutine(cinemachineSwitch.GateCamera(gateCam2));
                 level = true;
             }
         }
