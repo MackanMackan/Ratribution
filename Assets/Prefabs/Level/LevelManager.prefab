@@ -187,6 +187,7 @@ GameObject:
   - component: {fileID: 5051392223143444789}
   - component: {fileID: 5051392223143444788}
   - component: {fileID: 3082905140652077179}
+  - component: {fileID: 1913425048824712198}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -247,6 +248,21 @@ MonoBehaviour:
   gate1: {fileID: 5051392223527236397}
   gate2: {fileID: 5051392224411468515}
   winUI: {fileID: 0}
+--- !u!114 &1913425048824712198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5051392223143444791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71d6d9609dae67548b31db36687fb2f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owlSpawn: {fileID: 7754381767254154807, guid: dbe0690821042244f98a77a8adf28904, type: 3}
+  cinemachineSwitch: {fileID: 6853871621875950783, guid: abf1ff1046aba4947b93cce2ba3e0d42, type: 3}
+  characterMovement: {fileID: 5711385316259376906, guid: 36c504b35273c3142a8f599ce9593765, type: 3}
 --- !u!1 &5051392223743340686
 GameObject:
   m_ObjectHideFlags: 0

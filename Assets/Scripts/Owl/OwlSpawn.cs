@@ -12,7 +12,8 @@ public class OwlSpawn : MonoBehaviour
     public float spawnRate;
 
     public List<Transform> spawnPositionList = new List<Transform>();
-    List<GameObject> numberOfOwls = new List<GameObject>();
+    [HideInInspector]
+    public List<GameObject> numberOfOwls = new List<GameObject>();
 
     private GameObject[] beginOwls;
 
