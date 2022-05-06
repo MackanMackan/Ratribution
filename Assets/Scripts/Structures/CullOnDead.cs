@@ -9,16 +9,16 @@ public class CullOnDead : MonoBehaviour
     StructurePiece structurePiece;
     void Start()
     {
-        if(transform.childCount != 0)
-        {
-            buildingDestroy = GetComponent<BuildingDestroy>();
-            buildingDestroy.onDead += Cull;
-        }
-        else
-        {
+        //if(transform.childCount != 0)
+        //{
+        //    buildingDestroy = GetComponent<BuildingDestroy>();
+        //    buildingDestroy.onDead += Cull;
+        //}
+        //else
+        //{
             structurePiece = GetComponent<StructurePiece>();
             structurePiece.onDead += Cull;
-        }
+       // }
     }
 
     public void Cull()

@@ -8,6 +8,7 @@ public class BuildingCrumble : MonoBehaviour
 {
     public int health;
     [SerializeField] List<Transform> children;
+    [SerializeField] List<Transform> nonImporatantChildren;
     
     float amplitude = 2;
     
@@ -15,11 +16,25 @@ public class BuildingCrumble : MonoBehaviour
     
     float time = 0.4f;
     void Start()
-    {   
+    {
+        foreach (var deadChild in nonImporatantChildren)
+        {
+            children.Remove(deadChild);
+        }
+
         foreach (var child in children)
         {
-            child.GetComponent<StructurePiece>().onDamageBuilding += DamageMe;
-        }                                 
+            try
+            {
+                child.GetComponent<StructurePiece>().onDamageBuilding += DamageMe;
+                
+            }
+            catch
+            {
+                Debug.LogError("NOTFOUND");
+                nonImporatantChildren.Add(child);
+            }
+        }  
     }
 
     public void DamageMe(int damage)
@@ -27,7 +42,6 @@ public class BuildingCrumble : MonoBehaviour
         damage = Mathf.Min(health, damage);
 
         health -= damage;
-
         if (health <= 0)
         {
             DestroyBuilding();
