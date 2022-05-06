@@ -20,6 +20,7 @@ public class AnimationEventSender : MonoBehaviour
 
     public void PlayIntroLandingRoarSound()
     {
+        Debug.Log("morr");
         ServiceLocator.GetAudioProvider().PlayOneShot("IntroRoar", transform.position, false);
     }
 }

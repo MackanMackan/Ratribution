@@ -143,12 +143,12 @@ public class CharacterMovement : MonoBehaviour
         {
             if (compareHit.normal.y > transform.position.y)
             {
-                Debug.Log("uppför");
+                //Debug.Log("uppför");
                 walkingUpSlope = true;
             }
             else if (compareHit.normal.y < transform.position.y)
             {
-                Debug.Log("Nerför");
+                //Debug.Log("Nerför");
                 walkingUpSlope = false;
             }
         }
