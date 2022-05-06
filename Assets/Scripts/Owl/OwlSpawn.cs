@@ -9,7 +9,8 @@ public class OwlSpawn : MonoBehaviour
     int maxOwl = 70;
     public static int spawnOwlcounter;
     float nextSpawn;
-    public float spawnRate;
+    public int spawnRate;
+    public float spawnTimer;
 
     public List<Transform> spawnPositionList = new List<Transform>();
     [HideInInspector]
@@ -50,13 +51,15 @@ public class OwlSpawn : MonoBehaviour
     {
         if (Time.time > nextSpawn && spawnOwlcounter < maxOwl)
         {
-            nextSpawn = Time.time + spawnRate;
+            nextSpawn = Time.time + spawnTimer;
             Vector3 spawnPosition = spawnPositionList[Random.Range(0, spawnPositionList.Count)].position;
-            
-            GameObject enemySpawn = Instantiate(owl, spawnPosition, Quaternion.identity);
-            spawnOwlcounter++;
 
-            numberOfOwls.Add(enemySpawn);
+            for (int i = 0; i < spawnRate; i++)
+            {
+                GameObject enemySpawn = Instantiate(owl, spawnPosition, Quaternion.identity);
+                spawnOwlcounter++;
+                numberOfOwls.Add(enemySpawn);
+            }
         }
     }
 
