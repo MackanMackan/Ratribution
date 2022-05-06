@@ -10,7 +10,7 @@ public class OwlianKill : MonoBehaviour, IDestructable
     AIStateMachine stateMachine;
     Rigidbody owlRigidBody;
     NavMeshAgent agent;
-    [SerializeField] CapsuleCollider col1;
+    [SerializeField] CapsuleCollider colTrigg;
     [SerializeField] CapsuleCollider col2;
     [SerializeField] List<GameObject> childList;
     [SerializeField] List<Rigidbody> rigidBodies;
@@ -30,7 +30,7 @@ public class OwlianKill : MonoBehaviour, IDestructable
         stateMachine.enabled = false;
         owlRigidBody.isKinematic = false;
         animHandler.DisableAnimator();
-        col1.enabled = false;
+        colTrigg.enabled = false;
         col2.enabled = false;
         featherParticles.SetActive(true);
         foreach (var child in childList)
