@@ -86,6 +86,11 @@ public class CharacterMovement : MonoBehaviour
     private void Update()
     {
         SlopeCompensation();
+
+        if (introLanding.landing)
+        {
+            OnEnable();
+        }
     }
 
     private void FixedUpdate()
@@ -93,14 +98,6 @@ public class CharacterMovement : MonoBehaviour
         CameraLookRotation();
         Movement();
         CheckIfPlayerIsFallingAndPlayAnimation();
-    }
-
-    private void Update()
-    {
-        if (introLanding.landing)
-        {
-            OnEnable();
-        }
     }
 
     private Vector3 GetMoveInput()
