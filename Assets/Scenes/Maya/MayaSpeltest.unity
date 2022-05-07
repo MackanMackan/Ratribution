@@ -2887,25 +2887,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 118880151592858291, guid: 8fd62162859fc3849a6b4f814abdae4b, type: 3}
   m_PrefabInstance: {fileID: 469626742}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &481124333 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5051392223143444791, guid: 58d7507c5476cae42a8cbd29a0e72b3d, type: 3}
+--- !u!114 &481124335 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1913425048824712198, guid: 58d7507c5476cae42a8cbd29a0e72b3d, type: 3}
   m_PrefabInstance: {fileID: 5051392223335128794}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &481124334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 481124333}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71d6d9609dae67548b31db36687fb2f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  owlSpawn: {fileID: 1343130888}
-  cinemachineSwitch: {fileID: 1255843544}
 --- !u!1001 &490915665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4518,6 +4510,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 926543953}
     - target: {fileID: 6853871621875950783, guid: abf1ff1046aba4947b93cce2ba3e0d42, type: 3}
+      propertyPath: pauseMovment
+      value: 
+      objectReference: {fileID: 481124335}
+    - target: {fileID: 6853871621875950783, guid: abf1ff1046aba4947b93cce2ba3e0d42, type: 3}
       propertyPath: action.m_SingletonActionBindings.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -5076,6 +5072,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1915802546669293359, guid: 58d7507c5476cae42a8cbd29a0e72b3d, type: 3}
   m_PrefabInstance: {fileID: 5051392223335128794}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &814495224 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5051392222537427746, guid: 58d7507c5476cae42a8cbd29a0e72b3d, type: 3}
+  m_PrefabInstance: {fileID: 5051392223335128794}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &815957724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7879,17 +7886,6 @@ Transform:
   m_Father: {fileID: 1133519958}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1255843544 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6853871621875950783, guid: abf1ff1046aba4947b93cce2ba3e0d42, type: 3}
-  m_PrefabInstance: {fileID: 692179752}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48e22e41997202c47b136c53ea75dd3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1272634928 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7206564282872755860, guid: 52365cc8ed127e345a501d83242a9989, type: 3}
@@ -29914,10 +29910,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1913425048824712198, guid: 58d7507c5476cae42a8cbd29a0e72b3d, type: 3}
+      propertyPath: owlSpawn
+      value: 
+      objectReference: {fileID: 1343130888}
     - target: {fileID: 3082905140652077179, guid: 58d7507c5476cae42a8cbd29a0e72b3d, type: 3}
       propertyPath: winUI
       value: 
       objectReference: {fileID: 379916496}
+    - target: {fileID: 3082905140652077179, guid: 58d7507c5476cae42a8cbd29a0e72b3d, type: 3}
+      propertyPath: gateCam1
+      value: 
+      objectReference: {fileID: 926543953}
+    - target: {fileID: 3082905140652077179, guid: 58d7507c5476cae42a8cbd29a0e72b3d, type: 3}
+      propertyPath: gateCam2
+      value: 
+      objectReference: {fileID: 814495224}
     - target: {fileID: 5051392222537427746, guid: 58d7507c5476cae42a8cbd29a0e72b3d, type: 3}
       propertyPath: m_Priority
       value: 0

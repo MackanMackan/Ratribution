@@ -21,7 +21,7 @@ public class StructurePiece : MonoBehaviour, IDestructable
     public event onDead onDead;
     public event onDamageBuilding onDamageBuilding;
 
-    private MeshCollider meshCollider;
+    private Collider meshCollider;
     private Rigidbody rigidBody;
     private GameObject latestHitRecievedFrom;
     [SerializeField] GameObject player;
@@ -35,7 +35,7 @@ public class StructurePiece : MonoBehaviour, IDestructable
     {
         StartCoroutine(nameof(GetPlayerRef));
         onHit += CheckIfDead;
-        meshCollider = GetComponent<MeshCollider>();
+        meshCollider = GetComponent<Collider>();
         rigidBody = GetComponent<Rigidbody>();
         
     }
@@ -88,6 +88,7 @@ public class StructurePiece : MonoBehaviour, IDestructable
     {
         if (rigidBody == null) { return; }
         rigidBody.isKinematic = false;
+        gameObject.layer = LayerMask.NameToLayer("Destroyed");
         isDead = true;
         health = 0;
     }

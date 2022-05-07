@@ -38,7 +38,7 @@ public class CharacterMovement : MonoBehaviour
     private InputAction jumpInput;
 
     private Rigidbody rb;
-    private Animator animator;
+    public Animator animator;
 
     [SerializeField] ParticleSystem jumpParticles;
 
@@ -67,7 +67,7 @@ public class CharacterMovement : MonoBehaviour
         animator = animatorParentObj.GetComponent<Animator>();
 
         //Sets stronger gravity for all rigidbodies in the scene
-        Physics.gravity = new Vector3(0, -20f, 0);
+        Physics.gravity = new Vector3(0, -40f, 0);
         OnDisable();
     }
 
@@ -85,8 +85,6 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
-        SlopeCompensation();
-
         if (introLanding.landing)
         {
             OnEnable();
@@ -95,15 +93,53 @@ public class CharacterMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        CameraLookRotation();
-        Movement();
         CheckIfPlayerIsFallingAndPlayAnimation();
+        Movement();
     }
 
     private Vector3 GetMoveInput()
     {
         return new Vector3(moveDir.x, 0, moveDir.y);
 
+    }
+
+    private void SlopeCompensation()
+    {
+        //Calculate surface angle and use it to compensate rotation
+        RaycastHit hit;
+        RaycastHit compareHit;
+        Vector3 localOffset = new Vector3(0, 20, 10);
+
+        //CurrentPos Angle Ray debug -- HIT
+        Debug.DrawRay(transform.position, Vector3.down, Color.green, 3f);
+        
+        ////CompareY debug -- COMPAREHIT
+        Debug.DrawRay(transform.TransformPoint(localOffset), Vector3.down * 10, Color.yellow);
+
+        //Create surface angle
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, groundLayer) && isGrounded)
+        {
+            targetAngleX = Mathf.Atan2(hit.normal.x, hit.normal.y) * Mathf.Rad2Deg;
+        }
+
+        //Check if heading up slope or down slope
+        if (Physics.Raycast(transform.TransformPoint(localOffset), Vector3.down, out compareHit, groundLayer))
+        {
+            //Height check
+            if (compareHit.point.y > transform.position.y)
+            {
+                Debug.Log("uppför" + (compareHit.point.y - transform.position.y));
+                walkingUpSlope = true;
+            }
+            else if (compareHit.point.y < transform.position.y)
+            {
+                Debug.Log("Nerför" + (compareHit.point.y - transform.position.y));
+                walkingUpSlope = false;
+            }
+        }
+
+        //Clamps targetangle to avoid extreme rotations
+        targetAngleX = Mathf.Clamp(targetAngleX, -30f, 30f);
     }
     private void CameraLookRotation()
     {
@@ -118,43 +154,6 @@ public class CharacterMovement : MonoBehaviour
             Quaternion q = Quaternion.LookRotation(camCompensatedMoveDir, Vector3.up);
             transform.localRotation = Quaternion.Lerp(transform.rotation, q, Time.deltaTime * turnSpeed);
         }
-    }
-    private void SlopeCompensation()
-    {
-        //Calculate surface angle and use it to compensate rotation
-        RaycastHit hit;
-        RaycastHit compareHit;
-        Vector3 localOffset = new Vector3(0, 2, 10);
-
-        //CurrentPos Angle Ray debug -- HIT
-        Debug.DrawRay(transform.position, Vector3.down, Color.green, 3f);
-        
-
-        ////CompareY debug -- COMPAREHIT
-        Debug.DrawRay(transform.TransformPoint(localOffset), Vector3.down, Color.yellow);
-
-        //Create surface angle
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, groundLayer) && isGrounded)
-        {
-            targetAngleX = Mathf.Atan2(hit.normal.x, hit.normal.y) * Mathf.Rad2Deg;
-        }
-
-        if (Physics.Raycast(transform.TransformPoint(localOffset), Vector3.down, out compareHit, groundLayer))
-        {
-            if (compareHit.normal.y > transform.position.y)
-            {
-                //Debug.Log("uppför");
-                walkingUpSlope = true;
-            }
-            else if (compareHit.normal.y < transform.position.y)
-            {
-                //Debug.Log("Nerför");
-                walkingUpSlope = false;
-            }
-        }
-
-        //Clamps targetangle to avoid extreme rotations
-        targetAngleX = Mathf.Clamp(targetAngleX, -15f, 15f);
     }
 
     private void CheckIfPlayerIsFallingAndPlayAnimation()
@@ -175,10 +174,11 @@ public class CharacterMovement : MonoBehaviour
 
     private void Movement()
     {
+        SlopeCompensation();
+        CameraLookRotation();
         Rotation();
         GroundCheck();
 
-        //Vector3 m = Quaternion.Euler(0f, targetAngleY, 0f) * Vector3.forward;
         resetV = new Vector3(0, rb.velocity.y, 0);
         
         if (GetMoveInput().magnitude >= 0.1f)
@@ -191,7 +191,7 @@ public class CharacterMovement : MonoBehaviour
         else
         {
             //Disney On Ice hate campaign
-            rb.velocity = Vector3.Lerp(rb.velocity, resetV, stopSpeed * Time.deltaTime);
+            rb.velocity = resetV;
             animator.SetBool("isRunning", false);
         }
     }

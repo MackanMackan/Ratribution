@@ -8,7 +8,7 @@ public class StructurePieceBreakConnection : MonoBehaviour
     [SerializeField] bool isBottomPiece;
     private void Start()
     {
-        if(!isBottomPiece)
+        if(!isBottomPiece && mainStabilityPiece != null)
             mainStabilityPiece.GetComponent<StructurePiece>().onDead += MakeMeFallOnConnectionLost;
     }
     private void MakeMeFallOnConnectionLost()
