@@ -1357,7 +1357,7 @@ MonoBehaviour:
   punchingMoveForce: 2.75
   slamForce: 10
   turnSpeed: 6
-  jumpPower: 2
+  jumpPower: 4
   rayDistance: 0.5
   stopSpeed: 5
   isGrounded: 0
@@ -1366,6 +1366,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  animator: {fileID: 0}
   jumpParticles: {fileID: 2225083491879096424}
 --- !u!114 &5711385316259376908
 MonoBehaviour:
@@ -2105,6 +2106,10 @@ PrefabInstance:
       propertyPath: gizmoSizeSplit
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 328618384865170399, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
 --- !u!1 &381039934627626682 stripped
@@ -2203,6 +2208,10 @@ PrefabInstance:
     - target: {fileID: 328618384865170398, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
       propertyPath: gizmoSizeSplit
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 328618384865170399, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
@@ -2448,6 +2457,10 @@ PrefabInstance:
     - target: {fileID: 328618384865170398, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
       propertyPath: gizmoSizeSplit
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 328618384865170399, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc12b95e2fe24df4883f0490e19a794f, type: 3}

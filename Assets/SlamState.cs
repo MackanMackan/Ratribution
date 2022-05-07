@@ -15,7 +15,6 @@ public class SlamState : StateMachineBehaviour
         attackScript = player.GetComponent<CharacterAttack>();
         characterMovement = player.GetComponent<CharacterMovement>();   
         characterMovement.playerMoveForce = 0;
-        //attackScript.hitterSlam.SetActive(true);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -28,7 +27,14 @@ public class SlamState : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         attackScript.hitterSlam.SetActive(false);
-        characterMovement.playerMoveForce = characterMovement.runningMoveForce;
+        if (characterMovement.animator.GetBool("isPunching"))
+        {
+            characterMovement.playerMoveForce = characterMovement.punchingMoveForce;
+        }
+        else
+        {
+            characterMovement.playerMoveForce = characterMovement.runningMoveForce;
+        }
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

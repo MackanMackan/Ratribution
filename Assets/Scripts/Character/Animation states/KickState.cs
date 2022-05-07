@@ -28,7 +28,16 @@ public class KickState : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         attackScript.hitterKick.SetActive(false);
-        characterMovement.playerMoveForce = characterMovement.runningMoveForce;
+        if (characterMovement.animator.GetBool("isPunching"))
+        {
+            Debug.Log("Let's keep punching");
+            characterMovement.playerMoveForce = characterMovement.punchingMoveForce;
+        }
+        else
+        {
+            Debug.Log("Back to running...");
+            characterMovement.playerMoveForce = characterMovement.runningMoveForce;
+        }
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

@@ -70,7 +70,6 @@ public class CharacterAttack : MonoBehaviour
     private void DiceRollForAttackVariations()
     {
         int randomNum = Random.Range(1, 100);
-        Debug.Log("Diceroll");
         if (randomNum <= 5)
         {
             Debug.Log("Kick");
