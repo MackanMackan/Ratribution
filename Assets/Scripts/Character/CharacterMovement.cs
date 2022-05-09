@@ -74,7 +74,7 @@ public class CharacterMovement : MonoBehaviour
         OnDisable();
     }
 
-    private void OnEnable()
+    public void OnEnable()
     {
         moveInput.Enable();
         jumpInput.Enable();
