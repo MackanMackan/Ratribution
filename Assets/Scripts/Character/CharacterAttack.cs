@@ -8,6 +8,7 @@ public class CharacterAttack : MonoBehaviour
     private PlayerInputActions playerControls;
     private InputAction fireInput;
     private InputAction fire2Input;
+    private InputAction rollInput;
 
     private CharacterMovement characterMovement;
 
@@ -25,6 +26,7 @@ public class CharacterAttack : MonoBehaviour
         playerControls = new PlayerInputActions();
         fireInput = playerControls.Player.Fire;
         fire2Input = playerControls.Player.Fire2;
+        rollInput = playerControls.Player.Roll;
     }
 
     private void Start()
@@ -40,18 +42,21 @@ public class CharacterAttack : MonoBehaviour
 
         fireInput.started += StartPunching;
         fireInput.canceled += StopPunching;
+        rollInput.performed += ActivateRollHitter;
     }
 
     private void OnEnable()
     {
         fireInput.Enable();
         fire2Input.Enable();
+        rollInput.Enable();
     }
 
     private void OnDisable()
     {
         fireInput.Disable();
         fireInput.Disable();
+        rollInput.Disable();
     }
 
     private void StartPunching(InputAction.CallbackContext callbackContext)
@@ -74,15 +79,26 @@ public class CharacterAttack : MonoBehaviour
         int randomNum = Random.Range(1, 100);
         if (randomNum <= 5)
         {
-            Debug.Log("Kick");
             animator.SetTrigger("KickT");
         }
         else if (randomNum >= 85)
         {
-            Debug.Log("Slam");
             animator.SetTrigger("SlamT");
         }
     }
+
+    private void ActivateRollHitter(InputAction.CallbackContext callbackContext)
+    {
+        if (!animator.GetBool("isRolling"))
+        {
+            hitterRoll.SetActive(true);
+        }
+        else
+        {
+            hitterRoll.SetActive(false);
+        }
+    }
+
     public void ActivateSlamTrigger()
     {
         hitterSlam.SetActive(true);

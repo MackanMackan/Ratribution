@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class CharacterMovement : MonoBehaviour
 {
     [Header("Floats")]
-    public float playerMoveForce ;
+    public float playerMoveForce;
     public float runningMoveForce= 10;
     public float punchingMoveForce = 2.0f;
     public float slamForce;
@@ -15,6 +16,9 @@ public class CharacterMovement : MonoBehaviour
     public float jumpPower = 50.0f;
     public float rayDistance = 1.0f;
     public float stopSpeed = 1.0f;
+    public float stamina = 100f;
+    public float rollCooldown = 0f;
+    public float rollResetCooldown = 5f;
 
     [Header("Bools")]
     [SerializeField] bool isGrounded;
@@ -23,6 +27,7 @@ public class CharacterMovement : MonoBehaviour
     [Header("Misc")]
     [SerializeField] GameObject animatorParentObj;
     [SerializeField] LayerMask groundLayer;
+    [SerializeField] Slider staminaBar;
 
     private Vector2 moveDir;
     private Vector3 resetV;
@@ -38,6 +43,7 @@ public class CharacterMovement : MonoBehaviour
     private InputAction jumpInput;
     private InputAction rollInput;
 
+    private CharacterAttack characterAttack;
     private Rigidbody rb;
     public Animator animator;
 
@@ -68,6 +74,8 @@ public class CharacterMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         CharaCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
         animator = animatorParentObj.GetComponent<Animator>();
+        characterAttack = GetComponent<CharacterAttack>();
+        staminaBar = GameObject.FindGameObjectWithTag("StaminaBar").GetComponent<Slider>();
 
         //Sets stronger gravity for all rigidbodies in the scene
         Physics.gravity = new Vector3(0, -40f, 0);
@@ -100,6 +108,8 @@ public class CharacterMovement : MonoBehaviour
     {
         CheckIfPlayerIsFallingAndPlayAnimation();
         Movement();
+        staminaDrain();
+        CancelRollOnceOutOfStamina();
     }
 
     private Vector3 GetMoveInput()
@@ -115,19 +125,13 @@ public class CharacterMovement : MonoBehaviour
         RaycastHit compareHit;
         Vector3 localOffset = new Vector3(0, 20, 10);
 
-        //CurrentPos Angle Ray debug -- HIT
-        Debug.DrawRay(transform.position, Vector3.down, Color.green, 3f);
-        
-        ////CompareY debug -- COMPAREHIT
-        Debug.DrawRay(transform.TransformPoint(localOffset), Vector3.down * 10, Color.yellow);
-
-        //Create surface angle
+        //Get surface angle under player
         if (Physics.Raycast(transform.position, Vector3.down, out hit, groundLayer) && isGrounded)
         {
             targetAngleX = Mathf.Atan2(hit.normal.x, hit.normal.y) * Mathf.Rad2Deg;
         }
 
-        //Check if heading up slope or down slope
+        //Check ahead of player if heading up slope or down slope
         if (Physics.Raycast(transform.TransformPoint(localOffset), Vector3.down, out compareHit, groundLayer))
         {
             //Height check
@@ -140,7 +144,6 @@ public class CharacterMovement : MonoBehaviour
                 walkingUpSlope = false;
             }
         }
-
         //Clamps targetangle to avoid extreme rotations
         targetAngleX = Mathf.Clamp(targetAngleX, -30f, 30f);
     }
@@ -204,7 +207,23 @@ public class CharacterMovement : MonoBehaviour
             rb.velocity = resetV;
             animator.SetBool("isRunning", false);
             animator.SetBool("isRolling", false);
+            characterAttack.hitterRoll.SetActive(false);
         }
+    }
+    private void staminaDrain()
+    {
+        if (animator.GetBool("isRolling"))
+        {
+            if (stamina > 0)
+            {
+                stamina -= 10f * Time.deltaTime;
+            }
+        }
+        else if (!animator.GetBool("isRolling") && stamina < 100)
+        {
+            stamina += 10f * Time.deltaTime;
+        }
+        staminaBar.value = stamina;
     }
 
     private void Jump(InputAction.CallbackContext obj)
@@ -229,11 +248,19 @@ public class CharacterMovement : MonoBehaviour
 
     private void RollingStone(InputAction.CallbackContext obj)
     {
-        if (!animator.GetBool("isRolling"))
+        if (!animator.GetBool("isRolling") && stamina > 25)
         {
             animator.SetBool("isRolling", true);
         }
         else
+        {
+            animator.SetBool("isRolling", false);
+        }
+    }
+
+    private void CancelRollOnceOutOfStamina()
+    {
+        if (stamina < 1)
         {
             animator.SetBool("isRolling", false);
         }
