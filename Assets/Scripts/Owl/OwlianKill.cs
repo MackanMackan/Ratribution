@@ -33,6 +33,17 @@ public class OwlianKill : MonoBehaviour, IDestructable
         colTrigg.enabled = false;
         col2.enabled = false;
         featherParticles.SetActive(true);
+        ServiceLocator.Instance.GetAudioProvider().PlayOneShot("OwlScream",transform.position,true);
+        switch (Random.Range(0, 1))
+        {
+            case 0:
+                ServiceLocator.Instance.GetAudioProvider().PlayOneShot("OwlHit", transform.position, true);
+                break;
+            case 1:
+                ServiceLocator.Instance.GetAudioProvider().PlayOneShot("OwlHit2", transform.position, true);
+                break;
+        }
+        
         foreach (var child in childList)
         {
             child.transform.SetParent(root.transform);

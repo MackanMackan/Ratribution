@@ -26,6 +26,7 @@ public class ExplodeBarrel : MonoBehaviour
 
     private void Explode()
     {
+        ServiceLocator.Instance.GetAudioProvider().PlayOneShot("BarrelExplosion", transform.position, true);
         explosionCollider.enabled = false;
         Destroy(gameObject,15);
         Destroy(gameObject.transform.GetChild(0).gameObject);
