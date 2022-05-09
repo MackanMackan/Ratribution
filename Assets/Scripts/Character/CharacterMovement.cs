@@ -36,6 +36,7 @@ public class CharacterMovement : MonoBehaviour
     private PlayerInputActions playerControls;
     private InputAction moveInput;
     private InputAction jumpInput;
+    private InputAction rollInput;
 
     private Rigidbody rb;
     public Animator animator;
@@ -49,12 +50,14 @@ public class CharacterMovement : MonoBehaviour
         playerControls = new PlayerInputActions();
         moveInput = playerControls.Player.Move;
         jumpInput = playerControls.Player.Jump;
+        rollInput = playerControls.Player.Roll;
 
         //Movement
         moveInput.performed += cntxt => moveDir = cntxt.ReadValue<Vector2>();
         moveInput.canceled += cntxt => moveDir = Vector2.zero;
 
         jumpInput.performed += Jump;
+        rollInput.performed += RollingStone;
 
         introLanding = FindObjectOfType<IntroLanding>();
     }
@@ -75,12 +78,14 @@ public class CharacterMovement : MonoBehaviour
     {
         moveInput.Enable();
         jumpInput.Enable();
+        rollInput.Enable();
     }
 
     private void OnDisable()
     {
         moveInput.Disable();
         jumpInput.Disable();
+        rollInput.Disable();
     }
 
     private void Update()
@@ -128,12 +133,10 @@ public class CharacterMovement : MonoBehaviour
             //Height check
             if (compareHit.point.y > transform.position.y)
             {
-                Debug.Log("uppför" + (compareHit.point.y - transform.position.y));
                 walkingUpSlope = true;
             }
             else if (compareHit.point.y < transform.position.y)
             {
-                Debug.Log("Nerför" + (compareHit.point.y - transform.position.y));
                 walkingUpSlope = false;
             }
         }
@@ -183,7 +186,14 @@ public class CharacterMovement : MonoBehaviour
         
         if (GetMoveInput().magnitude >= 0.1f)
         {
-            camCompensatedMoveDir = playerMoveForce * Time.deltaTime * camCompensatedMoveDir * 100;
+            if (animator.GetBool("isRolling"))
+            {
+                camCompensatedMoveDir = playerMoveForce * Time.deltaTime * camCompensatedMoveDir * 150;
+            }
+            else
+            {
+                camCompensatedMoveDir = playerMoveForce * Time.deltaTime * camCompensatedMoveDir * 100;
+            }
 
             rb.velocity = new Vector3(camCompensatedMoveDir.x, rb.velocity.y, camCompensatedMoveDir.z);
             animator.SetBool("isRunning", true);
@@ -193,6 +203,7 @@ public class CharacterMovement : MonoBehaviour
             //Disney On Ice hate campaign
             rb.velocity = resetV;
             animator.SetBool("isRunning", false);
+            animator.SetBool("isRolling", false);
         }
     }
 
@@ -214,6 +225,18 @@ public class CharacterMovement : MonoBehaviour
     private void GroundCheck()
     {
         isGrounded = Physics.CheckSphere(transform.position - new Vector3(0, 0.5f, 0), 1f, groundLayer);
+    }
+
+    private void RollingStone(InputAction.CallbackContext obj)
+    {
+        if (!animator.GetBool("isRolling"))
+        {
+            animator.SetBool("isRolling", true);
+        }
+        else
+        {
+            animator.SetBool("isRolling", false);
+        }
     }
 
     private void OnDrawGizmosSelected()

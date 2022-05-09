@@ -15,6 +15,7 @@ public class CharacterAttack : MonoBehaviour
     public GameObject hitterL;
     public GameObject hitterKick;
     public GameObject hitterSlam;
+    public GameObject hitterRoll;
     [SerializeField] GameObject animatorParentObj;
 
     private Animator animator;
@@ -32,6 +33,7 @@ public class CharacterAttack : MonoBehaviour
         hitterL.SetActive(false);
         hitterKick.SetActive(false);
         hitterSlam.SetActive(false);
+        hitterRoll.SetActive(false);
 
         characterMovement = GetComponent<CharacterMovement>();
         animator = animatorParentObj.GetComponent<Animator>();
