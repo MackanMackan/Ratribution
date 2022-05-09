@@ -30,7 +30,10 @@ public class Hitter : MonoBehaviour
         if (other.GetComponent<IDestructable>() != null)
         {
             destructableObj = other.GetComponent<IDestructable>();
-            animImpact.PauseAnimationOnImpact(playerTransform,transform);
+
+            if (gameObject.CompareTag("Player"))
+                animImpact.PauseAnimationOnImpact(playerTransform,transform);
+
             onHitDestructable?.Invoke();
         }
     }
