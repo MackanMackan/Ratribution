@@ -23,6 +23,7 @@ public class CharacterMovement : MonoBehaviour
     [Header("Bools")]
     [SerializeField] bool isGrounded;
     [SerializeField] bool walkingUpSlope;
+    public bool isSlowedByRollImpact;
     
     [Header("Misc")]
     [SerializeField] GameObject animatorParentObj;
@@ -115,7 +116,6 @@ public class CharacterMovement : MonoBehaviour
     private Vector3 GetMoveInput()
     {
         return new Vector3(moveDir.x, 0, moveDir.y);
-
     }
 
     private void SlopeCompensation()
@@ -180,7 +180,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void Movement()
     {
-        SlopeCompensation();
+        SlopeCompensation();        
         CameraLookRotation();
         Rotation();
         GroundCheck();
@@ -197,6 +197,15 @@ public class CharacterMovement : MonoBehaviour
             {
                 camCompensatedMoveDir = playerMoveForce * Time.deltaTime * camCompensatedMoveDir * 100;
             }
+
+            //if (isSlowedByRollImpact)
+            //{
+            //    playerMoveForce = 5f;
+            //}
+            //else
+            //{
+            //    playerMoveForce = runningMoveForce;
+            //}
 
             rb.velocity = new Vector3(camCompensatedMoveDir.x, rb.velocity.y, camCompensatedMoveDir.z);
             animator.SetBool("isRunning", true);
@@ -222,6 +231,7 @@ public class CharacterMovement : MonoBehaviour
         else if (!animator.GetBool("isRolling") && stamina < 100)
         {
             stamina += 10f * Time.deltaTime;
+            characterAttack.hitterRoll.SetActive(false);
         }
         staminaBar.value = stamina;
     }

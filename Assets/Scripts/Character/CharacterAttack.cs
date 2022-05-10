@@ -42,7 +42,7 @@ public class CharacterAttack : MonoBehaviour
 
         fireInput.started += StartPunching;
         fireInput.canceled += StopPunching;
-        rollInput.performed += ActivateRollHitter;
+        //rollInput.performed += ActivateRollHitter;
     }
 
     private void OnEnable()
@@ -87,17 +87,17 @@ public class CharacterAttack : MonoBehaviour
         }
     }
 
-    private void ActivateRollHitter(InputAction.CallbackContext callbackContext)
-    {
-        if (!animator.GetBool("isRolling"))
-        {
-            hitterRoll.SetActive(true);
-        }
-        else
-        {
-            hitterRoll.SetActive(false);
-        }
-    }
+    //private void ActivateRollHitter(InputAction.CallbackContext callbackContext)
+    //{
+    //    if (!animator.GetBool("isRolling"))
+    //    {
+    //        hitterRoll.SetActive(true);
+    //    }
+    //    else
+    //    {
+    //        hitterRoll.SetActive(false);
+    //    }
+    //}
 
     public void ActivateSlamTrigger()
     {
