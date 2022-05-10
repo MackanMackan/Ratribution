@@ -20,7 +20,7 @@ public class ServiceLocator : MonoBehaviour
         }
         SetAudioProvider(new AudioProvider());
     }
-    public static IAudioService GetAudioProvider()
+    public IAudioService GetAudioProvider()
     {
         return audioService;
     }

@@ -60,7 +60,7 @@ public class StructurePiece : MonoBehaviour, IDestructable
 
         ParticleSystemServiceLocator.Instance.GetDustParticleSystem().EmitParticles(meshCollider.bounds.center, particlesToEmit);
 
-        ServiceLocator.GetAudioProvider().PlayOneShot("StructureImpact", transform.position, true);
+        ServiceLocator.Instance.GetAudioProvider().PlayOneShot("StructureImpact", transform.position, true);
         onHit?.Invoke();
         onDamageBuilding?.Invoke(damage);
     }

@@ -13,7 +13,7 @@ public class AudioProvider : IAudioService
     GameObject parent;
     public void Initialize()
     {
-        path = "Audio/Collisions";
+        path = "Audio/";
         parent = new GameObject("AudioSources");
         CreateAudioSources();
         LoadAudioClipsToList();
@@ -24,10 +24,7 @@ public class AudioProvider : IAudioService
         audioSources = new List<AudioSource>();
         for (int i = 0; i < amountOfSources; i++)
         {
-            AudioSource source = new GameObject("AudioSource (created at runtime)").AddComponent<AudioSource>();
-            source.transform.SetParent(parent.transform);
-            source.spatialBlend = 1;
-            AddAudioSourcesToList(source);
+            CreateNewAudioSource();
         }
     }
 
@@ -69,6 +66,7 @@ public class AudioProvider : IAudioService
     {
         AudioSource source = GetAvailableAudioSource();
         source.transform.position = position;
+        source.pitch = 1f;
         if (randomPitch) { source.pitch = UnityEngine.Random.Range(0.7f, 1.4f); }
         source.PlayOneShot(clip);
     }
@@ -89,6 +87,8 @@ public class AudioProvider : IAudioService
     {
         AudioSource source = new GameObject("AudioSource (created at runtime)").AddComponent<AudioSource>();
         source.transform.SetParent(parent.transform);
+        source.spatialBlend = 0.5f;
+        source.maxDistance = 4000f;
         AddAudioSourcesToList(source);
         return source;
     }
