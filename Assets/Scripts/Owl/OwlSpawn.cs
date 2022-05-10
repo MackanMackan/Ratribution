@@ -22,6 +22,7 @@ public class OwlSpawn : MonoBehaviour
 
     void Start()
     {
+        nextSpawn = spawnTimer;
         addOwls();
         getLevelHealth = FindObjectOfType<GetBuildingHealth>();
     }
@@ -49,13 +50,18 @@ public class OwlSpawn : MonoBehaviour
     private void SpawnOwl()
 
     {
-        if (Time.time > nextSpawn && spawnOwlcounter < maxOwl)
+        if (Time.time > nextSpawn)
         {
+            
             nextSpawn = Time.time + spawnTimer;
-            Vector3 spawnPosition = spawnPositionList[Random.Range(0, spawnPositionList.Count)].position;
-
+            Vector3 spawnArea = spawnPositionList[Random.Range(0, spawnPositionList.Count)].position;
+            Vector3 spawnPosition;
+            ServiceLocator.Instance.GetAudioProvider().PlayOneShot("WarTrumpet",spawnArea, false);
+            Debug.LogError("Spawning...");
             for (int i = 0; i < spawnRate; i++)
             {
+                Debug.LogError("Spawning..." + i);
+                spawnPosition = spawnArea + new Vector3(Random.Range(0, 10), 0, Random.Range(0, 10));
                 GameObject enemySpawn = Instantiate(owl, spawnPosition, Quaternion.identity);
                 spawnOwlcounter++;
                 numberOfOwls.Add(enemySpawn);

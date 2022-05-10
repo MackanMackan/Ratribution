@@ -7,6 +7,7 @@ public class AudioProvider : IAudioService
 {
     private string path;
     private int amountOfSources = 20;
+    private float spatialBlend = 0.5f;
     List<AudioSource> audioSources;
     List<AudioClip> audioClips;
     Dictionary<string, AudioClip> audioLibrary;
@@ -67,10 +68,22 @@ public class AudioProvider : IAudioService
         AudioSource source = GetAvailableAudioSource();
         source.transform.position = position;
         source.pitch = 1f;
+        source.spatialBlend = spatialBlend;
         if (randomPitch) { source.pitch = UnityEngine.Random.Range(0.7f, 1.4f); }
         source.PlayOneShot(clip);
     }
-
+    public void PlayOneShotNoSpatialBlend(string clipName, bool randomPitch)
+    {
+        PlayOneShotNoSpatialBlend(audioLibrary[clipName.ToLower()],randomPitch);
+    }
+    public void PlayOneShotNoSpatialBlend(AudioClip clip, bool randomPitch)
+    {
+        AudioSource source = GetAvailableAudioSource();
+        source.pitch = 1f;
+        source.spatialBlend = 0;
+        if (randomPitch) { source.pitch = UnityEngine.Random.Range(0.7f, 1.4f); }
+        source.PlayOneShot(clip);
+    }
     private AudioSource GetAvailableAudioSource()
     {
         foreach (var source in audioSources)
@@ -87,7 +100,7 @@ public class AudioProvider : IAudioService
     {
         AudioSource source = new GameObject("AudioSource (created at runtime)").AddComponent<AudioSource>();
         source.transform.SetParent(parent.transform);
-        source.spatialBlend = 0.5f;
+        source.spatialBlend = spatialBlend;
         source.maxDistance = 4000f;
         AddAudioSourcesToList(source);
         return source;

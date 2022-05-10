@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class BarrelPickUp : MonoBehaviour
 {
     bool pickedUpBarrel = false;
+    bool inMotherTreeZone = false;
     [SerializeField] GameObject barrelHolder;
     [SerializeField] GameObject barrelDropper;
     PlayerInputActions playerControls;
@@ -34,7 +35,10 @@ public class BarrelPickUp : MonoBehaviour
             barrel.transform.SetParent(null);
             barrel.GetComponent<CapsuleCollider>().enabled = true;
             barrel.GetComponent<Rigidbody>().isKinematic = false;
-            barrel.GetComponent<ExplodeBarrel>().StartExplosionFuse();
+
+            if(!inMotherTreeZone)
+                barrel.GetComponent<ExplodeBarrel>().StartExplosionFuse();
+
             barrel = null;
             pickedUpBarrel = false;
         }
@@ -50,6 +54,17 @@ public class BarrelPickUp : MonoBehaviour
             other.transform.SetParent(barrelHolder.transform);
             pickedUpBarrel = true;
             barrel = other.gameObject;
+        }
+        if (other.CompareTag("MotherTree"))
+        {
+            inMotherTreeZone = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("MotherTree"))
+        {
+            inMotherTreeZone = false;
         }
     }
 }
