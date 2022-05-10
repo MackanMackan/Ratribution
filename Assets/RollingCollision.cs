@@ -8,8 +8,8 @@ public class RollingCollision : MonoBehaviour
     GameObject player;
     CharacterMovement characterMovement;
 
-    private bool startTimer;
-    private float timer = 2f;
+    [SerializeField] bool startTimer;
+    [SerializeField] float timer = 2f;
 
 
     private void Awake()
@@ -38,7 +38,7 @@ public class RollingCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (((1 << other.gameObject.layer) & destructableLayer) != 0)
+        if (other.gameObject.layer == LayerMask.NameToLayer("Destructable"))
         {
             characterMovement.playerMoveForce = 5f;
             startTimer = true;
