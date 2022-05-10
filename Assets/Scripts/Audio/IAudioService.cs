@@ -14,4 +14,5 @@ public interface IAudioService : IService
 
     public void StopLooping(string clipName);
     public void StopLooping(AudioClip clip);
+    public AudioClip GetAudioClip(string clipName);
 }
