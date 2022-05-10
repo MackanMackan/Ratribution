@@ -289,4 +289,5 @@ public class CharacterMovement : MonoBehaviour
             jumpParticles.Emit(20);
         }
     }
+
 }
