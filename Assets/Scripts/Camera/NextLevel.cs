@@ -30,6 +30,7 @@ public class NextLevel : MonoBehaviour
         getLevelHealth = FindObjectOfType<GetBuildingHealth>();
         cinemachineSwitch = FindObjectOfType<CinemachineSwitch>();
         winUI.SetActive(false);
+        MotherTreeDestruction.onDestroyTree += WinGame;
     }
 
     private void Update()
@@ -55,19 +56,17 @@ public class NextLevel : MonoBehaviour
                 level = true;
             }
         }
-
-        if (getLevelHealth.level == Level.Level_4)
-        {
-            winUI.SetActive(true);
-           
-            Time.timeScale = 0.3f;
-            Time.fixedDeltaTime = 0.03F * Time.timeScale;
-
-        }
     }
 
     public void GateOpen(GameObject gate)
     {
         gate.transform.Translate(Vector3.up * speed * Time.deltaTime);
+    }
+    public void WinGame()
+    {
+        winUI.SetActive(true);
+
+        Time.timeScale = 0.3f;
+        Time.fixedDeltaTime = 0.03F * Time.timeScale;
     }
 }

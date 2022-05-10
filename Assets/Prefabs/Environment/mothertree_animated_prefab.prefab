@@ -237,9 +237,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1755939947066685915}
   - component: {fileID: 1375157786482287456}
+  - component: {fileID: 3058588650994249376}
+  - component: {fileID: 605536211668609375}
+  - component: {fileID: 5935839957260457528}
+  - component: {fileID: 8236637279952011395}
+  - component: {fileID: 5560869345139965524}
   m_Layer: 0
   m_Name: mothertree_animated_prefab
-  m_TagString: Untagged
+  m_TagString: MotherTree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -251,12 +256,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375157786482287457}
-  m_LocalRotation: {x: -0, y: -0.5534412, z: -0, w: 0.8328882}
+  m_LocalRotation: {x: 0, y: -0.55344236, z: 0, w: 0.8328875}
   m_LocalPosition: {x: 462.5, y: 49.4, z: 319}
   m_LocalScale: {x: 8.848491, y: 8.848491, z: 8.848491}
   m_Children:
   - {fileID: 7272907982843160901}
   - {fileID: 1084588573584435227}
+  - {fileID: 6807058261401958656}
+  - {fileID: 7937672991682795881}
+  - {fileID: 5331561963976727773}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -67.207, z: 0}
@@ -279,6 +287,81 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3058588650994249376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375157786482287457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47943422085420748a6929a243a81b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barrelHolders:
+  - {fileID: 2584927189542668066}
+  - {fileID: 5305333239994446356}
+  - {fileID: 2140899640036650307}
+  rb: {fileID: 8236637279952011395}
+  barrels: []
+--- !u!136 &605536211668609375
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375157786482287457}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.42
+  m_Height: 6.95
+  m_Direction: 0
+  m_Center: {x: 0.91, y: 0.75, z: 0}
+--- !u!136 &5935839957260457528
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375157786482287457}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.84
+  m_Height: 6.95
+  m_Direction: 0
+  m_Center: {x: 0.31, y: 2.99, z: 0}
+--- !u!54 &8236637279952011395
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375157786482287457}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!135 &5560869345139965524
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375157786482287457}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.95
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2129399159370289497
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,6 +393,36 @@ Transform:
   m_Father: {fileID: 797470698746815616}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2140899640036650307
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5331561963976727773}
+  m_Layer: 0
+  m_Name: BarrelHolder3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5331561963976727773
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140899640036650307}
+  m_LocalRotation: {x: -0.000000010244548, y: 0.000000029802322, z: -0.022790914, w: 0.9997403}
+  m_LocalPosition: {x: -3.65, y: -0.38, z: -1.16}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_Children: []
+  m_Father: {fileID: 1755939947066685915}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -2.612}
 --- !u!1 &2351044557879447880
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,6 +484,36 @@ Transform:
   m_Father: {fileID: 269808091396209394}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2584927189542668066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6807058261401958656}
+  m_Layer: 0
+  m_Name: BarrelHolder1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6807058261401958656
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2584927189542668066}
+  m_LocalRotation: {x: 0.0000000013969838, y: -0, z: -0.009941668, w: 0.9999506}
+  m_LocalPosition: {x: 1.96, y: -0.49, z: 0.87}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_Children: []
+  m_Father: {fileID: 1755939947066685915}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1.139}
 --- !u!1 &2735684965075172392
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,6 +733,36 @@ Transform:
   m_Father: {fileID: 5860791979920919425}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5305333239994446356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7937672991682795881}
+  m_Layer: 0
+  m_Name: BarrelHolder2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7937672991682795881
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5305333239994446356}
+  m_LocalRotation: {x: 0.06961879, y: 0.16831103, z: -0.0073610693, w: 0.9832449}
+  m_LocalPosition: {x: -0.66699976, y: -0.31400013, z: 2.3800004}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_Children: []
+  m_Father: {fileID: 1755939947066685915}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 8.012, y: 19.464, z: 0.518}
 --- !u!1 &5348306099927697333
 GameObject:
   m_ObjectHideFlags: 0

@@ -44,6 +44,7 @@ public class BuildingCrumble : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
+            ServiceLocator.Instance.GetAudioProvider().PlayOneShot("StructureImpact", transform.position, true);
             DestroyBuilding();
         }
     }

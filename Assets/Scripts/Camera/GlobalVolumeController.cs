@@ -23,27 +23,16 @@ public class GlobalVolumeController : MonoBehaviour
         depthOfField.active = false;
 
         getLevelHealth = FindObjectOfType<GetBuildingHealth>();
+
+        MotherTreeDestruction.onDestroyTree += TurnOnBlurr;
     }
 
-    private void Update()
-    {
-        if (getLevelHealth.level == Level.Level_4)
-        {
-            TurnOnOffBlurr(true);
-        }
 
-        else
-        {
-            TurnOnOffBlurr(false);
-        }
-     
-    }
-
-    public void TurnOnOffBlurr(bool value)
+    public void TurnOnBlurr()
     {
         profile.TryGet<DepthOfField>(out var depthOfField);
 
-        depthOfField.active = value;      
+        depthOfField.active = true;      
     }      
 
 }
