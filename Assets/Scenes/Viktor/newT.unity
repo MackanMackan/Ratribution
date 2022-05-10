@@ -8408,7 +8408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6559140416544404923, guid: 3b2f09a9e749c384a87da9124dee3733, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7354241648044296442, guid: 3b2f09a9e749c384a87da9124dee3733, type: 3}
       propertyPath: m_Name
@@ -10742,6 +10742,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9264496f9ce96c84f87b5ea9a3534323, type: 3}
+--- !u!1 &1056101159 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6559140416544404923, guid: 3b2f09a9e749c384a87da9124dee3733, type: 3}
+  m_PrefabInstance: {fileID: 793854621}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1056242146
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19249,6 +19254,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3082905140652077179, guid: 58d7507c5476cae42a8cbd29a0e72b3d, type: 3}
+      propertyPath: winUI
+      value: 
+      objectReference: {fileID: 1056101159}
+    - target: {fileID: 5051392222537427747, guid: 58d7507c5476cae42a8cbd29a0e72b3d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.32715818
+      objectReference: {fileID: 0}
     - target: {fileID: 5051392223143444788, guid: 58d7507c5476cae42a8cbd29a0e72b3d, type: 3}
       propertyPath: levelHolder_1
       value: 
