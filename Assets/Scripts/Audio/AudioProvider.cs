@@ -101,7 +101,9 @@ public class AudioProvider : IAudioService
         AudioSource source = new GameObject("AudioSource (created at runtime)").AddComponent<AudioSource>();
         source.transform.SetParent(parent.transform);
         source.spatialBlend = spatialBlend;
-        source.maxDistance = 4000f;
+        source.maxDistance = 800f;
+        source.dopplerLevel = 0;
+        source.rolloffMode = AudioRolloffMode.Linear;
         AddAudioSourcesToList(source);
         return source;
     }
@@ -126,5 +128,10 @@ public class AudioProvider : IAudioService
         audioSources.Clear();
         audioClips.Clear();
         audioLibrary.Clear();
+    }
+
+    public AudioClip GetAudioClip(string clipName)
+    {
+        return audioLibrary[clipName.ToLower()];
     }
 }

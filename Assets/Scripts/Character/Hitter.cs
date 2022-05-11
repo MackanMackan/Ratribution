@@ -24,7 +24,7 @@ public class Hitter : MonoBehaviour
     void DamageDestructableObject()
     {
         destructableObj.DamageMe(damage, gameObject);
-        if (gameObject.CompareTag("Player"))
+        if (!gameObject.transform.parent.CompareTag("Pickup"))
         {
             switch (Random.Range(0, 1))
             {
