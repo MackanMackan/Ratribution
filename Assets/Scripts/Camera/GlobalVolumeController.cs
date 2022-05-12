@@ -33,6 +33,13 @@ public class GlobalVolumeController : MonoBehaviour
         profile.TryGet<DepthOfField>(out var depthOfField);
 
         depthOfField.active = true;      
-    }      
+    }
+
+    public void TurnOffBlurr()
+    {
+        profile.TryGet<DepthOfField>(out var depthOfField);
+
+        depthOfField.active = false;
+    }
 
 }
