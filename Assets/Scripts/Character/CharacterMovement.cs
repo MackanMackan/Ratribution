@@ -158,7 +158,7 @@ public class CharacterMovement : MonoBehaviour
         {
             camCompensatedMoveDir = Quaternion.Euler(targetAngleX, targetAngleY, 0f) * Vector3.forward;
             Quaternion q = Quaternion.LookRotation(camCompensatedMoveDir, Vector3.up);
-            transform.localRotation = Quaternion.Lerp(transform.rotation, q, Time.deltaTime * turnSpeed);
+            transform.localRotation = Quaternion.Lerp(transform.rotation, q, Time.fixedDeltaTime * turnSpeed);
         }
     }
 
@@ -191,21 +191,12 @@ public class CharacterMovement : MonoBehaviour
         {
             if (animator.GetBool("isRolling"))
             {
-                camCompensatedMoveDir = playerMoveForce * Time.deltaTime * camCompensatedMoveDir * 150;
+                camCompensatedMoveDir = playerMoveForce * Time.fixedDeltaTime * camCompensatedMoveDir * 150;
             }
             else
             {
-                camCompensatedMoveDir = playerMoveForce * Time.deltaTime * camCompensatedMoveDir * 100;
+                camCompensatedMoveDir = playerMoveForce * Time.fixedDeltaTime * camCompensatedMoveDir * 100;
             }
-
-            //if (isSlowedByRollImpact)
-            //{
-            //    playerMoveForce = 5f;
-            //}
-            //else
-            //{
-            //    playerMoveForce = runningMoveForce;
-            //}
 
             rb.velocity = new Vector3(camCompensatedMoveDir.x, rb.velocity.y, camCompensatedMoveDir.z);
             animator.SetBool("isRunning", true);
@@ -225,12 +216,12 @@ public class CharacterMovement : MonoBehaviour
         {
             if (stamina > 0)
             {
-                stamina -= 10f * Time.deltaTime;
+                stamina -= 10f * Time.fixedDeltaTime;
             }
         }
         else if (!animator.GetBool("isRolling") && stamina < 100)
         {
-            stamina += 10f * Time.deltaTime;
+            stamina += 10f * Time.fixedDeltaTime;
             characterAttack.hitterRoll.SetActive(false);
         }
         staminaBar.value = stamina;

@@ -99,7 +99,13 @@ public class StructurePiece : MonoBehaviour, IDestructable
     {
         if (collision.gameObject.layer.Equals(LayerMask.NameToLayer("Ground")))
         {
-            ParticleSystemServiceLocator.Instance.GetDustParticleSystem().EmitParticles(meshCollider.bounds.center, particlesToEmit);
+            int dice = Random.Range(1, 101);
+            if (dice > 60)
+            {
+                Debug.Log("Hej vi kastade tärning och vann");
+                ParticleSystemServiceLocator.Instance.GetDustParticleSystem().EmitParticles(meshCollider.bounds.center, particlesToEmit);
+            }
+
         }
     }
 }
