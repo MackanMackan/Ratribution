@@ -58,11 +58,6 @@ public class NextLevel : MonoBehaviour
                 level = true;
             }
         }
-
-        if (Input.GetMouseButton(1))
-        {
-            WinGame();
-        }
     }
 
     public void GateOpen(GameObject gate)
