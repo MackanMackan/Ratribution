@@ -127,6 +127,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: RestartButton
       objectReference: {fileID: 0}
+    - target: {fileID: 8416590602787187613, guid: 56f9d38da2534c640be8dd49207f5fda, type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 3761505875955942725}
+    - target: {fileID: 8416590602787187613, guid: 56f9d38da2534c640be8dd49207f5fda, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416590602787187613, guid: 56f9d38da2534c640be8dd49207f5fda, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416590602787187613, guid: 56f9d38da2534c640be8dd49207f5fda, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416590602787187613, guid: 56f9d38da2534c640be8dd49207f5fda, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416590602787187613, guid: 56f9d38da2534c640be8dd49207f5fda, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416590602787187613, guid: 56f9d38da2534c640be8dd49207f5fda, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56f9d38da2534c640be8dd49207f5fda, type: 3}
 --- !u!224 &3761505875193121786 stripped
@@ -134,6 +162,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8416590602787187610, guid: 56f9d38da2534c640be8dd49207f5fda, type: 3}
   m_PrefabInstance: {fileID: 4683234699314405472}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3761505875955942725 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8416590602477315365, guid: 56f9d38da2534c640be8dd49207f5fda, type: 3}
+  m_PrefabInstance: {fileID: 4683234699314405472}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5046147711248537328
 PrefabInstance:
   m_ObjectHideFlags: 0
