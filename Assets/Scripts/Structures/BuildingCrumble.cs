@@ -60,7 +60,7 @@ public class BuildingCrumble : MonoBehaviour
         NavMeshObstacle obs = GetComponent<NavMeshObstacle>();
         obs.carving = false;
 
-        CinemachineShake.Instance.BeginShake(amplitude, frequency, time);
+        //CinemachineShake.Instance.BeginShake(amplitude, frequency, time);
 
         Destroy(gameObject, 10);
     }

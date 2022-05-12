@@ -8,8 +8,8 @@ public class CinemachineSwitch : MonoBehaviour
 {
     [SerializeField]
     private InputAction action;
-    [SerializeField]
-    private CinemachineVirtualCamera vCam1;
+   // [SerializeField]
+   // private CinemachineVirtualCamera vCam1;
     [SerializeField]
     private CinemachineVirtualCamera vCam2;
     float amplitude = 0.5f;
@@ -21,47 +21,46 @@ public class CinemachineSwitch : MonoBehaviour
 
    public PauseMovment pauseMovment;
      
-    private void OnEnable()
-    {
-        action.Enable();
-    }
+    //private void OnEnable()
+    //{
+    //    action.Enable();
+    //}
 
-    private void OnDisable()
-    {
-        action.Disable();
-    }
+    //private void OnDisable()
+    //{
+    //    action.Disable();
+    //}
 
-    private void Start()
-    {
-        action.performed += _ => SwitchCameraPrio();
-        
-    }
+    //private void Start()
+    //{
+    //    action.performed += _ => SwitchCameraPrio();        
+    //}
 
-    private void SwitchCameraPrio()
-    {
-        if (cam1)
-        {
-            vCam1.Priority = 1;
-            vCam2.Priority = 2;
-            CinemachineShake.Instance.cam1 = vCam2;
-        }
+    //private void SwitchCameraPrio()
+    //{
+    //    if (cam1)
+    //    {
+    //        vCam1.Priority = 1;
+    //        vCam2.Priority = 2;
+    //        CinemachineShake.Instance.cam1 = vCam2;
+    //    }
 
-        else
-        {
-            vCam1.Priority = 2;
-            vCam2.Priority = 1;
-            CinemachineShake.Instance.cam1 = vCam1;
-        }
+    //    else
+    //    {
+    //        vCam1.Priority = 2;
+    //        vCam2.Priority = 1;
+    //        CinemachineShake.Instance.cam1 = vCam1;
+    //    }
 
-        cam1 = !cam1;
-    }
+    //    cam1 = !cam1;
+    //}
 
     public IEnumerator GateCamera(CinemachineVirtualCamera gateCam)
     {
         pauseMovment.StopMovment(false);
 
         vCam2.enabled = false;
-        vCam1.enabled = false;
+        //vCam1.enabled = false;
         gateCam.enabled = true;
         
 
@@ -77,7 +76,7 @@ public class CinemachineSwitch : MonoBehaviour
         pauseMovment.StopMovment(true);
 
         vCam2.enabled = true;
-        vCam1.enabled = true;
+      // vCam1.enabled = true;
         gateCam.enabled = false;
 
         

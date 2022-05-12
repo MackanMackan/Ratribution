@@ -12,15 +12,21 @@ public class T_InstanciateTower : MonoBehaviour
     public GameObject towerClone;
     [HideInInspector]
     public bool isTowerAlive = false;
+    BuildingCrumble buildingCrumble;
+    public bool next = false;
+
     void Start()
     {
-      
+        buildingCrumble = FindObjectOfType<BuildingCrumble>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (towerClone == null && isTowerAlive)
+        {         
+            next = true;
+        }
     }
 
     public void T_Building()
@@ -30,6 +36,6 @@ public class T_InstanciateTower : MonoBehaviour
             instanciatePos = instanciatePlace.transform.position;
             towerClone = Instantiate(towerPrefab, instanciatePos, Quaternion.identity);
             isTowerAlive = true;
-        }   
+        }      
     }
 }

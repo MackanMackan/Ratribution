@@ -9,7 +9,7 @@ public class IntroLanding : MonoBehaviour
     public bool landing;
 
     Collider trigger;
-    public CinemachineVirtualCamera cinemachineVirtualCamera;
+    //public CinemachineVirtualCamera cinemachineVirtualCamera;
     public CinemachineVirtualCamera cinemachineVirtualCamera2;
     public CinemachineVirtualCamera cinemachineVirtualCameraIntro;
 
@@ -35,9 +35,9 @@ public class IntroLanding : MonoBehaviour
 
         yield return new WaitForSeconds(2.75f);
 
-        cinemachineVirtualCamera.enabled = true;
-        CinemachineShake.Instance.cam1 = cinemachineVirtualCamera;
         cinemachineVirtualCamera2.enabled = true;
+        //cinemachineVirtualCamera.enabled = true;
+        CinemachineShake.Instance.cam1 = cinemachineVirtualCamera2;
         cinemachineVirtualCameraIntro.enabled = false;
         trigger.enabled = false;
 

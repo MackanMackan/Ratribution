@@ -113,7 +113,7 @@ public class CharacterMovement : MonoBehaviour
         CancelRollOnceOutOfStamina();
     }
 
-    private Vector3 GetMoveInput()
+    public Vector3 GetMoveInput()
     {
         return new Vector3(moveDir.x, 0, moveDir.y);
     }
