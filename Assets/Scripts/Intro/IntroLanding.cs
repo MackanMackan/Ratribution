@@ -9,7 +9,6 @@ public class IntroLanding : MonoBehaviour
     public bool landing;
 
     Collider trigger;
-    //public CinemachineVirtualCamera cinemachineVirtualCamera;
     public CinemachineVirtualCamera cinemachineVirtualCamera2;
     public CinemachineVirtualCamera cinemachineVirtualCameraIntro;
 
@@ -25,7 +24,6 @@ public class IntroLanding : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             CinemachineShake.Instance.BeginShake(2, 2, 0.5f);
-
             StartCoroutine(BeginGame());
         }
     }
@@ -36,7 +34,6 @@ public class IntroLanding : MonoBehaviour
         yield return new WaitForSeconds(2.75f);
 
         cinemachineVirtualCamera2.enabled = true;
-        //cinemachineVirtualCamera.enabled = true;
         CinemachineShake.Instance.cam1 = cinemachineVirtualCamera2;
         cinemachineVirtualCameraIntro.enabled = false;
         trigger.enabled = false;
