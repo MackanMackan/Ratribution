@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CullOnDead : MonoBehaviour
 {
-    private int timeUntilCulled = 15;
+    private int timeUntilCulled = 5;
     BuildingDestroy buildingDestroy;
     StructurePiece structurePiece;
     void Start()
@@ -23,6 +23,7 @@ public class CullOnDead : MonoBehaviour
 
     public void Cull()
     {
+        timeUntilCulled = Random.Range(0, 5);
         Destroy(gameObject, timeUntilCulled);
     }
 }

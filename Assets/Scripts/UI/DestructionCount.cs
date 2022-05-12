@@ -38,6 +38,7 @@ public class DestructionCount : MonoBehaviour
         int total= Mathf.RoundToInt(total1);
 
         slider.value = currentHealth / totalHealth;
-        uiText.text = total.ToString() + "%";
+        slider.value = total;
+        //uiText.text = total.ToString() + "%";
     }
 }
