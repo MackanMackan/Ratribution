@@ -20,5 +20,6 @@ public class PlayerDrop : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         characterMovement = player.GetComponent<CharacterMovement>();
         characterMovement.playerMoveForce = 0;
+        Time.fixedDeltaTime = 0.02F;
     }
 }

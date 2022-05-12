@@ -15,6 +15,7 @@ public class NextLevel : MonoBehaviour
     GameObject gate2;
 
     GetBuildingHealth getLevelHealth;
+    GlobalVolumeController globalVolumeController;
     CinemachineSwitch cinemachineSwitch;
 
     public GameObject winUI;
@@ -27,6 +28,7 @@ public class NextLevel : MonoBehaviour
 
     private void Start()
     {
+        globalVolumeController = FindObjectOfType<GlobalVolumeController>();
         getLevelHealth = FindObjectOfType<GetBuildingHealth>();
         cinemachineSwitch = FindObjectOfType<CinemachineSwitch>();
         winUI.SetActive(false);
@@ -56,6 +58,11 @@ public class NextLevel : MonoBehaviour
                 level = true;
             }
         }
+
+        if (Input.GetMouseButton(1))
+        {
+            WinGame();
+        }
     }
 
     public void GateOpen(GameObject gate)
@@ -63,10 +70,18 @@ public class NextLevel : MonoBehaviour
         gate.transform.Translate(Vector3.up * speed * Time.deltaTime);
     }
     public void WinGame()
-    {
-        winUI.SetActive(true);
+    {     
+            Time.timeScale = 0.3f;
+            Time.fixedDeltaTime = 0.03F * Time.timeScale;
 
-        Time.timeScale = 0.3f;
-        Time.fixedDeltaTime = 0.03F * Time.timeScale;
+            StartCoroutine(WinGame2());            
     }
+
+    public IEnumerator WinGame2() //TODO KAN MAN INTE LAGGA TILL IENUMERATORT TILL EVENTET?
+    {
+        yield return new WaitForSeconds(1.5f);
+        winUI.SetActive(true);
+        globalVolumeController.TurnOnBlurr();
+    }
+
 }
