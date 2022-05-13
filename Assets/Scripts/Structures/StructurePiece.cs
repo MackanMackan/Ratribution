@@ -29,6 +29,8 @@ public class StructurePiece : MonoBehaviour, IDestructable
     private bool isDead = false;
     Vector3 hitDir;
 
+    float dustParticleTimer = 1;
+    bool doneParticles = false;
     private int particlesToEmit = 4;
 
     void Start()
@@ -97,11 +99,21 @@ public class StructurePiece : MonoBehaviour, IDestructable
     {
         this.hitDir = hitDir;
     }
+    IEnumerator DoDustParticles()
+    {
+        doneParticles = true;
+        ParticleSystemServiceLocator.Instance.GetDustParticleSystem().EmitParticles(meshCollider.bounds.center, particlesToEmit);
+        yield return new WaitForSeconds(dustParticleTimer);
+        doneParticles = false;
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer.Equals(LayerMask.NameToLayer("Ground")))
         {
-           ParticleSystemServiceLocator.Instance.GetDustParticleSystem().EmitParticles(meshCollider.bounds.center, particlesToEmit);
+            if (!doneParticles)
+            {
+                StartCoroutine(DoDustParticles());
+            }
         }
     }
 }
