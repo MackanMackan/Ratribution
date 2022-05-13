@@ -105,8 +105,7 @@ public class OwlSpawn : MonoBehaviour
     {
         for (int i = 0; i < activeOwls.Length; i++)
         {
-            activeOwls[i].SetActive(true);
-            i++;
+            activeOwls[i].SetActive(true);            
         }
     }
 
@@ -114,8 +113,7 @@ public class OwlSpawn : MonoBehaviour
     {
         for (int i = 0; i < activeOwls.Length; i++)
         {
-            activeOwls[i].SetActive(false);
-            i++;
+            activeOwls[i].SetActive(false);           
         }
     }
 
