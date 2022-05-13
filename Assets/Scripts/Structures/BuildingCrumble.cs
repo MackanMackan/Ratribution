@@ -9,6 +9,7 @@ public class BuildingCrumble : MonoBehaviour
     public int health;
     [SerializeField] List<Transform> children;
     [SerializeField] List<Transform> nonImporatantChildren;
+    [SerializeField] [Range(0, 1)] float precentageToImmediatleyDestroy = 0;
     
     float amplitude = 2;
     
@@ -50,6 +51,16 @@ public class BuildingCrumble : MonoBehaviour
     }
     private void DestroyBuilding()
     {
+        //For optimizing destruction
+        for (int i = 0; i <  Mathf.RoundToInt(children.Count * precentageToImmediatleyDestroy); i++)
+        {
+            Debug.Log(children.Count);
+            int pos = Random.Range(0, children.Count);
+            GameObject destoryThisPiece = children[pos].gameObject;
+            children.Remove(children[pos]);
+            Destroy(destoryThisPiece);
+        }
+
         foreach(Transform child in children)
         {
             if(child == null) { continue; }
