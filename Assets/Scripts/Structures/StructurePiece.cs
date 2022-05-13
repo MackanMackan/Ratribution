@@ -41,6 +41,7 @@ public class StructurePiece : MonoBehaviour, IDestructable
     }
     public void AddForceInDirection(Vector3 direction, float forceMagnitude)
     {
+        direction.Normalize();
         rigidBody.AddForce(direction * forceMagnitude, ForceMode.Impulse);
     }
     IEnumerator GetPlayerRef()
@@ -50,8 +51,9 @@ public class StructurePiece : MonoBehaviour, IDestructable
     }
     public void DamageMe(int damage, GameObject recievedFrom)
     {
+        latestHitRecievedFrom = recievedFrom;
         if (isDead) {
-            hitDir = transform.position - player.transform.position;
+            hitDir = transform.position - recievedFrom.transform.position;
             AddForceInDirection(hitDir, forceMagnitude); 
             return; 
         }
@@ -73,7 +75,7 @@ public class StructurePiece : MonoBehaviour, IDestructable
             }
             else
             {
-                hitDir = transform.position - player.transform.position;
+                hitDir = transform.position - latestHitRecievedFrom.transform.position;
             }
             ActivatePhysics();
             AddForceInDirection(hitDir, forceMagnitude);
@@ -95,16 +97,11 @@ public class StructurePiece : MonoBehaviour, IDestructable
     {
         this.hitDir = hitDir;
     }
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.layer.Equals(LayerMask.NameToLayer("Ground")))
-    //    {
-    //        int dice = Random.Range(1, 11);
-    //        if (dice > 7)
-    //        {
-    //            ParticleSystemServiceLocator.Instance.GetDustParticleSystem().EmitParticles(meshCollider.bounds.center, particlesToEmit);
-    //        }
-    //
-    //    }
-    //}
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer.Equals(LayerMask.NameToLayer("Ground")))
+        {
+           ParticleSystemServiceLocator.Instance.GetDustParticleSystem().EmitParticles(meshCollider.bounds.center, particlesToEmit);
+        }
+    }
 }

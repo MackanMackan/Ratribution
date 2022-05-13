@@ -52,10 +52,11 @@ public class BuildingCrumble : MonoBehaviour
     private void DestroyBuilding()
     {
         //For optimizing destruction
-        for (int i = 0; i <  Mathf.RoundToInt(children.Count * precentageToImmediatleyDestroy); i++)
+        for (int i = 1; i <  Mathf.RoundToInt(children.Count * precentageToImmediatleyDestroy); i++)
         {
-            Debug.Log(children.Count);
             int pos = Random.Range(0, children.Count);
+            if(children[pos] == null){ continue; }
+
             GameObject destoryThisPiece = children[pos].gameObject;
             children.Remove(children[pos]);
             Destroy(destoryThisPiece);
