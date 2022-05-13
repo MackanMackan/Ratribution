@@ -89,7 +89,7 @@ public class OwlSpawn : MonoBehaviour
                     ActivateOwls(owlsLevel3);
                     addOwls(owlsLevel3);
 
-                    newOwls = false;
+                    newOwls = true;
                 }
                 break;
 
