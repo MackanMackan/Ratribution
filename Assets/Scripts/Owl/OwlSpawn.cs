@@ -5,62 +5,139 @@ using UnityEngine;
 public class OwlSpawn : MonoBehaviour
 {
     public GameObject owl;
+    public GameObject owl2;
+    public GameObject owl3;
 
     int maxOwl = 70;
-    public static int spawnOwlcounter;
     float nextSpawn;
+    float minScale = 1;
+    float maxScale = 2;
+
     public int spawnRate;
     public float spawnTimer;
+    public static int spawnOwlcounter;
 
     public List<Transform> spawnPositionList = new List<Transform>();
+    public List<Transform> spawnPositionList2 = new List<Transform>();
+    public List<Transform> spawnPositionList3 = new List<Transform>();
     [HideInInspector]
     public List<GameObject> numberOfOwls = new List<GameObject>();
 
     private GameObject[] beginOwls;
+    private GameObject[] owlsLevel2;
+    private GameObject[] owlsLevel3;
 
     GetBuildingHealth getLevelHealth;
 
-    void Start()
+    bool  newOwls = true;
+
+    private void Awake()
     {
         nextSpawn = spawnTimer;
-        addOwls();
         getLevelHealth = FindObjectOfType<GetBuildingHealth>();
+
+        beginOwls = GameObject.FindGameObjectsWithTag("Owlian");
+        owlsLevel2 = GameObject.FindGameObjectsWithTag("Owlian2");
+        owlsLevel3 = GameObject.FindGameObjectsWithTag("Owlian3");
+   
+        Debug.Log(owlsLevel2);
+       
+        addOwls(beginOwls);
+        DisableOwls(owlsLevel2);
+        DisableOwls(owlsLevel3);
+
+        var level = getLevelHealth.level;
+
+
+
+
+
     }
 
-    private void addOwls()
+    private void addOwls(GameObject [] owls)
     {
-        beginOwls = GameObject.FindGameObjectsWithTag("Owlian");
-
-        for (int i = 0; i < beginOwls.Length; i++)
+        
+        for (int i = 0; i < owls.Length; i++)
         {
-            numberOfOwls.Add(beginOwls[i]);
+            numberOfOwls.Add(owls[i]);
+            Debug.Log(owls[i]);
         }
     }
     void Update()
     {
-        SpawnOwl();
 
-        if (getLevelHealth.level == Level.Level_4)
+        switch (getLevelHealth.level)
         {
-            KillOwl();
-            maxOwl = 0;
+            case Level.Level_1: SpawnOwl(spawnPositionList, owl); break;
+
+            case Level.Level_2:
+         
+                SpawnOwl(spawnPositionList2, owl2);
+
+                if (newOwls)
+
+                {
+                    KillOwl();
+                    ActivateOwls(owlsLevel2);
+                    addOwls(owlsLevel2);
+
+                    newOwls = false;
+                }
+                break;
+
+            case Level.Level_3:
+                SpawnOwl(spawnPositionList3, owl3);
+
+                if (newOwls)
+                {
+                    KillOwl();
+                    ActivateOwls(owlsLevel2);
+                    addOwls(owlsLevel2);
+
+                    newOwls = false;
+                }
+                break;
+
+            case Level.Level_4:
+
+                KillOwl();
+                maxOwl = 0;
+                break;
         }
     }
 
-    private void SpawnOwl()
+    private void ActivateOwls(GameObject[] activeOwls)
+    {
+        for (int i = 0; i < activeOwls.Length; i++)
+        {
+            activeOwls[i].SetActive(true);
+            i++;
+        }
+    }
+
+    private void DisableOwls(GameObject[] activeOwls)
+    {
+        for (int i = 0; i < activeOwls.Length; i++)
+        {
+            activeOwls[i].SetActive(false);
+            i++;
+        }
+    }
+
+    private void SpawnOwl(List<Transform> spawnList, GameObject owlsLevel)
 
     {
         if (Time.time > nextSpawn)
-        {
-            
+        {          
             nextSpawn = Time.time + spawnTimer;
-            Vector3 spawnArea = spawnPositionList[Random.Range(0, spawnPositionList.Count)].position;
+            Vector3 spawnArea = spawnList[Random.Range(0, spawnPositionList.Count)].position;
             Vector3 spawnPosition;
             ServiceLocator.Instance.GetAudioProvider().PlayOneShot("WarTrumpet",spawnArea, false);
             for (int i = 0; i < spawnRate; i++)
             {
                 spawnPosition = spawnArea + new Vector3(Random.Range(0, 10), 0, Random.Range(0, 10));
-                GameObject enemySpawn = Instantiate(owl, spawnPosition, Quaternion.identity);
+                GameObject enemySpawn = Instantiate(owlsLevel, spawnPosition, Quaternion.identity);
+                enemySpawn.transform.localScale = Vector3.one * Random.Range(minScale, maxScale);
                 spawnOwlcounter++;
                 numberOfOwls.Add(enemySpawn);
             }

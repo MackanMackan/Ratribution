@@ -8,6 +8,12 @@ public class PausMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public static bool gameIsPaused = false;
     GlobalVolumeController globalVolumeController;
+    private PlayerInputActions playerControls;
+
+    private void Awake()
+    {
+        playerControls = new PlayerInputActions();
+    }
 
     private void Start()
     {
