@@ -83,7 +83,7 @@ public class OwlSpawn : MonoBehaviour
             case Level.Level_3:
                 SpawnOwl(spawnPositionList3, owl3);
 
-                if (newOwls)
+                if (newOwls == false)
                 {
                     KillOwl();
                     ActivateOwls(owlsLevel3);
