@@ -17,13 +17,15 @@ public class OwlSpawn : MonoBehaviour
     public float spawnTimer;
     public static int spawnOwlcounter;
 
+    public GameObject spawnManager;
     public List<Transform> spawnPositionList = new List<Transform>();
     public List<Transform> spawnPositionList2 = new List<Transform>();
     public List<Transform> spawnPositionList3 = new List<Transform>();
+
     [HideInInspector]
     public List<GameObject> numberOfOwls = new List<GameObject>();
 
-    private GameObject[] beginOwls;
+    private GameObject[] owlsLevel1;
     private GameObject[] owlsLevel2;
     private GameObject[] owlsLevel3;
 
@@ -36,22 +38,16 @@ public class OwlSpawn : MonoBehaviour
         nextSpawn = spawnTimer;
         getLevelHealth = FindObjectOfType<GetBuildingHealth>();
 
-        beginOwls = GameObject.FindGameObjectsWithTag("Owlian");
+        owlsLevel1 = GameObject.FindGameObjectsWithTag("Owlian");
         owlsLevel2 = GameObject.FindGameObjectsWithTag("Owlian2");
         owlsLevel3 = GameObject.FindGameObjectsWithTag("Owlian3");
    
         Debug.Log(owlsLevel2);
        
-        addOwls(beginOwls);
+        addOwls(owlsLevel1);
         DisableOwls(owlsLevel2);
         DisableOwls(owlsLevel3);
-
-        var level = getLevelHealth.level;
-
-
-
-
-
+        Debug.Log(owlsLevel2);
     }
 
     private void addOwls(GameObject [] owls)
@@ -60,7 +56,6 @@ public class OwlSpawn : MonoBehaviour
         for (int i = 0; i < owls.Length; i++)
         {
             numberOfOwls.Add(owls[i]);
-            Debug.Log(owls[i]);
         }
     }
     void Update()
@@ -91,8 +86,8 @@ public class OwlSpawn : MonoBehaviour
                 if (newOwls)
                 {
                     KillOwl();
-                    ActivateOwls(owlsLevel2);
-                    addOwls(owlsLevel2);
+                    ActivateOwls(owlsLevel3);
+                    addOwls(owlsLevel3);
 
                     newOwls = false;
                 }
@@ -101,7 +96,7 @@ public class OwlSpawn : MonoBehaviour
             case Level.Level_4:
 
                 KillOwl();
-                maxOwl = 0;
+                spawnManager.SetActive(false);
                 break;
         }
     }
@@ -110,8 +105,7 @@ public class OwlSpawn : MonoBehaviour
     {
         for (int i = 0; i < activeOwls.Length; i++)
         {
-            activeOwls[i].SetActive(true);
-            i++;
+            activeOwls[i].SetActive(true);            
         }
     }
 
@@ -119,8 +113,7 @@ public class OwlSpawn : MonoBehaviour
     {
         for (int i = 0; i < activeOwls.Length; i++)
         {
-            activeOwls[i].SetActive(false);
-            i++;
+            activeOwls[i].SetActive(false);           
         }
     }
 
