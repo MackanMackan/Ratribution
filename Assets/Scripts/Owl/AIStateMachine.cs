@@ -25,7 +25,13 @@ public class AIStateMachine : MonoBehaviour
     void Update()
     {
         if(animHandler && !atAttackDistance)
+        {
             animHandler.DoRunAnimation(Mathf.Abs(agent.velocity.x+ agent.velocity.y+ agent.velocity.z));
+        }
+        else
+        {
+            animHandler.DoRunAnimation(0);
+        }
         
     }
     private void FixedUpdate()
