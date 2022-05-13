@@ -16,6 +16,10 @@ public class OwlianKill : MonoBehaviour, IDestructable
     [SerializeField] List<Rigidbody> rigidBodies;
     [SerializeField] GameObject root;
     [SerializeField] GameObject featherParticles;
+    [SerializeField] GameObject featherPoofParticles;
+    [SerializeField] GameObject owlSpear;
+    [SerializeField] GameObject owlMesh;
+    [SerializeField] GameObject owlRoot;
     void Start()
     {
         animHandler = GetComponent<OwlianAnimationHandler>();
@@ -48,7 +52,7 @@ public class OwlianKill : MonoBehaviour, IDestructable
         {
             rb.AddForce(direction * Random.Range(2, 5) * forceMagnitude, ForceMode.VelocityChange);
         }
-        CullOnDeath();
+        StartCoroutine(CullOnDeath());
     }
 
     public void CheckIfDead()
@@ -70,9 +74,14 @@ public class OwlianKill : MonoBehaviour, IDestructable
     {
         
     }
-    void CullOnDeath()
+    IEnumerator CullOnDeath()
     {
-        Destroy(gameObject,15);
+        yield return new WaitForSeconds(5);
+        Instantiate(featherPoofParticles,owlRoot.transform.position,Quaternion.identity);
+        owlMesh.SetActive(false);
+        owlSpear.SetActive(false);
+        yield return new WaitForSeconds(5);
+        Destroy(gameObject);
     }
     private void OnTriggerEnter(Collider other)
     {

@@ -40,7 +40,8 @@ public class ParticleSystemServiceLocator : MonoBehaviour
     public IParticleSystem GetDustParticleSystem()
     {
         return dustParticles;
-    }public IParticleSystem GetImpactParticleSystem()
+    }
+    public IParticleSystem GetImpactParticleSystem()
     {
         return impactParticles;
     }
