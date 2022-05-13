@@ -13,13 +13,11 @@ public class OwlianKill : MonoBehaviour, IDestructable
     [SerializeField] CapsuleCollider colTrigg;
     [SerializeField] CapsuleCollider col2;
     [SerializeField] List<GameObject> childList;
-    [SerializeField] List<Rigidbody> rigidBodies;
     [SerializeField] GameObject root;
     [SerializeField] GameObject featherParticles;
     [SerializeField] GameObject featherPoofParticles;
     [SerializeField] GameObject owlSpear;
     [SerializeField] GameObject owlMesh;
-    [SerializeField] GameObject owlRoot;
     void Start()
     {
         animHandler = GetComponent<OwlianAnimationHandler>();
@@ -35,7 +33,7 @@ public class OwlianKill : MonoBehaviour, IDestructable
         owlRigidBody.isKinematic = false;
         animHandler.DisableAnimator();
         colTrigg.enabled = false;
-        col2.enabled = false;
+       // col2.enabled = false;
         featherParticles.SetActive(true);
         ServiceLocator.Instance.GetAudioProvider().PlayOneShot("OwlScream",transform.position,true);
         
@@ -48,10 +46,6 @@ public class OwlianKill : MonoBehaviour, IDestructable
     public void AddForceInDirection(Vector3 direction, float forceMagnitude)
     {
         owlRigidBody.AddForce(direction * Random.Range(2,5) * forceMagnitude, ForceMode.VelocityChange);
-        foreach (var rb in rigidBodies)
-        {
-            rb.AddForce(direction * Random.Range(2, 5) * forceMagnitude, ForceMode.VelocityChange);
-        }
         StartCoroutine(CullOnDeath());
     }
 
@@ -77,7 +71,7 @@ public class OwlianKill : MonoBehaviour, IDestructable
     IEnumerator CullOnDeath()
     {
         yield return new WaitForSeconds(5);
-        Instantiate(featherPoofParticles,owlRoot.transform.position,Quaternion.identity);
+        Instantiate(featherPoofParticles, root.transform.position,Quaternion.identity);
         owlMesh.SetActive(false);
         owlSpear.SetActive(false);
         yield return new WaitForSeconds(5);

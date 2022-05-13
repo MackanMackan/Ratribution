@@ -3,6 +3,7 @@ using UnityEngine;
 public class SpearFly : MonoBehaviour
 {
     [SerializeField] Rigidbody rb;
+    [SerializeField] GameObject trail;
     [SerializeField] float throwForce = 10;
     [SerializeField] BoxCollider spearCollider;
     void Start()
@@ -25,6 +26,7 @@ public class SpearFly : MonoBehaviour
             rb.isKinematic = true;
             rb.velocity = Vector3.zero;
             spearCollider.enabled = false;
+            trail.SetActive(false);
         }
     }
 }
