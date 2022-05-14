@@ -60,7 +60,6 @@ public class AIStateMachine : MonoBehaviour
         Vector3 direction = player.transform.position - agent.transform.position;
         direction += Vector3.up * 3;
         direction.Normalize();
-        Debug.DrawRay(agent.transform.position + Vector3.up * 3, direction, Color.blue, 10);
         if (Physics.Raycast(agent.transform.position + Vector3.up * 3, direction, out RaycastHit hitInfo, attackDistance))
         {
             if (hitInfo.transform.CompareTag("Player"))
