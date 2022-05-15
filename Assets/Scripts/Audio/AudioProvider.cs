@@ -103,7 +103,7 @@ public class AudioProvider : IAudioService
         source.spatialBlend = spatialBlend;
         source.maxDistance = 600f;
         source.dopplerLevel = 0;
-        source.rolloffMode = AudioRolloffMode.Linear;
+        source.rolloffMode = AudioRolloffMode.Logarithmic;
         AddAudioSourcesToList(source);
         return source;
     }

@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
+public delegate void isGrounded();
+public delegate void isNotGrounded();
 public class CharacterMovement : MonoBehaviour
 {
     [Header("Floats")]
@@ -52,6 +54,8 @@ public class CharacterMovement : MonoBehaviour
 
     IntroLanding introLanding;
 
+    public static event isGrounded isOnGround;
+    public static event isNotGrounded isNotOnGround;
     private void Awake()
     {
         playerControls = new PlayerInputActions();
@@ -245,6 +249,14 @@ public class CharacterMovement : MonoBehaviour
     private void GroundCheck()
     {
         isGrounded = Physics.CheckSphere(transform.position - new Vector3(0, 0.5f, 0), 1f, groundLayer);
+        if (isGrounded)
+        {
+            isOnGround?.Invoke();
+        }
+        else
+        {
+            isNotOnGround?.Invoke();
+        }
     }
 
     private void RollingStone(InputAction.CallbackContext obj)
