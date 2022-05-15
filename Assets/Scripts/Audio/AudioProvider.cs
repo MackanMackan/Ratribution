@@ -101,7 +101,7 @@ public class AudioProvider : IAudioService
         AudioSource source = new GameObject("AudioSource (created at runtime)").AddComponent<AudioSource>();
         source.transform.SetParent(parent.transform);
         source.spatialBlend = spatialBlend;
-        source.maxDistance = 800f;
+        source.maxDistance = 600f;
         source.dopplerLevel = 0;
         source.rolloffMode = AudioRolloffMode.Linear;
         AddAudioSourcesToList(source);

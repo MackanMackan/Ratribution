@@ -26,15 +26,16 @@ public class Hitter : MonoBehaviour
         destructableObj.DamageMe(damage, gameObject);
         if (!gameObject.transform.parent.CompareTag("Pickup"))
         {
-            switch (Random.Range(0, 1))
-            {
-                case 0:
-                    ServiceLocator.Instance.GetAudioProvider().PlayOneShot("OwlHit", transform.position, true);
-                    break;
-                case 1:
-                    ServiceLocator.Instance.GetAudioProvider().PlayOneShot("OwlHit2", transform.position, true);
-                    break;
-            }
+            if(!destructableObj.AmIDead())
+                switch (Random.Range(0, 1))
+                {
+                    case 0:
+                        ServiceLocator.Instance.GetAudioProvider().PlayOneShot("OwlHit", transform.position, true);
+                        break;
+                    case 1:
+                        ServiceLocator.Instance.GetAudioProvider().PlayOneShot("OwlHit2", transform.position, true);
+                        break;
+                }
         }
     }
     private void OnTriggerEnter(Collider other)
