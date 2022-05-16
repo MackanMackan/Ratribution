@@ -63,7 +63,10 @@ public class StructurePiece : MonoBehaviour, IDestructable
 
         health -= damage;
 
-        ParticleSystemServiceLocator.Instance.GetDustParticleSystem().EmitParticles(meshCollider.bounds.center, particlesToEmit);
+        if(Random.Range(0,10) == 0)
+        {
+            ParticleSystemServiceLocator.Instance.GetDustParticleSystem().EmitParticles(meshCollider.bounds.center, particlesToEmit);
+        }
         ServiceLocator.Instance.GetAudioProvider().PlayOneShot("StructureImpact", transform.position, true);
         onHit?.Invoke();
         onDamageBuilding?.Invoke(damage,recievedFrom);
