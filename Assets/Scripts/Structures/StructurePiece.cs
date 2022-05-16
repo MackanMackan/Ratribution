@@ -44,6 +44,7 @@ public class StructurePiece : MonoBehaviour, IDestructable
     public void AddForceInDirection(Vector3 direction, float forceMagnitude)
     {
         direction.Normalize();
+        direction.y = Mathf.Abs(direction.y);
         rigidBody.AddForce(direction * forceMagnitude, ForceMode.Impulse);
     }
     IEnumerator GetPlayerRef()
