@@ -21,9 +21,19 @@ public class PausMenu : MonoBehaviour
        globalVolumeController= FindObjectOfType<GlobalVolumeController>();
     }
 
+    public void OnEnable()
+    {
+        playerControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerControls.Disable();
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) //TO DO LAGG TILL KONTROLL
+        if (playerControls.UI.Menu.triggered) //TO DO LAGG TILL KONTROLL
         {
             if (gameIsPaused)
             {
@@ -40,7 +50,6 @@ public class PausMenu : MonoBehaviour
 
     public void Resume()
     {
-        Debug.Log("KNAPP");
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         gameIsPaused = false;
