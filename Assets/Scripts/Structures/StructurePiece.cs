@@ -26,7 +26,7 @@ public class StructurePiece : MonoBehaviour, IDestructable
     private GameObject latestHitRecievedFrom;
     [SerializeField] GameObject player;
     private int forceMagnitude = 25;
-    private bool isDead = false;
+    public bool isDead = false;
     Vector3 hitDir;
 
     float dustParticleTimer = 1;
@@ -115,5 +115,10 @@ public class StructurePiece : MonoBehaviour, IDestructable
                 StartCoroutine(DoDustParticles());
             }
         }
+    }
+
+    public bool AmIDead()
+    {
+        return isDead;
     }
 }

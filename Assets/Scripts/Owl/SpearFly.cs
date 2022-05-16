@@ -6,6 +6,8 @@ public class SpearFly : MonoBehaviour
     [SerializeField] GameObject trail;
     [SerializeField] float throwForce = 10;
     [SerializeField] BoxCollider spearCollider;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip[] audioClips;
     void Start()
     {
         Vector3 direction = CharacterGetter.PLAYER.transform.position - transform.position;
@@ -27,6 +29,17 @@ public class SpearFly : MonoBehaviour
             rb.velocity = Vector3.zero;
             spearCollider.enabled = false;
             trail.SetActive(false);
+            audioSource.pitch = Random.Range(0.8f,1.2f);
+            switch (Random.Range(0, 2))
+            {
+                case 0:
+                    audioSource.clip = audioClips[0];
+                    break;
+                case 1:
+                    audioSource.clip = audioClips[1];
+                    break;
+            }
+            audioSource.Play();
         }
     }
 }
