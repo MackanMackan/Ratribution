@@ -13,9 +13,12 @@ public class StructurePieceBreakConnection : MonoBehaviour
     }
     private void MakeMeFallOnConnectionLost()
     {
-        StructurePiece piece = GetComponent<StructurePiece>();
-        piece.health = 0;
-        piece.CheckIfDead();
+        if(GetComponent<StructurePiece>())
+        {
+            StructurePiece piece = GetComponent<StructurePiece>();
+            piece.health = 0;
+            piece.CheckIfDead();
+        }
     }
 
     private void OnDrawGizmos()

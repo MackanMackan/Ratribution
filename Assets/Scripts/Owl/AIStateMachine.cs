@@ -9,7 +9,10 @@ public class AIStateMachine : MonoBehaviour
     [SerializeField] GameObject player;
     OwlianAnimationHandler animHandler;
     float attackDistance = 15;
+    float baseAttackDistance = 15;
+    float attackDistanceAdded = 10;
     public bool atAttackDistance = false;
+    bool startChecking = false;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -21,12 +24,23 @@ public class AIStateMachine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player)
-            aiState.ExecuteState(atAttackDistance);
-
-        if(animHandler)
+        if(animHandler && !atAttackDistance)
+        {
             animHandler.DoRunAnimation(Mathf.Abs(agent.velocity.x+ agent.velocity.y+ agent.velocity.z));
+        }
+        else
+        {
+            animHandler.DoRunAnimation(0);
+        }
         
+    }
+    private void FixedUpdate()
+    {
+        if (startChecking)
+            CastRayToPlayer();
+
+        if (player)
+            aiState.ExecuteState(atAttackDistance);
     }
     public void ChangeState(IAIState newState)
     {
@@ -39,28 +53,29 @@ public class AIStateMachine : MonoBehaviour
         yield return new WaitForSeconds(2f);
         player = GameObject.FindGameObjectWithTag("Player");
         aiState.InitializeState(agent, player,this,this);
-        StartCoroutine(CheckForPlayer());
+        startChecking = true;
     }
-    IEnumerator CheckForPlayer()
+    void CastRayToPlayer()
     {
-        yield return new WaitForSeconds(0.5f);
-        Vector3 direction = player.transform.position - agent.transform.position + Vector3.up * 3;
+        Vector3 direction = player.transform.position - agent.transform.position;
+        direction += Vector3.up * 3;
         direction.Normalize();
-        if (Physics.Raycast(agent.transform.position + direction + Vector3.up * 3, direction, out RaycastHit hitInfo, attackDistance))
+        if (Physics.Raycast(agent.transform.position + Vector3.up * 3, direction, out RaycastHit hitInfo, attackDistance))
         {
             if (hitInfo.transform.CompareTag("Player"))
             {
                 atAttackDistance = true;
+                attackDistance = baseAttackDistance + attackDistanceAdded;
             }
             else
             {
                 atAttackDistance = false;
+                attackDistance = baseAttackDistance;
             }
         }
         else
         {
             atAttackDistance = false;
         }
-        StartCoroutine(CheckForPlayer());
     }
 }

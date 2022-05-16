@@ -9,6 +9,8 @@ public class BuildingCrumble : MonoBehaviour
     public int health;
     [SerializeField] List<Transform> children;
     [SerializeField] List<Transform> nonImporatantChildren;
+    [SerializeField] [Range(0, 1)] float precentageToImmediatleyDestroy = 0;
+    bool haveCrumble = false;
     
     float amplitude = 2;
     
@@ -50,18 +52,33 @@ public class BuildingCrumble : MonoBehaviour
     }
     private void DestroyBuilding()
     {
-        foreach(Transform child in children)
+        if (!haveCrumble)
         {
-            if(child == null) { continue; }
+            haveCrumble = true;
+            //For optimizing destruction
+            for (int i = 1; i <  Mathf.RoundToInt(children.Count * precentageToImmediatleyDestroy); i++)
+            {
+                int pos = Random.Range(0, children.Count);
+                if(children[pos] == null){ continue; }
 
-            child.GetComponent<StructurePiece>().ActivatePhysics();
-            child.GetComponent<CullOnDead>().Cull();
+                GameObject destoryThisPiece = children[pos].gameObject;
+                children.Remove(children[pos]);
+                Destroy(destoryThisPiece);
+            }
+
+            foreach(Transform child in children)
+            {
+                if(child == null) { continue; }
+
+                child.GetComponent<StructurePiece>().ActivatePhysics();
+                child.GetComponent<CullOnDead>().Cull();
+            }
+            NavMeshObstacle obs = GetComponent<NavMeshObstacle>();
+            obs.carving = false;
+
+            //CinemachineShake.Instance.BeginShake(amplitude, frequency, time);
+
+            Destroy(gameObject, 10);
         }
-        NavMeshObstacle obs = GetComponent<NavMeshObstacle>();
-        obs.carving = false;
-
-        //CinemachineShake.Instance.BeginShake(amplitude, frequency, time);
-
-        Destroy(gameObject, 10);
     }
 }

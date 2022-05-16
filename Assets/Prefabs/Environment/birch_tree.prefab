@@ -306,6 +306,18 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5454164599457218486, guid: 1748469f9e6da8d4c8687db53ee4c834, type: 3}
+      propertyPath: NoiseModule.separateAxes
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454164599457218486, guid: 1748469f9e6da8d4c8687db53ee4c834, type: 3}
+      propertyPath: NoiseModule.strengthY.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454164599457218486, guid: 1748469f9e6da8d4c8687db53ee4c834, type: 3}
+      propertyPath: NoiseModule.strengthZ.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454164599457218486, guid: 1748469f9e6da8d4c8687db53ee4c834, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].probability
       value: 0.05
       objectReference: {fileID: 0}

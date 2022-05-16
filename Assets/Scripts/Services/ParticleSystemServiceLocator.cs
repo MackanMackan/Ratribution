@@ -11,6 +11,7 @@ public class ParticleSystemServiceLocator : MonoBehaviour
     private IParticleSystem impactParticles;
     public GameObject dustParticleSystem;
     public GameObject impactParticleSystem;
+    
     private void Awake()
     {
         if (instance == null)
@@ -40,7 +41,8 @@ public class ParticleSystemServiceLocator : MonoBehaviour
     public IParticleSystem GetDustParticleSystem()
     {
         return dustParticles;
-    }public IParticleSystem GetImpactParticleSystem()
+    }
+    public IParticleSystem GetImpactParticleSystem()
     {
         return impactParticles;
     }

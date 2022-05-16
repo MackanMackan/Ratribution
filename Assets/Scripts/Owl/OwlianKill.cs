@@ -13,9 +13,12 @@ public class OwlianKill : MonoBehaviour, IDestructable
     [SerializeField] CapsuleCollider colTrigg;
     [SerializeField] CapsuleCollider col2;
     [SerializeField] List<GameObject> childList;
-    [SerializeField] List<Rigidbody> rigidBodies;
     [SerializeField] GameObject root;
     [SerializeField] GameObject featherParticles;
+    [SerializeField] GameObject featherPoofParticles;
+    [SerializeField] GameObject owlSpear;
+    [SerializeField] GameObject owlMesh;
+    bool isDead = false;
     void Start()
     {
         animHandler = GetComponent<OwlianAnimationHandler>();
@@ -31,9 +34,18 @@ public class OwlianKill : MonoBehaviour, IDestructable
         owlRigidBody.isKinematic = false;
         animHandler.DisableAnimator();
         colTrigg.enabled = false;
-        col2.enabled = false;
+       // col2.enabled = false;
         featherParticles.SetActive(true);
-        ServiceLocator.Instance.GetAudioProvider().PlayOneShot("OwlScream",transform.position,true);
+        if(Random.Range(0,10) == 9)
+            switch(Random.Range(0, 2))
+            {
+                case 0:   
+                    ServiceLocator.Instance.GetAudioProvider().PlayOneShot("OwlScream",transform.position,true);
+                    break;
+                case 1:
+                    ServiceLocator.Instance.GetAudioProvider().PlayOneShot("OwlScream2", transform.position, true);
+                    break;
+            }
         
         foreach (var child in childList)
         {
@@ -44,11 +56,7 @@ public class OwlianKill : MonoBehaviour, IDestructable
     public void AddForceInDirection(Vector3 direction, float forceMagnitude)
     {
         owlRigidBody.AddForce(direction * Random.Range(2,5) * forceMagnitude, ForceMode.VelocityChange);
-        foreach (var rb in rigidBodies)
-        {
-            rb.AddForce(direction * Random.Range(2, 5) * forceMagnitude, ForceMode.VelocityChange);
-        }
-        CullOnDeath();
+        StartCoroutine(CullOnDeath());
     }
 
     public void CheckIfDead()
@@ -64,15 +72,21 @@ public class OwlianKill : MonoBehaviour, IDestructable
         direction.y = 6;
         AddForceInDirection(direction,forceMagnitude);
         OwlSpawn.spawnOwlcounter--;
+        isDead = true;
     }
 
     public void GetHitDirection(Vector3 direction)
     {
         
     }
-    void CullOnDeath()
+    IEnumerator CullOnDeath()
     {
-        Destroy(gameObject,15);
+        yield return new WaitForSeconds(5);
+        Instantiate(featherPoofParticles, root.transform.position,Quaternion.identity);
+        owlMesh.SetActive(false);
+        owlSpear.SetActive(false);
+        yield return new WaitForSeconds(5);
+        Destroy(gameObject);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -80,5 +94,10 @@ public class OwlianKill : MonoBehaviour, IDestructable
         {
             featherParticles.SetActive(false);
         }
+    }
+
+    public bool AmIDead()
+    {
+        return isDead;
     }
 }

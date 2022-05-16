@@ -23,19 +23,24 @@ public class Hitter : MonoBehaviour
     }
     void DamageDestructableObject()
     {
-        destructableObj.DamageMe(damage, gameObject);
         if (!gameObject.transform.parent.CompareTag("Pickup"))
         {
-            switch (Random.Range(0, 1))
+            if(!destructableObj.AmIDead())
+                switch (Random.Range(0, 2))
+                {
+                    case 0:
+                        ServiceLocator.Instance.GetAudioProvider().PlayOneShot("OwlHit", transform.position, true);
+                        break;
+                    case 1:
+                        ServiceLocator.Instance.GetAudioProvider().PlayOneShot("OwlHit2", transform.position, true);
+                        break;
+                }
+            if(Random.Range(0,20)== 0)
             {
-                case 0:
-                    ServiceLocator.Instance.GetAudioProvider().PlayOneShot("OwlHit", transform.position, true);
-                    break;
-                case 1:
-                    ServiceLocator.Instance.GetAudioProvider().PlayOneShot("OwlHit2", transform.position, true);
-                    break;
+                ServiceLocator.Instance.GetAudioProvider().PlayOneShot("IntroRoar", transform.position, true);
             }
         }
+        destructableObj.DamageMe(damage, gameObject);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -43,7 +48,7 @@ public class Hitter : MonoBehaviour
         {
             destructableObj = other.GetComponent<IDestructable>();
 
-            if (gameObject.CompareTag("Player"))
+            if (gameObject.transform.parent.CompareTag("Player") || gameObject.transform.parent.CompareTag("PlayerLimb"))
                 animImpact.PauseAnimationOnImpact(playerTransform,transform);
 
             onHitDestructable?.Invoke();

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class DustParticleSystem : IParticleSystem
 {
@@ -11,8 +12,8 @@ public class DustParticleSystem : IParticleSystem
     {
         GameObject dustParticleSystemInstance = InstatiateParticleSystem();
         dustParticleSystemInstance.transform.position = position;
-        ParticleSystem particles = dustParticleSystemInstance.GetComponent<ParticleSystem>();
-        particles.Emit(emits);
+        VisualEffect particles = dustParticleSystemInstance.GetComponent<VisualEffect>();
+        particles.Play();
     }
     public GameObject GetNewParticleSystem()
     {
