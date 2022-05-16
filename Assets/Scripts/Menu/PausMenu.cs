@@ -65,7 +65,7 @@ public class PausMenu : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
         Time.timeScale = 1f;
     }
     public void BackToMainMenu()
