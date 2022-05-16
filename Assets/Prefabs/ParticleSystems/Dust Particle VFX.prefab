@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3746478113983614122}
   - component: {fileID: 2758261259442371188}
   - component: {fileID: 179572516038384352}
+  - component: {fileID: 6651359598286477987}
   m_Layer: 0
   m_Name: Dust Particle VFX
   m_TagString: Untagged
@@ -108,3 +109,15 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &6651359598286477987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3746478113983614127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b68fcd7b352f9df4991c5aa34b6a8517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
