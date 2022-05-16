@@ -6,7 +6,7 @@ using UnityEngine;
 
 public delegate void onHit();
 public delegate void onDead();
-public delegate void onDamageBuilding(int damage);
+public delegate void onDamageBuilding(int damage, GameObject damageRecivedFrom);
 
 
 [RequireComponent(typeof(Rigidbody))]
@@ -65,7 +65,7 @@ public class StructurePiece : MonoBehaviour, IDestructable
         ParticleSystemServiceLocator.Instance.GetDustParticleSystem().EmitParticles(meshCollider.bounds.center, particlesToEmit);
         ServiceLocator.Instance.GetAudioProvider().PlayOneShot("StructureImpact", transform.position, true);
         onHit?.Invoke();
-        onDamageBuilding?.Invoke(damage);
+        onDamageBuilding?.Invoke(damage,recievedFrom);
     }
     public void CheckIfDead()
     {
