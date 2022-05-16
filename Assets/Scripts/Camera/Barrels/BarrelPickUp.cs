@@ -12,11 +12,18 @@ public class BarrelPickUp : MonoBehaviour
     PlayerInputActions playerControls;
     InputAction dropBarrel;
     GameObject barrel;
+     MotherTreeDestruction motherDestruction;
+     GameObject motherTree;
     private void Awake()
     {
         playerControls = new PlayerInputActions();
         dropBarrel = playerControls.Player.DropBarrel;
         dropBarrel.performed += DropBarrel;
+    }
+    private void Start()
+    {
+        motherTree = GameObject.FindGameObjectWithTag("MotherTree");
+        motherDestruction = motherTree.GetComponent<MotherTreeDestruction>();
     }
     private void OnEnable()
     {
@@ -28,7 +35,7 @@ public class BarrelPickUp : MonoBehaviour
     }
     void DropBarrel(InputAction.CallbackContext call)
     {
-        if (pickedUpBarrel)
+        if (pickedUpBarrel && !inMotherTreeZone)
         {
             barrel.transform.position = barrelDropper.transform.position;
             barrel.transform.rotation = barrelDropper.transform.rotation;
@@ -36,12 +43,17 @@ public class BarrelPickUp : MonoBehaviour
             barrel.GetComponent<CapsuleCollider>().enabled = true;
             barrel.GetComponent<Rigidbody>().isKinematic = false;
 
-            if(!inMotherTreeZone)
+            if (!inMotherTreeZone)
+            {
                 barrel.GetComponent<ExplodeBarrel>().StartExplosionFuse();
-
-            barrel = null;
-            pickedUpBarrel = false;
+            }
         }
+        else if(inMotherTreeZone)
+        {
+            motherDestruction.AddBarrelToTree(barrel);
+        }
+        barrel = null;
+        pickedUpBarrel = false;
     }
     private void OnTriggerEnter(Collider other)
     {

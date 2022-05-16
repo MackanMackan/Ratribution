@@ -8,11 +8,15 @@ public class MotherTreeDestruction : MonoBehaviour
     public static event onDestroyTree onDestroyTree;
     [SerializeField] GameObject[] barrelHolders;
     [SerializeField] Rigidbody rb;
-    [SerializeField] List<GameObject> barrels;
+    List<GameObject> barrels;
     int amountOfBarrelsAttached = 0;
-    private void OnTriggerEnter(Collider other)
+    private void Start()
     {
-        if (other.CompareTag("Pickup") && other.GetComponent<ExplodeBarrel>().isExploding == false && amountOfBarrelsAttached < 3)
+        barrels = new List<GameObject>();
+    }
+    public void AddBarrelToTree(GameObject other)
+    {
+        if(barrels != null)
         {
             foreach (var barrel in barrels)
             {
@@ -21,23 +25,27 @@ public class MotherTreeDestruction : MonoBehaviour
                     return;
                 }
             }
-            barrels.Add(other.gameObject);
-            other.transform.position = barrelHolders[amountOfBarrelsAttached].transform.position;
-            other.transform.localScale *= 4f;
-            other.transform.rotation = barrelHolders[amountOfBarrelsAttached].transform.rotation;
-            other.transform.SetParent(barrelHolders[amountOfBarrelsAttached].transform);
-            other.GetComponent<ExplodeBarrel>().isExploding = true;
-            other.GetComponent<Rigidbody>().isKinematic = true;
-            amountOfBarrelsAttached++;
-            if(amountOfBarrelsAttached == 3)
-            {
-                foreach (var barrel in barrels)
-                {
-                    barrel.GetComponent<ExplodeBarrel>().StartExplosionFuse();
-                }
-                StartCoroutine(TurnOnPhysics());
-            }
         }
+        barrels.Add(other.gameObject);
+        other.transform.position = barrelHolders[amountOfBarrelsAttached].transform.position;
+        other.transform.localScale *= 4f;
+        other.transform.rotation = barrelHolders[amountOfBarrelsAttached].transform.rotation;
+        other.transform.SetParent(barrelHolders[amountOfBarrelsAttached].transform);
+        other.GetComponent<ExplodeBarrel>().isExploding = true;
+        other.GetComponent<Rigidbody>().isKinematic = true;
+        amountOfBarrelsAttached++;
+        if (amountOfBarrelsAttached == 3)
+        {
+            foreach (var barrel in barrels)
+            {
+                barrel.GetComponent<ExplodeBarrel>().StartExplosionFuse();
+            }
+            StartCoroutine(TurnOnPhysics());
+        }
+}
+    private void OnTriggerEnter(Collider other)
+    {
+           
     }
     IEnumerator TurnOnPhysics()
     {
