@@ -11,6 +11,7 @@ public class BuildingCrumble : MonoBehaviour
     [SerializeField] List<Transform> nonImporatantChildren;
     [SerializeField] [Range(0, 1)] float precentageToImmediatleyDestroy = 0;
     bool haveCrumble = false;
+    public static GameObject lastHitter;
     
     float amplitude = 2;
     
@@ -39,10 +40,10 @@ public class BuildingCrumble : MonoBehaviour
         }  
     }
 
-    public void DamageMe(int damage)
+    public void DamageMe(int damage, GameObject damageRecievedFrom)
     {
         damage = Mathf.Min(health, damage);
-
+        lastHitter = damageRecievedFrom;
         health -= damage;
         if (health <= 0)
         {
@@ -70,7 +71,7 @@ public class BuildingCrumble : MonoBehaviour
             {
                 if(child == null) { continue; }
 
-                child.GetComponent<StructurePiece>().ActivatePhysics();
+                child.GetComponent<StructurePiece>().DamageMe(10000, lastHitter);
                 child.GetComponent<CullOnDead>().Cull();
             }
             NavMeshObstacle obs = GetComponent<NavMeshObstacle>();

@@ -55,7 +55,6 @@ public class PlayerAudioHandler : MonoBehaviour
     }
     public void PlayRollSFX()
     {
-        Debug.Log("Roll SFX!");
         source.volume = rollVolume;
         currentVolume = rollVolume;
         source.pitch = Random.Range(0.8f, 1.4f);
