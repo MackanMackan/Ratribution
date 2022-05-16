@@ -18,6 +18,7 @@ public class OwlianKill : MonoBehaviour, IDestructable
     [SerializeField] GameObject featherPoofParticles;
     [SerializeField] GameObject owlSpear;
     [SerializeField] GameObject owlMesh;
+    [SerializeField] GameObject owlBarrel;
     bool isDead = false;
     void Start()
     {
@@ -74,6 +75,12 @@ public class OwlianKill : MonoBehaviour, IDestructable
         AddForceInDirection(direction,forceMagnitude);
         OwlSpawn.spawnOwlcounter--;
         isDead = true;
+        if(owlBarrel != null)
+        {
+            owlBarrel.transform.SetParent(null);
+            owlBarrel.GetComponent<Rigidbody>().isKinematic = false;
+            owlBarrel.GetComponent<ExplodeBarrel>().isExploding = false;
+        }
     }
 
     public void GetHitDirection(Vector3 direction)

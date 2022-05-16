@@ -7,6 +7,7 @@ public class OwlSpawn : MonoBehaviour
     public GameObject owl;
     public GameObject owl2;
     public GameObject owl3;
+    public GameObject owlExploder;
 
     int maxOwl = 70;
     float nextSpawn;
@@ -119,7 +120,8 @@ public class OwlSpawn : MonoBehaviour
 
     {
         if (Time.time > nextSpawn)
-        {          
+        {
+            GameObject enemySpawn;
             nextSpawn = Time.time + spawnTimer;
             Vector3 spawnArea = spawnList[Random.Range(0, spawnPositionList.Count)].position;
             Vector3 spawnPosition;
@@ -127,7 +129,14 @@ public class OwlSpawn : MonoBehaviour
             for (int i = 0; i < spawnRate; i++)
             {
                 spawnPosition = spawnArea + new Vector3(Random.Range(0, 10), 0, Random.Range(0, 10));
-                GameObject enemySpawn = Instantiate(owlsLevel, spawnPosition, Quaternion.identity);
+                if (Random.Range(0, 20) == 0)
+                {
+                    enemySpawn = Instantiate(owlExploder, spawnPosition, Quaternion.identity);
+                }
+                else
+                {
+                    enemySpawn = Instantiate(owlsLevel, spawnPosition, Quaternion.identity);
+                }
                 enemySpawn.transform.localScale = Vector3.one * Random.Range(minScale, maxScale);
                 spawnOwlcounter++;
                 numberOfOwls.Add(enemySpawn);
