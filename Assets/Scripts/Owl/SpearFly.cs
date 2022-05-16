@@ -16,6 +16,7 @@ public class SpearFly : MonoBehaviour
         rb.AddForce(direction * throwForce, ForceMode.VelocityChange);
         transform.LookAt(CharacterGetter.PLAYER.transform);
         transform.eulerAngles = new Vector3(transform.eulerAngles.x + 90, transform.eulerAngles.y, transform.eulerAngles.z);
+        ServiceLocator.Instance.GetAudioProvider().PlayOneShot("OwlianAttackWosh", transform.position, true);
         Destroy(gameObject,10);
     }
 

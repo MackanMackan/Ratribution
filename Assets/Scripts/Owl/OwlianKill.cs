@@ -36,7 +36,7 @@ public class OwlianKill : MonoBehaviour, IDestructable
         colTrigg.enabled = false;
        // col2.enabled = false;
         featherParticles.SetActive(true);
-        if(Random.Range(0,10) == 9)
+        if(Random.Range(0,20) == 0)
             switch(Random.Range(0, 2))
             {
                 case 0:   
@@ -56,6 +56,7 @@ public class OwlianKill : MonoBehaviour, IDestructable
     public void AddForceInDirection(Vector3 direction, float forceMagnitude)
     {
         owlRigidBody.AddForce(direction * Random.Range(2,5) * forceMagnitude, ForceMode.VelocityChange);
+        owlRigidBody.angularVelocity = new Vector3(Random.Range(0.5f,3f), Random.Range(0.5f, 3f), Random.Range(0.5f, 3f));
         StartCoroutine(CullOnDeath());
     }
 

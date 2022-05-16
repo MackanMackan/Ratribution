@@ -10,8 +10,12 @@ public class PlayerAudioHandler : MonoBehaviour
     PlayerInputActions playerControls;
     InputAction roll;
     float footStepVolume = 0.15f;
-    float rollVolume = 0.8f;
+    float rollStepVolume = 0.5f;
+    float rollContinousVolume = 0.6f;
     float currentVolume = 0.8f;
+    Animator animator;
+
+    [SerializeField] ParticleSystem jumpParticles;
     private void Awake()
     {
         playerControls = new PlayerInputActions();
@@ -20,16 +24,21 @@ public class PlayerAudioHandler : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(ActivateAudioTriggers());
         CharacterMovement.isOnGround += SFXTouchGroundVolume;
         CharacterMovement.isNotOnGround += SFXTurnOFVolume;
+        animator = GetComponent<Animator>();
+        sourceRoll.volume = rollContinousVolume;
     }
-    IEnumerator ActivateAudioTriggers()
+    private void Update()
     {
-        yield return new WaitForSeconds(4f);
-        roll.Enable();
-        roll.performed += PlayRollContinous;
-        roll.canceled += StopRollContinous;
+        if (animator.GetBool("isRolling"))
+        {
+            PlayRollContinous();
+        }
+        else if(!animator.GetBool("isRolling"))
+        {
+            StopRollContinous();
+        }
     }
 
         public void PlayFootStepSFX()
@@ -55,26 +64,35 @@ public class PlayerAudioHandler : MonoBehaviour
     }
     public void PlayRollSFX()
     {
-        source.volume = rollVolume;
-        currentVolume = rollVolume;
+        source.volume = rollStepVolume;
+        currentVolume = rollStepVolume;
         source.pitch = Random.Range(0.8f, 1.4f);
         source.clip = ServiceLocator.Instance.GetAudioProvider().GetAudioClip("PlayerRoll1");
         source.Play();
 
     }
-    public void PlayRollContinous(InputAction.CallbackContext callback)
+    public void PlayRollContinous()
     {
-        sourceRoll.Play();
+        if(!sourceRoll.isPlaying)
+            sourceRoll.Play();
     }
-    public void StopRollContinous(InputAction.CallbackContext callback)
+    public void StopRollContinous()
     {
-        sourceRoll.Stop();
+        if (sourceRoll.isPlaying)
+            sourceRoll.Stop();
     }
-
+    public void PlayIntroStepSFX()
+    {
+        ServiceLocator.Instance.GetAudioProvider().PlayOneShot("ImpactAftermath", transform.position, false);
+        ServiceLocator.Instance.GetAudioProvider().PlayOneShot("ImpactAftermath", transform.position, false);
+        ServiceLocator.Instance.GetAudioProvider().PlayOneShot("ImpactAftermath", transform.position, false);
+        CinemachineShake.Instance.BeginShake(1, 1, 1f);
+        jumpParticles.Emit(20);
+    }
     void SFXTouchGroundVolume()
     {
         source.volume = currentVolume;
-        sourceRoll.volume = 1;
+        sourceRoll.volume = rollContinousVolume;
     }
     void SFXTurnOFVolume()
     {
