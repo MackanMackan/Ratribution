@@ -11,7 +11,7 @@ public class OwlSpawn : MonoBehaviour
     int maxOwl = 70;
     float nextSpawn;
     float minScale = 1;
-    float maxScale = 2;
+    float maxScale = 1.5f;
 
     public int spawnRate;
     public float spawnTimer;
@@ -71,8 +71,7 @@ public class OwlSpawn : MonoBehaviour
 
                 if (newOwls)
 
-                {
-                    KillOwl();
+                {                  
                     ActivateOwls(owlsLevel2);
                     addOwls(owlsLevel2);
 
@@ -84,8 +83,7 @@ public class OwlSpawn : MonoBehaviour
                 SpawnOwl(spawnPositionList3, owl3);
 
                 if (newOwls == false)
-                {
-                    KillOwl();
+                {                   
                     ActivateOwls(owlsLevel3);
                     addOwls(owlsLevel3);
 
