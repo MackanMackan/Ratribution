@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaa3b8214f75b354e9ba2caadd022259, type: 3}
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   quality:
     m_OverrideState: 0
@@ -467,15 +467,15 @@ MonoBehaviour:
   m_AdvancedMode: 0
   rotation:
     m_OverrideState: 1
-    m_Value: 68
+    m_Value: 298
     min: 0
     max: 360
   skyIntensityMode:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: 0.1
+    m_Value: 14.07
   multiplier:
     m_OverrideState: 0
     m_Value: 1
@@ -489,9 +489,9 @@ MonoBehaviour:
     m_Value: {x: 0.09176913, y: 0.25309965, z: 0.5}
   desiredLuxValue:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 100
   updateMode:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 2
   updatePeriod:
     m_OverrideState: 0
@@ -684,10 +684,10 @@ MonoBehaviour:
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.54
+    m_Value: 0.41
   contrast:
     m_OverrideState: 1
-    m_Value: 13
+    m_Value: 4.4
     min: -100
     max: 100
   colorFilter:
@@ -703,7 +703,7 @@ MonoBehaviour:
     max: 180
   saturation:
     m_OverrideState: 1
-    m_Value: 15
+    m_Value: -6.8
     min: -100
     max: 100
 --- !u!114 &8351483691231033693
