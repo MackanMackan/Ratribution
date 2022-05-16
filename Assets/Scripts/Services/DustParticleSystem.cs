@@ -8,12 +8,19 @@ public class DustParticleSystem : IParticleSystem
 {
     public GameObject dustParticleSystem;
 
+    //public void EmitParticles(Vector3 position, int emits)
+    //{
+    //    GameObject dustParticleSystemInstance = InstatiateParticleSystem();
+    //    dustParticleSystemInstance.transform.position = position;
+    //    VisualEffect particles = dustParticleSystemInstance.GetComponent<VisualEffect>();
+    //    particles.Play();
+    //}
     public void EmitParticles(Vector3 position, int emits)
     {
         GameObject dustParticleSystemInstance = InstatiateParticleSystem();
         dustParticleSystemInstance.transform.position = position;
-        VisualEffect particles = dustParticleSystemInstance.GetComponent<VisualEffect>();
-        particles.Play();
+        ParticleSystem particles = dustParticleSystemInstance.GetComponent<ParticleSystem>();
+        particles.Emit(emits);
     }
     public GameObject GetNewParticleSystem()
     {
