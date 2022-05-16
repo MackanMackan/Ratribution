@@ -9,11 +9,18 @@ public class StructurePieceBreakConnection : MonoBehaviour
     private void Start()
     {
         if(!isBottomPiece && mainStabilityPiece != null)
+        {
             mainStabilityPiece.GetComponent<StructurePiece>().onDead += MakeMeFallOnConnectionLost;
+            GetComponent<StructurePiece>().onDead += StopCheckingIfImDead;
+        }
+    }
+    private void StopCheckingIfImDead()
+    {
+        mainStabilityPiece.GetComponent<StructurePiece>().onDead -= MakeMeFallOnConnectionLost;
     }
     private void MakeMeFallOnConnectionLost()
     {
-        if(GetComponent<StructurePiece>())
+        if (GetComponent<StructurePiece>() != null)
         {
             StructurePiece piece = GetComponent<StructurePiece>();
             piece.health = 0;
