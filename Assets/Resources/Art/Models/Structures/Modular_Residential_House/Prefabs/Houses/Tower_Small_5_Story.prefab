@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1002217461979523625}
   - component: {fileID: 1233670879652901194}
+  - component: {fileID: 1205220056475145182}
   m_Layer: 0
   m_Name: Tower_Small_5_Story
   m_TagString: Untagged
@@ -104,6 +105,22 @@ MonoBehaviour:
   children: []
   nonImporatantChildren: []
   precentageToImmediatleyDestroy: 0
+--- !u!208 &1205220056475145182
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002217461979523624}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.25, y: 0.5, z: 2.25}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.46, y: 0, z: 0.31}
+  m_TimeToStationary: 0.5
 --- !u!1001 &12469094753182805
 PrefabInstance:
   m_ObjectHideFlags: 0
