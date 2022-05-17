@@ -10,7 +10,6 @@ public delegate void onDamageBuilding(int damage, GameObject damageRecivedFrom);
 
 
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(MeshCollider))]
 [RequireComponent(typeof(CullOnDead))]
 [RequireComponent(typeof(StructurePieceBreakConnection))]
 public class StructurePiece : MonoBehaviour, IDestructable
@@ -21,7 +20,7 @@ public class StructurePiece : MonoBehaviour, IDestructable
     public event onDead onDead;
     public event onDamageBuilding onDamageBuilding;
 
-    private Collider meshCollider;
+    private Collider collider;
     private Rigidbody rigidBody;
     private GameObject latestHitRecievedFrom;
     [SerializeField] GameObject player;
@@ -37,7 +36,7 @@ public class StructurePiece : MonoBehaviour, IDestructable
     {
         StartCoroutine(nameof(GetPlayerRef));
         onHit += CheckIfDead;
-        meshCollider = GetComponent<Collider>();
+        collider = GetComponent<Collider>();
         rigidBody = GetComponent<Rigidbody>();
         
     }
@@ -65,7 +64,7 @@ public class StructurePiece : MonoBehaviour, IDestructable
 
         if(Random.Range(0,10) == 0)
         {
-            ParticleSystemServiceLocator.Instance.GetDustParticleSystem().EmitParticles(meshCollider.bounds.center, particlesToEmit);
+            ParticleSystemServiceLocator.Instance.GetDustParticleSystem().EmitParticles(collider.bounds.center, particlesToEmit);
         }
         ServiceLocator.Instance.GetAudioProvider().PlayOneShot("StructureImpact", transform.position, true);
         onHit?.Invoke();
@@ -106,7 +105,7 @@ public class StructurePiece : MonoBehaviour, IDestructable
     IEnumerator DoDustParticles()
     {
         doneParticles = true;
-        ParticleSystemServiceLocator.Instance.GetDustParticleSystem().EmitParticles(meshCollider.bounds.center, particlesToEmit);
+        ParticleSystemServiceLocator.Instance.GetDustParticleSystem().EmitParticles(collider.bounds.center, particlesToEmit);
         yield return new WaitForSeconds(dustParticleTimer);
         doneParticles = false;
     }
