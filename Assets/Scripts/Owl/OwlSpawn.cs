@@ -34,7 +34,7 @@ public class OwlSpawn : MonoBehaviour
 
     bool  newOwls = true;
 
-    private void Awake()
+    private void Start()
     {
         nextSpawn = spawnTimer;
         getLevelHealth = FindObjectOfType<GetBuildingHealth>();
