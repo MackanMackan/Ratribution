@@ -24,7 +24,7 @@ public class GlobalVolumeController : MonoBehaviour
 
         getLevelHealth = FindObjectOfType<GetBuildingHealth>();
 
-        MotherTreeDestruction.onDestroyTree += TurnOnBlurr;
+        //MotherTreeDestruction.onDestroyTree += TurnOnBlurr;
     }
 
 
