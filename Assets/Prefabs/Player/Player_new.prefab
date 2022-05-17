@@ -585,7 +585,7 @@ GameObject:
   - component: {fileID: 1307455664221248424}
   m_Layer: 0
   m_Name: HandIK.L
-  m_TagString: Player
+  m_TagString: PlayerLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1193,7 +1193,7 @@ GameObject:
   - component: {fileID: 8888725794795779176}
   m_Layer: 0
   m_Name: HandIK.R
-  m_TagString: Player
+  m_TagString: PlayerLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1599,11 +1599,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18de056092c6fa4ba83a2d1a461a726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitterRoll: {fileID: 6413107299860780786}
   hitterR: {fileID: 381039934627626682}
   hitterL: {fileID: 5760444227535268688}
   hitterKick: {fileID: 4587463522609942007}
   hitterSlam: {fileID: 3390496335181467971}
-  hitterRoll: {fileID: 6413107299860780786}
   animatorParentObj: {fileID: 238758134985017310}
 --- !u!136 &4699961327880758745
 CapsuleCollider:
@@ -1864,7 +1864,7 @@ GameObject:
   - component: {fileID: 5423718626159466087}
   m_Layer: 0
   m_Name: Calf.R_end
-  m_TagString: Player
+  m_TagString: PlayerLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

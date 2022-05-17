@@ -19,9 +19,9 @@ public class OwlSpawn : MonoBehaviour
     public static int spawnOwlcounter;
 
     public GameObject spawnManager;
-    public List<Transform> spawnPositionList = new List<Transform>();
-    public List<Transform> spawnPositionList2 = new List<Transform>();
-    public List<Transform> spawnPositionList3 = new List<Transform>();
+    public List<Transform> spawnPositionList;
+    public List<Transform> spawnPositionList2;
+    public List<Transform> spawnPositionList3;
 
     [HideInInspector]
     public List<GameObject> numberOfOwls = new List<GameObject>();
