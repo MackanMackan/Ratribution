@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 36243576932438917}
   - component: {fileID: 7065553326867927032}
   - component: {fileID: 6563492215236361017}
+  - component: {fileID: 4518375696695357261}
   m_Layer: 3
   m_Name: RoundRoof__13__sh_1
   m_TagString: Untagged
@@ -142,6 +143,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &4518375696695357261
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56231468383384015}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.099447, y: 7.792424, z: 5.7606444}
+  m_Center: {x: -0.000030517578, y: 0.0000076293945, z: 0}
 --- !u!1 &474280604510895989
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,6 +171,7 @@ GameObject:
   - component: {fileID: 1134274478960673718}
   - component: {fileID: 1228694838600555299}
   - component: {fileID: 4718979997508478820}
+  - component: {fileID: 235432594927159333}
   m_Layer: 3
   m_Name: RoundRoof__13__sh_7
   m_TagString: Untagged
@@ -284,6 +299,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &235432594927159333
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474280604510895989}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.2570443, y: 5.1162133, z: 8.539345}
+  m_Center: {x: -0.000030517578, y: 0.000007390976, z: 6.969948e-14}
 --- !u!1 &1599377507767667476
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,6 +327,7 @@ GameObject:
   - component: {fileID: 3987754476521883713}
   - component: {fileID: 4417418763842493593}
   - component: {fileID: 2264277650977397418}
+  - component: {fileID: 3114488606084996694}
   m_Layer: 3
   m_Name: RoundRoof__13__sh_6
   m_TagString: Untagged
@@ -426,6 +455,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &3114488606084996694
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599377507767667476}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.698126, y: 4.4933753, z: 6.301457}
+  m_Center: {x: -0.000030517578, y: 0.0000076293945, z: -0.000007390976}
 --- !u!1 &1911686167384269737
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +483,7 @@ GameObject:
   - component: {fileID: 8865131412334712806}
   - component: {fileID: 2699242276861886712}
   - component: {fileID: 8243777205104615229}
+  - component: {fileID: 3691960213496380976}
   m_Layer: 3
   m_Name: RoundRoof__13__sh_2
   m_TagString: Untagged
@@ -568,6 +611,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &3691960213496380976
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911686167384269737}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.2406836, y: 5.13508, z: 8.108764}
+  m_Center: {x: -0.000030517578, y: 0.0000075101852, z: 3.484974e-14}
 --- !u!1 &2619448623055250506
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,6 +639,7 @@ GameObject:
   - component: {fileID: 8276160449516024141}
   - component: {fileID: 8976697958076378904}
   - component: {fileID: 5999902579522518247}
+  - component: {fileID: 826127842829934606}
   m_Layer: 3
   m_Name: RoundRoof__13__sh_9
   m_TagString: Untagged
@@ -710,6 +767,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &826127842829934606
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619448623055250506}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.348476, y: 4.698576, z: 8.780845}
+  m_Center: {x: -0.000030517578, y: 0.0000076293945, z: -0.0000076293945}
 --- !u!1 &2837780799863134025
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,6 +795,7 @@ GameObject:
   - component: {fileID: 1800650326382905328}
   - component: {fileID: 821462690200376356}
   - component: {fileID: 1450857543100006220}
+  - component: {fileID: 7745258578828148421}
   m_Layer: 3
   m_Name: RoundRoof__13__sh_4
   m_TagString: Untagged
@@ -852,6 +923,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &7745258578828148421
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2837780799863134025}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.950833, y: 7.1831875, z: 5.8778944}
+  m_Center: {x: -0.000030636787, y: 0.0000076293945, z: -0.0000076293945}
 --- !u!1 &3343718085718479243
 GameObject:
   m_ObjectHideFlags: 0
@@ -867,6 +951,7 @@ GameObject:
   - component: {fileID: 5492456360084461729}
   - component: {fileID: 8899740195655935785}
   - component: {fileID: 2239438009993771026}
+  - component: {fileID: 1132726098714916991}
   m_Layer: 3
   m_Name: RoundRoof__13__sh_5
   m_TagString: Untagged
@@ -994,6 +1079,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &1132726098714916991
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3343718085718479243}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.219912, y: 7.055697, z: 5.620263}
+  m_Center: {x: -0.000030517578, y: 0.0000076293945, z: -0.000007748604}
 --- !u!1 &4304213123873358279
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,6 +1107,7 @@ GameObject:
   - component: {fileID: 3813890752344754233}
   - component: {fileID: 8148952698206832626}
   - component: {fileID: 966904787330337427}
+  - component: {fileID: 5119627187070319846}
   m_Layer: 3
   m_Name: RoundRoof__13__sh_3
   m_TagString: Untagged
@@ -1136,6 +1235,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &5119627187070319846
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4304213123873358279}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.459133, y: 5.751253, z: 5.652804}
+  m_Center: {x: -0.000030517578, y: 0.0000076293945, z: -0.000007748604}
 --- !u!1 &4765922085034810398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1218,6 +1330,7 @@ GameObject:
   - component: {fileID: 5045740565860977388}
   - component: {fileID: 8658893907664357098}
   - component: {fileID: 3189150569867638661}
+  - component: {fileID: 8733098732236665723}
   m_Layer: 3
   m_Name: RoundRoof__13__sh_10
   m_TagString: Untagged
@@ -1345,6 +1458,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &8733098732236665723
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6390089467900195556}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.0149994, y: 6.10927, z: 4.2731943}
+  m_Center: {x: -0.000030577183, y: 0.000007748604, z: -3.7514276e-14}
 --- !u!1 &8542137293444506067
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,6 +1486,7 @@ GameObject:
   - component: {fileID: 7463716024477902911}
   - component: {fileID: 7991664236165845809}
   - component: {fileID: 4330997218570041386}
+  - component: {fileID: 8209295280793134805}
   m_Layer: 3
   m_Name: RoundRoof__13__sh_8
   m_TagString: Untagged
@@ -1487,3 +1614,16 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &8209295280793134805
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8542137293444506067}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.609961, y: 7.603508, z: 7.2716546}
+  m_Center: {x: -0.000030517578, y: 0.0000076293945, z: 0}

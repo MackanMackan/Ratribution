@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 463808840866156976}
   - component: {fileID: 7102258653713991376}
   - component: {fileID: 4988849824261219261}
+  - component: {fileID: 4585151589101587210}
   m_Layer: 3
   m_Name: Small_Temple_sh_5
   m_TagString: Untagged
@@ -143,6 +144,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &4585151589101587210
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15203814207910051}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.1418405, y: 4.661693, z: 3.9019518}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &43719465543528244
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,6 +172,7 @@ GameObject:
   - component: {fileID: 8467079125673064229}
   - component: {fileID: 5095670266649426236}
   - component: {fileID: 8469070126546438371}
+  - component: {fileID: 6598781836995272062}
   m_Layer: 3
   m_Name: Small_Temple_sh_58
   m_TagString: Untagged
@@ -286,6 +301,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &6598781836995272062
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43719465543528244}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8200424, y: 1.9346228, z: 3.3343096}
+  m_Center: {x: 0.000000029802322, y: -0.00000047683716, z: 0}
 --- !u!1 &54100152437374914
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,6 +329,7 @@ GameObject:
   - component: {fileID: 2309746897035696174}
   - component: {fileID: 6646463480852404285}
   - component: {fileID: 749839894401188067}
+  - component: {fileID: 6445378808653032190}
   m_Layer: 3
   m_Name: Small_Temple_sh_8
   m_TagString: Untagged
@@ -429,6 +458,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &6445378808653032190
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54100152437374914}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8267072, y: 2.8476992, z: 1.6865988}
+  m_Center: {x: 0, y: 0.0000005364418, z: 0}
 --- !u!1 &87360034274182138
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,6 +486,7 @@ GameObject:
   - component: {fileID: 1811426845398658298}
   - component: {fileID: 8640166797980647339}
   - component: {fileID: 6574081204321780647}
+  - component: {fileID: 5539349211136818448}
   m_Layer: 3
   m_Name: Small_Temple_sh_14
   m_TagString: Untagged
@@ -572,6 +615,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &5539349211136818448
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87360034274182138}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4352238, y: 3.3704479, z: 1.9010348}
+  m_Center: {x: -0.00000011920929, y: 0, z: 0}
 --- !u!1 &147344434038855317
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,6 +643,7 @@ GameObject:
   - component: {fileID: 599083606978884268}
   - component: {fileID: 6877925729794260235}
   - component: {fileID: 2434184178592238107}
+  - component: {fileID: 3563192829632133729}
   m_Layer: 3
   m_Name: Small_Temple_sh_9
   m_TagString: Untagged
@@ -715,6 +772,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &3563192829632133729
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147344434038855317}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4276867, y: 4.7154694, z: 2.775247}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.000000059604645}
 --- !u!1 &393579956747263933
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,6 +800,7 @@ GameObject:
   - component: {fileID: 3615810413470567839}
   - component: {fileID: 6612435230372315000}
   - component: {fileID: 1399969101096905021}
+  - component: {fileID: 5940915257873663916}
   m_Layer: 3
   m_Name: Small_Temple_sh_59
   m_TagString: Untagged
@@ -858,6 +929,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &5940915257873663916
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393579956747263933}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6383938, y: 1.0532379, z: 1.1484716}
+  m_Center: {x: 0.000000059604645, y: 0, z: 0.000000029802322}
 --- !u!1 &401183318738374511
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,6 +957,7 @@ GameObject:
   - component: {fileID: 2296195563810251786}
   - component: {fileID: 6595144307270265030}
   - component: {fileID: 9199333401449115574}
+  - component: {fileID: 345384295950818073}
   m_Layer: 3
   m_Name: Small_Temple_sh_70
   m_TagString: Untagged
@@ -1001,6 +1086,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &345384295950818073
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401183318738374511}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0261091, y: 0.42521906, z: 0.20782399}
+  m_Center: {x: 0.000000059604645, y: 0.00000023841858, z: -0.00000011920929}
 --- !u!1 &417375167012417805
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,6 +1114,7 @@ GameObject:
   - component: {fileID: 1330722746050394961}
   - component: {fileID: 627591890432375240}
   - component: {fileID: 7102696410562683120}
+  - component: {fileID: 2768728476768565522}
   m_Layer: 3
   m_Name: Small_Temple_sh_31
   m_TagString: Untagged
@@ -1144,6 +1243,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &2768728476768565522
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417375167012417805}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.37284228, y: 1.5093063, z: 0.84512967}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &427245817564241522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,6 +1271,7 @@ GameObject:
   - component: {fileID: 2907382352435544938}
   - component: {fileID: 4178321269681730269}
   - component: {fileID: 8946935330639223035}
+  - component: {fileID: 1369735646876446666}
   m_Layer: 3
   m_Name: Small_Temple_sh_48
   m_TagString: Untagged
@@ -1287,6 +1400,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &1369735646876446666
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427245817564241522}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.82970834, y: 2.810645, z: 0.8297081}
+  m_Center: {x: -0.00000010430813, y: -0.000000059604645, z: 0}
 --- !u!1 &532835196522520450
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,6 +1428,7 @@ GameObject:
   - component: {fileID: 1309152309242086703}
   - component: {fileID: 4871880215773398762}
   - component: {fileID: 4311211938076902018}
+  - component: {fileID: 1231355001950492928}
   m_Layer: 3
   m_Name: Small_Temple_sh_33
   m_TagString: Untagged
@@ -1430,6 +1557,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &1231355001950492928
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532835196522520450}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.13495421, y: 0.4885478, z: 0.41393113}
+  m_Center: {x: -0.00000011920929, y: 0.00000023841858, z: 0.00000011175871}
 --- !u!1 &642962216959686765
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,6 +1585,7 @@ GameObject:
   - component: {fileID: 218996871082232038}
   - component: {fileID: 1216637893413382842}
   - component: {fileID: 159175309638003137}
+  - component: {fileID: 7679150020683085751}
   m_Layer: 3
   m_Name: Small_Temple_sh_18
   m_TagString: Untagged
@@ -1573,6 +1714,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &7679150020683085751
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642962216959686765}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.141521, y: 3.91116, z: 2.7008827}
+  m_Center: {x: -0.000000059604645, y: 0, z: 0.00000011920929}
 --- !u!1 &823393497682819723
 GameObject:
   m_ObjectHideFlags: 0
@@ -1588,6 +1742,7 @@ GameObject:
   - component: {fileID: 505203588955974333}
   - component: {fileID: 7501501221889673565}
   - component: {fileID: 5604756168806727628}
+  - component: {fileID: 539248159341287322}
   m_Layer: 3
   m_Name: Small_Temple_sh_4
   m_TagString: Untagged
@@ -1716,6 +1871,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &539248159341287322
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823393497682819723}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.329427, y: 3.7641125, z: 4.0246344}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &894558621792201837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1731,6 +1899,7 @@ GameObject:
   - component: {fileID: 2134506668251782139}
   - component: {fileID: 2700417678705725480}
   - component: {fileID: 2547930615159013558}
+  - component: {fileID: 5113766339127781890}
   m_Layer: 3
   m_Name: Small_Temple_sh_20
   m_TagString: Untagged
@@ -1859,6 +2028,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &5113766339127781890
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894558621792201837}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.90480053, y: 0.6694498, z: 1.6984994}
+  m_Center: {x: 0.000000059604645, y: 0.00000047683716, z: 0.000000029802322}
 --- !u!1 &940817503094306558
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,6 +2056,7 @@ GameObject:
   - component: {fileID: 237494184717524065}
   - component: {fileID: 3324715412763613219}
   - component: {fileID: 6620881985673017887}
+  - component: {fileID: 1265691468627737830}
   m_Layer: 3
   m_Name: Small_Temple_sh_49
   m_TagString: Untagged
@@ -2002,6 +2185,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &1265691468627737830
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940817503094306558}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.23561954, y: 1.3583392, z: 0.8297081}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1026154737703599174
 GameObject:
   m_ObjectHideFlags: 0
@@ -2017,6 +2213,7 @@ GameObject:
   - component: {fileID: 2187867367701158628}
   - component: {fileID: 9178963752724227340}
   - component: {fileID: 7465316459841433577}
+  - component: {fileID: 3452123031020314952}
   m_Layer: 3
   m_Name: Small_Temple_sh_26
   m_TagString: Untagged
@@ -2145,6 +2342,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &3452123031020314952
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026154737703599174}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.524918, y: 1.3296794, z: 0.9324879}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1026403516943147194
 GameObject:
   m_ObjectHideFlags: 0
@@ -2160,6 +2370,7 @@ GameObject:
   - component: {fileID: 8459128236105753040}
   - component: {fileID: 6193383962558112037}
   - component: {fileID: 3906185974743951749}
+  - component: {fileID: 2314356197855801288}
   m_Layer: 3
   m_Name: Small_Temple_sh_75
   m_TagString: Untagged
@@ -2287,6 +2498,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &2314356197855801288
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026403516943147194}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5025008, y: 1.5798228, z: 0.001219511}
+  m_Center: {x: 0, y: 0.00000011920929, z: -0.00000011920929}
 --- !u!1 &1124085095405231663
 GameObject:
   m_ObjectHideFlags: 0
@@ -2302,6 +2526,7 @@ GameObject:
   - component: {fileID: 8285517924298863440}
   - component: {fileID: 8939694792332992009}
   - component: {fileID: 221115814534988072}
+  - component: {fileID: 2358760716233666287}
   m_Layer: 3
   m_Name: Small_Temple_sh_77
   m_TagString: Untagged
@@ -2429,6 +2654,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &2358760716233666287
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124085095405231663}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.50874436, y: 0.09144354, z: 0.058549166}
+  m_Center: {x: 0.000000014901161, y: 0.00000023841858, z: -0.00000011920929}
 --- !u!1 &1165729364610754224
 GameObject:
   m_ObjectHideFlags: 0
@@ -2444,6 +2682,7 @@ GameObject:
   - component: {fileID: 1403249970910091636}
   - component: {fileID: 3262544996953193946}
   - component: {fileID: 5691640908891996690}
+  - component: {fileID: 6169896941205674379}
   m_Layer: 3
   m_Name: Small_Temple_sh_39
   m_TagString: Untagged
@@ -2572,6 +2811,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &6169896941205674379
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165729364610754224}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.82970834, y: 1.8861871, z: 0.8297081}
+  m_Center: {x: 0.00000010430813, y: 0.00000023841858, z: 0}
 --- !u!1 &1332453052805597931
 GameObject:
   m_ObjectHideFlags: 0
@@ -2587,6 +2839,7 @@ GameObject:
   - component: {fileID: 1288474278116222689}
   - component: {fileID: 4743744704191970349}
   - component: {fileID: 6041663384573007650}
+  - component: {fileID: 5533829575123656207}
   m_Layer: 3
   m_Name: Small_Temple_sh_52
   m_TagString: Untagged
@@ -2715,6 +2968,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &5533829575123656207
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332453052805597931}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.82970786, y: 3.8507578, z: 0.82970834}
+  m_Center: {x: -0.00000011920929, y: -0.00000011920929, z: -0.00000010430813}
 --- !u!1 &1472359008108055329
 GameObject:
   m_ObjectHideFlags: 0
@@ -2730,6 +2996,7 @@ GameObject:
   - component: {fileID: 6487094929795607367}
   - component: {fileID: 885282166638526019}
   - component: {fileID: 4630558901744216533}
+  - component: {fileID: 2227235718356396392}
   m_Layer: 3
   m_Name: Small_Temple_sh_45
   m_TagString: Untagged
@@ -2858,6 +3125,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &2227235718356396392
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472359008108055329}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1402595, y: 0.3554883, z: 0.09544277}
+  m_Center: {x: -0.00000011920929, y: -0.000000007450581, z: 0}
 --- !u!1 &1627386954009418864
 GameObject:
   m_ObjectHideFlags: 0
@@ -2873,6 +3153,7 @@ GameObject:
   - component: {fileID: 7641239766203903489}
   - component: {fileID: 891999064025598372}
   - component: {fileID: 295715702888983929}
+  - component: {fileID: 6163156475322129107}
   m_Layer: 3
   m_Name: Small_Temple_sh_72
   m_TagString: Untagged
@@ -3001,6 +3282,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &6163156475322129107
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627386954009418864}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7294022, y: 0.40677786, z: 0.17681694}
+  m_Center: {x: 0.000000029802322, y: -0.00000023841858, z: 0}
 --- !u!1 &1649819902713505282
 GameObject:
   m_ObjectHideFlags: 0
@@ -3217,6 +3511,7 @@ GameObject:
   - component: {fileID: 7925088499515274134}
   - component: {fileID: 1927275633309737738}
   - component: {fileID: 210434355635005350}
+  - component: {fileID: 646222126712635844}
   m_Layer: 3
   m_Name: Small_Temple_sh_62
   m_TagString: Untagged
@@ -3345,6 +3640,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &646222126712635844
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2304096976500374430}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.8124022, y: 1.9982729, z: 2.6813288}
+  m_Center: {x: 0.000000059604645, y: 0.00000044703484, z: 0}
 --- !u!1 &2307506231109814130
 GameObject:
   m_ObjectHideFlags: 0
@@ -3360,6 +3668,7 @@ GameObject:
   - component: {fileID: 8179744620387646784}
   - component: {fileID: 5029224816215133787}
   - component: {fileID: 6454135554127163480}
+  - component: {fileID: 4875804412651962282}
   m_Layer: 3
   m_Name: Small_Temple_sh_42
   m_TagString: Untagged
@@ -3488,6 +3797,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &4875804412651962282
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2307506231109814130}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.017108, y: 3.9312327, z: 0.9567532}
+  m_Center: {x: 0, y: 0.00000011920929, z: 0}
 --- !u!1 &2321886410303227228
 GameObject:
   m_ObjectHideFlags: 0
@@ -3503,6 +3825,7 @@ GameObject:
   - component: {fileID: 8197587521413387143}
   - component: {fileID: 734139089905190089}
   - component: {fileID: 4132994821817105763}
+  - component: {fileID: 4924654310508694799}
   m_Layer: 3
   m_Name: Small_Temple_sh_46
   m_TagString: Untagged
@@ -3631,6 +3954,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &4924654310508694799
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2321886410303227228}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0837982, y: 2.6167908, z: 1.0837986}
+  m_Center: {x: -0.00000008940697, y: -0.000000059604645, z: 0.00000014901161}
 --- !u!1 &2328210059997937361
 GameObject:
   m_ObjectHideFlags: 0
@@ -3646,6 +3982,7 @@ GameObject:
   - component: {fileID: 6768136882248012822}
   - component: {fileID: 7648455001295820015}
   - component: {fileID: 6851014091455656596}
+  - component: {fileID: 3594274489777745538}
   m_Layer: 3
   m_Name: Small_Temple_sh_10
   m_TagString: Untagged
@@ -3774,6 +4111,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &3594274489777745538
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2328210059997937361}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7999783, y: 3.0798366, z: 3.503123}
+  m_Center: {x: -0.000000059604645, y: -0.00000047683716, z: 0}
 --- !u!1 &2465354821318836908
 GameObject:
   m_ObjectHideFlags: 0
@@ -3789,6 +4139,7 @@ GameObject:
   - component: {fileID: 6608192090474307107}
   - component: {fileID: 584999759595761038}
   - component: {fileID: 7187706213440172970}
+  - component: {fileID: 8843990455963222831}
   m_Layer: 3
   m_Name: Small_Temple_sh_1
   m_TagString: Untagged
@@ -3917,6 +4268,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &8843990455963222831
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2465354821318836908}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4498613, y: 0.34062487, z: 0.39569402}
+  m_Center: {x: 0, y: -0.000000029802322, z: 0.00000011920929}
 --- !u!1 &2718863442785652512
 GameObject:
   m_ObjectHideFlags: 0
@@ -3932,6 +4296,7 @@ GameObject:
   - component: {fileID: 4796716828789778820}
   - component: {fileID: 8620767280832408479}
   - component: {fileID: 139060954650405251}
+  - component: {fileID: 6744923496622698632}
   m_Layer: 3
   m_Name: Small_Temple_sh_73
   m_TagString: Untagged
@@ -4060,6 +4425,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &6744923496622698632
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2718863442785652512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9289, y: 0.64852333, z: 0.3085115}
+  m_Center: {x: 0.000000029802322, y: 0, z: 0.00000011920929}
 --- !u!1 &2763227135052357520
 GameObject:
   m_ObjectHideFlags: 0
@@ -4075,6 +4453,7 @@ GameObject:
   - component: {fileID: 8324094788132272233}
   - component: {fileID: 369258143615103657}
   - component: {fileID: 1929307940879887064}
+  - component: {fileID: 2839232711890781742}
   m_Layer: 3
   m_Name: Small_Temple_sh_35
   m_TagString: Untagged
@@ -4203,6 +4582,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &2839232711890781742
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2763227135052357520}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.16625452, y: 0.4668188, z: 0.70940274}
+  m_Center: {x: 0, y: 0, z: 0.00000011920929}
 --- !u!1 &2840939100961404460
 GameObject:
   m_ObjectHideFlags: 0
@@ -4218,6 +4610,7 @@ GameObject:
   - component: {fileID: 7939334449825731531}
   - component: {fileID: 1550409836799238637}
   - component: {fileID: 2699102015614173589}
+  - component: {fileID: 3182437269436913879}
   m_Layer: 3
   m_Name: Small_Temple_sh_32
   m_TagString: Untagged
@@ -4346,6 +4739,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &3182437269436913879
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2840939100961404460}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2553554, y: 3.8900652, z: 4.7642603}
+  m_Center: {x: -0.000000059604645, y: 0, z: 0}
 --- !u!1 &2922083762174882987
 GameObject:
   m_ObjectHideFlags: 0
@@ -4361,6 +4767,7 @@ GameObject:
   - component: {fileID: 7864112317929274757}
   - component: {fileID: 110156783208701846}
   - component: {fileID: 5051553766569814705}
+  - component: {fileID: 5761663752828108899}
   m_Layer: 3
   m_Name: Small_Temple_sh_50
   m_TagString: Untagged
@@ -4489,6 +4896,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &5761663752828108899
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2922083762174882987}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.22337008, y: 0.26578733, z: 0.16955137}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2975043932582351979
 GameObject:
   m_ObjectHideFlags: 0
@@ -4504,6 +4924,7 @@ GameObject:
   - component: {fileID: 6422399217113912983}
   - component: {fileID: 7663027586511601845}
   - component: {fileID: 1217436384580909460}
+  - component: {fileID: 2719705370350723259}
   m_Layer: 3
   m_Name: Small_Temple_sh_60
   m_TagString: Untagged
@@ -4632,6 +5053,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &2719705370350723259
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2975043932582351979}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3080969, y: 1.567399, z: 2.1094797}
+  m_Center: {x: 0.000000029802322, y: 0.00000047683716, z: 0}
 --- !u!1 &3109458827498645429
 GameObject:
   m_ObjectHideFlags: 0
@@ -4647,6 +5081,7 @@ GameObject:
   - component: {fileID: 5077302201337579870}
   - component: {fileID: 8906492377245946951}
   - component: {fileID: 1396764668486874843}
+  - component: {fileID: 1780471930367330682}
   m_Layer: 3
   m_Name: Small_Temple_sh_64
   m_TagString: Untagged
@@ -4775,6 +5210,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &1780471930367330682
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3109458827498645429}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.83385676, y: 0.6313775, z: 1}
+  m_Center: {x: 0.000000029802322, y: -0.000000029802322, z: 0}
 --- !u!1 &3285873588864178117
 GameObject:
   m_ObjectHideFlags: 0
@@ -4790,6 +5238,7 @@ GameObject:
   - component: {fileID: 8375499277591142082}
   - component: {fileID: 4221499230861702345}
   - component: {fileID: 3533344273363179336}
+  - component: {fileID: 960646004742196908}
   m_Layer: 3
   m_Name: Small_Temple_sh_36
   m_TagString: Untagged
@@ -4918,6 +5367,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &960646004742196908
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3285873588864178117}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.42923498, y: 1.1745751, z: 0.3613665}
+  m_Center: {x: 0, y: -0.00000014901161, z: -0.00000011175871}
 --- !u!1 &3315633768425985016
 GameObject:
   m_ObjectHideFlags: 0
@@ -4933,6 +5395,7 @@ GameObject:
   - component: {fileID: 5583456423717548519}
   - component: {fileID: 6176374425872721001}
   - component: {fileID: 3152894619680233957}
+  - component: {fileID: 8981344283098259988}
   m_Layer: 3
   m_Name: Small_Temple_sh_41
   m_TagString: Untagged
@@ -5061,6 +5524,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &8981344283098259988
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3315633768425985016}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.82970786, y: 3.6416192, z: 0.82970834}
+  m_Center: {x: 0.00000011920929, y: 0.000000059604645, z: 0.00000010430813}
 --- !u!1 &3492657202596741225
 GameObject:
   m_ObjectHideFlags: 0
@@ -5076,6 +5552,7 @@ GameObject:
   - component: {fileID: 2266960616340000130}
   - component: {fileID: 7446891515324048693}
   - component: {fileID: 784653702122727841}
+  - component: {fileID: 5754007662746900450}
   m_Layer: 3
   m_Name: Small_Temple_sh_13
   m_TagString: Untagged
@@ -5204,6 +5681,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &5754007662746900450
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3492657202596741225}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2619939, y: 2.4672046, z: 0.41550002}
+  m_Center: {x: 0.000000029802322, y: 0, z: -0.000000059604645}
 --- !u!1 &3976283745973825065
 GameObject:
   m_ObjectHideFlags: 0
@@ -5219,6 +5709,7 @@ GameObject:
   - component: {fileID: 7274202354441580358}
   - component: {fileID: 131163174780422661}
   - component: {fileID: 1561861357634958221}
+  - component: {fileID: 7215581227735010188}
   m_Layer: 3
   m_Name: Small_Temple_sh_16
   m_TagString: Untagged
@@ -5347,6 +5838,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &7215581227735010188
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3976283745973825065}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.3414998, y: 3.4205537, z: 2.9153187}
+  m_Center: {x: 0.000000059604645, y: -0.00000023841858, z: 0}
 --- !u!1 &4030991749252288800
 GameObject:
   m_ObjectHideFlags: 0
@@ -5362,6 +5866,7 @@ GameObject:
   - component: {fileID: 5555709855701750609}
   - component: {fileID: 6357373978445098726}
   - component: {fileID: 6545781717891952154}
+  - component: {fileID: 588051995687723719}
   m_Layer: 3
   m_Name: Small_Temple_sh_55
   m_TagString: Untagged
@@ -5490,6 +5995,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &588051995687723719
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4030991749252288800}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.82970786, y: 1.1693592, z: 0.82970834}
+  m_Center: {x: -0.00000011920929, y: 0, z: -0.00000010430813}
 --- !u!1 &4031803059353905555
 GameObject:
   m_ObjectHideFlags: 0
@@ -5505,6 +6023,7 @@ GameObject:
   - component: {fileID: 1232710993175681976}
   - component: {fileID: 2802731346697470260}
   - component: {fileID: 4237892342728057112}
+  - component: {fileID: 4043302724827543205}
   m_Layer: 3
   m_Name: Small_Temple_sh_47
   m_TagString: Untagged
@@ -5633,6 +6152,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &4043302724827543205
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4031803059353905555}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.82970834, y: 2.3738513, z: 0.8297081}
+  m_Center: {x: -0.00000010430813, y: -0.00000023841858, z: 0}
 --- !u!1 &4270508921597278275
 GameObject:
   m_ObjectHideFlags: 0
@@ -5648,6 +6180,7 @@ GameObject:
   - component: {fileID: 6010938905284960967}
   - component: {fileID: 477029264822495607}
   - component: {fileID: 5763524859088402352}
+  - component: {fileID: 778649694241696096}
   m_Layer: 3
   m_Name: Small_Temple_sh_12
   m_TagString: Untagged
@@ -5776,6 +6309,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &778649694241696096
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4270508921597278275}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.781949, y: 3.9328945, z: 2.0305111}
+  m_Center: {x: 0, y: 0, z: -0.00000011920929}
 --- !u!1 &4277016720756344598
 GameObject:
   m_ObjectHideFlags: 0
@@ -5791,6 +6337,7 @@ GameObject:
   - component: {fileID: 2139824011524307311}
   - component: {fileID: 4226063253486238545}
   - component: {fileID: 7073702430986682697}
+  - component: {fileID: 1676303845633160204}
   m_Layer: 3
   m_Name: Small_Temple_sh_40
   m_TagString: Untagged
@@ -5919,6 +6466,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &1676303845633160204
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4277016720756344598}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3382194, y: 0.97961855, z: 0.82970834}
+  m_Center: {x: 0.00000011920929, y: -0.00000022351742, z: 0.00000010430813}
 --- !u!1 &4322500664510425399
 GameObject:
   m_ObjectHideFlags: 0
@@ -5934,6 +6494,7 @@ GameObject:
   - component: {fileID: 1691545952956908911}
   - component: {fileID: 3103965463345987540}
   - component: {fileID: 7985872036574584966}
+  - component: {fileID: 6761337657611390593}
   m_Layer: 3
   m_Name: Small_Temple_sh_30
   m_TagString: Untagged
@@ -6062,6 +6623,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &6761337657611390593
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4322500664510425399}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.35537, y: 3.99542, z: 3.5214057}
+  m_Center: {x: -0.000000059604645, y: -0.00000023841858, z: -0.00000011920929}
 --- !u!1 &4425065807925434012
 GameObject:
   m_ObjectHideFlags: 0
@@ -6077,6 +6651,7 @@ GameObject:
   - component: {fileID: 4778728872012969537}
   - component: {fileID: 8302648504352002139}
   - component: {fileID: 425696381351198744}
+  - component: {fileID: 6762889249118900014}
   m_Layer: 3
   m_Name: Small_Temple_sh_15
   m_TagString: Untagged
@@ -6205,6 +6780,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &6762889249118900014
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4425065807925434012}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.822922, y: 3.9795783, z: 4.4348273}
+  m_Center: {x: 0, y: 0.00000023841858, z: 0}
 --- !u!1 &4432780092177287325
 GameObject:
   m_ObjectHideFlags: 0
@@ -6220,6 +6808,7 @@ GameObject:
   - component: {fileID: 2166326505992616830}
   - component: {fileID: 5173599004904705418}
   - component: {fileID: 5591186242262866052}
+  - component: {fileID: 4985202263224580093}
   m_Layer: 3
   m_Name: Small_Temple_sh_11
   m_TagString: Untagged
@@ -6348,6 +6937,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &4985202263224580093
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4432780092177287325}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.121972, y: 3.7911847, z: 3.3378487}
+  m_Center: {x: 0, y: 0.00000023841858, z: 0}
 --- !u!1 &4573165292816671078
 GameObject:
   m_ObjectHideFlags: 0
@@ -6363,6 +6965,7 @@ GameObject:
   - component: {fileID: 1033539510527748923}
   - component: {fileID: 6477512030411886966}
   - component: {fileID: 6996288785685245759}
+  - component: {fileID: 2923947512920687482}
   m_Layer: 3
   m_Name: Small_Temple_sh_76
   m_TagString: Untagged
@@ -6490,6 +7093,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &2923947512920687482
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4573165292816671078}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.63311476, y: 0.92731375, z: 0.14519215}
+  m_Center: {x: -0.000000029802322, y: 0, z: 0}
 --- !u!1 &4696583647875092897
 GameObject:
   m_ObjectHideFlags: 0
@@ -6505,6 +7121,7 @@ GameObject:
   - component: {fileID: 3230140270964617616}
   - component: {fileID: 7408700677729553409}
   - component: {fileID: 6755042013909453818}
+  - component: {fileID: 2518434702995264270}
   m_Layer: 3
   m_Name: Small_Temple_sh_3
   m_TagString: Untagged
@@ -6632,6 +7249,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &2518434702995264270
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4696583647875092897}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 1, z: 0.9956932}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4780200558097030874
 GameObject:
   m_ObjectHideFlags: 0
@@ -6647,6 +7277,7 @@ GameObject:
   - component: {fileID: 3921199499113334833}
   - component: {fileID: 474554660067239960}
   - component: {fileID: 1363064528115488539}
+  - component: {fileID: 7614669456228904347}
   m_Layer: 3
   m_Name: Small_Temple_sh_24
   m_TagString: Untagged
@@ -6775,6 +7406,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &7614669456228904347
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4780200558097030874}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.338188, y: 3.259223, z: 2.585866}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5319505423280571174
 GameObject:
   m_ObjectHideFlags: 0
@@ -6790,6 +7434,7 @@ GameObject:
   - component: {fileID: 4943211972407769215}
   - component: {fileID: 475510404633419297}
   - component: {fileID: 1852743358988031565}
+  - component: {fileID: 1102480291578541812}
   m_Layer: 3
   m_Name: Small_Temple_sh_65
   m_TagString: Untagged
@@ -6918,6 +7563,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &1102480291578541812
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5319505423280571174}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: -0.000000029802322, y: 0, z: 0}
 --- !u!1 &5546225409332272458
 GameObject:
   m_ObjectHideFlags: 0
@@ -6933,6 +7591,7 @@ GameObject:
   - component: {fileID: 4707807376074371902}
   - component: {fileID: 1661644437267621693}
   - component: {fileID: 3460473428206546562}
+  - component: {fileID: 5063447056296130008}
   m_Layer: 3
   m_Name: Small_Temple_sh_2
   m_TagString: Untagged
@@ -7061,6 +7720,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &5063447056296130008
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5546225409332272458}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 0.9956932}
+  m_Center: {x: -0.000000029802322, y: 0, z: 0}
 --- !u!1 &5660208519704707966
 GameObject:
   m_ObjectHideFlags: 0
@@ -7076,6 +7748,7 @@ GameObject:
   - component: {fileID: 8070977331157993485}
   - component: {fileID: 7723830621533953807}
   - component: {fileID: 7734663549785850243}
+  - component: {fileID: 182700099171738430}
   m_Layer: 3
   m_Name: Small_Temple_sh_51
   m_TagString: Untagged
@@ -7204,6 +7877,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &182700099171738430
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5660208519704707966}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.82970834, y: 2.683256, z: 0.8297081}
+  m_Center: {x: -0.00000010430813, y: 0, z: 0}
 --- !u!1 &5837327404267442600
 GameObject:
   m_ObjectHideFlags: 0
@@ -7219,6 +7905,7 @@ GameObject:
   - component: {fileID: 7163190345178863025}
   - component: {fileID: 2310945756956356806}
   - component: {fileID: 3406013988147140265}
+  - component: {fileID: 7228267437391008571}
   m_Layer: 3
   m_Name: Small_Temple_sh_6
   m_TagString: Untagged
@@ -7347,6 +8034,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &7228267437391008571
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5837327404267442600}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4411118, y: 2.655136, z: 3.3032327}
+  m_Center: {x: 0.00000008940697, y: 0, z: 0}
 --- !u!1 &5838957488367872008
 GameObject:
   m_ObjectHideFlags: 0
@@ -7362,6 +8062,7 @@ GameObject:
   - component: {fileID: 2892708242637701848}
   - component: {fileID: 2008395354985339675}
   - component: {fileID: 4138783188320102806}
+  - component: {fileID: 2194151766619516892}
   m_Layer: 3
   m_Name: Small_Temple_sh_27
   m_TagString: Untagged
@@ -7490,6 +8191,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &2194151766619516892
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5838957488367872008}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.298171, y: 4.1839027, z: 3.454233}
+  m_Center: {x: -0.000000059604645, y: 0, z: 0}
 --- !u!1 &5842117562457761922
 GameObject:
   m_ObjectHideFlags: 0
@@ -7505,6 +8219,7 @@ GameObject:
   - component: {fileID: 2528878238943374938}
   - component: {fileID: 943593124495485524}
   - component: {fileID: 7421766468980819571}
+  - component: {fileID: 1310220866925940999}
   m_Layer: 3
   m_Name: Small_Temple_sh_53
   m_TagString: Untagged
@@ -7633,6 +8348,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &1310220866925940999
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5842117562457761922}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0837986, y: 4.003235, z: 1.0837982}
+  m_Center: {x: -0.00000014901161, y: 0, z: -0.00000008940697}
 --- !u!1 &5849345987385068146
 GameObject:
   m_ObjectHideFlags: 0
@@ -7648,6 +8376,7 @@ GameObject:
   - component: {fileID: 1546194736825194259}
   - component: {fileID: 7523062705406659538}
   - component: {fileID: 5653891198383152388}
+  - component: {fileID: 2203183277549226055}
   m_Layer: 3
   m_Name: Small_Temple_sh_17
   m_TagString: Untagged
@@ -7776,6 +8505,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &2203183277549226055
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5849345987385068146}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.767244, y: 3.1195486, z: 2.363809}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5881444499341019424
 GameObject:
   m_ObjectHideFlags: 0
@@ -7791,6 +8533,7 @@ GameObject:
   - component: {fileID: 4489822440489678428}
   - component: {fileID: 8335862756145825535}
   - component: {fileID: 3071441773887333148}
+  - component: {fileID: 7667822651726107895}
   m_Layer: 3
   m_Name: Small_Temple_sh_54
   m_TagString: Untagged
@@ -7919,6 +8662,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &7667822651726107895
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5881444499341019424}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.23530984, y: 0.16392326, z: 0.37111422}
+  m_Center: {x: 0.00000011920929, y: 0, z: 0}
 --- !u!1 &6115325067722254138
 GameObject:
   m_ObjectHideFlags: 0
@@ -7934,6 +8690,7 @@ GameObject:
   - component: {fileID: 8953388873440911111}
   - component: {fileID: 5625320473002726609}
   - component: {fileID: 551873392827063160}
+  - component: {fileID: 7110179981909082262}
   m_Layer: 3
   m_Name: Small_Temple_sh_63
   m_TagString: Untagged
@@ -8061,6 +8818,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &7110179981909082262
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6115325067722254138}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6132646296581100420
 GameObject:
   m_ObjectHideFlags: 0
@@ -8076,6 +8846,7 @@ GameObject:
   - component: {fileID: 8407884351210573974}
   - component: {fileID: 7859692978245794709}
   - component: {fileID: 659425817593273755}
+  - component: {fileID: 2037495409942867747}
   m_Layer: 3
   m_Name: Small_Temple_sh_21
   m_TagString: Untagged
@@ -8204,6 +8975,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &2037495409942867747
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6132646296581100420}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9648832, y: 0.7111807, z: 1.3411644}
+  m_Center: {x: 0, y: -0.00000047683716, z: 0}
 --- !u!1 &6209860516939439868
 GameObject:
   m_ObjectHideFlags: 0
@@ -8219,6 +9003,7 @@ GameObject:
   - component: {fileID: 6228524768892630167}
   - component: {fileID: 210146028853301376}
   - component: {fileID: 9166986626050493241}
+  - component: {fileID: 801641717679455641}
   m_Layer: 3
   m_Name: Small_Temple_sh_37
   m_TagString: Untagged
@@ -8347,6 +9132,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &801641717679455641
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6209860516939439868}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5365412, y: 0.9982876, z: 1.0837986}
+  m_Center: {x: -0.00000010430813, y: 0, z: -0.00000014901161}
 --- !u!1 &6353491275985888740
 GameObject:
   m_ObjectHideFlags: 0
@@ -8362,6 +9160,7 @@ GameObject:
   - component: {fileID: 498830848776045687}
   - component: {fileID: 1771950746768512925}
   - component: {fileID: 219386821964019980}
+  - component: {fileID: 2083724424866510924}
   m_Layer: 3
   m_Name: Small_Temple_sh_71
   m_TagString: Untagged
@@ -8490,6 +9289,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &2083724424866510924
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6353491275985888740}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9505179, y: 0.8533244, z: 0.27135634}
+  m_Center: {x: 0, y: -0.00000025331974, z: 0.00000011920929}
 --- !u!1 &6438005319472526907
 GameObject:
   m_ObjectHideFlags: 0
@@ -8505,6 +9317,7 @@ GameObject:
   - component: {fileID: 6392531478910985062}
   - component: {fileID: 6880272846829223124}
   - component: {fileID: 2265783072923818984}
+  - component: {fileID: 8610288386916110421}
   m_Layer: 3
   m_Name: Small_Temple_sh_74
   m_TagString: Untagged
@@ -8633,6 +9446,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &8610288386916110421
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6438005319472526907}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.52053165, y: 0.13378048, z: 0.13331604}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6571308644104099753
 GameObject:
   m_ObjectHideFlags: 0
@@ -8648,6 +9474,7 @@ GameObject:
   - component: {fileID: 4499120131298486165}
   - component: {fileID: 6061954244588101926}
   - component: {fileID: 3402990227210597801}
+  - component: {fileID: 8251593839688828259}
   m_Layer: 3
   m_Name: Small_Temple_sh_29
   m_TagString: Untagged
@@ -8776,6 +9603,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &8251593839688828259
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6571308644104099753}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.8179543, y: 1.9634677, z: 1.945145}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7138538704841527405
 GameObject:
   m_ObjectHideFlags: 0
@@ -8791,6 +9631,7 @@ GameObject:
   - component: {fileID: 8641700344589897396}
   - component: {fileID: 7581256043656047504}
   - component: {fileID: 5004339234600470897}
+  - component: {fileID: 1009636266393545806}
   m_Layer: 3
   m_Name: Small_Temple_sh_56
   m_TagString: Untagged
@@ -8919,6 +9760,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &1009636266393545806
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7138538704841527405}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.252956, y: 1.0301685, z: 2.136744}
+  m_Center: {x: 0, y: 0, z: 0.000000059604645}
 --- !u!1 &7159810741067571680
 GameObject:
   m_ObjectHideFlags: 0
@@ -8934,6 +9788,7 @@ GameObject:
   - component: {fileID: 7553536790023828250}
   - component: {fileID: 5126095537333154360}
   - component: {fileID: 1711242424133157413}
+  - component: {fileID: 262372591079936978}
   m_Layer: 3
   m_Name: Small_Temple_sh_57
   m_TagString: Untagged
@@ -9062,6 +9917,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &262372591079936978
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7159810741067571680}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.24816525, y: 0.46163368, z: 0.44806767}
+  m_Center: {x: 0.000000059604645, y: 0, z: 0}
 --- !u!1 &7165808622899992008
 GameObject:
   m_ObjectHideFlags: 0
@@ -9077,6 +9945,7 @@ GameObject:
   - component: {fileID: 3032979863524589477}
   - component: {fileID: 3894935782497948111}
   - component: {fileID: 3080565648061594184}
+  - component: {fileID: 3542054692311004319}
   m_Layer: 3
   m_Name: Small_Temple_sh_38
   m_TagString: Untagged
@@ -9205,6 +10074,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &3542054692311004319
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7165808622899992008}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0837982, y: 5.00559, z: 1.0837986}
+  m_Center: {x: 0.00000008940697, y: 0, z: -0.00000014901161}
 --- !u!1 &7494503010621268927
 GameObject:
   m_ObjectHideFlags: 0
@@ -9220,6 +10102,7 @@ GameObject:
   - component: {fileID: 5939386250265908269}
   - component: {fileID: 4186957073433753243}
   - component: {fileID: 7964752121043421978}
+  - component: {fileID: 6045827522970634630}
   m_Layer: 3
   m_Name: Small_Temple_sh_66
   m_TagString: Untagged
@@ -9348,6 +10231,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &6045827522970634630
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7494503010621268927}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2279744, y: 2.3289309, z: 0.18757081}
+  m_Center: {x: 0, y: 0.000000059604645, z: 0.00000011920929}
 --- !u!1 &7733780426086088284
 GameObject:
   m_ObjectHideFlags: 0
@@ -9363,6 +10259,7 @@ GameObject:
   - component: {fileID: 3258616469632002975}
   - component: {fileID: 4125107607442455485}
   - component: {fileID: 828524148274150257}
+  - component: {fileID: 607839116912506319}
   m_Layer: 3
   m_Name: Small_Temple_sh_69
   m_TagString: Untagged
@@ -9490,6 +10387,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &607839116912506319
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7733780426086088284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5025008, y: 1.5798228, z: 0.13347244}
+  m_Center: {x: 0, y: 0.00000011920929, z: 0}
 --- !u!1 &7889666292691199617
 GameObject:
   m_ObjectHideFlags: 0
@@ -9505,6 +10415,7 @@ GameObject:
   - component: {fileID: 2528853932635654731}
   - component: {fileID: 5021392180154650618}
   - component: {fileID: 4155078564695065564}
+  - component: {fileID: 7437432660023279977}
   m_Layer: 3
   m_Name: Small_Temple_sh_43
   m_TagString: Untagged
@@ -9633,6 +10544,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &7437432660023279977
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7889666292691199617}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.48556113, y: 0.35963154, z: 0.42423272}
+  m_Center: {x: 0.00000011920929, y: 0, z: 0.00000011175871}
 --- !u!1 &7989347434786432964
 GameObject:
   m_ObjectHideFlags: 0
@@ -9648,6 +10572,7 @@ GameObject:
   - component: {fileID: 8325577315040763792}
   - component: {fileID: 52498452501726805}
   - component: {fileID: 6635751131745716978}
+  - component: {fileID: 7991379602958499556}
   m_Layer: 3
   m_Name: Small_Temple_sh_25
   m_TagString: Untagged
@@ -9775,6 +10700,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &7991379602958499556
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7989347434786432964}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.3843074, y: 3.3351767, z: 4.6105037}
+  m_Center: {x: 0, y: -0.00000023841858, z: 0}
 --- !u!1 &8073404544651754620
 GameObject:
   m_ObjectHideFlags: 0
@@ -9790,6 +10728,7 @@ GameObject:
   - component: {fileID: 6909116891847173943}
   - component: {fileID: 779308656145844066}
   - component: {fileID: 5490303133066491186}
+  - component: {fileID: 3332242864750590184}
   m_Layer: 3
   m_Name: Small_Temple_sh_23
   m_TagString: Untagged
@@ -9918,6 +10857,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &3332242864750590184
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8073404544651754620}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7033565, y: 1.9199815, z: 1.9327253}
+  m_Center: {x: 0, y: -0.00000023841858, z: 0}
 --- !u!1 &8268253951133703347
 GameObject:
   m_ObjectHideFlags: 0
@@ -9933,6 +10885,7 @@ GameObject:
   - component: {fileID: 463502893989027885}
   - component: {fileID: 2522414205240740495}
   - component: {fileID: 346821991569176060}
+  - component: {fileID: 3296492136210527069}
   m_Layer: 3
   m_Name: Small_Temple_sh_61
   m_TagString: Untagged
@@ -10061,6 +11014,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &3296492136210527069
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8268253951133703347}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.9807112, y: 2.5145054, z: 2.4040086}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8328643789106738486
 GameObject:
   m_ObjectHideFlags: 0
@@ -10076,6 +11042,7 @@ GameObject:
   - component: {fileID: 9161814068037232983}
   - component: {fileID: 6515129840572545945}
   - component: {fileID: 1244508373587599659}
+  - component: {fileID: 3547765533331448748}
   m_Layer: 3
   m_Name: Small_Temple_sh_68
   m_TagString: Untagged
@@ -10204,6 +11171,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &3547765533331448748
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8328643789106738486}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.181352, y: 0.91638136, z: 0.18757057}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8369120760769753952
 GameObject:
   m_ObjectHideFlags: 0
@@ -10219,6 +11199,7 @@ GameObject:
   - component: {fileID: 7398760153010565506}
   - component: {fileID: 1093631269929281423}
   - component: {fileID: 8370997252409045184}
+  - component: {fileID: 5520002412855476580}
   m_Layer: 3
   m_Name: Small_Temple_sh_44
   m_TagString: Untagged
@@ -10347,6 +11328,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &5520002412855476580
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8369120760769753952}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0837986, y: 2.077394, z: 1.0837982}
+  m_Center: {x: 0.00000014901161, y: -0.000000059604645, z: 0.00000008940697}
 --- !u!1 &8513582314122680621
 GameObject:
   m_ObjectHideFlags: 0
@@ -10362,6 +11356,7 @@ GameObject:
   - component: {fileID: 7606269062549188249}
   - component: {fileID: 1289336024592934722}
   - component: {fileID: 7188554490873751486}
+  - component: {fileID: 9118623283589205347}
   m_Layer: 3
   m_Name: Small_Temple_sh_67
   m_TagString: Untagged
@@ -10490,6 +11485,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &9118623283589205347
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8513582314122680621}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.047341228, y: 0.18228662, z: 0.06046915}
+  m_Center: {x: 0.000000059604645, y: 0.000000059604645, z: 0}
 --- !u!1 &8681098130603248125
 GameObject:
   m_ObjectHideFlags: 0
@@ -10505,6 +11513,7 @@ GameObject:
   - component: {fileID: 3812444516834836220}
   - component: {fileID: 2834198602217784574}
   - component: {fileID: 4337374759809568441}
+  - component: {fileID: 4719094482225724371}
   m_Layer: 3
   m_Name: Small_Temple_sh_7
   m_TagString: Untagged
@@ -10633,6 +11642,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &4719094482225724371
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8681098130603248125}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.0038466, y: 5.110928, z: 2.0650063}
+  m_Center: {x: 0, y: 0, z: -0.000000059604645}
 --- !u!1 &8754515402362074571
 GameObject:
   m_ObjectHideFlags: 0
@@ -10648,6 +11670,7 @@ GameObject:
   - component: {fileID: 6657205394207283028}
   - component: {fileID: 6125690435028723595}
   - component: {fileID: 786740263834191524}
+  - component: {fileID: 6175078582656873920}
   m_Layer: 3
   m_Name: Small_Temple_sh_34
   m_TagString: Untagged
@@ -10776,6 +11799,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &6175078582656873920
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8754515402362074571}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.82970834, y: 1.9504132, z: 0.8297081}
+  m_Center: {x: 0.00000010430813, y: 0.00000020861626, z: 0}
 --- !u!1 &8758524096361917581
 GameObject:
   m_ObjectHideFlags: 0
@@ -10791,6 +11827,7 @@ GameObject:
   - component: {fileID: 3421297681972627837}
   - component: {fileID: 127657829725120980}
   - component: {fileID: 5886885274055181021}
+  - component: {fileID: 8403303406520507222}
   m_Layer: 3
   m_Name: Small_Temple_sh_28
   m_TagString: Untagged
@@ -10919,6 +11956,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &8403303406520507222
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8758524096361917581}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.13240874, y: 0.46563172, z: 0.3761202}
+  m_Center: {x: 0.000000059604645, y: -0.00000011920929, z: 0.000000059604645}
 --- !u!1 &8971754470742569080
 GameObject:
   m_ObjectHideFlags: 0
@@ -10934,6 +11984,7 @@ GameObject:
   - component: {fileID: 5706196957390348704}
   - component: {fileID: 2506659201721293083}
   - component: {fileID: 1705868958709146163}
+  - component: {fileID: 257971417294863014}
   m_Layer: 3
   m_Name: Small_Temple_sh_19
   m_TagString: Untagged
@@ -11062,6 +12113,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &257971417294863014
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8971754470742569080}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1889243, y: 3.674162, z: 3.5637026}
+  m_Center: {x: 0, y: 0, z: -0.000000059604645}
 --- !u!1 &8983421260422721083
 GameObject:
   m_ObjectHideFlags: 0
@@ -11077,6 +12141,7 @@ GameObject:
   - component: {fileID: 730340086648899114}
   - component: {fileID: 566306075139092248}
   - component: {fileID: 7309659962348025171}
+  - component: {fileID: 5068145507009517070}
   m_Layer: 3
   m_Name: Small_Temple_sh_22
   m_TagString: Untagged
@@ -11205,3 +12270,16 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &5068145507009517070
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8983421260422721083}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.223382, y: 4.3830094, z: 4.0559034}
+  m_Center: {x: 0, y: -0.00000023841858, z: 0}

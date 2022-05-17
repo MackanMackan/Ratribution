@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5497825926161219676}
   - component: {fileID: 8927234077561114617}
   - component: {fileID: 6631303412197243699}
+  - component: {fileID: 3031639366063686902}
   m_Layer: 0
   m_Name: SimpleRoundWindow
   m_TagString: Untagged
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3031639366063686902
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5118309234810133222}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02227974, y: 0.023426311, z: 0.0018757059}
+  m_Center: {x: -0.000000012572852, y: 0.000000013038516, z: 0.00093785295}

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2633086509679715658}
   - component: {fileID: 8939999470159488203}
   - component: {fileID: 1703039446090015121}
+  - component: {fileID: 2230108583310178637}
   m_Layer: 3
   m_Name: RectHouse_sh_29
   m_TagString: Untagged
@@ -143,6 +144,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &2230108583310178637
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133124475211217228}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.921132, y: 2.5183654, z: 4.4593678}
+  m_Center: {x: 0.000030577183, y: 0, z: -0.0000076293945}
 --- !u!1 &175235879038795362
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,6 +172,7 @@ GameObject:
   - component: {fileID: 6593784869066981318}
   - component: {fileID: 2100854383111489527}
   - component: {fileID: 7771258821560104715}
+  - component: {fileID: 853373875710081723}
   m_Layer: 3
   m_Name: RectHouse_sh_24
   m_TagString: Untagged
@@ -286,6 +301,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &853373875710081723
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175235879038795362}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.5029297, y: 2.6672132, z: 3.6527472}
+  m_Center: {x: 0.000030577183, y: 0.00000011920929, z: -0.0000038146973}
 --- !u!1 &480344262667923838
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,6 +329,7 @@ GameObject:
   - component: {fileID: 4832273975040928878}
   - component: {fileID: 8148087414678752737}
   - component: {fileID: 8074743701903314030}
+  - component: {fileID: 6670619559651477444}
   m_Layer: 3
   m_Name: RectHouse_sh_27
   m_TagString: Untagged
@@ -429,6 +458,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &6670619559651477444
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480344262667923838}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.3366241, y: 3.3212864, z: 3.1787999}
+  m_Center: {x: 0.000030517578, y: 0, z: -0.0000038146973}
 --- !u!1 &1564397011678629783
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,6 +486,7 @@ GameObject:
   - component: {fileID: 7051541020126077415}
   - component: {fileID: 4949185247257870485}
   - component: {fileID: 3453236040365391138}
+  - component: {fileID: 4545470397170334089}
   m_Layer: 3
   m_Name: RectHouse_sh_8
   m_TagString: Untagged
@@ -572,6 +615,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &4545470397170334089
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564397011678629783}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.712348, y: 3.7039773, z: 3.5800152}
+  m_Center: {x: 0.000030577183, y: 0, z: -0.000003874302}
 --- !u!1 &1859597720966846499
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,6 +643,7 @@ GameObject:
   - component: {fileID: 4643904489892800537}
   - component: {fileID: 5326786395816240629}
   - component: {fileID: 8509315773950636391}
+  - component: {fileID: 6962866727161251435}
   m_Layer: 3
   m_Name: RectHouse_sh_7
   m_TagString: Untagged
@@ -715,6 +772,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &6962866727161251435
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859597720966846499}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.5090466, y: 2.0837922, z: 2.727634}
+  m_Center: {x: 0.000030398369, y: 0.000000059604645, z: -0.00000756979}
 --- !u!1 &1875680865867866290
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,6 +800,7 @@ GameObject:
   - component: {fileID: 5242589466673493434}
   - component: {fileID: 8700802196568190432}
   - component: {fileID: 8699531747225363008}
+  - component: {fileID: 753576848597855892}
   m_Layer: 3
   m_Name: RectHouse_sh_5
   m_TagString: Untagged
@@ -858,6 +929,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &753576848597855892
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875680865867866290}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7506719, y: 3.1325245, z: 4.300584}
+  m_Center: {x: 0, y: 0.00000017881393, z: -0.0000038146973}
 --- !u!1 &2010421599264566304
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,6 +957,7 @@ GameObject:
   - component: {fileID: 2911125696249852447}
   - component: {fileID: 7508302229026752328}
   - component: {fileID: 2359833485664204047}
+  - component: {fileID: 5714172038049004918}
   m_Layer: 3
   m_Name: RectHouse_sh_17
   m_TagString: Untagged
@@ -1001,6 +1086,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &5714172038049004918
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010421599264566304}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.4877064, y: 3.7039773, z: 2.9936223}
+  m_Center: {x: 0.000030517578, y: 0, z: -0.0000038146973}
 --- !u!1 &2497216202231123846
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,6 +1114,7 @@ GameObject:
   - component: {fileID: 6828886861589303989}
   - component: {fileID: 3250076851427748942}
   - component: {fileID: 5188711557894355812}
+  - component: {fileID: 2743704695111215127}
   m_Layer: 3
   m_Name: RectHouse_sh_20
   m_TagString: Untagged
@@ -1143,6 +1242,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &2743704695111215127
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2497216202231123846}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.9192183, y: 2.5363927, z: 3.9941192}
+  m_Center: {x: 0.000030517578, y: -0.000000059604645, z: -0.0000038146973}
 --- !u!1 &2529157837810787304
 GameObject:
   m_ObjectHideFlags: 0
@@ -1158,6 +1270,7 @@ GameObject:
   - component: {fileID: 7938054314521064861}
   - component: {fileID: 4401820136494346900}
   - component: {fileID: 247706518642458154}
+  - component: {fileID: 2323356967943324840}
   m_Layer: 3
   m_Name: RectHouse_sh_9
   m_TagString: Untagged
@@ -1286,6 +1399,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &2323356967943324840
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2529157837810787304}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0623765, y: 2.050278, z: 3.095538}
+  m_Center: {x: 0.000030517578, y: 0, z: -0.0000076293945}
 --- !u!1 &2561242744337230089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1301,6 +1427,7 @@ GameObject:
   - component: {fileID: 5925887667275696545}
   - component: {fileID: 5606320576946789802}
   - component: {fileID: 4625821315131221340}
+  - component: {fileID: 154800397599740771}
   m_Layer: 3
   m_Name: RectHouse_sh_1
   m_TagString: Untagged
@@ -1429,6 +1556,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &154800397599740771
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2561242744337230089}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.8170063, y: 3.3800075, z: 3.692545}
+  m_Center: {x: 0.000030517578, y: 0, z: -0.000007748604}
 --- !u!1 &2622669573053148679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,6 +1584,7 @@ GameObject:
   - component: {fileID: 2707680404529717206}
   - component: {fileID: 4677481568969969036}
   - component: {fileID: 6352733060798741747}
+  - component: {fileID: 5857210025491024864}
   m_Layer: 3
   m_Name: RectHouse_sh_12
   m_TagString: Untagged
@@ -1572,6 +1713,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &5857210025491024864
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2622669573053148679}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.514053, y: 1.3999954, z: 4.3997035}
+  m_Center: {x: 0.000030517578, y: 0, z: -0.0000038146973}
 --- !u!1 &3883068385783048815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,6 +1741,7 @@ GameObject:
   - component: {fileID: 4753737389666631952}
   - component: {fileID: 1610556796292541722}
   - component: {fileID: 85700588373603084}
+  - component: {fileID: 7591984042187630916}
   m_Layer: 3
   m_Name: RectHouse_sh_11
   m_TagString: Untagged
@@ -1715,6 +1870,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &7591984042187630916
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3883068385783048815}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9628274, y: 2.1719618, z: 3.430931}
+  m_Center: {x: 0.00003066659, y: -0.000000059604645, z: -0.00000756979}
 --- !u!1 &4292969350457198474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1730,6 +1898,7 @@ GameObject:
   - component: {fileID: 5483014235061656600}
   - component: {fileID: 5134880954972677066}
   - component: {fileID: 2689970254207077215}
+  - component: {fileID: 7759052368872500487}
   m_Layer: 3
   m_Name: RectHouse_sh_21
   m_TagString: Untagged
@@ -1858,6 +2027,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &7759052368872500487
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4292969350457198474}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.6266015, y: 4, z: 3.0841868}
+  m_Center: {x: 0.000030517578, y: 0, z: -0.0000039339066}
 --- !u!1 &4395599222930426139
 GameObject:
   m_ObjectHideFlags: 0
@@ -1873,6 +2055,7 @@ GameObject:
   - component: {fileID: 4336539594883387477}
   - component: {fileID: 4746468932929621461}
   - component: {fileID: 8326409941189582309}
+  - component: {fileID: 8937242222327182638}
   m_Layer: 3
   m_Name: RectHouse_sh_2
   m_TagString: Untagged
@@ -2001,6 +2184,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &8937242222327182638
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395599222930426139}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.952391, y: 2.3480434, z: 2.9596987}
+  m_Center: {x: 0.000030517578, y: -0.00000017881393, z: -0.000003874302}
 --- !u!1 &4453495955443956917
 GameObject:
   m_ObjectHideFlags: 0
@@ -2016,6 +2212,7 @@ GameObject:
   - component: {fileID: 834132794568551051}
   - component: {fileID: 7046199952806983770}
   - component: {fileID: 4834170940733231424}
+  - component: {fileID: 4873526241041667949}
   m_Layer: 3
   m_Name: RectHouse_sh_23
   m_TagString: Untagged
@@ -2144,6 +2341,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &4873526241041667949
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4453495955443956917}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.547724, y: 1.9016818, z: 3.3786461}
+  m_Center: {x: 0.000030517578, y: 0, z: -0.0000038146973}
 --- !u!1 &4817255423315849182
 GameObject:
   m_ObjectHideFlags: 0
@@ -2159,6 +2369,7 @@ GameObject:
   - component: {fileID: 452506710757736589}
   - component: {fileID: 5863624335303542433}
   - component: {fileID: 1866115971131542351}
+  - component: {fileID: 4231281757061945080}
   m_Layer: 3
   m_Name: RectHouse_sh_15
   m_TagString: Untagged
@@ -2287,6 +2498,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &4231281757061945080
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4817255423315849182}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.577137, y: 2.8473432, z: 3.0482793}
+  m_Center: {x: 0, y: 0.00000011920929, z: -0.0000037550926}
 --- !u!1 &5080619729267768599
 GameObject:
   m_ObjectHideFlags: 0
@@ -2302,6 +2526,7 @@ GameObject:
   - component: {fileID: 5717875831043500607}
   - component: {fileID: 6269850862010445449}
   - component: {fileID: 5825523350723903721}
+  - component: {fileID: 4234338110995164072}
   m_Layer: 3
   m_Name: RectHouse_sh_28
   m_TagString: Untagged
@@ -2430,6 +2655,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &4234338110995164072
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5080619729267768599}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9175639, y: 2.8993597, z: 2.9171345}
+  m_Center: {x: 0.000061035156, y: -0.000000059604645, z: -0.0000038146973}
 --- !u!1 &5328466531770416664
 GameObject:
   m_ObjectHideFlags: 0
@@ -2445,6 +2683,7 @@ GameObject:
   - component: {fileID: 7861223786730891797}
   - component: {fileID: 5180208180333616435}
   - component: {fileID: 5440435795156035168}
+  - component: {fileID: 6193247841790626588}
   m_Layer: 3
   m_Name: RectHouse_sh_19
   m_TagString: Untagged
@@ -2573,6 +2812,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &6193247841790626588
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328466531770416664}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.037005, y: 2.4484193, z: 3.0927649}
+  m_Center: {x: 0.000061035156, y: -0.00000011920929, z: -0.00000756979}
 --- !u!1 &5375705364311403707
 GameObject:
   m_ObjectHideFlags: 0
@@ -2588,6 +2840,7 @@ GameObject:
   - component: {fileID: 2827068989135745543}
   - component: {fileID: 5113792472586606733}
   - component: {fileID: 2231456509179299148}
+  - component: {fileID: 1210928298534258580}
   m_Layer: 3
   m_Name: RectHouse_sh_25
   m_TagString: Untagged
@@ -2716,6 +2969,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &1210928298534258580
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5375705364311403707}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.902635, y: 2.627593, z: 1.6229945}
+  m_Center: {x: 0.000030577183, y: 0, z: -0.0000075101852}
 --- !u!1 &5498961891123926501
 GameObject:
   m_ObjectHideFlags: 0
@@ -2731,6 +2997,7 @@ GameObject:
   - component: {fileID: 6232696613262490062}
   - component: {fileID: 4718517194356688508}
   - component: {fileID: 6165162813824338332}
+  - component: {fileID: 7863628360101111451}
   m_Layer: 3
   m_Name: RectHouse_sh_4
   m_TagString: Untagged
@@ -2859,6 +3126,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &7863628360101111451
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5498961891123926501}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7516277, y: 3.2687569, z: 2.9654202}
+  m_Center: {x: 0, y: 0, z: -0.000003874302}
 --- !u!1 &5637124586925375435
 GameObject:
   m_ObjectHideFlags: 0
@@ -2874,6 +3154,7 @@ GameObject:
   - component: {fileID: 2509796362160449820}
   - component: {fileID: 7734719759337461466}
   - component: {fileID: 747622083250135755}
+  - component: {fileID: 4622788334924186192}
   m_Layer: 3
   m_Name: RectHouse_sh_14
   m_TagString: Untagged
@@ -3002,6 +3283,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &4622788334924186192
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5637124586925375435}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6928782, y: 1.7696815, z: 6.1678123}
+  m_Center: {x: 0.000030517578, y: 0, z: -0.0000038146973}
 --- !u!1 &5920559901855731876
 GameObject:
   m_ObjectHideFlags: 0
@@ -3017,6 +3311,7 @@ GameObject:
   - component: {fileID: 3722313752190467957}
   - component: {fileID: 936380637328040587}
   - component: {fileID: 1090294035977023648}
+  - component: {fileID: 6315527911994982461}
   m_Layer: 3
   m_Name: RectHouse_sh_6
   m_TagString: Untagged
@@ -3145,6 +3440,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &6315527911994982461
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5920559901855731876}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1882176, y: 3.0157332, z: 3.0869124}
+  m_Center: {x: 0.000030457973, y: 0, z: -0.0000076293945}
 --- !u!1 &6023498826909171093
 GameObject:
   m_ObjectHideFlags: 0
@@ -3160,6 +3468,7 @@ GameObject:
   - component: {fileID: 6904693056456500397}
   - component: {fileID: 5029831413860778978}
   - component: {fileID: 4860874588938180640}
+  - component: {fileID: 5206592836372448732}
   m_Layer: 3
   m_Name: RectHouse_sh_13
   m_TagString: Untagged
@@ -3288,6 +3597,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &5206592836372448732
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6023498826909171093}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.545126, y: 1.8156881, z: 3.3223991}
+  m_Center: {x: 0.000030577183, y: 0, z: -0.0000037550926}
 --- !u!1 &6068365577638250628
 GameObject:
   m_ObjectHideFlags: 0
@@ -3303,6 +3625,7 @@ GameObject:
   - component: {fileID: 6304835359640772124}
   - component: {fileID: 1809189229379521567}
   - component: {fileID: 7584571152077470029}
+  - component: {fileID: 2278863365706763909}
   m_Layer: 3
   m_Name: RectHouse_sh_26
   m_TagString: Untagged
@@ -3431,6 +3754,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &2278863365706763909
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6068365577638250628}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9883947, y: 3.892304, z: 1.6359043}
+  m_Center: {x: 0.000061005354, y: 0.000000059604645, z: -0.0000076293945}
 --- !u!1 &6201039211201330752
 GameObject:
   m_ObjectHideFlags: 0
@@ -3446,6 +3782,7 @@ GameObject:
   - component: {fileID: 4626154202950699710}
   - component: {fileID: 773415826627754232}
   - component: {fileID: 7066833891835396733}
+  - component: {fileID: 5887578764152746623}
   m_Layer: 3
   m_Name: RectHouse_sh_10
   m_TagString: Untagged
@@ -3574,6 +3911,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &5887578764152746623
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6201039211201330752}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.5745623, y: 1.9820526, z: 3.6947129}
+  m_Center: {x: 0.000061035156, y: 0, z: -0.0000039339066}
 --- !u!1 &6378894133369626350
 GameObject:
   m_ObjectHideFlags: 0
@@ -3589,6 +3939,7 @@ GameObject:
   - component: {fileID: 6777644656068611994}
   - component: {fileID: 2709918718623709651}
   - component: {fileID: 2821899052755339996}
+  - component: {fileID: 77595038217405814}
   m_Layer: 3
   m_Name: RectHouse_sh_16
   m_TagString: Untagged
@@ -3717,6 +4068,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &77595038217405814
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6378894133369626350}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.2423973, y: 2.6450186, z: 3.4406896}
+  m_Center: {x: 0.000030696392, y: -0.000000059604645, z: -0.0000076293945}
 --- !u!1 &6923763205534754669
 GameObject:
   m_ObjectHideFlags: 0
@@ -3732,6 +4096,7 @@ GameObject:
   - component: {fileID: 3741923147967784406}
   - component: {fileID: 4600406414993483476}
   - component: {fileID: 8139842716974324942}
+  - component: {fileID: 730206995537304167}
   m_Layer: 3
   m_Name: RectHouse_sh_22
   m_TagString: Untagged
@@ -3860,6 +4225,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &730206995537304167
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6923763205534754669}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2762082, y: 1.2690227, z: 2.0486774}
+  m_Center: {x: 0.000060915947, y: 0, z: -0.0000074505806}
 --- !u!1 &6995217489658405142
 GameObject:
   m_ObjectHideFlags: 0
@@ -3875,6 +4253,7 @@ GameObject:
   - component: {fileID: 4050223241414837994}
   - component: {fileID: 9039354298511156203}
   - component: {fileID: 1966924746084915575}
+  - component: {fileID: 9152085725332084633}
   m_Layer: 3
   m_Name: RectHouse_sh_30
   m_TagString: Untagged
@@ -4003,6 +4382,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &9152085725332084633
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6995217489658405142}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.785986, y: 3.556845, z: 2.0541315}
+  m_Center: {x: 0.000030517578, y: 0, z: -0.0000038146973}
 --- !u!1 &7059871119146464428
 GameObject:
   m_ObjectHideFlags: 0
@@ -4125,6 +4517,7 @@ GameObject:
   - component: {fileID: 7558423083599600819}
   - component: {fileID: 534917647309751999}
   - component: {fileID: 5772205072296871898}
+  - component: {fileID: 3519128188226791299}
   m_Layer: 3
   m_Name: RectHouse_sh_3
   m_TagString: Untagged
@@ -4253,6 +4646,19 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &3519128188226791299
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8443897916662255638}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.9475374, y: 3.7039773, z: 2.8541062}
+  m_Center: {x: 0.00006097555, y: 0, z: -0.0000038146973}
 --- !u!1 &8646033072977099483
 GameObject:
   m_ObjectHideFlags: 0
@@ -4268,6 +4674,7 @@ GameObject:
   - component: {fileID: 4023288430564237882}
   - component: {fileID: 7958569018555060225}
   - component: {fileID: 4365600922003027698}
+  - component: {fileID: 976298709729826290}
   m_Layer: 3
   m_Name: RectHouse_sh_18
   m_TagString: Untagged
@@ -4396,3 +4803,16 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!65 &976298709729826290
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8646033072977099483}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5954857, y: 3.5848937, z: 2.3901834}
+  m_Center: {x: 0, y: 0.000000059604645, z: -0.000003874302}
