@@ -44,9 +44,7 @@ public class PausMenu : MonoBehaviour
             }
             else
             {             
-                Pause();
-                
-               
+                Pause();                            
             }
         }
     }
@@ -86,7 +84,6 @@ public class PausMenu : MonoBehaviour
     public IEnumerator Mm()
     {
         transision.SetTrigger("Start");
-        Debug.Log("w");
         yield return new WaitForSeconds(transisionTime);
         SceneManager.LoadScene(0);
     }

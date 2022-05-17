@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.EventSystems;
 
 public class NextLevel : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class NextLevel : MonoBehaviour
     [SerializeField]
     Animator gate4;
 
+    public  GameObject itemsButton;
+
     GetBuildingHealth getLevelHealth;
     GlobalVolumeController globalVolumeController;
     CinemachineSwitch cinemachineSwitch;
@@ -29,7 +32,9 @@ public class NextLevel : MonoBehaviour
     float speed = 10;
 
     bool level = true;
-    
+
+    EventSystem m_EventSystem;
+
 
     private void Start()
     {
@@ -38,6 +43,10 @@ public class NextLevel : MonoBehaviour
         cinemachineSwitch = FindObjectOfType<CinemachineSwitch>();
         winUI.SetActive(false);
         MotherTreeDestruction.onDestroyTree += WinGame;
+
+        //itemsButton = GameObject.FindGameObjectWithTag("Restart");
+
+        m_EventSystem = EventSystem.current;
     }
 
     private void Update()
@@ -63,6 +72,11 @@ public class NextLevel : MonoBehaviour
                 level = true;
             }
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            WinGame();
+        }
     }
 
     public void GateOpen(Animator gate1, Animator gate2)
@@ -78,9 +92,12 @@ public class NextLevel : MonoBehaviour
             StartCoroutine(WinGame2());            
     }
 
-    public IEnumerator WinGame2() //TODO KAN MAN INTE LAGGA TILL IENUMERATORT TILL EVENTET?
+    public IEnumerator WinGame2()
     {
         yield return new WaitForSeconds(1.5f);
+
+        m_EventSystem.SetSelectedGameObject(itemsButton);
+
         winUI.SetActive(true);
         globalVolumeController.TurnOnBlurr();
     }
