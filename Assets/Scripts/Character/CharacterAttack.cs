@@ -12,11 +12,11 @@ public class CharacterAttack : MonoBehaviour
 
     private CharacterMovement characterMovement;
 
+    public GameObject hitterRoll;
     public GameObject hitterR;
     public GameObject hitterL;
     public GameObject hitterKick;
     public GameObject hitterSlam;
-    public GameObject hitterRoll;
     [SerializeField] GameObject animatorParentObj;
 
     private Animator animator;
@@ -31,11 +31,13 @@ public class CharacterAttack : MonoBehaviour
 
     private void Start()
     {
+        hitterRoll = GameObject.FindGameObjectWithTag("PlayerHitterRoll");
+
+        hitterRoll.SetActive(false);
         hitterR.SetActive(false);
         hitterL.SetActive(false);
         hitterKick.SetActive(false);
         hitterSlam.SetActive(false);
-        hitterRoll.SetActive(false);
 
         characterMovement = GetComponent<CharacterMovement>();
         animator = animatorParentObj.GetComponent<Animator>();
@@ -86,18 +88,6 @@ public class CharacterAttack : MonoBehaviour
             animator.SetTrigger("SlamT");
         }
     }
-
-    //private void ActivateRollHitter(InputAction.CallbackContext callbackContext)
-    //{
-    //    if (!animator.GetBool("isRolling"))
-    //    {
-    //        hitterRoll.SetActive(true);
-    //    }
-    //    else
-    //    {
-    //        hitterRoll.SetActive(false);
-    //    }
-    //}
 
     public void ActivateSlamTrigger()
     {
