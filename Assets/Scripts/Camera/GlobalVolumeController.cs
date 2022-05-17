@@ -15,32 +15,25 @@ public class GlobalVolumeController : MonoBehaviour
     private void Start()
     {
         profile = m_Volume.sharedProfile;
+
         if (!profile.TryGet<DepthOfField>(out var depthOfField))
         {
             depthOfField = profile.Add<DepthOfField>(false);
         }
 
         depthOfField.active = false;
-        Debug.Log("VAdhander");
         getLevelHealth = FindObjectOfType<GetBuildingHealth>();
-
-   
     }
-
 
     public void TurnOnBlurr()
     {
-        Debug.Log("DOF");
         profile.TryGet<DepthOfField>(out var depthOfField);
-
         depthOfField.active = true;      
     }
 
     public void TurnOffBlurr()
     {
         profile.TryGet<DepthOfField>(out var depthOfField);
-
         depthOfField.active = false;
     }
-
 }

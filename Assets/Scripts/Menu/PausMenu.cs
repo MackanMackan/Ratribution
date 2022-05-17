@@ -73,6 +73,7 @@ public class PausMenu : MonoBehaviour
     }
     public void BackToMainMenu()
     {
+        Time.timeScale = 1f;
         StartCoroutine(Mm());
     }
 
@@ -84,8 +85,8 @@ public class PausMenu : MonoBehaviour
 
     public IEnumerator Mm()
     {
-        Debug.Log("HEJHEJ");
         transision.SetTrigger("Start");
+        Debug.Log("w");
         yield return new WaitForSeconds(transisionTime);
         SceneManager.LoadScene(0);
     }

@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class ShowPaw : MonoBehaviour, ISelectHandler
+
+
+public class ShowPaw : MonoBehaviour, ISelectHandler, IDeselectHandler
 {
-    bool selected = false;
-    //Transform child;
     private void Start()
     {
         transform.GetChild(1).gameObject.SetActive(false);
@@ -17,13 +17,14 @@ public class ShowPaw : MonoBehaviour, ISelectHandler
     {
         
         transform.GetChild(1).gameObject.SetActive(true);
-     
-    }
 
-    private void Update()
+    }
+    public void OnDeselect(BaseEventData data)
     {
-
+        transform.GetChild(1).gameObject.SetActive(false);
     }
+
+
 }
    
 
