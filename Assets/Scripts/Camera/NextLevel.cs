@@ -9,10 +9,15 @@ public class NextLevel : MonoBehaviour
     CinemachineVirtualCamera gateCam1;
     [SerializeField]
     CinemachineVirtualCamera gateCam2;
+  
     [SerializeField]
-    GameObject gate1;
+    Animator gate1;
     [SerializeField]
-    GameObject gate2;
+    Animator gate2;
+    [SerializeField]
+    Animator gate3;
+    [SerializeField]
+    Animator gate4;
 
     GetBuildingHealth getLevelHealth;
     GlobalVolumeController globalVolumeController;
@@ -39,7 +44,7 @@ public class NextLevel : MonoBehaviour
     {
         if (getLevelHealth.level == Level.Level_2)
         {          
-            GateOpen(gate1);
+            GateOpen(gate1, gate2);
 
             if (level)
             {
@@ -50,7 +55,7 @@ public class NextLevel : MonoBehaviour
 
         if ( getLevelHealth.level == Level.Level_3)
         {
-            GateOpen(gate2);
+            GateOpen(gate3, gate4);
 
             if (level == false)
             {
@@ -60,9 +65,10 @@ public class NextLevel : MonoBehaviour
         }
     }
 
-    public void GateOpen(GameObject gate)
+    public void GateOpen(Animator gate1, Animator gate2)
     {
-        gate.transform.Translate(Vector3.up * speed * Time.deltaTime);
+        gate1.SetTrigger("GateOpenT");
+        gate2.SetTrigger("GateOpenT");
     }
     public void WinGame()
     {     

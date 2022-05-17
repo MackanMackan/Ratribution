@@ -21,15 +21,16 @@ public class GlobalVolumeController : MonoBehaviour
         }
 
         depthOfField.active = false;
-
+        Debug.Log("VAdhander");
         getLevelHealth = FindObjectOfType<GetBuildingHealth>();
 
-        //MotherTreeDestruction.onDestroyTree += TurnOnBlurr;
+   
     }
 
 
     public void TurnOnBlurr()
     {
+        Debug.Log("DOF");
         profile.TryGet<DepthOfField>(out var depthOfField);
 
         depthOfField.active = true;      
