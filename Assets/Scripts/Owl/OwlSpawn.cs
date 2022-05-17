@@ -43,12 +43,12 @@ public class OwlSpawn : MonoBehaviour
         owlsLevel2 = GameObject.FindGameObjectsWithTag("Owlian2");
         owlsLevel3 = GameObject.FindGameObjectsWithTag("Owlian3");
    
-        Debug.Log(owlsLevel2);
+        //Debug.Log(owlsLevel2);
        
         addOwls(owlsLevel1);
         DisableOwls(owlsLevel2);
         DisableOwls(owlsLevel3);
-        Debug.Log(owlsLevel2);
+        //Debug.Log(owlsLevel2);
     }
 
     private void addOwls(GameObject [] owls)

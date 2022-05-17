@@ -31,6 +31,8 @@ public class CharacterAttack : MonoBehaviour
 
     private void Start()
     {
+        hitterRoll = GameObject.FindGameObjectWithTag("PlayerHitterRoll");
+
         hitterR.SetActive(false);
         hitterL.SetActive(false);
         hitterKick.SetActive(false);
@@ -86,18 +88,6 @@ public class CharacterAttack : MonoBehaviour
             animator.SetTrigger("SlamT");
         }
     }
-
-    //private void ActivateRollHitter(InputAction.CallbackContext callbackContext)
-    //{
-    //    if (!animator.GetBool("isRolling"))
-    //    {
-    //        hitterRoll.SetActive(true);
-    //    }
-    //    else
-    //    {
-    //        hitterRoll.SetActive(false);
-    //    }
-    //}
 
     public void ActivateSlamTrigger()
     {

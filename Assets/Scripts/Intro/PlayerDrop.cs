@@ -17,9 +17,12 @@ public class PlayerDrop : MonoBehaviour
        Vector3 spawnPosition = dropPlace.transform.position;
        GO_player = Instantiate(player, spawnPosition, Quaternion.identity);
        cinemachineVirtualCamera2.enabled = false;
-        player = GameObject.FindGameObjectWithTag("Player");
-        characterMovement = player.GetComponent<CharacterMovement>();
-        characterMovement.playerMoveForce = 0;
-        Time.fixedDeltaTime = 0.02F;
+    }
+    private void Start()
+    {
+       //player = GameObject.FindGameObjectWithTag("Player");
+       //characterMovement = player.GetComponent<CharacterMovement>();
+       //characterMovement.playerMoveForce = 0;
+       Time.fixedDeltaTime = 0.02F;
     }
 }
