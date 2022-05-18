@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening; //Inkluderat tweeing grejerna
+using UnityEngine.UI; //behövs nu
 
 public class PausMenu : MonoBehaviour
 {
@@ -9,16 +11,18 @@ public class PausMenu : MonoBehaviour
     public static bool gameIsPaused = false;
     GlobalVolumeController globalVolumeController;
     private PlayerInputActions playerControls;
-    public Animator transision;
+    public Image fade; //Istället för transition
     private float transisionTime;
 
     private void Awake()
     {
+        DOTween.Init();
         playerControls = new PlayerInputActions();
     }
 
     private void Start()
     {
+
         pauseMenuUI.SetActive(false);
        globalVolumeController= FindObjectOfType<GlobalVolumeController>();
         
@@ -36,7 +40,7 @@ public class PausMenu : MonoBehaviour
 
     void Update()
     {
-        if (playerControls.UI.Menu.triggered) //TO DO LAGG TILL KONTROLL
+        if (playerControls.UI.Menu.triggered) 
         {
             if (gameIsPaused)
             {
@@ -71,9 +75,8 @@ public class PausMenu : MonoBehaviour
     }
     public void BackToMainMenu()
     {
-        Time.timeScale = 1f;
-        transision.SetTrigger("Start");
-        Invoke(nameof(Mm), 1);
+        fade.enabled = true;
+        fade.DOFade(1, 1).SetUpdate(true).OnComplete(Mm); //Sätt alpha till 1, under 1 sekund, ignorera timescale, när det är klart kör funktionen Mm
     }
 
     public void QuitGame()
@@ -84,6 +87,7 @@ public class PausMenu : MonoBehaviour
 
     public void Mm()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
 
