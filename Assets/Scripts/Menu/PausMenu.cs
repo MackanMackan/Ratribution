@@ -9,6 +9,8 @@ public class PausMenu : MonoBehaviour
     public static bool gameIsPaused = false;
     GlobalVolumeController globalVolumeController;
     private PlayerInputActions playerControls;
+    public Animator transision;
+    private float transisionTime;
 
     private void Awake()
     {
@@ -19,6 +21,7 @@ public class PausMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
        globalVolumeController= FindObjectOfType<GlobalVolumeController>();
+        
     }
 
     public void OnEnable()
@@ -41,9 +44,7 @@ public class PausMenu : MonoBehaviour
             }
             else
             {             
-                Pause();
-                
-                
+                Pause();                            
             }
         }
     }
@@ -70,14 +71,21 @@ public class PausMenu : MonoBehaviour
     }
     public void BackToMainMenu()
     {
-        SceneManager.LoadScene(0);
         Time.timeScale = 1f;
+        StartCoroutine(Mm());
     }
 
     public void QuitGame()
     {
         Debug.Log("Quit Game");
         Application.Quit();
+    }
+
+    public IEnumerator Mm()
+    {
+        transision.SetTrigger("Start");
+        yield return new WaitForSeconds(transisionTime);
+        SceneManager.LoadScene(0);
     }
 
 }

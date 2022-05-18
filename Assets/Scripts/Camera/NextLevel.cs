@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.EventSystems;
 
 public class NextLevel : MonoBehaviour
 {
@@ -9,10 +10,17 @@ public class NextLevel : MonoBehaviour
     CinemachineVirtualCamera gateCam1;
     [SerializeField]
     CinemachineVirtualCamera gateCam2;
+  
     [SerializeField]
-    GameObject gate1;
+    Animator gate1;
     [SerializeField]
-    GameObject gate2;
+    Animator gate2;
+    [SerializeField]
+    Animator gate3;
+    [SerializeField]
+    Animator gate4;
+
+    public  GameObject itemsButton;
 
     GetBuildingHealth getLevelHealth;
     GlobalVolumeController globalVolumeController;
@@ -24,7 +32,9 @@ public class NextLevel : MonoBehaviour
     float speed = 10;
 
     bool level = true;
-    
+
+    EventSystem m_EventSystem;
+
 
     private void Start()
     {
@@ -33,13 +43,17 @@ public class NextLevel : MonoBehaviour
         cinemachineSwitch = FindObjectOfType<CinemachineSwitch>();
         winUI.SetActive(false);
         MotherTreeDestruction.onDestroyTree += WinGame;
+
+        //itemsButton = GameObject.FindGameObjectWithTag("Restart");
+
+        m_EventSystem = EventSystem.current;
     }
 
     private void Update()
     {
         if (getLevelHealth.level == Level.Level_2)
         {          
-            GateOpen(gate1);
+            GateOpen(gate1, gate2);
 
             if (level)
             {
@@ -50,7 +64,7 @@ public class NextLevel : MonoBehaviour
 
         if ( getLevelHealth.level == Level.Level_3)
         {
-            GateOpen(gate2);
+            GateOpen(gate3, gate4);
 
             if (level == false)
             {
@@ -58,11 +72,17 @@ public class NextLevel : MonoBehaviour
                 level = true;
             }
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            WinGame();
+        }
     }
 
-    public void GateOpen(GameObject gate)
+    public void GateOpen(Animator gate1, Animator gate2)
     {
-        gate.transform.Translate(Vector3.up * speed * Time.deltaTime);
+        gate1.SetTrigger("GateOpenT");
+        gate2.SetTrigger("GateOpenT");
     }
     public void WinGame()
     {     
@@ -72,9 +92,12 @@ public class NextLevel : MonoBehaviour
             StartCoroutine(WinGame2());            
     }
 
-    public IEnumerator WinGame2() //TODO KAN MAN INTE LAGGA TILL IENUMERATORT TILL EVENTET?
+    public IEnumerator WinGame2()
     {
         yield return new WaitForSeconds(1.5f);
+
+        m_EventSystem.SetSelectedGameObject(itemsButton);
+
         winUI.SetActive(true);
         globalVolumeController.TurnOnBlurr();
     }
