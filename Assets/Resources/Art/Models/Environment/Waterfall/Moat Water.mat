@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Waterfall
+  m_Name: Moat Water
   m_Shader: {fileID: -6465566751694194690, guid: 356e1e4e28b60c44e8a6f730ab9e967b, type: 3}
   m_ShaderKeywords: _DISABLE_SSR_TRANSPARENT _ENABLE_FOG_ON_TRANSPARENT _SURFACE_TYPE_TRANSPARENT
   m_LightmapFlags: 4
@@ -38,12 +38,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_24335b02a5ef48ec84899dda9b498785: 0.12
-    - Vector1_634c31fc67354391a14aba76161f24d2: 0.4
-    - Vector1_7088eb600451499e8e9ed1a398e2b049: 0.54
+    - Vector1_24335b02a5ef48ec84899dda9b498785: 1.17
+    - Vector1_634c31fc67354391a14aba76161f24d2: 0.5
+    - Vector1_7088eb600451499e8e9ed1a398e2b049: 0.29
     - Vector1_967c6c9bc20a4adb8ff31223368bcf3d: 1
-    - Vector1_b66d26eacba048c084955912a1738e22: -1.89
-    - Vector1_ba3479cac48e455fa2ff7c8b09b8efb5: 0.66
+    - Vector1_b66d26eacba048c084955912a1738e22: -1.24
+    - Vector1_ba3479cac48e455fa2ff7c8b09b8efb5: 0.26
     - Vector1_f75ab52227194a078c91c7871377c343: 4.35
     - Vector1_fd682379a9434e8b8364ada2064cf83a: 5.01
     - _AddPrecomputedVelocity: 0
@@ -94,11 +94,11 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 0
     m_Colors:
-    - Color_0910505f3a41499b90847a7be3a3edd5: {r: 0.20959415, g: 0.42040628, b: 0.7075472, a: 1}
+    - Color_0910505f3a41499b90847a7be3a3edd5: {r: 0.2404592, g: 0.36729726, b: 0.5377358, a: 1}
     - Color_dd07a9d2b3004496a87edfcb65051746: {r: 0.16470586, g: 0.3531695, b: 0.74509805, a: 1}
-    - Vector2_5f2090519d4a439788fb6de5a0a9eac6: {r: 5, g: 1, b: 0, a: 0}
-    - Vector2_ca663f65fdff49648e3f457042ffba0a: {r: 0, g: 0.75, b: 0, a: 0}
-    - Vector2_f321e6f50e0a4ad8af6b6dbf3e87b5aa: {r: 0, g: 1, b: 0, a: 0}
+    - Vector2_5f2090519d4a439788fb6de5a0a9eac6: {r: 10, g: 10, b: 0, a: 0}
+    - Vector2_ca663f65fdff49648e3f457042ffba0a: {r: 0, g: 0.1, b: 0, a: 0}
+    - Vector2_f321e6f50e0a4ad8af6b6dbf3e87b5aa: {r: 0, g: 0.1, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
