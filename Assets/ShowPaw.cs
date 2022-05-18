@@ -21,6 +21,7 @@ public class ShowPaw : MonoBehaviour, ISelectHandler, IDeselectHandler
     {
         
         transform.GetChild(1).gameObject.SetActive(true);
+        ServiceLocator.Instance.GetAudioProvider().PlayOneShot("menu",transform.position,false);
 
     }
     public void OnDeselect(BaseEventData data)
