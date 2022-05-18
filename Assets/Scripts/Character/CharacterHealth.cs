@@ -4,7 +4,7 @@ public delegate void onHitPlayer();
 public class CharacterHealth : MonoBehaviour
 {
     public static event onHitPlayer onHitPlayer;
-    [SerializeField] static int health = 500;
+    [SerializeField]public static int health = 500;
     public static void DamageMe(int damage)
     {
         health -= damage;

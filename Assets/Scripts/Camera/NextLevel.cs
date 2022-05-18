@@ -60,6 +60,8 @@ public class NextLevel : MonoBehaviour
                 StartCoroutine(cinemachineSwitch.GateCamera(gateCam1));
                 level = false;
             }
+
+            CharacterHealth.health = 500;
         }
 
         if ( getLevelHealth.level == Level.Level_3)
@@ -71,11 +73,8 @@ public class NextLevel : MonoBehaviour
                 StartCoroutine(cinemachineSwitch.GateCamera(gateCam2));
                 level = true;
             }
-        }
 
-        if (Input.GetMouseButtonDown(1))
-        {
-            WinGame();
+            CharacterHealth.health = 500;
         }
     }
 

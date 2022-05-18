@@ -12,15 +12,18 @@ public class Fade : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("HALLÅHALLÅ");
         DOTween.Init();
 
-        fade1.enabled = true;
-        fade1.DOFade(0, 1).SetUpdate(true).OnComplete(blabla); //Sätt alpha till 1, under 1 sekund, ignorera timescale, när det är klart kör funktionen Mm
     }
 
-    private void blabla()
+    private void Start()
     {
-        throw new NotImplementedException();
+        fade1.enabled = true;
+        fade1.DOFade(0, 1f).SetUpdate(true).OnComplete(fadeOver);
+    }
+
+    private void fadeOver()
+    {
+        fade1.enabled = false;
     }
 }

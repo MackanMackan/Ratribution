@@ -24,19 +24,17 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         creditsUI.SetActive(false);
-
     }
 
-    public void Fade()
+    public void Fade1()
     {
         fade.enabled = true;
         fade.DOFade(1, 1).SetUpdate(true).OnComplete(PlayGame); //Sätt alpha till 1, under 1 sekund, ignorera timescale, när det är klart kör funktionen Mm
     }
+
     public void PlayGame()
     {
-
-        SceneManager.LoadScene(2);
-        //MusicSound.PlayMenuMusic();
+        SceneManager.LoadScene(2);  
     }
 
     public void QuitGame()
