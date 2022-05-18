@@ -38,7 +38,7 @@ public class RollingCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Destructable"))
+        if (other.gameObject.CompareTag("Finish"))
         {
             characterMovement.playerMoveForce = 5f;
             startTimer = true;
