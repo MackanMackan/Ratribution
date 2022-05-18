@@ -10,7 +10,7 @@ public class GlobalVolumeController : MonoBehaviour
     public VolumeProfile profile;
     public Volume m_Volume;
 
-    GetBuildingHealth getLevelHealth;
+    //GetBuildingHealth getLevelHealth;
 
     private void Start()
     {
@@ -22,11 +22,12 @@ public class GlobalVolumeController : MonoBehaviour
         }
 
         depthOfField.active = false;
-        getLevelHealth = FindObjectOfType<GetBuildingHealth>();
+       // getLevelHealth = FindObjectOfType<GetBuildingHealth>();
     }
 
     public void TurnOnBlurr()
     {
+        Debug.Log("Blurr");
         profile.TryGet<DepthOfField>(out var depthOfField);
         depthOfField.active = true;      
     }
