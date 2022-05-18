@@ -72,7 +72,8 @@ public class PausMenu : MonoBehaviour
     public void BackToMainMenu()
     {
         Time.timeScale = 1f;
-        StartCoroutine(Mm());
+        transision.SetTrigger("Start");
+        Invoke(nameof(Mm), 1);
     }
 
     public void QuitGame()
@@ -81,10 +82,8 @@ public class PausMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public IEnumerator Mm()
+    public void Mm()
     {
-        transision.SetTrigger("Start");
-        yield return new WaitForSeconds(transisionTime);
         SceneManager.LoadScene(0);
     }
 
