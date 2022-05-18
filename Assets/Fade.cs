@@ -10,16 +10,10 @@ public class Fade : MonoBehaviour
 {
     public Image fade1;
 
-    private void Awake()
-    {
-        DOTween.Init();
-
-    }
-
     private void Start()
     {
-        fade1.enabled = true;
-        fade1.DOFade(0, 1f).SetUpdate(true).OnComplete(fadeOver);
+        //fade1.enabled = true;
+        fade1.DOFade (0, 3).SetDelay(1).OnComplete(fadeOver);
     }
 
     private void fadeOver()

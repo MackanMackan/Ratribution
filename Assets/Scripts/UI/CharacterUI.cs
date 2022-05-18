@@ -18,9 +18,4 @@ public class CharacterUI : MonoBehaviour
     {
         slider.value = CharacterHealth.GetHealth();       
     }
-
-    private void Update()
-    {
-        Debug.Log(CharacterHealth.GetHealth());
-    }
 }
