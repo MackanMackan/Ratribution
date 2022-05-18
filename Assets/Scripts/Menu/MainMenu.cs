@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using DG.Tweening; 
+using UnityEngine.UI; 
 
 public class MainMenu : MonoBehaviour
 {
@@ -12,15 +14,27 @@ public class MainMenu : MonoBehaviour
     private GameObject playButton;
     [SerializeField]
     private GameObject backButton;
+    public Image fade;
 
+
+    private void Awake()
+    {
+        DOTween.Init();
+    }
     private void Start()
     {
         creditsUI.SetActive(false);
     }
+
+    public void Fade1()
+    {
+        fade.enabled = true;
+        fade.DOFade(1, 1).SetUpdate(true).OnComplete(PlayGame); //Sätt alpha till 1, under 1 sekund, ignorera timescale, när det är klart kör funktionen Mm
+    }
+
     public void PlayGame()
     {
-        SceneManager.LoadScene(2);
-        //MusicSound.PlayMenuMusic();
+        SceneManager.LoadScene(2);  
     }
 
     public void QuitGame()

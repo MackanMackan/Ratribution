@@ -11,20 +11,16 @@ public class CharacterUI : MonoBehaviour
         slider = GetComponent<Slider>();
         slider.maxValue = CharacterHealth.GetHealth();
         slider.value = CharacterHealth.GetHealth();
-        CharacterHealth.onHitPlayer += UpdateUISlider;
-        
-    }
-
-    private void Update()
-    {
-       
-            //currentHealth--;            
-            //UpdateUISlider(10); //move to place where you take damage.
-        
+        CharacterHealth.onHitPlayer += UpdateUISlider;    
     }
 
     public void UpdateUISlider()
     {
         slider.value = CharacterHealth.GetHealth();       
+    }
+
+    private void Update()
+    {
+        Debug.Log(CharacterHealth.GetHealth());
     }
 }
