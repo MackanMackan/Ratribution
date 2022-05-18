@@ -3305,6 +3305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2138795140790877368}
   - component: {fileID: 967229919771262040}
+  - component: {fileID: 8477299554817045496}
   m_Layer: 3
   m_Name: Small Temple_root (prefab) 1
   m_TagString: Untagged
@@ -3496,6 +3497,22 @@ MonoBehaviour:
   - {fileID: 3004537948524821873}
   nonImporatantChildren: []
   precentageToImmediatleyDestroy: 0
+--- !u!208 &8477299554817045496
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649819902713505282}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 4.5, y: 0.5, z: 4.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &2304096976500374430
 GameObject:
   m_ObjectHideFlags: 0

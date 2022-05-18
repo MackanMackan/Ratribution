@@ -90,6 +90,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7491428148791109879}
+  - component: {fileID: 7162102466938382028}
   m_Layer: 0
   m_Name: fort_walls_TALL
   m_TagString: Untagged
@@ -112,3 +113,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &7162102466938382028
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7835478959058727501}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0804636, y: 2.6388988, z: 0.33057636}
+  m_Center: {x: 0.050938867, y: 1.2876511, z: -0.0034266708}
