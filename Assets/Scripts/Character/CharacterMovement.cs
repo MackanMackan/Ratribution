@@ -19,6 +19,7 @@ public class CharacterMovement : MonoBehaviour
     public float rayDistance = 1.0f;
     public float stopSpeed = 1.0f;
     public float stamina = 100f;
+    public float enableRollAtStamina = 100f;
     public float rollCooldown = 0f;
     public float rollResetCooldown = 5f;
 
@@ -26,6 +27,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] bool isGrounded;
     [SerializeField] bool walkingUpSlope;
     public bool isSlowedByRollImpact;
+    public bool fatigued = false;
     
     [Header("Misc")]
     [SerializeField] GameObject animatorParentObj;
@@ -228,6 +230,10 @@ public class CharacterMovement : MonoBehaviour
             stamina += 10f * Time.fixedDeltaTime;
             characterAttack.hitterRoll.SetActive(false);
         }
+        if(stamina == enableRollAtStamina)
+        {
+            fatigued = false;
+        }
         staminaBar.value = stamina;
     }
 
@@ -261,7 +267,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void RollingStone(InputAction.CallbackContext obj)
     {
-        if (!animator.GetBool("isRolling") && stamina > 25)
+        if (!animator.GetBool("isRolling") && stamina > 0 && !fatigued)
         {
             animator.SetBool("isRolling", true);
         }
@@ -275,6 +281,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (stamina < 1)
         {
+            fatigued = true;
             animator.SetBool("isRolling", false);
         }
     }
