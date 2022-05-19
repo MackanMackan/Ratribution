@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 243935356006850211}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StreetLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23,9 +23,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 243935356006850210}
-  m_LocalRotation: {x: -0, y: -0.7071079, z: -0, w: 0.7071057}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 301.69, y: 100.67, z: 459.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.6325, y: 2.6325, z: 2.6325}
   m_Children:
   - {fileID: 353559598547831445}
   m_Father: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 7825277070200683300}
   - component: {fileID: 7990067579713944427}
   - component: {fileID: 5171573094587405971}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f29b49b4e3102c94090baa64b3d8d347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainStabilityPiece: {fileID: 0}
+  mainStabilityPiece: {fileID: 2626848779592941285}
   isBottomPiece: 0
 --- !u!114 &5171573094587405971
 MonoBehaviour:
@@ -242,14 +242,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a055509819710d84084c918d3c8134f2, type: 2}
+    - target: {fileID: -6406703734789975141, guid: ddd71cc9f22c4554391917203abf0c86, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ddd71cc9f22c4554391917203abf0c86, type: 3}
       propertyPath: m_Name
       value: StreetLight (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ddd71cc9f22c4554391917203abf0c86, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4489834551269606038, guid: ddd71cc9f22c4554391917203abf0c86, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 48b6a140f37dcbb438ef593b6ec790c5, type: 2}
+    - target: {fileID: 7024755519631605796, guid: ddd71cc9f22c4554391917203abf0c86, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddd71cc9f22c4554391917203abf0c86, type: 3}
 --- !u!1 &1126964476712570927 stripped
@@ -313,7 +325,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &3001229563395523471
+--- !u!54 &8343369556371863862
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -383,7 +395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainStabilityPiece: {fileID: 0}
   isBottomPiece: 0
---- !u!54 &6413696818227033534
+--- !u!54 &8343369556371863869
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -436,7 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f29b49b4e3102c94090baa64b3d8d347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainStabilityPiece: {fileID: 0}
+  mainStabilityPiece: {fileID: 2626848779592941285}
   isBottomPiece: 0
 --- !u!114 &7544660844705427394
 MonoBehaviour:

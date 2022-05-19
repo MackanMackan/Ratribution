@@ -22,4 +22,10 @@ public class AnimationEventSender : MonoBehaviour
     {
         ServiceLocator.Instance.GetAudioProvider().PlayOneShot("IntroRoar", transform.position, false);
     }
+
+    private void SetAnimationSpeed(float speed)
+    {
+        Animator animator = gameObject.GetComponent<Animator>();
+        animator.SetFloat("AnimationSpeed", speed);
+    }
 }
