@@ -45,7 +45,6 @@ public class GetBuildingHealth : MonoBehaviour
         if (level == Level.Level_1)
         {
             LoopToGetHealth(levelHolder_1);
-
             if (totalHealth <= 0)
             {
                 level = Level.Level_2;
@@ -56,7 +55,6 @@ public class GetBuildingHealth : MonoBehaviour
         if (level == Level.Level_2)
         {
             LoopToGetHealth(levelHolder_2);
-
             if (totalHealth <= 0)
             {
                 level = Level.Level_3;
@@ -67,7 +65,6 @@ public class GetBuildingHealth : MonoBehaviour
         if (level == Level.Level_3)
         {
             LoopToGetHealth(levelHolder_3);
-
             if (totalHealth <= 0)
             {
                 level = Level.Level_4;
@@ -87,7 +84,6 @@ public class GetBuildingHealth : MonoBehaviour
             if (buildingCrumble != null)
                 totalHealth += buildingCrumble.health;
         }
-        totalHealth *= 0.8f;
     }
 
     public void RestartBuildingHealth()
