@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class CameraFollowIntro : MonoBehaviour
 {
-    Transform target;
+    public Transform target;
+    public float smoothSpeed = 0.125f;
+    public Vector3 offSet;
 
-    private void Start()
+
+    private void FixedUpdate()
     {
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-    }
+        Vector3 cameraX = target.position;
+        cameraX.y = transform.position.y;
+        transform.position = cameraX + offSet;
 
-    void Update()
-    {       
-        transform.LookAt(target);      
     }
-
-    //TODO ZOOMA?
 }
+
+
