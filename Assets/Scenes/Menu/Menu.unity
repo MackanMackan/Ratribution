@@ -195,7 +195,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_AnchoredPosition: {x: -0.000061035156, y: -0.000015258789}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &230462258
@@ -293,7 +293,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -166, y: 58}
+  m_AnchoredPosition: {x: -102.79562, y: 87.24936}
   m_SizeDelta: {x: 139.3785, y: 123.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &286393757
@@ -316,7 +316,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Programmers\n\nMarcus Kolbe\nViktor Andersson\nMaya Wing\xE5rdh\n"
+  m_text: 'Marcus
+
+    Viktor
+
+    Maya
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1a374429eb52436448c2f446ac50e3ea, type: 2}
   m_sharedMaterial: {fileID: -9030103760372219356, guid: 1a374429eb52436448c2f446ac50e3ea, type: 2}
@@ -379,7 +385,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -114.46947, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -502,7 +508,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: 112}
+  m_AnchoredPosition: {x: 58, y: 132}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &388375376
@@ -1126,7 +1132,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 97.33914, y: 116.64429}
+  m_AnchoredPosition: {x: 174.33917, y: 141.8015}
   m_SizeDelta: {x: 189.7296, y: 55.4826}
   m_Pivot: {x: 0.4491289, y: 0.7609375}
 --- !u!114 &762697354
@@ -2033,7 +2039,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1568751160
 Transform:
   m_ObjectHideFlags: 0
@@ -2089,7 +2095,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 110, y: -48}
+  m_AnchoredPosition: {x: 187.00002, y: -22.842804}
   m_SizeDelta: {x: 189.72961, y: 55.531006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1618356447
@@ -2198,72 +2204,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1244db1ef5f793343b077df50c5d875f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1658416220
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1658416222}
-  - component: {fileID: 1658416221}
-  m_Layer: 0
-  m_Name: RatMenueBG Nr1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!328 &1658416221
-VideoPlayer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1658416220}
-  m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 600a0f70bce231041a235233f286e576, type: 3}
-  m_TargetCameraAlpha: 1
-  m_TargetCamera3DLayout: 0
-  m_TargetCamera: {fileID: 724321791}
-  m_TargetTexture: {fileID: 0}
-  m_TimeReference: 0
-  m_TargetMaterialRenderer: {fileID: 0}
-  m_TargetMaterialProperty: _MainTex
-  m_RenderMode: 0
-  m_AspectRatio: 2
-  m_DataSource: 0
-  m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
-  m_TargetAudioSources:
-  - {fileID: 0}
-  m_DirectAudioVolumes:
-  - 1
-  m_Url: 
-  m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 00
-  m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
-  m_SkipOnDrop: 1
-  m_Looping: 1
-  m_WaitForFirstFrame: 1
-  m_FrameReadyEventEnabled: 0
-  m_VideoShaders: []
---- !u!4 &1658416222
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1658416220}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1660633824
 GameObject:
   m_ObjectHideFlags: 0
@@ -2298,7 +2238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 319, y: 50}
+  m_AnchoredPosition: {x: 218.58316, y: 55.741116}
   m_SizeDelta: {x: 315.5241, y: 171.2097}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1660633826
@@ -2321,17 +2261,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Artists
-
-
-    Edvin Edenhage
-
-    Vilma Gustafsson
-
-    Jonathan Dewoon
-
-    Maja
-    Dandebo'
+  m_text: "Edvin \nWilma\nJonathan\nMaja"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1a374429eb52436448c2f446ac50e3ea, type: 2}
   m_sharedMaterial: {fileID: -9030103760372219356, guid: 1a374429eb52436448c2f446ac50e3ea, type: 2}
@@ -2502,7 +2432,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 109.99997, y: 24.842793}
+  m_AnchoredPosition: {x: 187, y: 50}
   m_SizeDelta: {x: 189.72961, y: 55.531006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1663751507
@@ -2802,7 +2732,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 109.99992, y: -120.81525}
+  m_AnchoredPosition: {x: 186.99995, y: -95.658035}
   m_SizeDelta: {x: 189.7296, y: 55.4826}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1973890797
