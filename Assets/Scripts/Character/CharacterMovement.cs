@@ -151,7 +151,7 @@ public class CharacterMovement : MonoBehaviour
             }
         }
         //Clamps targetangle to avoid extreme rotations
-        targetAngleX = Mathf.Clamp(targetAngleX, -30f, 30f);
+        targetAngleX = Mathf.Clamp(targetAngleX, -20f, 20f);
     }
     private void CameraLookRotation()
     {
