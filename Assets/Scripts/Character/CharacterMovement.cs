@@ -56,8 +56,8 @@ public class CharacterMovement : MonoBehaviour
 
     IntroLanding introLanding;
 
-    public static event isGrounded isOnGround;
-    public static event isNotGrounded isNotOnGround;
+    public event isGrounded isOnGround;
+    public event isNotGrounded isNotOnGround;
     private void Awake()
     {
         playerControls = new PlayerInputActions();
