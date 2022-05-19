@@ -477,7 +477,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1571999682332259900}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Owl_Statue_With_Banner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,7 +491,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2205371617834478726}
-  m_LocalRotation: {x: -0, y: -0.7254116, z: -0, w: 0.68831545}
+  m_LocalRotation: {x: 0, y: -0.7254104, z: 0, w: 0.68831664}
   m_LocalPosition: {x: 10.28, y: 29.9945, z: -147.61}
   m_LocalScale: {x: 1.5047952, y: 1.5047948, z: 1.5047952}
   m_Children:
@@ -670,6 +670,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Banner_UPDATED 2 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1610221427778760753, guid: 5bc34f7fd21ca2a4eb436ab30279d3ae, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2095149608648436363, guid: 5bc34f7fd21ca2a4eb436ab30279d3ae, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -754,18 +758,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2508459586651562903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7148011580751429054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60291febb49ec224ea23091db47708c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &23541243001498088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -795,3 +787,15 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   isDead: 0
+--- !u!114 &2508459586651562903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7148011580751429054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60291febb49ec224ea23091db47708c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

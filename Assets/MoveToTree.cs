@@ -11,6 +11,7 @@ public class MoveToTree : MonoBehaviour
     CinemachineVirtualCamera cmCam;
     GameObject motherTree;
     GameObject player;
+    BoxCollider boxCollider;
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class MoveToTree : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         motherTree = GameObject.FindGameObjectWithTag("MotherTree");
+        boxCollider = GetComponent<BoxCollider>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -40,14 +42,14 @@ public class MoveToTree : MonoBehaviour
 
         treeCam.enabled = false;
         cmCam.enabled = true;
-        Destroy(this.gameObject, 2);
+        boxCollider.enabled = false;
     }
 
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(1))
-        {
-            StartCoroutine(CamToTree());
-        }
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetMouseButtonDown(1))
+    //    {
+    //        StartCoroutine(CamToTree());
+    //    }
+    //}
 }

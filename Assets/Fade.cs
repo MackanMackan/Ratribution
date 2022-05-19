@@ -13,7 +13,6 @@ public class Fade : MonoBehaviour
 
     private void Start()
     {
-        //fade1.enabled = true;
         fade1.DOFade (0, 3f).SetDelay(0.5f).SetEase(ease).OnComplete(fadeOver);
     }
 
