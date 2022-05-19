@@ -92,7 +92,7 @@ public class CharacterAttack : MonoBehaviour
     public void ActivateSlamTrigger()
     {
         hitterSlam.SetActive(true);
-        characterMovement.PushCharacterForwardWhenSlamming();
+        //characterMovement.PushCharacterForwardWhenSlamming();
     }
 
 }
