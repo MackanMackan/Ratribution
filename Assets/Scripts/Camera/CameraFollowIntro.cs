@@ -12,7 +12,6 @@ public class CameraFollowIntro : MonoBehaviour
     private void FixedUpdate()
     {
         Vector3 cameraX = target.position;
-        cameraX.y = transform.position.y;
         transform.position = cameraX + offSet;
 
     }
