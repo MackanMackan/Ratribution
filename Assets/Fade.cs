@@ -9,11 +9,12 @@ public class Fade : MonoBehaviour
 
 {
     public Image fade1;
+    public Ease ease = Ease.InCubic;
 
     private void Start()
     {
         //fade1.enabled = true;
-        fade1.DOFade (0, 3).SetDelay(1).OnComplete(fadeOver);
+        fade1.DOFade (0, 2.5f).SetDelay(0.5f).SetEase(ease).OnComplete(fadeOver);
     }
 
     private void fadeOver()
