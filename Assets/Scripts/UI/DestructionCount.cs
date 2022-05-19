@@ -25,7 +25,6 @@ public class DestructionCount : MonoBehaviour
     public void SetCurrentHealth(float value)
     {
         currentHealth = value;
-
     }
     private void Update()
     {

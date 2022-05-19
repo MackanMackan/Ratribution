@@ -9,7 +9,8 @@ public class MotherTreeDestruction : MonoBehaviour
     [SerializeField] GameObject[] barrelHolders;
     [SerializeField] Rigidbody rb;
     List<GameObject> barrels;
-    int amountOfBarrelsAttached = 0;
+    public int amountOfBarrelsAttached = 0;
+
     private void Start()
     {
         barrels = new List<GameObject>();
@@ -34,6 +35,7 @@ public class MotherTreeDestruction : MonoBehaviour
         other.GetComponent<ExplodeBarrel>().isExploding = true;
         other.GetComponent<Rigidbody>().isKinematic = true;
         amountOfBarrelsAttached++;
+
         if (amountOfBarrelsAttached == 3)
         {
             foreach (var barrel in barrels)
