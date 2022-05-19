@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerAudioHandler : MonoBehaviour
 {
@@ -23,11 +24,16 @@ public class PlayerAudioHandler : MonoBehaviour
     }
 
     private void Start()
-    {
-        CharacterMovement.isOnGround += SFXTouchGroundVolume;
-        CharacterMovement.isNotOnGround += SFXTurnOFVolume;
-        source = gameObject.GetComponent<AudioSource>();
+    {      
         animator = GetComponent<Animator>();
+        StartCoroutine(SetUpAudio());
+    }
+    IEnumerator SetUpAudio()
+    {
+        yield return new WaitForSeconds(2);
+        CharacterMovement carMove = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>();
+        carMove.isOnGround += SFXTouchGroundVolume;
+        carMove.isNotOnGround += SFXTurnOFVolume;
         sourceRoll.volume = rollContinousVolume;
     }
     private void Update()
@@ -97,8 +103,6 @@ public class PlayerAudioHandler : MonoBehaviour
     }
     void SFXTurnOFVolume()
     {
-        Debug.Log(source + "this is my source component");
-        Debug.Log(sourceRoll + "this is my sourceroll component");
         source.volume = 0;
         sourceRoll.volume = 0;
     }
