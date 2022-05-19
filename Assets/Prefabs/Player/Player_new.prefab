@@ -1575,11 +1575,13 @@ MonoBehaviour:
   rayDistance: 0.5
   stopSpeed: 5
   stamina: 100
+  enableRollAtStamina: 100
   rollCooldown: 0
   rollResetCooldown: 5
   isGrounded: 0
   walkingUpSlope: 0
   isSlowedByRollImpact: 0
+  fatigued: 0
   animatorParentObj: {fileID: 238758134985017310}
   groundLayer:
     serializedVersion: 2
