@@ -8,7 +8,6 @@ public class DestructionCount : MonoBehaviour
 {
     float totalHealth;
     float currentHealth;
-    public TextMeshProUGUI uiText;
 
     Slider slider;
 
@@ -36,7 +35,6 @@ public class DestructionCount : MonoBehaviour
         float total1 = currentHealth / totalHealth * 100;
         int total= Mathf.RoundToInt(total1);
 
-        slider.value = currentHealth / totalHealth;
         slider.value = total;
         //uiText.text = total.ToString() + "%";
     }
