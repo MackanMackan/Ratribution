@@ -46,7 +46,7 @@ public class Movment_tut : MonoBehaviour
     private InputAction jumpInput;
     private InputAction rollInput;
 
-    private CharacterAttack characterAttack;
+    Tut_Attack tut_Attack;
     private Rigidbody rb;
     public Animator animator;
 
@@ -79,7 +79,7 @@ public class Movment_tut : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         CharaCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
         animator = animatorParentObj.GetComponent<Animator>();
-        characterAttack = GetComponent<CharacterAttack>();
+        tut_Attack = GetComponent<Tut_Attack>();
         staminaBar = GameObject.FindGameObjectWithTag("StaminaBar").GetComponent<Slider>();
 
         //Sets stronger gravity for all rigidbodies in the scene
@@ -204,7 +204,7 @@ public class Movment_tut : MonoBehaviour
             rb.velocity = resetV;
             animator.SetBool("isRunning", false);
             animator.SetBool("isRolling", false);
-            characterAttack.hitterRoll.SetActive(false);
+            tut_Attack.hitterRoll.SetActive(false);
         }
     }
     private void staminaDrain()
@@ -219,7 +219,7 @@ public class Movment_tut : MonoBehaviour
         else if (!animator.GetBool("isRolling") && stamina < 100)
         {
             stamina += 10f * Time.fixedDeltaTime;
-            characterAttack.hitterRoll.SetActive(false);
+            tut_Attack.hitterRoll.SetActive(false);
         }
         if (stamina == enableRollAtStamina)
         {
