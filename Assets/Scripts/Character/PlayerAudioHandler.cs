@@ -26,7 +26,7 @@ public class PlayerAudioHandler : MonoBehaviour
     {
         CharacterMovement.isOnGround += SFXTouchGroundVolume;
         CharacterMovement.isNotOnGround += SFXTurnOFVolume;
-        source = gameObject.GetComponent<AudioSource>();
+        source = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         sourceRoll.volume = rollContinousVolume;
     }
@@ -42,7 +42,7 @@ public class PlayerAudioHandler : MonoBehaviour
         }
     }
 
-        public void PlayFootStepSFX()
+    public void PlayFootStepSFX()
     {
         source.pitch = Random.Range(0.8f,1.4f);
         source.volume = footStepVolume;
