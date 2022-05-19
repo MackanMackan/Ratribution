@@ -152,6 +152,11 @@ public class CharacterMovement : MonoBehaviour
         }
         //Clamps targetangle to avoid extreme rotations
         targetAngleX = Mathf.Clamp(targetAngleX, -20f, 20f);
+
+        if (walkingUpSlope)
+        {
+            targetAngleX *= -1;
+        }
     }
     private void CameraLookRotation()
     {
@@ -239,10 +244,8 @@ public class CharacterMovement : MonoBehaviour
 
     private void Jump(InputAction.CallbackContext obj)
     {
-        Debug.Log(staminaBar);
         if (isGrounded)
         {
-            Debug.Log("Jump!!");
             animator.SetTrigger("JumpT");
             rb.AddForceAtPosition(jumpPower * Vector3.up * 100, transform.position, ForceMode.Impulse);
         }
