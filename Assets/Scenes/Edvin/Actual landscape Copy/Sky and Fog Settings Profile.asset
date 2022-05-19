@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Value: 1
   skyAmbientMode:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: 0
   fogType:
     m_OverrideState: 1
     m_Value: 0
@@ -48,13 +48,13 @@ MonoBehaviour:
     m_Value: 1
   color:
     m_OverrideState: 1
-    m_Value: {r: 0.6012994, g: 0.688794, b: 0.7830189, a: 1}
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
     hdr: 1
     showAlpha: 0
     showEyeDropper: 1
   tint:
-    m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 1.319508, g: 1.319508, b: 1.319508, a: 1}
     hdr: 1
     showAlpha: 0
     showEyeDropper: 1
@@ -80,7 +80,7 @@ MonoBehaviour:
     m_Value: 2.41
   maximumHeight:
     m_OverrideState: 1
-    m_Value: 24
+    m_Value: 13.56
   meanFreePath:
     m_OverrideState: 1
     m_Value: 3
@@ -90,7 +90,7 @@ MonoBehaviour:
     m_Value: 1
   albedo:
     m_OverrideState: 1
-    m_Value: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1
@@ -163,6 +163,7 @@ MonoBehaviour:
   - {fileID: -4160581981032480583}
   - {fileID: 8148630043736774283}
   - {fileID: 5699224206462295120}
+  - {fileID: 6740450820772228836}
 --- !u!114 &5096548101135314172
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -367,7 +368,7 @@ MonoBehaviour:
     m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: 15
+    m_Value: 14.9
   multiplier:
     m_OverrideState: 1
     m_Value: 1
@@ -465,6 +466,44 @@ MonoBehaviour:
   rectLightShadow:
     m_OverrideState: 1
     m_Value: 0
+--- !u!114 &6740450820772228836
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b8bcdf71d7fafa419fca1ed162f5fc9, type: 3}
+  m_Name: ColorAdjustments
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  postExposure:
+    m_OverrideState: 0
+    m_Value: 0
+  contrast:
+    m_OverrideState: 0
+    m_Value: 0
+    min: -100
+    max: 100
+  colorFilter:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    hdr: 1
+    showAlpha: 0
+    showEyeDropper: 1
+  hueShift:
+    m_OverrideState: 0
+    m_Value: 0
+    min: -180
+    max: 180
+  saturation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: -100
+    max: 100
 --- !u!114 &8148630043736774283
 MonoBehaviour:
   m_ObjectHideFlags: 3
