@@ -80,7 +80,7 @@ public class PausMenu : MonoBehaviour
     public void BackToMainMenu()
     {
         fade.enabled = true;
-        fade.DOFade(1, 1).SetUpdate(true).OnComplete(Mm); //Sätt alpha till 1, under 1 sekund, ignorera timescale, när det är klart kör funktionen Mm
+        fade.DOFade(1, 1).SetUpdate(true).OnComplete(Mm); 
     }
 
     public void QuitGame()
