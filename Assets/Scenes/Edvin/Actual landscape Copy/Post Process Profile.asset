@@ -118,17 +118,17 @@ MonoBehaviour:
     m_Value: 1
   length:
     m_OverrideState: 1
-    m_Value: 0.119
+    m_Value: 0.07
     min: 0
     max: 1
   opacity:
     m_OverrideState: 1
-    m_Value: 0.603
+    m_Value: 0.4
     min: 0
     max: 1
   distanceScaleFactor:
     m_OverrideState: 1
-    m_Value: 0.293
+    m_Value: 0.08
     min: 0
     max: 1
   maxDistance:
@@ -149,7 +149,7 @@ MonoBehaviour:
     min: 0
   rayBias:
     m_OverrideState: 1
-    m_Value: 0.076
+    m_Value: 0.16
     min: 0
     max: 1
   thicknessScale:
@@ -232,48 +232,9 @@ MonoBehaviour:
   - {fileID: 8726550040594813646}
   - {fileID: 6057189271031434627}
   - {fileID: -6138157558377709610}
-  - {fileID: 2931943152831172412}
   - {fileID: 3817290140236248730}
   - {fileID: -2408188213240490292}
   - {fileID: 6609753891779975512}
---- !u!114 &2931943152831172412
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b8bcdf71d7fafa419fca1ed162f5fc9, type: 3}
-  m_Name: ColorAdjustments
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  postExposure:
-    m_OverrideState: 1
-    m_Value: -0.35
-  contrast:
-    m_OverrideState: 1
-    m_Value: -7
-    min: -100
-    max: 100
-  colorFilter:
-    m_OverrideState: 1
-    m_Value: {r: 1, g: 0.9576808, b: 0.9, a: 1}
-    hdr: 1
-    showAlpha: 0
-    showEyeDropper: 1
-  hueShift:
-    m_OverrideState: 1
-    m_Value: 0
-    min: -180
-    max: 180
-  saturation:
-    m_OverrideState: 1
-    m_Value: 35
-    min: -100
-    max: 100
 --- !u!114 &3817290140236248730
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -290,20 +251,20 @@ MonoBehaviour:
   m_AdvancedMode: 0
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 0.96210235, y: 0.96623385, z: 1, w: 0.20215635}
+    m_Value: {x: 0.9270965, y: 1, z: 0.99202496, w: 0.14917621}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 0.7320572, y: 0.8351419, z: 1, w: 0.13549016}
+    m_Value: {x: 0.7419824, y: 0.79008096, z: 1, w: 0.109000094}
   highlights:
     m_OverrideState: 1
-    m_Value: {x: 0.77194244, y: 1, z: 0.879147, w: 0.29221454}
+    m_Value: {x: 0.83279437, y: 1, z: 0.87196964, w: 0.2392344}
   shadowsStart:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
     min: 0
   shadowsEnd:
-    m_OverrideState: 0
-    m_Value: 0.3
+    m_OverrideState: 1
+    m_Value: 0.18
     min: 0
   highlightsStart:
     m_OverrideState: 0
@@ -329,16 +290,16 @@ MonoBehaviour:
   m_AdvancedMode: 0
   maxShadowDistance:
     m_OverrideState: 1
-    m_Value: 865
+    m_Value: 600
     min: 0
   directionalTransmissionMultiplier:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.87
     min: 0
     max: 1
   cascadeShadowSplitCount:
     m_OverrideState: 1
-    m_Value: 3
+    m_Value: 2
     min: 1
     max: 4
   cascadeShadowSplit0:
