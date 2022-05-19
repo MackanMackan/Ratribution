@@ -34,7 +34,7 @@ public class BuildingCrumble : MonoBehaviour
             }
             catch
             {
-                Debug.LogError("NOTFOUND on child at: " + gameObject.name);
+                Debug.LogError("NOTFOUND on child at: " + gameObject.name+ " Parent: "+gameObject.transform.parent.name);
                 nonImporatantChildren.Add(child);
             }
         }  
