@@ -13,6 +13,8 @@ public class PausMenu : MonoBehaviour
     private PlayerInputActions playerControls;
     public Image fade; //Istället för transition
     private float transisionTime;
+    [SerializeField]
+    AudioSource audioSource;
 
     private void Awake()
     {
@@ -55,6 +57,7 @@ public class PausMenu : MonoBehaviour
 
     public void Resume()
     {
+        audioSource.volume = 0.5f;
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         gameIsPaused = false;
@@ -62,6 +65,7 @@ public class PausMenu : MonoBehaviour
     }
     void Pause()
     {
+        audioSource.volume = 0.2f;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         gameIsPaused = true;
