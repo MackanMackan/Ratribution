@@ -87,6 +87,7 @@ public class GetBuildingHealth : MonoBehaviour
             if (buildingCrumble != null)
                 totalHealth += buildingCrumble.health;
         }
+        totalHealth *= 0.8f;
     }
 
     public void RestartBuildingHealth()
