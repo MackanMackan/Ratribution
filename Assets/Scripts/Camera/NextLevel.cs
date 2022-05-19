@@ -32,7 +32,8 @@ public class NextLevel : MonoBehaviour
     float speed = 10;
 
     bool level = true;
-
+    bool level2GatesOpened = false;
+    bool level3GatesOpened = false;
     EventSystem m_EventSystem;
 
 
@@ -51,8 +52,9 @@ public class NextLevel : MonoBehaviour
 
     private void Update()
     {
-        if (getLevelHealth.level == Level.Level_2)
-        {          
+        if (getLevelHealth.level == Level.Level_2 && !level2GatesOpened)
+        {
+            level2GatesOpened = true;
             GateOpen(gate1, gate2);
 
             if (level)
@@ -64,8 +66,9 @@ public class NextLevel : MonoBehaviour
             CharacterHealth.health = 500;
         }
 
-        if ( getLevelHealth.level == Level.Level_3)
+        if ( getLevelHealth.level == Level.Level_3 && !level3GatesOpened)
         {
+            level3GatesOpened = true;
             GateOpen(gate3, gate4);
 
             if (level == false)
