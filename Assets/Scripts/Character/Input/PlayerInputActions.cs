@@ -422,6 +422,17 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""dce4e50b-194e-491b-b632-980fc0544dbc"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Roll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""828d3f9f-7465-494f-8cc0-a1bd264e462f"",
                     ""path"": ""<Keyboard>/leftShift"",
                     ""interactions"": """",
