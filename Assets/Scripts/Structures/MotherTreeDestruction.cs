@@ -17,16 +17,16 @@ public class MotherTreeDestruction : MonoBehaviour
     }
     public void AddBarrelToTree(GameObject other)
     {
-        if(barrels != null)
-        {
-            foreach (var barrel in barrels)
-            {
-                if (other.name.Equals(barrel.name))
-                {
-                    return;
-                }
-            }
-        }
+        //if(barrels != null)
+        //{
+        //    foreach (var barrel in barrels)
+        //    {
+        //        if (other.name.Equals(barrel.name))
+        //        {
+        //            return;
+        //        }
+        //    }
+        //}
         barrels.Add(other.gameObject);
         other.transform.position = barrelHolders[amountOfBarrelsAttached].transform.position;
         other.transform.localScale *= 4f;

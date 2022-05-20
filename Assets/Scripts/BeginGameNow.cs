@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using DG.Tweening;
+using System;
 
 public class BeginGameNow : MonoBehaviour
 {
@@ -12,10 +13,19 @@ public class BeginGameNow : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            fade.enabled = true;
-            fade.DOFade(1, 1).SetUpdate(true).OnComplete(StartGame);           
+                
+            Game();
+                      
         }
+
     }
+
+    public void Game()
+    {
+        fade.enabled = true;
+        fade.DOFade(1, 1).SetUpdate(true).OnComplete(StartGame);
+    }
+
     void StartGame()
     {
         SceneManager.LoadScene(2);
