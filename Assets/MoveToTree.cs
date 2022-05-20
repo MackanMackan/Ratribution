@@ -83,5 +83,10 @@ public class MoveToTree : MonoBehaviour
         {
             barrel3.color = Color.white;
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            StartCoroutine(CamToTree());
+        }
     }
 }
