@@ -15,6 +15,9 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private GameObject backButton;
     public Image fade;
+    public GameObject ControllsUI;
+    public GameObject backButton2;
+    public Image rat;
 
 
     private void Awake()
@@ -24,6 +27,7 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         creditsUI.SetActive(false);
+        ControllsUI.SetActive(false);
     }
 
     public void Fade1()
@@ -59,10 +63,21 @@ public class MainMenu : MonoBehaviour
 
     public void BackToMainMenu()
     {
+        rat.enabled = true;
         pauseMenuUI.SetActive(true);
         creditsUI.SetActive(false);
+        ControllsUI.SetActive(false);
         var eventSystem = EventSystem.current;
         eventSystem.SetSelectedGameObject(playButton, new BaseEventData(eventSystem));
+    }
+
+    public void GoToControlls()
+    {
+        rat.enabled = false;
+        pauseMenuUI.SetActive(false);
+        ControllsUI.SetActive(true);
+        var eventSystem = EventSystem.current;
+        eventSystem.SetSelectedGameObject(backButton2, new BaseEventData(eventSystem));
     }
 
 
