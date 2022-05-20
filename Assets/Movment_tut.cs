@@ -54,8 +54,8 @@ public class Movment_tut : MonoBehaviour
 
     IntroLanding introLanding;
 
-    public static event isGrounded isOnGround;
-    public static event isNotGrounded isNotOnGround;
+    public static event isGrounded isOnGround2;
+    public static event isNotGrounded isNotOnGround2;
     private void Awake()
     {
         playerControls = new PlayerInputActions();
@@ -249,11 +249,11 @@ public class Movment_tut : MonoBehaviour
         isGrounded = Physics.CheckSphere(transform.position - new Vector3(0, 0.5f, 0), 1f, groundLayer);
         if (isGrounded)
         {
-            isOnGround?.Invoke();
+            isOnGround2?.Invoke();
         }
         else
         {
-            isNotOnGround?.Invoke();
+            isNotOnGround2?.Invoke();
         }
     }
 
