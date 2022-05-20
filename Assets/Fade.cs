@@ -4,7 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
 using System;
-using UnityEngine.UI;
+
 
 public class Fade : MonoBehaviour
 

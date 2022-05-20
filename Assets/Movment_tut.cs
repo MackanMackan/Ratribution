@@ -80,7 +80,7 @@ public class Movment_tut : MonoBehaviour
         CharaCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
         animator = animatorParentObj.GetComponent<Animator>();
         tut_Attack = GetComponent<Tut_Attack>();
-        staminaBar = GameObject.FindGameObjectWithTag("StaminaBar").GetComponent<Slider>();
+       // staminaBar = GameObject.FindGameObjectWithTag("StaminaBar").GetComponent<Slider>();
 
         //Sets stronger gravity for all rigidbodies in the scene
         Physics.gravity = new Vector3(0, -40f, 0);
@@ -107,7 +107,7 @@ public class Movment_tut : MonoBehaviour
         CheckIfPlayerIsFallingAndPlayAnimation();
         Movement();
         staminaDrain();
-        CancelRollOnceOutOfStamina();
+       // CancelRollOnceOutOfStamina();
     }
 
     public Vector3 GetMoveInput()
@@ -225,7 +225,7 @@ public class Movment_tut : MonoBehaviour
         {
             fatigued = false;
         }
-        staminaBar.value = stamina;
+       // staminaBar.value = stamina;
     }
 
     private void Jump(InputAction.CallbackContext obj)
