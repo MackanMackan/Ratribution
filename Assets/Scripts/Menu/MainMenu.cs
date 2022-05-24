@@ -10,16 +10,16 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
     public GameObject creditsUI;
+    public GameObject pc;
     [SerializeField]
     private GameObject playButton;
     [SerializeField]
     private GameObject backButton;
     public Image fade;
     public GameObject ControllsUI;
-    public GameObject backButton2;
+    public GameObject pcButton2;
+    public GameObject gpButton2;
     public Image rat;
-
-
     private void Awake()
     {
         DOTween.Init();
@@ -28,6 +28,7 @@ public class MainMenu : MonoBehaviour
     {
         creditsUI.SetActive(false);
         ControllsUI.SetActive(false);
+        pc.SetActive(false);
     }
 
     public void Fade1()
@@ -67,6 +68,7 @@ public class MainMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         creditsUI.SetActive(false);
         ControllsUI.SetActive(false);
+        pc.SetActive(false);
         var eventSystem = EventSystem.current;
         eventSystem.SetSelectedGameObject(playButton, new BaseEventData(eventSystem));
     }
@@ -76,8 +78,19 @@ public class MainMenu : MonoBehaviour
         rat.enabled = false;
         pauseMenuUI.SetActive(false);
         ControllsUI.SetActive(true);
+        pc.SetActive(false);
         var eventSystem = EventSystem.current;
-        eventSystem.SetSelectedGameObject(backButton2, new BaseEventData(eventSystem));
+        eventSystem.SetSelectedGameObject(pcButton2, new BaseEventData(eventSystem));
+    }
+
+    public void GoToPCControlls()
+    {
+        rat.enabled = false;
+        pauseMenuUI.SetActive(false);
+        ControllsUI.SetActive(false);
+        pc.SetActive(true);
+        var eventSystem = EventSystem.current;
+        eventSystem.SetSelectedGameObject(gpButton2, new BaseEventData(eventSystem));
     }
 
 
