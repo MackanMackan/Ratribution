@@ -98,6 +98,15 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AnyKey"",
+                    ""type"": ""Button"",
+                    ""id"": ""51addb6c-c6d8-40ca-8202-012e6ec767a7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -483,6 +492,17 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Camera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5a16cf3f-55a1-42e1-b358-ee9c09a5dc0d"",
+                    ""path"": ""<Keyboard>/anyKey"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AnyKey"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1120,6 +1140,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_Player_Roll = m_Player.FindAction("Roll", throwIfNotFound: true);
         m_Player_DropBarrel = m_Player.FindAction("DropBarrel", throwIfNotFound: true);
         m_Player_Camera = m_Player.FindAction("Camera", throwIfNotFound: true);
+        m_Player_AnyKey = m_Player.FindAction("AnyKey", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1200,6 +1221,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Roll;
     private readonly InputAction m_Player_DropBarrel;
     private readonly InputAction m_Player_Camera;
+    private readonly InputAction m_Player_AnyKey;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -1212,6 +1234,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         public InputAction @Roll => m_Wrapper.m_Player_Roll;
         public InputAction @DropBarrel => m_Wrapper.m_Player_DropBarrel;
         public InputAction @Camera => m_Wrapper.m_Player_Camera;
+        public InputAction @AnyKey => m_Wrapper.m_Player_AnyKey;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1245,6 +1268,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Camera.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCamera;
                 @Camera.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCamera;
                 @Camera.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCamera;
+                @AnyKey.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAnyKey;
+                @AnyKey.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAnyKey;
+                @AnyKey.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAnyKey;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1273,6 +1299,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Camera.started += instance.OnCamera;
                 @Camera.performed += instance.OnCamera;
                 @Camera.canceled += instance.OnCamera;
+                @AnyKey.started += instance.OnAnyKey;
+                @AnyKey.performed += instance.OnAnyKey;
+                @AnyKey.canceled += instance.OnAnyKey;
             }
         }
     }
@@ -1445,6 +1474,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnRoll(InputAction.CallbackContext context);
         void OnDropBarrel(InputAction.CallbackContext context);
         void OnCamera(InputAction.CallbackContext context);
+        void OnAnyKey(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

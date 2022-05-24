@@ -38,7 +38,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(2);  
+        SceneManager.LoadScene("newT");  
     }
 
     public void QuitGame()
@@ -49,7 +49,7 @@ public class MainMenu : MonoBehaviour
 
     public void GoToTut()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Tutorial Level");
 
     }
 

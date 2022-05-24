@@ -74,7 +74,7 @@ public class PausMenu : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("newT");
         Time.timeScale = 1f;
     }
     public void BackToMainMenu()
@@ -92,7 +92,7 @@ public class PausMenu : MonoBehaviour
     public void Mm()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Menu");
     }
 
 }
