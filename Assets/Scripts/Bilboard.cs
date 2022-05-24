@@ -12,17 +12,15 @@ public class Bilboard : MonoBehaviour
     {
         Vector3 targetPostition = new Vector3(vCamera.transform.position.x, this.transform.position.y, vCamera.transform.position.z);
 
-        //if (!bilboard)
-        //{
-        //    transform.LookAt(vCamera.transform.position);
+        if (!bilboard)
+        {
+            transform.LookAt(targetPostition);
 
-        //}
-        //else
-        //{
-        //    transform.rotation = vCamera.transform.rotation;
-        //}
-
-        this.transform.LookAt(targetPostition);
+        }
+        else
+        {
+            transform.rotation = vCamera.transform.rotation;
+        }
 
         transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
     }
