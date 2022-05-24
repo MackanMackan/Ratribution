@@ -23,13 +23,11 @@ public class SkipIntroVideo : MonoBehaviour
         anyKey = playerControls.Player.AnyKey;
 
         roll.Enable();
-        fire.Enable();
         dropbarrel.Enable();
         jump.Enable();
         anyKey.Enable();
 
         roll.performed += GoToMainMenu;
-        fire.performed += GoToMainMenu;
         dropbarrel.performed += GoToMainMenu;
         jump.performed += GoToMainMenu;
         anyKey.performed += GoToMainMenu;
@@ -37,10 +35,16 @@ public class SkipIntroVideo : MonoBehaviour
     void GoToMainMenu(InputAction.CallbackContext callback)
     {
         roll.performed -= GoToMainMenu;
-        fire.performed -= GoToMainMenu;
         dropbarrel.performed -= GoToMainMenu;
         jump.performed -= GoToMainMenu;
         anyKey.performed -= GoToMainMenu;
+
+        roll.Disable();
+        fire.Disable();
+        dropbarrel.Disable();
+        jump.Disable();
+        anyKey.Disable();
+
         SceneManager.LoadScene("Menu");
     }
 }

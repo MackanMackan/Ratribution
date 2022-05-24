@@ -8,8 +8,10 @@ public class SpearFly : MonoBehaviour
     [SerializeField] BoxCollider spearCollider;
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip[] audioClips;
+    CharacterHealth charHp;
     void Start()
     {
+        charHp = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterHealth>();
         Vector3 direction = CharacterGetter.PLAYER.transform.position - transform.position;
         direction.Normalize();
         direction.y = Random.Range(0.5f,0.7f);
@@ -25,7 +27,7 @@ public class SpearFly : MonoBehaviour
         if (other.CompareTag("PlayerLimb"))
         {
             transform.SetParent(other.transform);
-            CharacterHealth.DamageMe(2);
+            charHp.DamageMe(2);
             rb.isKinematic = true;
             rb.velocity = Vector3.zero;
             spearCollider.enabled = false;

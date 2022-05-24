@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ExplodeBarrel : MonoBehaviour
@@ -10,6 +9,7 @@ public class ExplodeBarrel : MonoBehaviour
     [SerializeField] GameObject particleFuse;
     [SerializeField] GameObject explosionHitter;
     [SerializeField] SphereCollider explosionCollider;
+    [SerializeField] AudioSource source;
     public void StartExplosionFuse()
     {
         isExploding = true;
@@ -26,7 +26,8 @@ public class ExplodeBarrel : MonoBehaviour
 
     private void Explode()
     {
-        ServiceLocator.Instance.GetAudioProvider().PlayOneShot("BarrelExplosion", transform.position, true);
+        source.pitch = UnityEngine.Random.Range(0.8f,1.2f);
+        source.Play();
         explosionCollider.enabled = false;
         Destroy(gameObject,15);
         Destroy(gameObject.transform.GetChild(0).gameObject);
