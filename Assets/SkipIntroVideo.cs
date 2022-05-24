@@ -36,6 +36,11 @@ public class SkipIntroVideo : MonoBehaviour
     }
     void GoToMainMenu(InputAction.CallbackContext callback)
     {
+        roll.performed -= GoToMainMenu;
+        fire.performed -= GoToMainMenu;
+        dropbarrel.performed -= GoToMainMenu;
+        jump.performed -= GoToMainMenu;
+        anyKey.performed -= GoToMainMenu;
         SceneManager.LoadScene("Menu");
     }
 }
