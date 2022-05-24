@@ -36,10 +36,13 @@ public class NextLevel : MonoBehaviour
     bool level3GatesOpened = false;
     EventSystem m_EventSystem;
 
+    PausMenu pausMenu;
+
 
     private void Start()
     {
         globalVolumeController = FindObjectOfType<GlobalVolumeController>();
+        pausMenu = FindObjectOfType<PausMenu>();
         getLevelHealth = FindObjectOfType<GetBuildingHealth>();
         cinemachineSwitch = FindObjectOfType<CinemachineSwitch>();
         winUI.SetActive(false);
@@ -99,9 +102,9 @@ public class NextLevel : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
 
         m_EventSystem.SetSelectedGameObject(itemsButton);
+        pausMenu.winscreen = true;
 
         winUI.SetActive(true);
         globalVolumeController.TurnOnBlurr();
     }
-
 }

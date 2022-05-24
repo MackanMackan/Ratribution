@@ -15,6 +15,8 @@ public class PausMenu : MonoBehaviour
     private float transisionTime;
     [SerializeField]
     AudioSource audioSource;
+    [HideInInspector]
+   public bool winscreen = false;
 
     private void Awake()
     {
@@ -42,7 +44,7 @@ public class PausMenu : MonoBehaviour
 
     void Update()
     {
-        if (playerControls.UI.Menu.triggered) 
+        if (playerControls.UI.Menu.triggered && !winscreen) 
         {
             if (gameIsPaused)
             {
