@@ -35,7 +35,7 @@ public class Hitter : MonoBehaviour
                         ServiceLocator.Instance.GetAudioProvider().PlayOneShot("OwlHit2", transform.position, true);
                         break;
                 }
-            if(Random.Range(0,20)== 0)
+            if(Random.Range(0,200)== 0)
             {
                 ServiceLocator.Instance.GetAudioProvider().PlayOneShot("IntroRoar", transform.position, true);
             }

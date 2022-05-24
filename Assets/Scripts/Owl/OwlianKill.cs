@@ -37,17 +37,24 @@ public class OwlianKill : MonoBehaviour, IDestructable
         colTrigg.enabled = false;
        // col2.enabled = false;
         featherParticles.SetActive(true);
-        if(Random.Range(0,20) == 0)
-            switch(Random.Range(0, 2))
+        if (Random.Range(0, 20) == 0)
+        {
+            switch (Random.Range(0, 2))
             {
-                case 0:   
-                    ServiceLocator.Instance.GetAudioProvider().PlayOneShot("OwlScream",transform.position,true);
+                case 0:
+                    ServiceLocator.Instance.GetAudioProvider().PlayOneShot("OwlScream", transform.position, true);
                     break;
                 case 1:
                     ServiceLocator.Instance.GetAudioProvider().PlayOneShot("OwlScream2", transform.position, true);
                     break;
             }
-        
+        }
+
+        if(Random.Range(0,1000) == 0)
+        {
+            ServiceLocator.Instance.GetAudioProvider().PlayOneShot("OwlScream3", transform.position, true);
+        }
+
         foreach (var child in childList)
         {
             child.transform.SetParent(root.transform);
