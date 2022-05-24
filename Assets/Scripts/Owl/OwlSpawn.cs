@@ -91,12 +91,6 @@ public class OwlSpawn : MonoBehaviour
                     newOwls = true;
                 }
                 break;
-
-            case Level.Level_4:
-
-                KillOwl();
-                spawnManager.SetActive(false);
-                break;
         }
     }
 
