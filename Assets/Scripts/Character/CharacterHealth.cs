@@ -4,11 +4,11 @@ public delegate void onHitPlayer();
 public delegate void onDeadPlayer();
 public class CharacterHealth : MonoBehaviour
 {
-    public static event onHitPlayer onHitPlayer;
-    public static event onDeadPlayer onDeadPlayer;
-    [SerializeField]public static int health = 500;
+    public event onHitPlayer onHitPlayer;
+    public event onDeadPlayer onDeadPlayer;
+    [SerializeField]public int health = 500;
     static bool isDead = false;
-    public static void DamageMe(int damage)
+    public void DamageMe(int damage)
     {
         health -= damage;
         onHitPlayer?.Invoke();
@@ -19,7 +19,7 @@ public class CharacterHealth : MonoBehaviour
         }
     }
 
-    public static int GetHealth()
+    public int GetHealth()
     {
         return health;
     }
