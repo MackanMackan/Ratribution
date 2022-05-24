@@ -10,7 +10,11 @@ public class NextLevel : MonoBehaviour
     CinemachineVirtualCamera gateCam1;
     [SerializeField]
     CinemachineVirtualCamera gateCam2;
-  
+    [SerializeField]
+    CinemachineVirtualCamera cam;
+    [SerializeField]
+    CinemachineVirtualCamera treeCam;
+
     [SerializeField]
     Animator gate1;
     [SerializeField]
@@ -74,6 +78,11 @@ public class NextLevel : MonoBehaviour
                 StartCoroutine(cinemachineSwitch.GateCamera(gateCam2));
                 level = true;
             }
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            WinGame();
 
         }
     }
@@ -84,7 +93,10 @@ public class NextLevel : MonoBehaviour
         gate2.SetTrigger("GateOpenT");
     }
     public void WinGame()
-    {     
+    {
+        cam.enabled = false;
+        treeCam.enabled = true;
+
             Time.timeScale = 0.3f;
             Time.fixedDeltaTime = 0.03F * Time.timeScale;
 
