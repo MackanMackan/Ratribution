@@ -36,16 +36,15 @@ public class NextLevel : MonoBehaviour
     bool level3GatesOpened = false;
     EventSystem m_EventSystem;
 
-
+    PausMenu pausMenu;
     private void Start()
     {
         globalVolumeController = FindObjectOfType<GlobalVolumeController>();
+        pausMenu = FindObjectOfType<PausMenu>();
         getLevelHealth = FindObjectOfType<GetBuildingHealth>();
         cinemachineSwitch = FindObjectOfType<CinemachineSwitch>();
         winUI.SetActive(false);
         MotherTreeDestruction.onDestroyTree += WinGame;
-
-        //itemsButton = GameObject.FindGameObjectWithTag("Restart");
 
         m_EventSystem = EventSystem.current;
     }
@@ -63,7 +62,6 @@ public class NextLevel : MonoBehaviour
                 level = false;
             }
 
-            CharacterHealth.health = 500;
         }
 
         if ( getLevelHealth.level == Level.Level_3 && !level3GatesOpened)
@@ -77,7 +75,6 @@ public class NextLevel : MonoBehaviour
                 level = true;
             }
 
-            CharacterHealth.health = 500;
         }
     }
 
@@ -99,9 +96,9 @@ public class NextLevel : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
 
         m_EventSystem.SetSelectedGameObject(itemsButton);
+        pausMenu.winscreen = true;
 
         winUI.SetActive(true);
         globalVolumeController.TurnOnBlurr();
     }
-
 }

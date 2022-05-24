@@ -7,10 +7,10 @@ public class DeadMenu : MonoBehaviour
 {
     public void GotToMainMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Menu");
     }
     public void RestartGame()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("newT");
     }
 }

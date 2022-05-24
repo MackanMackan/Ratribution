@@ -40,6 +40,6 @@ public class SetDeadUI : MonoBehaviour
     void LoadDeadScene()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("DeadScene");
     }
 }
