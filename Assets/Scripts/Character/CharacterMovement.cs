@@ -28,6 +28,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] bool walkingUpSlope;
     public bool isSlowedByRollImpact;
     public bool fatigued = false;
+    bool jumpHasEmitted = false;
     
     [Header("Misc")]
     [SerializeField] GameObject animatorParentObj;
@@ -265,6 +266,7 @@ public class CharacterMovement : MonoBehaviour
         }
         else
         {
+            jumpHasEmitted = false;
             isNotOnGround?.Invoke();
         }
     }
@@ -298,8 +300,9 @@ public class CharacterMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer.Equals(LayerMask.NameToLayer("Ground")))
+        if (collision.gameObject.layer.Equals(LayerMask.NameToLayer("Ground")) && !jumpHasEmitted)
         {
+            jumpHasEmitted = true;
             jumpParticles.Emit(20);
         }
     }
