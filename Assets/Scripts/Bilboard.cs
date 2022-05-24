@@ -10,7 +10,7 @@ public class Bilboard : MonoBehaviour
  
     private void LateUpdate()
     {
-        Vector3 targetPostition = new Vector3(vCamera.transform.position.x, this.transform.position.y, vCamera.transform.position.z);
+        Vector3 targetPostition = new Vector3(vCamera.transform.position.x, transform.position.y, vCamera.transform.position.z);
 
         if (!bilboard)
         {
