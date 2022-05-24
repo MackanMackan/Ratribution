@@ -5,7 +5,7 @@ using UnityEngine;
 public class ExplodeBarrel : MonoBehaviour
 {
     public bool isExploding = false;
-    [SerializeField] float timerUntilExploder = 3;
+    [SerializeField] float timeUntilExplode = 3;
     [SerializeField] GameObject particleFuse;
     [SerializeField] GameObject explosionHitter;
     [SerializeField] SphereCollider explosionCollider;
@@ -18,7 +18,7 @@ public class ExplodeBarrel : MonoBehaviour
     }
     IEnumerator ExplosionCountDown()
     {
-        yield return new WaitForSeconds(timerUntilExploder);
+        yield return new WaitForSeconds(timeUntilExplode);
         explosionHitter.SetActive(true);
         yield return new WaitForSeconds(0.1f);
         Explode();
