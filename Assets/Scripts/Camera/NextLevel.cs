@@ -37,8 +37,6 @@ public class NextLevel : MonoBehaviour
     EventSystem m_EventSystem;
 
     PausMenu pausMenu;
-
-
     private void Start()
     {
         globalVolumeController = FindObjectOfType<GlobalVolumeController>();
@@ -47,8 +45,6 @@ public class NextLevel : MonoBehaviour
         cinemachineSwitch = FindObjectOfType<CinemachineSwitch>();
         winUI.SetActive(false);
         MotherTreeDestruction.onDestroyTree += WinGame;
-
-        //itemsButton = GameObject.FindGameObjectWithTag("Restart");
 
         m_EventSystem = EventSystem.current;
     }
@@ -66,7 +62,6 @@ public class NextLevel : MonoBehaviour
                 level = false;
             }
 
-            CharacterHealth.health = 500;
         }
 
         if ( getLevelHealth.level == Level.Level_3 && !level3GatesOpened)
@@ -80,7 +75,6 @@ public class NextLevel : MonoBehaviour
                 level = true;
             }
 
-            CharacterHealth.health = 500;
         }
     }
 
