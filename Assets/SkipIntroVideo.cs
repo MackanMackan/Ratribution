@@ -1,11 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.Video;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class SkipIntroVideo : MonoBehaviour
 {
+    [SerializeField] Image fadeImg;
+
     PlayerInputActions playerControls;
     InputAction roll;
     InputAction fire;
@@ -13,8 +17,10 @@ public class SkipIntroVideo : MonoBehaviour
     InputAction jump;
     InputAction anyKey;
 
+    VideoPlayer vidPlayer;
     void Start()
     {
+        vidPlayer = GetComponent<VideoPlayer>();
         playerControls = new PlayerInputActions();
         roll = playerControls.Player.Roll;
         fire = playerControls.Player.Fire;
@@ -27,24 +33,52 @@ public class SkipIntroVideo : MonoBehaviour
         jump.Enable();
         anyKey.Enable();
 
-        roll.performed += GoToMainMenu;
-        dropbarrel.performed += GoToMainMenu;
-        jump.performed += GoToMainMenu;
-        anyKey.performed += GoToMainMenu;
-    }
-    void GoToMainMenu(InputAction.CallbackContext callback)
-    {
-        roll.performed -= GoToMainMenu;
-        dropbarrel.performed -= GoToMainMenu;
-        jump.performed -= GoToMainMenu;
-        anyKey.performed -= GoToMainMenu;
+        roll.performed += SkipButtonPushed;
+        dropbarrel.performed += SkipButtonPushed;
+        jump.performed += SkipButtonPushed;
+        anyKey.performed += SkipButtonPushed;
 
+        vidPlayer.loopPointReached += IntroCutsceneFinished;
+    }
+    void SkipButtonPushed(InputAction.CallbackContext callback)
+    {
+        RemoveEvents();
+
+        DisableInput();
+
+        DoFadeScreen();
+    }
+    void IntroCutsceneFinished(VideoPlayer player)
+    {
+        RemoveEvents();
+
+        DisableInput();
+
+        DoFadeScreen();
+    }
+    void RemoveEvents()
+    {
+        roll.performed -= SkipButtonPushed;
+        dropbarrel.performed -= SkipButtonPushed;
+        jump.performed -= SkipButtonPushed;
+        anyKey.performed -= SkipButtonPushed;
+        vidPlayer.loopPointReached -= IntroCutsceneFinished;
+    }
+    void DisableInput()
+    {
         roll.Disable();
         fire.Disable();
         dropbarrel.Disable();
         jump.Disable();
         anyKey.Disable();
-
+    }
+    void DoFadeScreen()
+    {
+        fadeImg.enabled = true;
+        fadeImg.DOFade(1, 2).SetUpdate(true).OnComplete(LoadMainMenu);
+    }
+    void LoadMainMenu()
+    {
         SceneManager.LoadScene("Menu");
     }
 }
