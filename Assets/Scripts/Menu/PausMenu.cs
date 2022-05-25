@@ -76,7 +76,7 @@ public class PausMenu : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("newT");
+        SceneManager.LoadScene("MainGame");
         Time.timeScale = 1f;
     }
     public void BackToMainMenu()

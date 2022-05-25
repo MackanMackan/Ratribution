@@ -28,6 +28,6 @@ public class BeginGameNow : MonoBehaviour
 
     void StartGame()
     {
-        SceneManager.LoadScene("newT");
+        SceneManager.LoadScene("MainGame");
     }
 }

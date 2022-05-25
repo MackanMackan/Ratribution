@@ -11,6 +11,6 @@ public class DeadMenu : MonoBehaviour
     }
     public void RestartGame()
     {
-        SceneManager.LoadScene("newT");
+        SceneManager.LoadScene("MainGame");
     }
 }

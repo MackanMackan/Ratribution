@@ -39,7 +39,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("newT");  
+        SceneManager.LoadScene("MainGame");  
     }
 
     public void QuitGame()
