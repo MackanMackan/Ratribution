@@ -20,6 +20,8 @@ public class MainMenu : MonoBehaviour
     public GameObject pcButton2;
     public GameObject gpButton2;
     public Image rat;
+
+    [SerializeField] Image loadImg;
     private void Awake()
     {
         DOTween.Init();
@@ -39,6 +41,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
+        loadImg.enabled = true;
         SceneManager.LoadScene("MainGame");  
     }
 
@@ -50,6 +53,7 @@ public class MainMenu : MonoBehaviour
 
     public void GoToTut()
     {
+        loadImg.enabled = true;
         SceneManager.LoadScene("Tutorial Level");
 
     }

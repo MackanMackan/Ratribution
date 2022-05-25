@@ -54,8 +54,8 @@ public class Movment_tut : MonoBehaviour
 
     IntroLanding introLanding;
 
-    public static event isGrounded isOnGround2;
-    public static event isNotGrounded isNotOnGround2;
+    public event isGrounded isOnGround2;
+    public event isNotGrounded isNotOnGround2;
     private void Awake()
     {
         playerControls = new PlayerInputActions();

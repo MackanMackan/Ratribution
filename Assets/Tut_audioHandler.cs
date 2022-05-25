@@ -32,8 +32,8 @@ public class Tut_audioHandler : MonoBehaviour
         yield return new WaitForSeconds(2);
         Movment_tut carMove = GameObject.FindGameObjectWithTag("Player").GetComponent<Movment_tut>();
 
-        Movment_tut.isOnGround2 += SFXTouchGroundVolume;
-        Movment_tut.isNotOnGround2 += SFXTurnOFVolume;
+        carMove.isOnGround2 += SFXTouchGroundVolume;
+        carMove.isNotOnGround2 += SFXTurnOFVolume;
         sourceRoll.volume = rollContinousVolume;
     }
     private void Update()

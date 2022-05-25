@@ -7,7 +7,7 @@ public class CharacterHealth : MonoBehaviour
     public event onHitPlayer onHitPlayer;
     public event onDeadPlayer onDeadPlayer;
     [SerializeField]public int health = 500;
-    static bool isDead = false;
+    bool isDead = false;
     public void DamageMe(int damage)
     {
         health -= damage;

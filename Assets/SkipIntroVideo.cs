@@ -9,6 +9,7 @@ using DG.Tweening;
 public class SkipIntroVideo : MonoBehaviour
 {
     [SerializeField] Image fadeImg;
+    [SerializeField] Image loadingImg;
 
     PlayerInputActions playerControls;
     InputAction roll;
@@ -79,6 +80,7 @@ public class SkipIntroVideo : MonoBehaviour
     }
     void LoadMainMenu()
     {
+        loadingImg.enabled = true;
         SceneManager.LoadScene("Menu");
     }
 }

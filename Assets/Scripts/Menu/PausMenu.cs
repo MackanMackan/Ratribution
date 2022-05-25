@@ -18,6 +18,7 @@ public class PausMenu : MonoBehaviour
     [HideInInspector]
    public bool winscreen = false;
 
+    [SerializeField] Image loadImg;
     private void Awake()
     {
         DOTween.Init();
@@ -76,6 +77,7 @@ public class PausMenu : MonoBehaviour
 
     public void Restart()
     {
+        loadImg.enabled = true;
         SceneManager.LoadScene("MainGame");
         Time.timeScale = 1f;
     }
@@ -94,6 +96,7 @@ public class PausMenu : MonoBehaviour
     public void Mm()
     {
         Time.timeScale = 1f;
+        loadImg.enabled = true;
         SceneManager.LoadScene("Menu");
     }
 

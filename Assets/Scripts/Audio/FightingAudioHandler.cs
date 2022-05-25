@@ -5,8 +5,7 @@ using UnityEngine.InputSystem;
 
 public class FightingAudioHandler : MonoBehaviour
 {
-    public static FightingAudioHandler Instance { get { return instance; } }
-    private static FightingAudioHandler instance;
+    CharacterHealth charHp;
     PlayerInputActions playerControls;
     InputAction punch;
     InputAction roll;
@@ -18,14 +17,6 @@ public class FightingAudioHandler : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
         playerControls = new PlayerInputActions();
         punch = playerControls.Player.Fire;
         roll = playerControls.Player.Roll;
@@ -50,6 +41,20 @@ public class FightingAudioHandler : MonoBehaviour
         dropBarrel.Enable();
         dropBarrel.started += ChangeFightMusicActive;
         dropBarrel.canceled += ChangeFightMusicInactive;
+
+        charHp = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterHealth>();
+        charHp.onDeadPlayer += InactiveEventsOnDeath;
+    }
+    void InactiveEventsOnDeath()
+    {
+        punch.started -= ChangeFightMusicActive;
+        punch.canceled -= ChangeFightMusicInactive;
+
+        roll.started -= ChangeFightMusicActive;
+        roll.canceled -= ChangeFightMusicInactive;
+
+        dropBarrel.started -= ChangeFightMusicActive;
+        dropBarrel.canceled -= ChangeFightMusicInactive;
     }
     public void ChangeFightMusicActive(InputAction.CallbackContext callback)
     {
