@@ -92,6 +92,4 @@ public class MainMenu : MonoBehaviour
         var eventSystem = EventSystem.current;
         eventSystem.SetSelectedGameObject(gpButton2, new BaseEventData(eventSystem));
     }
-
-
 }
