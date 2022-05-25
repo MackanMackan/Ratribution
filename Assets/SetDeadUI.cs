@@ -12,7 +12,6 @@ public class SetDeadUI : MonoBehaviour
     GameObject player;
     CharacterMovement charMove;
     CharacterAttack charAtt;
-    [SerializeField] Image loadImg;
     void Start()
     {
         if (!SceneManager.GetActiveScene().name.Equals("DeadScene"))
@@ -38,7 +37,6 @@ public class SetDeadUI : MonoBehaviour
     void LoadDeadScene()
     {
         Time.timeScale = 1f;
-        loadImg.enabled = true;
         SceneManager.LoadScene("DeadScene");
     }
 }
