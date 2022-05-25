@@ -114,9 +114,10 @@ public class OwlSpawn : MonoBehaviour
         {
             GameObject enemySpawn;
             nextSpawn = Time.time + spawnTimer;
-            Vector3 spawnArea = spawnList[Random.Range(0, spawnPositionList.Count)].position;
+            Transform randomSpawn = spawnList[Random.Range(0, spawnPositionList.Count)];
+            Vector3 spawnArea = randomSpawn.position;
             Vector3 spawnPosition;
-            ServiceLocator.Instance.GetAudioProvider().PlayOneShot("WarTrumpet",spawnArea, false);
+            randomSpawn.GetComponent<AudioSource>().Play();
             for (int i = 0; i < spawnRate; i++)
             {
                 spawnPosition = spawnArea + new Vector3(Random.Range(0, 10), 0, Random.Range(0, 10));
