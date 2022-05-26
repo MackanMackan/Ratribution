@@ -59,7 +59,7 @@ public class MoveToTree : MonoBehaviour
         destroyUI.SetActive(false);
         treeUI.SetActive(true);
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
 
         treeCam.enabled = false;
         cmCam.enabled = true;
@@ -84,5 +84,9 @@ public class MoveToTree : MonoBehaviour
             barrel3.color = Color.white;
         }
 
+        if (Input.GetMouseButtonDown(1))
+        {
+            StartCoroutine(CamToTree());
+        }
     }
 }
