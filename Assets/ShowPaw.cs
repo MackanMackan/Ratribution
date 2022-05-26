@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-
 public class ShowPaw : MonoBehaviour, ISelectHandler, IDeselectHandler
 {
     private void Start()
