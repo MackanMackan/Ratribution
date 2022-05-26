@@ -87,6 +87,7 @@ public class OwlSpawn : MonoBehaviour
 
                     newOwls = true;
                 }
+
                 break;
         }
     }
@@ -133,14 +134,6 @@ public class OwlSpawn : MonoBehaviour
                 spawnOwlcounter++;
                 numberOfOwls.Add(enemySpawn);
             }
-        }
-    }
-
-    private void KillOwl()
-    {
-        foreach (GameObject owl in numberOfOwls)
-        {
-            Destroy(owl);
         }
     }
 }
