@@ -36,7 +36,7 @@ public class MainMenu : MonoBehaviour
     public void Fade1()
     {
         fade.enabled = true;
-        fade.DOFade(1, 1).SetUpdate(true).OnComplete(PlayGame); //Sätt alpha till 1, under 1 sekund, ignorera timescale, när det är klart kör funktionen Mm
+        fade.DOFade(1, 1).SetUpdate(true).OnComplete(PlayGame);
     }
 
     public void PlayGame()

@@ -28,7 +28,6 @@ public class ShowPaw : MonoBehaviour, ISelectHandler, IDeselectHandler
     {
         transform.GetChild(1).gameObject.SetActive(false);
     }
-
 }
    
 

@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using DG.Tweening; //Inkluderat tweeing grejerna
-using UnityEngine.UI; //behövs nu
+using DG.Tweening;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PausMenu : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class PausMenu : MonoBehaviour
     AudioSource audioSource;
     [HideInInspector]
    public bool winscreen = false;
+    public GameObject cButton;
 
     [SerializeField] Image loadImg;
     private void Awake()
@@ -68,6 +70,8 @@ public class PausMenu : MonoBehaviour
     }
     void Pause()
     {
+        var eventSystem = EventSystem.current;
+        eventSystem.SetSelectedGameObject(cButton, new BaseEventData(eventSystem));
         audioSource.volume = 0.2f;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;

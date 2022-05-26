@@ -79,6 +79,12 @@ public class NextLevel : MonoBehaviour
                 level = true;
             }
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            WinGame();
+
+        }
     }
 
     public void GateOpen(Animator gate1, Animator gate2)
