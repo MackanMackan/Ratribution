@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class NextLevel : MonoBehaviour
 {
@@ -102,12 +103,8 @@ public class NextLevel : MonoBehaviour
 
     public IEnumerator WinGame2()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
 
-        m_EventSystem.SetSelectedGameObject(itemsButton);
-        pausMenu.winscreen = true;
-
-        winUI.SetActive(true);
-        globalVolumeController.TurnOnBlurr();
+        SceneManager.LoadScene("Win Scene Evening");
     }
 }
