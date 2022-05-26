@@ -41,9 +41,7 @@ public class MoveToTree : MonoBehaviour
         
         barrel3.color = barrel1.color = barrel2.color -= new Color(0, 0, 0, 0.5f);
         motherTreeDestruction = FindObjectOfType<MotherTreeDestruction>();
-
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -82,11 +80,6 @@ public class MoveToTree : MonoBehaviour
         if (motherTreeDestruction.amountOfBarrelsAttached == 3)
         {
             barrel3.color = Color.white;
-        }
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            StartCoroutine(CamToTree());
         }
     }
 }

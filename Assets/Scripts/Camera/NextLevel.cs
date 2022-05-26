@@ -13,7 +13,7 @@ public class NextLevel : MonoBehaviour
     [SerializeField]
     CinemachineVirtualCamera cam;
     [SerializeField]
-    CinemachineVirtualCamera treeCam;
+    CinemachineVirtualCamera winCam;
 
     [SerializeField]
     Animator gate1;
@@ -51,6 +51,8 @@ public class NextLevel : MonoBehaviour
         MotherTreeDestruction.onDestroyTree += WinGame;
 
         m_EventSystem = EventSystem.current;
+
+      
     }
 
     private void Update()
@@ -77,9 +79,9 @@ public class NextLevel : MonoBehaviour
             {
                 StartCoroutine(cinemachineSwitch.GateCamera(gateCam2));
                 level = true;
+        
             }
         }
-
     }
 
     public void GateOpen(Animator gate1, Animator gate2)
@@ -90,12 +92,12 @@ public class NextLevel : MonoBehaviour
     public void WinGame()
     {
         cam.enabled = false;
-        treeCam.enabled = true;
+        winCam.enabled = true;
 
-            Time.timeScale = 0.3f;
-            Time.fixedDeltaTime = 0.03F * Time.timeScale;
+        Time.timeScale = 0.3f;
+        Time.fixedDeltaTime = 0.03F * Time.timeScale;
 
-            StartCoroutine(WinGame2());            
+        StartCoroutine(WinGame2());            
     }
 
     public IEnumerator WinGame2()
