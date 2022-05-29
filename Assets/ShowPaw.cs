@@ -25,10 +25,10 @@ public class ShowPaw : MonoBehaviour, ISelectHandler, IDeselectHandler
         transform.GetChild(1).gameObject.SetActive(false);
 
     }
-    //private void OnDisable()
-    //{
-    //    transform.GetChild(1).gameObject.SetActive(false);
-    //}
+    private void OnDisable()
+    {
+        transform.GetChild(1).gameObject.SetActive(false);
+    }
 }
    
 
