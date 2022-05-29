@@ -4,11 +4,30 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class WinMenu : MonoBehaviour
 {
     public Image fade;
+    public Image fade2;
     [SerializeField] Image loadImg;
+    public Ease ease = Ease.InCubic;
+
+    private void Start()
+    {
+        fade2.DOFade(0, 3f).SetDelay(0.5f).SetEase(ease).OnComplete(fadeOver);
+    }
+
+    private void fadeOver()
+    {
+        fade2.enabled = false;
+    }
+
+    private void WinScene()
+    {
+        throw new NotImplementedException();
+    }
+
     public void BackToMainMenu()
     {
         fade.enabled = true;

@@ -4,6 +4,8 @@ using UnityEngine;
 using Cinemachine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
+using UnityEngine.UI;
 
 public class NextLevel : MonoBehaviour
 {
@@ -41,6 +43,8 @@ public class NextLevel : MonoBehaviour
     bool level3GatesOpened = false;
     EventSystem m_EventSystem;
 
+    public Image fade;
+
     PausMenu pausMenu;
     private void Start()
     {
@@ -52,8 +56,9 @@ public class NextLevel : MonoBehaviour
         MotherTreeDestruction.onDestroyTree += WinGame;
 
         m_EventSystem = EventSystem.current;
+        fade.enabled = false;
 
-      
+
     }
 
     private void Update()
@@ -104,7 +109,14 @@ public class NextLevel : MonoBehaviour
     public IEnumerator WinGame2()
     {
         yield return new WaitForSeconds(2f);
+        Time.timeScale = 1;
+        Time.fixedDeltaTime = 0.02F;
+        fade.enabled = true;
+        fade.DOFade(1, 2).SetUpdate(true).OnComplete(Wingame3);
+    }
 
+    void Wingame3()
+    {
         SceneManager.LoadScene("Win Scene Evening");
     }
 }
