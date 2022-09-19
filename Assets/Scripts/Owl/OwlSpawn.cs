@@ -8,7 +8,6 @@ public class OwlSpawn : MonoBehaviour
     public GameObject owl2;
     public GameObject owl3;
     public GameObject owlExploder;
-    public GameObject owlBody;
 
     int maxOwl = 70;
     float nextSpawn;
